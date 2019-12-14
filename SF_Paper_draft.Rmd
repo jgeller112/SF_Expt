@@ -1,0 +1,60 @@
+---
+title: "Is Sans Forgetica Really Unforgettable?"
+output: html_document
+---
+
+The desirable difficulty principle (Bjork, 1994) puts forth the paradoxical idea that making learning harder (not easier) should have the desirable effect of improving long-term retention. Notable examples of desirable difficulties include having participants generate information from word fragments instead of passively reading intact words (e.g., Slamecka & Graf, 1978), spacing out study sessions instead of massing them (e.g., Carpenter, 2017), and having participants engage in retrieval practice after studying instead of simply restudying the information (Kornell & Vaughn, 2016). Another simple strategy that has gained some attention is to make material more perceptually disfluent. This can be done by changing the material’s perceptual characteristics (Diemand-Yaumen, Oppenheimer, & Vaughan, 2011; French et al., 2013). Visual material that is masked (Mulligan,
+1996), inverted (Sungkhasette, Friedman, & Castel, 2011), presented in an atypical font (Diemand Yaumen et al., 2011), blurred (Rosner, Davis, & Milliken, 2015), or even in handwritten cursive (Geller, Still, Dark, Carpenter, 2018) have all been shown to produce memory benefits. The desirable effect of perceptual disfluency on memory has been called the disfluency effect.
+
+Although appealing as a pedagogical strategy, there have been several experiments that failed to find a memory benefit for perceptually disfluent
+materials (e.g., Magreehan, Serra, Schwartz & Narciss, 2016; Rhodes & Castel, 2008, 2009; Rummer, Scheweppe, & Schewede, 2016; Yue,
+Castel, & Bjork, 2013), casting doubt upon the veracity of the disfluency effect. Recent studies by Geller et al.(2018) and Geller & Still (2018) found that perceptual disfluency can have a beneficial effect on memory, but only under very limited conditions, which weakens its educational valdity. 
+
+Despite the weak evidence for perceptual disfluency, it came as a surprise to me when a little over a year ago, I saw a font by the name of Sans Forgetica (SF) getting a ton of press coverage. The mnnmenomic benefits of this font, *based on cognitive psychology*, were being touted in reputable news sources like Washington Post (https://www.washingtonpost.com/business/2018/10/05/introducing-sans-forgetica-font-designed-boost-your-memory/) and NPR (https://www.npr.org/2018/10/06/655121384/sans-forgetica-a-font-to-remember, amongst others. The creators even made the SF font available for mac and pc operating systems--all you have to do is downlaod the font file and you to can remember everything you read. There is even a Chrome browser extension and cellphone application that allows users to place material in Sans Forgetica. With this much attention and marketing, there has to be solid empirical evidence backing it up, right? Not quite. 
+
+# What do we know about SF? 
+
+There is not information about SF. The typyface itself is a variation of a sans-serif typeface. It is a typeface that consists of intermitten gaps in letters that are back slanted (see below picture). The design features of this typeface require readers of it to "fill-in" the missing pieces like a puzzle. As it pertains to the empirical validation of the claims made, the website does offer some information about SF and how the original results were obtained, but not enough information to replicate the studies. 
+
+![image](https://user-images.githubusercontent.com/18429968/70854186-006bd180-1e7e-11ea-8fe1-94f5cf37c805.png)
+
+# What I could find 
+ Earp (2018) conducted an interview with the creators of SF and got some details from them. I found out that two studies were conducted. In a lab experiment (*N*=96), they had participants read 20 word pairs (e.g., girl - guy; called a paried associates task in cognitive parlance) in three new fonts (one of them being SF) and a typical or common font. The font pairs were presented in was counterbalanced participants. What this means is that all fonts were showns, but the same pairs were never presneted in more than one type of font. Each word pair was presnted on the screen for 100 ms (that is super fast...). For a final test, they were given the cue (e.g., *girl*) and had to respond with the target (*guy*). What did they find? According to the interview, targets were recalled 68% of time when presented in a common font. For cue-target pairs in SF, targets were recalled 69% of the time--a negeliable difference. 
+
+In an online experiment, participants were presented passages (250 words in total) where one of the paragraphs was presented in SF. Each participant saw five different texts in total. For each text they were asked one question about the part written in SF and another question about the part written in standard Arial. Participants remembered 57% of the text when a section was written in Sans Forgetica, compared to 50% of the surrounding text that was written in a plain Arial font.
+
+At the time of this writing, these studies have not been published nor is there a preprint available.I  reached out to the creators of SF, but they refused to share the materials with me. Instead of waiting, I elicited the help of Sara Davis and Daniel Peterson at Skidmore university to test the mnenmomic benefits of Sans Forgetica. We preregistered two studies (https://osf.io/d2vy8/). All materials, data, and analysis scripts can be found at that website. On my github, you can reproduce all analyses for the two reported experiments in an online container (https://github.com/jgeller112/SF_Expt1; https://github.com/jgeller112/SF_Expt2). 
+
+# Experiment 1
+
+
+In the first study we compared the mnenmonic benefits of SF against a robust technique known to enhance memory—generation. The generation effect is a phenomenon where information is better remembered when retrieved than if it is simply read. In a prototypical experiment,participants are asked to generate words from word fragments DOLL - DR__ or read intact cue-target pairs (). Compared to the intact condition, individuals recall the target words that had to be generated at a higher rate. The authors of SF suggest that due to the nature of SF, individuals have to generate of fill in the stimulus. We put that to the test in the first experiment. 
+
+We preregistered a sample size of 230 participants (115 per group) to detect a small-to medium size interaction effect (d = .35) with 90% power. We choose this effect size as our SESOI due in part to small effect sizes seen in actaul classroom studies (). 
+
+The first experiment was a simple paried associates task with a final cued-recall test (similar to the creator's first experiment). We presented 24 weakly associated noun pairs that were 5–7 letters and 1–3 syllables in length, and high in concreteness (400–700) and frequency (at least 30 per million). For half of the participants, half of the targets were presented in SF while the other half were presented in Arial font; for the other half of participants, the targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (arial font).
+
+What did we find?
+
+In Experiment 1 we found a sizeable generation effect, which replicated past work. However, we did not find a SF effect (See figure below)
+
+![plot](https://user-images.githubusercontent.com/18429968/70854778-1f6e6180-1e86-11ea-9fa9-fabd9262ad5b.png)
+
+# Experiment 2
+
+Experiment 2 examined the SF in a more eductiaonlly realistic scenairo. We presented participants a passage on ground water where some of the material was either: pre-highlighted, presented in SF, or presneted with no changes. This was a between-subjects manipulation. Specifically participants read a passage about ground water (856 words) from the U.S. Geological Survey website (Yue, Storm, Kornell, Bjork, 2014). Eleven critical phrases each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unchanged. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). 
+
+We preregistered a sample size of 510 participants (170 per group) to detect a small-to medium size interaction effect (d = .35) with 90% power. 
+
+We found that infromation that was pre-hightlighted had better recall than passages presentened normally. We did not find that passages in SF were better remembered than normal or highligheted passages.
+
+![SF_raincloud](https://user-images.githubusercontent.com/18429968/70854796-47f65b80-1e86-11ea-850e-83821a6bd418.png)
+
+
+# Conclusions
+
+The evidence contained herein suggests that SF does not have the mnemonic effects pruported by its creators. Now it is possible that there is an effect of SF, but the effect size might be smaller than we could detect acorss our two studies. Our SESOI was d = .35. If so, it probably does not have any real educational benefit. It is our conclsuion that SF is really forgetable and you should not be using it as a way to boost leanring. 
+
+
+
+
