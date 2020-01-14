@@ -21,24 +21,29 @@ library(stringi)
 
 here()
 
+set.seed(456)
 
-ground <- qualtRics::read_survey("SF_ground_water_december14th.csv")
+ground <- qualtRics::read_survey("ground_water_memory01202.csv")
 
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 
 #get manipulation check question to merge with scored data. 
 ground_native <- ground %>% 
-  dplyr::select(ResponseId,Finished, Progress, Q192, Q145, Q377)
+  dplyr::select(ResponseId,Finished, Progress, Q163_1, Q164, FL_149_DO, Q192, Q145, Q434, Q435, Q436, Q437, Q438, Q439, Q440, Q441, Q442, Q433, Q444) %>%
+  
+ground_native <- pivot_longer(ground_native,cols=Q434:Q444, names_to="Question", values_to="Response") %>%
+  dplyr::filter(Q192=="Ground water", Progress==100, Q145=="Yes")
+  
+ground_native <- pivot_longer(ground_native,cols=Q434:Q444, names_to="Question", values_to="Response") %>%
+  dplyr::filter(Q192=="Ground water", Progress==100)
 
-#read in scored data
-scored_gound_sf<-read_csv("scored_ground_sf.csv")
 
-scored_merged <- merge(scored_ground_sf, ground_native)
 
-#all
-glmer_acc_all <- scored_merged %>% dplyr::filter(Q192=="Ground water" & Q377 >17)
+question<-read.csv("question_reponse.csv") # read in correct responses 
 
-tokens <- unnest_tokens(tbl = glmer_acc_all, output = token, input = response)
+ground_native_question<-dplyr::left_join(ground_native, question) #merge
+
+tokens <- unnest_tokens(tbl = ground_native_question, output = token, input = Response)
 wordlist <- unique(tokens$token)
 
 # Spell check the words
@@ -51,28 +56,31 @@ spelling.sugg <- unlist(lapply(spelling.sugg, function(x) x[1]))
 spelling.dict <- as.data.frame(cbind(spelling.errors,spelling.sugg))
 spelling.dict$spelling.pattern <- paste0("\\b", spelling.dict$spelling.errors, "\\b")
 # Write out spelling dictionary
+
+
 write.csv(x = spelling.dict, file = "../output_data/spelling.dict.csv",
           fileEncoding = "utf8", row.names = F)
 
 # Parse features
-tokens <- unnest_tokens(tbl = glmer_acc_all, output = token,
+tokens <- unnest_tokens(tbl = ground_native_question, output = token,
                         input = response, token = stringr::str_split,
                         pattern = " |\\, |\\.|\\,|\\;")
 
-#with native english speakers
-glmer_acc_native <- scored_merged %>% dplyr::filter(Q145=="Yes", Q192=="Ground water") # error with qualtrics experiment and it did not display when Ps learned English so could not get accurate english prof profile for Ps.
+tokens$auto_acc <- ifelse(tokens$Correct==tokens$token, 1, 0)
 
-scored_ground_plot<- glmer_acc_all %>% 
+tokens[is.na(tokens)] <- 0 #change all NAs to 0 
+
+scored_ground_plot<- tt %>% 
   group_by(ResponseId, FL_149_DO) %>% 
   rename(Passage="FL_149_DO") %>% 
   summarise(acc=mean(acc)) %>% 
   ungroup() %>% 
   mutate(Passage=ifelse(Passage=="Passage", "SF", Passage))
 
-scored_ground_aov<- glmer_acc_all %>% 
+scored_ground_aov<- replace %>% 
   dplyr::group_by(ResponseId, FL_149_DO) %>% 
   dplyr::rename(Passage="FL_149_DO") %>% 
-  dplyr::summarise(acc=mean(auto_spell_acc)) %>% 
+  dplyr::summarise(acc=mean(auto_acc)) %>% 
   dplyr::ungroup() %>% 
   dplyr::mutate(Passagetype=ifelse(Passage=="Passage", "SF", Passage))
 
@@ -84,8 +92,7 @@ a1 <- aov_ez("ResponseId", "acc", scored_ground_aov,
 
 kable(nice(a1))
 
-
-ls1 <- emmeans(a1, specs = "FL_149_DO") # get the simple effects test for signifcant interaction. 
+ls1 <- emmeans(a1, specs = "Passage") # get the simple effects test for signifcant interaction. 
 
 flex1=pairs(ls1)
 
@@ -95,7 +102,7 @@ kable(flex1)
 source("https://gist.githubusercontent.com/benmarwick/2a1bb0133ff568cbe28d/raw/fb53bd97121f7f9ce947837ef1a4c65a73bffb3f/geom_flat_violin.R")
 
 g <- 
-  ggplot(data = scored_ground_aov, 
+  ggplot(data = repalce, 
          aes(x = Passage, y = acc, fill = Passage)) +
   geom_flat_violin(position = position_nudge(x = .2, y = 0), alpha = .8) +
   geom_point(aes(y = acc, color = Passage), 
