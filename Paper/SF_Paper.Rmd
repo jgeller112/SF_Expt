@@ -121,11 +121,12 @@ summary(ef1)
 x1 <- as.data.frame(ef1)
 
 bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
+
 p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
   geom_bar(stat="identity", position="dodge") + 
   geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Proporition Recalled on Final Test", x="Disfluency") + 
   theme(legend.position = "none") +
-  scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1))
+  scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
 p
 
@@ -144,7 +145,7 @@ Experiment 2 examined the SF in a more educatioanlly realistic scenairo. We pres
 Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we decided to run six more pariticpants per group, giving us 176 participants in each of the three conditions.
 
 
-```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% CI dervied from the glmer model."}
+```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% CI dervied from the GLMER model.")}
 library(qualtRics)
 library(tidyverse)
 library(afex)
