@@ -1,0 +1,22 @@
+Type: Compendium
+Package: SF Experiment 1
+Title: Reproduce Expt 1
+Version: 0.0.1
+Authors@R: 
+    person(given = "Jason ",
+           family = "Geller",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Reproduce analysis from Expt 1
+License: What license it uses
+Depends: 
+    ggplot2,
+    lubridate,
+    tidyr,
+    tidyverse, 
+    afex, 
+    qualtRics, 
+    emmeans
+Encoding: UTF-8
+LazyData: true

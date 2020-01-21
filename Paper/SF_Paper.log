@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.14)  15 JAN 2020 17:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.14)  21 JAN 2020 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -845,77 +845,83 @@ Underfull \hbox (badness 4205) in paragraph at lines 120--121
 / business / 2018 / 10 / 05 / introducing -[]
  []
 
-[2] [3]
+[2] [3] [4]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-60.
+69.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-162.
+171.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4]
-<SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=90, 469.755pt x 325.215p
-t>
+)
+<SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=113, 469.755pt x 325.215
+pt>
 File: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf  use
-d on input line 185.
+d on input line 194.
 (pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
 
-Overfull \hbox (28.90814pt too wide) in paragraph at lines 185--186
+Overfull \hbox (28.90814pt too wide) in paragraph at lines 194--195
 [][] 
  []
 
-[5 <./SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>] [6]
-<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=112, 578.16pt x 289.08pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[5] [6 <./SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>] [7]
+<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=147, 578.16pt x 289.08pt
 >
 File: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf  use
-d on input line 223.
+d on input line 255.
 (pdftex.def)             Requested size: 433.61893pt x 216.80946pt.
 
-Overfull \hbox (34.38147pt too wide) in paragraph at lines 223--224
+Overfull \hbox (34.38147pt too wide) in paragraph at lines 255--256
  []\T1/lmr/m/n/10.95 {[] 
  []
 
-[7 <./SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>] [8]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[9]
+[8] [9 <./SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [10]
-<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=137, 469.755pt x 325.215
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[11]
+<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=171, 469.755pt x 325.215
 pt>
 File: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf  use
-d on input line 385.
+d on input line 417.
 (pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
-[11 <./SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 412.
-[12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 412.
+[12] [13 <./SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
 (./SF_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 412.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 412.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 445.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
 Package rerunfilecheck Info: File `SF_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 267568CCD90E3B5F0038BEDA7D2C3AD1;1095.
+(rerunfilecheck)             Checksum: EF3F09E87BC613238BF1FD32A25CB571;1686.
  ) 
 Here is how much of TeX's memory you used:
- 13903 strings out of 494107
- 202953 string characters out of 6172906
- 279479 words of memory out of 5000000
- 17679 multiletter control sequences out of 15000+600000
+ 13928 strings out of 494107
+ 203227 string characters out of 6172906
+ 279673 words of memory out of 5000000
+ 17691 multiletter control sequences out of 15000+600000
  99714 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,10n,51p,1376b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,10n,51p,1367b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users
 /gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/gellr/L
 ibrary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/gellr/Librar
@@ -928,10 +934,10 @@ s/type1/public/lm/lmr8.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fonts/type1
 /lm/lmri10.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/l
 mss8.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.
 pfb>
-Output written on SF_Paper.pdf (12 pages, 320117 bytes).
+Output written on SF_Paper.pdf (14 pages, 326143 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

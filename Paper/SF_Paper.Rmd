@@ -41,7 +41,7 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "doc"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_word
 ---
 
 ```{r setup, include = FALSE}
@@ -82,21 +82,27 @@ In the first study we compared the mnenmonic benefits of SF against a robust tec
 
 ## Participants
 
-We recruited 230 people from Amazon’s Mechanical Turk Service. Sample size was calculated based on the smallest effect of interest (SEOI; Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actaul classroom studies (Bulter et al., 2014). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 270 is required to detect whether an effect size of .35 differs from zero. After excluding participants After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before we were left with 115 participants per group. 
+We recruited 230 people from Amazon’s Mechanical Turk Service. Sample size was calculated based on the smallest effect of interest (SEOI; Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actaul classroom studies (Bulter et al., 2014). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 270 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
 
-## Materials and Procedure
+## Materials
 
-We preregistered two studies (https://osf.io/d2vy8/). All materials, data, and analysis scripts can be found at that website. Analyses are computationally reproducible on our github by going here:(https://github.com/jgeller112/SF_Expt1; https://github.com/jgeller112/SF_Expt2). 
+The preregistration (aspredicted.org) for Experiment 1 can be found here. All materials, data, and analysis scirpts can be found here (https://osf.io/d2vy8/). The results contained herein are  computationally reproducible by going to the primary author's github and clicking on the binder button (https://github.com/jgeller112/SF_Expt1; https://github.com/jgeller112/SF_Expt2). 
 
 Participants were presented with 22 weakly related cue-target pairs taken from Carpenter et al., 2012)[^1]: Two cue-target pairs () had to be thrown out as they were not preseted due to a coding error. The cue-target pairs were all nouns, 5–7 letters and 1–3 syllables in length, and high in concreteness (400–700) and frequency (at least 30 per million). 
 
-For half the participants, targets were presented in SF while the other half were presented in Arial font; for the other half of participants, targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (Arial font). After a short 2 minute distractor task (anagram generation), they completed a cued recall test. During cued recall, particpants were presented 24 cues one at a time and asked to provide the target word. After they were thanked and debriefed. 
+## Procedure and Design
+The experiment began with the presentation of 22 word pairs, shown one at a time, for 2 secconds each. The cue word always appeared on the left and the target always on the right. Immediately proceeding this, participants did a short 2 minute distractor task (anagram generation). Finally participants completed a cued recall test. During cued recall, particpants were presented 24 cues one at a time and asked to provide the target word. Responses were self-paced. Once completed participants clicked on a button to advance to the next question. After they were asked several demographic questions.
 
-In Experiment 1 participants were presented with 40 weakly relatedcue-target pairs. The pairs were nouns, 5–7 letters, 1–3 syllables in length, and high in concreteness (400–700) and frequency (at least 30 per million). For half of the participants, half of the targets were presented in SF while the other half were presented in Arial font; for the other half of participants, the targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (Arial font). After a short 2 minute distractor task (anagram generation), they completed a cued recall test. 
+We used a 2 x 2 mixed design. The within-subjects factor (Disfluency: fluent vs. disfluency) was manipulated across items and participants. The between-subjects factor (Difficulty Type: Generation vs. Sans Forgetcia) was manipulated between participants. For half the participants, targets were presented in sans forgetica while the other half were presented in Arial font; for the other half of participants, targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (Arial font). After a short 2 minute distractor task (anagram generation), they completed a cued recall test. During cued recall, particpants were presented 24 cues one at a time and asked to provide the target word. After they were thanked and debriefed. 
 
 Spell checking was automated with the hunspell package in R (Ooms, 2018) using spellCheck.R. At the next step we manually examined the output to catch incorrect suggestions and to add their own corrections.  Becasuse participants were recruited in the United States, we used the American English dictionary. A nice walkthrough on how to use the package can be found in Buchcamam, De Deyne, and Montefinese (2019). Using the package, each response was corrected for misspelings. Corrected spellings are provided in the most probable order, therefore, the first suggestion is selected as the correct answer. Answers were marked correct if they provided the exact response. In order for a response to be judged correctly, the response had to match the correct answer. 
 
-What did we find?
+# Results
+
+## Scoring
+
+Accuracy was automated with the hunspell package in R (Ooms, 2018) using spellCheck.R. At the next step we manually examined the output to catch incorrect suggestions and to add their own corrections.  Becasuse participants were recruited in the United States, we used the American English dictionary. A nice walkthrough on how to use the package can be found in Buchcamam, De Deyne, and Montefinese (2019). Using the package, each response was corrected for misspelings. Corrected spellings are provided in the most probable order, therefore, the first suggestion is selected as the correct answer. Answers were marked correct if they provided the exact response. In order for a response to be judged correctly, the response had to match the correct answer. 
+
 
 In Experiment 1 we found a sizeable generation effect, which replicated past work. However, we did not find a SF effect (See figure below)
 
@@ -135,14 +141,37 @@ p
 
 # Experiment 2
 
-The procedure in Experiment 1 could be said to lack educational realsim. It is possible that Experiment 2 examined the SF in a more educatioanlly realistic scenairo. We presented participants a passage on ground water where some of the material was either: pre-highlighted, presented in SF, or presneted with no changes. This was a between-subjects manipulation. Specifically participants read a passage about ground water (856 words) from the U.S. Geological Survey website (Yue, Storm, Kornell, Bjork, 2014). Eleven critical phrases ^[orginally we had 12 critical phrases but a pilot test after the pregreistation showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unchanged. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). 
+The procedure in Experiment 1 could be argued to lack educational realsim. To test the effects of sans forgetica in a more relaistic situation, Experiment 2 presented participants a passage on ground water where some of the material was either: pre-highlighted, presented in SF, or presneted normally. This was a between-subjects manipulation. 
 
-
-Experiment 2 examined the SF in a more educatioanlly realistic scenairo. We presented participants a passage on ground water where some of the material was either: pre-highlighted, presented in SF, or presneted with no changes. This was a between-subjects manipulation. Specifically participants read a passage about ground water (856 words) from the U.S. Geological Survey website (Yue, Storm, Kornell, Bjork, 2014). Eleven critical phrases ^[orginally we had 12 critical phrases but a pilot test after the pregreistation showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unchanged. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). 
 
 ## Participants
 
 Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we decided to run six more pariticpants per group, giving us 176 participants in each of the three conditions.
+
+## Materials
+
+The preregistatiron (aspredicted.org) for Experiment 2 can be found here. All materials, data, and analysis scirpts can be found here (https://osf.io/d2vy8/). The results contained herein are  computationally reproducible by going to the primary author's github and clicking on the binder button (https://github.com/jgeller112/SF_Expt1; https://github.com/jgeller112/SF_Expt2).
+ 
+Participants read a passage  on ground water (856 words) taken from from the U.S. Geological Survey (see Yue et al.)  Eleven critical phrases ^[orginally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unchanged. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). 
+
+## Design and Procedure
+
+Participants were randomly assigned to either the pre-highlighted, sans forgetica, or normal conditions. Our design employed three between-subject variables: pre-highlighting, sans forgetica, and normal.
+
+Participants completed the experiment on-line via the qualtrics survey platform. Participant read the passage on ground water in its entirety, which they were given 6 min to do. Participants in the pre-highlighted  condition received some passages in yellow highlighting. In the sans forgetica condition, participants were presented some sentences in sans forgetcia. In the normal passage condition, participants were given sentences with no changes. All particiapnts were instructed to read the passage as though they were studying material for a class.
+
+After the alloted time, all participants were given a brief questionnaire (2 questions) asking them to indicate their metacognitive beliefs afte reading the passage. The two questions were: “Do you feel that the presentation fo the material helped you remember" and "How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?" Participants were then given a short distractor task (anagrams) for 3 minutes. Finally, all participants were given the 12 question fill-in-the-blank test. 
+
+
+
+# Results
+
+Accuracy on the fill-in-the-blank test was examined using a logistical mixed model (logit link) using the lme4 package in R (Bates, Machler, Bolker, and Walker, 2015) with passage type as a fixed effect and random intercepts for subjects and questions as random effects: acc=glmer(auto_acc~passage_type+(1|ResponseId) + (1|Question), data=data, family="binomial") Passage type was treatment coded thus estimates represent simple effects. 
+
+We hypothesized that pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and san forgetia sentences. Our hypotheses were partially supported.  Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *Estimate* = .381, *exp(B)* = 1.46, *SE* = .167, *z* = 2.281, *p* = .023 *d* = .81 [^3: odds ratios were converted to d by dividing the OR by 1.91 (Chinn, 2000)] and were marginally better remmebered than sentences presented in sans forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *Estimate* = .065, *exp(B)* = 1.07, *SE* = .167, *z* = 0.386, *p* = 0.700, *d* =.04. A Bayes factor using the brms package (Burkner, 2015) was computed for the point null (0) and found that probability of this effect being zero was 15.2 to 1. 
+
+Our hypotheses were partially supported. We hypothesized that pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and san forgetia sentences. We found that pre-highlighted sentneces were better remembered than sentences presented normally and in sans forgetica. 
+
 
 
 ```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% CI dervied from the GLMER model.")}
@@ -169,9 +198,9 @@ x1 <- as.data.frame(ef1)
 bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 p<- ggplot(x1, aes(FL_149_DO, fit, fill=FL_149_DO))+ 
   geom_bar(stat="identity", position="dodge") + 
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="", x="Passage Type") + 
+  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Recall Accuracy", x="Passage Type") + 
   scale_fill_manual(values=c("grey", "black", "yellow"))+
-  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
+  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1)) +
 
 p 
 
@@ -184,7 +213,7 @@ In Experiment 2 we also asked students about their metacognitive awarness. Speci
 One potential reason for pre-highlighted information recieving lower JOLs than the normal passage is that pre-highlighted information served to focus participants attention specific parts of the passage. Given the question, pariticpants might thought this would hinder them if tested over the passage as a whole. Future research should
 
 
-```{r, fig.align="center"}
+```{r, fig.align="center", messages=FALSE}
 
 jols=ground %>% 
   group_by(ResponseId, FL_149_DO)%>%
@@ -252,8 +281,10 @@ g
 We hypothezied that sentences pre-highlighted or presented in sans forgetica would be better remembered than sentences presented normally. Further, we predicted that there would be no recall differences between the pre-highligted and the sans forgetica conditions. Our hypothese were only partially confirmed. We found that infromation that was pre-hightlighted had better recall than passages presentened normally, *Estimate* = -.328, *SE* = .166, *z* = -1.97, *p* = .048. Sentences that were pre-highlighted were also remembered marginally better than senetnces presented in sans forgetica,*Estimate* = -.307, *SE* = .167, *z* = -1.84, *p* = .066. Looking at Bayes Factor for this comparison suggests that evidence for a difference between the two conditions is faily weak. Critically, sentences presented in sans forgetcia were not better remembered than sentences presented normally, *Estimate* = -.328, *SE* = .166, *z* = -1.97, *p* = .048, *BF*=).  
 
 
-# Conclusions
+# Dicussion
 
+
+Across two experiment 
 The evidence contained herein suggests that SF does not have the mnemonic effects pruported by its creators. Now it is possible that there is an effect of SF, but the effect size might be smaller than we could detect acorss our two studies. Our SESOI was d = .35. If so, it probably does not have any real educational benefit. It is our conclsuion that SF is really forgetable and you should not be using it as a way to boost leanring. 
 
 
