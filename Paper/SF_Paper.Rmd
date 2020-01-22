@@ -107,8 +107,7 @@ Accuracy was automated with the hunspell package in R (Ooms, 2018) using spellCh
 
 Accuracy on the cued recall test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with disfluency and diffilcuty type as a fixed effect and random intercepts for subjects (N=233) and target type (N =22) and random slopes for the factor of disfluency by participant and target: full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000))). This was the most complext model we could get to converge (Barr, Levy, Scheepers, & Tily, 2013). Passage type was treatment coded thus estimates represent simple effects. 
 
-In Experiment 1 there was no effect of difficulty type, *Estimate* = -0.043, *exp(b)* = .961, *SE* .102, *Z* = -.430, *p* = .667, **d* =. There was an effect of disfluency, *Estimate* = 0.224, *exp(b)* = 1.251, *SE* =  .062, *Z* = 3.622, *p* < .001, *d* = .654. Crucially, there was a significant interacion between difficulty type and disfluency, *Estimate* = 0.249, *exp(b)* = 1.28, *SE* =  .041, *Z* = 6.098, *p* < .001, *d* = .67. This reflected a sizeable generation effect, but no SF effect (See figure below). Although not specified in the preregistration, a Bayes factor (BF) derived from the Bayesian Information Criterion (see Wagenmakers, 2007) indicated that a model with the interaction term was strongly preferred (BF > 100; Jeffreys, 1961).
-
+In Experiment 1 there was no effect of difficulty type, *Estimate* = -0.043, *exp(b)* = .961, *SE* .102, *Z* = -.430, *p* = .667, **d* =. There was an effect of disfluency, *Estimate* = 0.224, *exp(b)* = 1.251, *SE* =  .062, *Z* = 3.622, *p* < .001, *d* = .654. Crucially, there was a significant interacion between difficulty type and disfluency, *Estimate* = 0.249, *exp(b)* = 1.28, *SE* =  .041, *Z* = 6.098, *p* < .001, *d* = .67. This reflected a sizeable generation effect, but no SF effect (See figure below). Although not specified in the preregistration, a Bayes factor (BF) using weakly informative default priors for the estimates (Gelamn, Jakulin, Grazia,Pittaum & Sung Su, 2008) derived from the the full model using brms () and bayestestR indicated more support for a model with the interaction over a model without the interaction (BF = 9.19). 
 
 ```{r, echo=FALSE, message=FALSE}
 library(qualtRics)
@@ -169,7 +168,7 @@ After 10 minutes, all participants were given a brief questionnaire (2 questions
 
 Accuracy on the fill-in-the-blank test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with passage type as a fixed effect and random intercepts for subjects (N=528)and questions (N =11) as random effects: acc=glmer(auto_acc~passage_type+(1|ResponseId) + (1|Question), data=data, family="binomial"). Passage type was treatment coded thus estimates represent simple effects. 
 
-We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Figure 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *Estimate* = .381, *exp(B)* = 1.46, *SE* = .167, *z* = 2.281, *p* = .023 *d* = .81 [^3: odds ratios were converted to d by dividing the OR by 1.91 (Chinn, 2000)] and were marginally better remmebered than sentences presented in sans forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *Estimate* = .065, *exp(B)* = 1.07, *SE* = .167, *z* = 0.386, *p* = 0.700, *d* =.04. A Bayes factor using the brms package (Burkner, 2015) was computed for the point null (0) and found that probability of this effect being zero was 15.2 to 1. 
+We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Figure 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *Estimate* = .381, *exp(B)* = 1.46, *SE* = .167, *z* = 2.281, *p* = .023 *d* = .81 [^3: odds ratios were converted to d by dividing the OR by 1.91 (Chinn, 2000)] and were marginally better remmebered than sentences presented in sans forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *Estimate* = .065, *exp(B)* = 1.07, *SE* = .167, *z* = 0.386, *p* = 0.700, *d* =.04. A Bayes factor using the brms package (Burkner, 2015) was computed for no difference found that probability of this effect being zero was 12.72 to 1. 
 
 ```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% CI dervied from the GLMER model.")}
 library(qualtRics)
@@ -183,21 +182,24 @@ library(knitr)
 here()
 ground <- qualtRics::read_survey(here("memory_acc_gw_final.csv"))
 
+ground_change <- ground %>%
+  mutate(Passage=ifelse(FL_149_DO=="Highlight", "Pre-highlighted", ifelse(FL_149_DO=="Passage", "Sans Forgetica", "Normal")))
+
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 # loading needed libraries
-full_model=glmer(auto_acc~FL_149_DO+(1|ResponseId) + (1|Question), data=ground, family="binomial")
+full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family="binomial")
 #fit full model
 
-ef1 <- effect("FL_149_DO", full_model) #take final glmer model 
+ef1 <- effect("Passage", full_model) #take final glmer model 
 summary(ef1)
 x1 <- as.data.frame(ef1)
 
 bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
-p<- ggplot(x1, aes(FL_149_DO, fit, fill=FL_149_DO))+ 
+p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
   geom_bar(stat="identity", position="dodge") + 
   geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Recall Accuracy", x="Passage Type") + 
-  scale_fill_manual(values=c("grey", "black", "yellow"))+
-  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1)) +
+  scale_fill_manual(values=c("grey", "yellow", "black"))+
+  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
 p 
 

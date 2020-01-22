@@ -6,6 +6,8 @@ install.packages("emmeans")
 install.packages("ggbeeswarm")
 install.packages("hunspell")
 install.packages("tidytext")
+install.packages("brms")
+install.packages("bayestestR")
 
 
 library(qualtRics)
@@ -14,6 +16,8 @@ library(afex)
 library(emmeans)
 library(hunspell)
 library(tidytext)
+library(bayestestR)
+library(brms)
 
 #Read in each qualtrics file. For SF and Generate conditions, we used two counterbalanced lists so each cue-target pair was presented in the fluent (read) and disfluent conditions (generate or SF font) across participants. 
 
@@ -169,4 +173,29 @@ p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+
   theme(legend.position = "none") +
   scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1))
 
+# run full bayesian model 
 
+prior<-prior(student_t(3,0, 2), class="b") # weakly informed
+
+
+dis=brm(acc~condition*dis+ (1+dis|ResponseID)+(1+condition*dis|target), data=gen, family=bernoulli(), prior=prior, sample_prior=TRUE)
+
+#run brms model
+c_dis_main <- pairs(emmeans(dis, ~ dis)) # get marginal for dis
+
+em_dis_simple<-emmeans(dis, ~dis*condition) # interaction
+
+pairs(em_dis_simple, by = "condition") #
+
+c_dis_condition_interaction <- contrast(em_dis_simple, interaction = c("pairwise","pairwise"))
+
+c_dis_all <- rbind(c_dis_main,
+                   c_dis_condition_interaction)
+
+bayestestR::describe_posterior(c_color_all,
+                               estimate = "median", dispersion = TRUE,
+                               ci = .9, ci_method = "hdi",
+                               test = c("bayesfactor"),
+                               bf_prior = dis)
+
+# get the BF for model with and without interaction.
