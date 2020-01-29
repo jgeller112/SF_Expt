@@ -14,6 +14,7 @@ Depends:
     ggplot2,
     tidyverse,
     here,
-    qualtRics
+    qualtRics, 
+    lme4
 Encoding: UTF-8
 LazyData: true
