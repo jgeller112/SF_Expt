@@ -64,7 +64,7 @@ library(ggpol)
 library(knitr)
 
 
-sfgen=read_csv("sfgenerate_final.csv")
+sfgen=read_csv(here("Expt1_data", "sfgenerate_final.csv"))
 
 
 full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
@@ -104,8 +104,8 @@ library(emmeans)
 library(here)
 library(ggpol)
 library(knitr)
-here()
-ground <- qualtRics::read_survey("memory_acc_gw_final.csv")
+
+ground <- qualtRics::read_survey(here("Expt2_data", "memory_acc_gw_final.csv")
 
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 # loading needed libraries
