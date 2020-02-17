@@ -105,7 +105,7 @@ Accuracy was automated with the hunspell package in R (Ooms, 2018) using spellCh
 
 # Results
 
-Accuracy on the cued recall test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with disfluency and diffilcuty type as a fixed effect and random intercepts for subjects (N=233) and target type (N =22) and random slopes for the factor of disfluency by participant and target: full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000))). This was the most complext model we could get to converge (Barr, Levy, Scheepers, & Tily, 2013). Passage type was treatment coded thus estimates represent simple effects. 
+Accuracy on the cued recall test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with disfluency and diffilcuty type as a fixed effect and random intercepts for subjects (N=233) and target type (N =22) and random slopes for the factor of disfluency by participant and target: full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000))). This was the most complext model we could get to converge (Barr, Levy, Scheepers, & Tily, 2013). condition and disflunecy were sum coded (1, -1). 
 
 In Experiment 1 there was no effect of difficulty type, *Estimate* = -0.043, *exp(b)* = .961, *SE* .102, *Z* = -.430, *p* = .667, **d* =. There was an effect of disfluency, *Estimate* = 0.224, *exp(b)* = 1.251, *SE* =  .062, *Z* = 3.622, *p* < .001, *d* = .654. Crucially, there was a significant interacion between difficulty type and disfluency, *Estimate* = 0.249, *exp(b)* = 1.28, *SE* =  .041, *Z* = 6.098, *p* < .001, *d* = .67. This reflected a sizeable generation effect, but no SF effect (See figure below). Although not specified in the preregistration, a Bayes factor (BF) using weakly informative default priors for the estimates (Gelamn, Jakulin, Grazia,Pittaum & Sung Su, 2008) derived from the the full model using brms () and bayestestR indicated more support for a model with the interaction over a model without the interaction (BF = 9.19). 
 
@@ -119,7 +119,7 @@ library(ggpol)
 library(knitr)
 library(here)
 
-sfgen=read_csv(here("sfgenerate_final.csv"))
+sfgen=read_csv(here("Expt1_data", "sfgenerate_final.csv"))
 
 
 full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
@@ -148,7 +148,7 @@ The procedure in Experiment 1 could be argued to lack educational realsim. To te
 
 ## Participants
 
-Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we decided to run six more pariticpants per group, giving us 176 participants in each of the three conditions.
+Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we ran six more pariticpants per group, giving us 176 participants in each of the three conditions.
 
 ## Materials
 
@@ -166,9 +166,9 @@ After 10 minutes, all participants were given a brief questionnaire (2 questions
 
 # Results
 
-Accuracy on the fill-in-the-blank test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with passage type as a fixed effect and random intercepts for subjects (N=528)and questions (N =11) as random effects: acc=glmer(auto_acc~passage_type+(1|ResponseId) + (1|Question), data=data, family="binomial"). Passage type was treatment coded thus estimates represent simple effects. 
+Accuracy on the fill-in-the-blank test was examined using a logistical mixed model (logit link) in R (R studio, 2019) using the lme4 package (Bates, Machler, Bolker, and Walker, 2015) with passage type as a fixed effect and random intercepts for subjects (*n*=528) and questions (*n*=11):  acc=glmer(auto_acc~passage_type+(1|ResponseId) + (1|Question), data=data, family="binomial"). Passage type was treatment coded thus estimates represent simple effects. 
 
-We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Figure 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *Estimate* = .381, *exp(B)* = 1.46, *SE* = .167, *z* = 2.281, *p* = .023 *d* = .81 [^3: odds ratios were converted to d by dividing the OR by 1.91 (Chinn, 2000)] and were marginally better remmebered than sentences presented in sans forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *Estimate* = .065, *exp(B)* = 1.07, *SE* = .167, *z* = 0.386, *p* = 0.700, *d* =.04. A Bayes factor using the brms package (Burkner, 2015) was computed for no difference found that probability of this effect being zero was 12.72 to 1. 
+We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Figure 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *Estimate* = .381, *exp(B)* = 1.46, *SE* = .167, *z* = 2.281, *p* = .023 *d* = .81 [^3: odds ratios were converted to d by dividing the ln(OR) by 1.81 (Chinn, 2000)] and were marginally better remmebered than sentences presented in sans forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *Estimate* = .065, *exp(B)* = 1.07, *SE* = .167, *z* = 0.386, *p* = 0.700, *d* =.04. A Bayes factor using the brms package (Burkner, 2015) was computed for no difference found that probability of this effect being zero was 12.72 to 1. 
 
 ```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% CI dervied from the GLMER model.")}
 library(qualtRics)
@@ -179,8 +179,7 @@ library(here)
 library(ggpol)
 library(knitr)
 
-here()
-ground <- qualtRics::read_survey(here("memory_acc_gw_final.csv"))
+ground <- qualtRics::read_survey(here("Expt2_Data", "memory_acc_gw_final.csv"))
 
 ground_change <- ground %>%
   mutate(Passage=ifelse(FL_149_DO=="Highlight", "Pre-highlighted", ifelse(FL_149_DO=="Passage", "Sans Forgetica", "Normal")))
@@ -212,7 +211,7 @@ In Experiment 2 we also asked students about their metacognitive awarness. Speci
 One potential reason for pre-highlighted information recieving lower JOLs than the normal passage is that pre-highlighted information served to focus participants attention specific parts of the passage. Given the question, pariticpants might thought this would hinder them if tested over the passage as a whole. Future research should
 
 
-```{r, fig.align="center", messages=FALSE, echo=FALSE}
+```{r, fig.align="center", fig.cap="Judgements of learning as a function of passage type.",  messages=FALSE, echo=FALSE, results="asis"}
 
 jols=ground %>% 
   group_by(ResponseId, FL_149_DO)%>%
@@ -234,46 +233,19 @@ ls1 <- emmeans(a1, specs = "Passage") # get the simple effects test for signifca
 flex1=pairs(ls1)
 
 kable(flex1)
+jols<-as.data.frame(jols)
 
-source("https://gist.githubusercontent.com/benmarwick/2a1bb0133ff568cbe28d/raw/fb53bd97121f7f9ce947837ef1a4c65a73bffb3f/geom_flat_violin.R")
-
-raincloud_theme = theme(
-text = element_text(size = 10),
-axis.title.x = element_text(size = 16),
-axis.title.y = element_text(size = 16),
-axis.text = element_text(size = 14),
-axis.text.x = element_text(angle = 45, vjust = 0.5),
-legend.title=element_text(size=16),
-legend.text=element_text(size=16),
-legend.position = "right",
-plot.title = element_text(lineheight=.8, face="bold", size = 16),
-panel.border = element_blank(),
-panel.grid.minor = element_blank(),
-panel.grid.major = element_blank(),
-axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'),
-axis.line.y = element_line(colour = 'black', size=0.5, linetype='solid'))
-
-
-
-g <- 
-  ggplot(data = jols, 
-         aes(x = Passage, y = jols, fill = Passage)) +
-  geom_flat_violin(position = position_nudge(x = .2, y = 0), alpha = .8) +
-  geom_point(aes(y = jols, color = Passage), 
-             position = position_jitter(width = .15), size = .5, alpha = 0.8) +
-  geom_boxplot(width = .1, outlier.shape = NA, alpha = 0.5) +
-  expand_limits(x = 4.00) +
-  guides(fill = FALSE) +
-  guides(color = FALSE) +
-  scale_color_brewer(palette = "Spectral") +
-  scale_fill_brewer(palette = "Spectral") +
-  coord_flip() + # flip or not
-  theme_bw() + labs(x="Passage Type", y="Judgements of Learning") + ggtitle("JOLs Across Manipualtion Type")
-  raincloud_theme
-
-g
-
-#fit full model
+apa_beeplot(
+  data = jols
+  , id = "ResponseId"
+  , dv = "jols"
+  , ylab="Judements of Learning (%)"
+  , xlab="Passage Type"
+  , factors = c("Passage")
+  )
+pairs=as.data.frame(flex1)
+f=apa_table(pairs)
+f
 
 ```
 
