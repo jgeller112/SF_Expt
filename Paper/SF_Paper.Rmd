@@ -25,12 +25,10 @@ authornote: |
   Enter author note here.
 
 abstract: |
-
-"Do students learn better with material that is perceptually harder-to-process? One way to to make material harder-to-process is by placing it in an atypical font. One font that is claimed to enhance memory is Sans Forgetcia. In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (*N* = 215), we examined cued recall with weakly realted pairs to examine Sans Forgetica and comapred it to a robust technique used to enhance memory--generation. Results showed a robust generation effect, but no Sans Forgetica effect. In Experiment 2 (*N*=528), we examined cued recall of select words from sentences presented in either Sans Forgetcia, pre-highlighted, or normal. Once again we did not find a Sans Forgetica effect. We did find that Pre-highlighted informatuon was better remembered when select sentences were presented normally effect. Our findings suggests that Sans Forgetica is really forgeticable."
+  Do students learn better with material that is perceptually harder-to-process? One way to to make material harder-to-process is by placing it in an atypical font. One font claimed to enhance memory is Sans Forgetcia, despite little to no empirical evidence that Sans Forgetica . In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (*N* = 215), participants studied weakly realted cue-target word pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL). Cued recall performance showed a robust generation effect, but no Sans Forgetica memory benefit. In Experiment 2 (*N*=528), participants read a passage on ground water with select sentences presented in either Sans Forgetcia, yellow highlighting, or unchanged. Cued recall for selelct words were better for pre-highlighted information than when no changes to the passage were made. Critically, presenting sentences in Sans Forgetica did not produce better cued recall than pre-highlighted sentences or sentences presented unchanged. Our findings suggests that Sans Forgetica is really forgeticable. 
   
-keywords          : "Disfluency" "Fluency" "Desirable Difficulties" "Recall" 
+keywords          : "keywords"
 wordcount         : "X"
-
 bibliography      : ["r-references.bib"]
 
 floatsintext      : no
@@ -42,8 +40,8 @@ mask              : no
 draft             : no
 
 documentclass     : "apa6"
-classoption       : "doc"
-output            : papaja::apa6_word
+classoption       : "pdf"
+output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
