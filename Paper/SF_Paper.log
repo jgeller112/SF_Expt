@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  27 FEB 2020 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  27 FEB 2020 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,29 +721,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [1{/Users/gellr/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-Overfull \hbox (48.01334pt too wide) in paragraph at lines 208--209
+]
+Underfull \vbox (badness 4242) has occurred while \output is active []
+
+[2]
+Overfull \hbox (48.01334pt too wide) in paragraph at lines 211--212
 \T1/ptm/m/n/10 trol=glmerControl(optimizer=^^P  bobyqa^^Q,optCtrl=list(maxfun=1
 00000))).
  []
 
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
-3.
+6.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+) [3]
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
-30.
+33.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (70.25676pt too wide) in paragraph at lines 230--230
+Overfull \hbox (70.25676pt too wide) in paragraph at lines 233--233
 []\T1/pcr/m/n/10 ## Warning: Missing column names filled in: \TS1/pcr/m/n/10 '\
 T1/pcr/m/n/10 X1\TS1/pcr/m/n/10 ' \T1/pcr/m/n/10 [1][] 
  []
 
-[3]
-Overfull \hbox (7762.25676pt too wide) in paragraph at lines 244--244
+
+Overfull \hbox (7762.25676pt too wide) in paragraph at lines 247--247
 []\T1/pcr/m/n/10 ## [1] "We fitted a logistic mixed model (estimated using ML a
 nd BOBYQA optimizer) to predict acc with condition and dis (formula = acc ~ con
 dition * dis). The model included dis, ResponseID, condition and target as rand
@@ -766,25 +769,22 @@ ta = 0.21, p < .001)."[]
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 248.
-<SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=110, 469.755pt x 325.215
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 251.
+<SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=115, 469.755pt x 325.215
 pt>
 File: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf  use
-d on input line 290.
+d on input line 293.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
 
-Overfull \hbox (0.0005pt too wide) in paragraph at lines 290--291
+Overfull \hbox (0.0005pt too wide) in paragraph at lines 293--294
 [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[4 <./SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>]
-Overfull \hbox (6628.25676pt too wide) in paragraph at lines 351--351
+[4 <./SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>] [5]
+Overfull \hbox (6628.25676pt too wide) in paragraph at lines 355--355
 []\T1/pcr/m/n/10 ## [1] "We fitted a logistic mixed model (estimated using ML a
 nd Nelder-Mead optimizer) to predict auto_acc with Passage (formula = auto_acc 
 ~ Passage). The model included ResponseId and Question as random effects (formu
@@ -804,85 +804,85 @@ ica is positive and can be considered as very small and not significant (beta =
  []
 
 
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
  []
 
 
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##       0.3847685       0.4779490       0.4001575[] 
  []
 
-[5]
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
  []
 
 
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##       0.2608280       0.3405702       0.2733269[] 
  []
 
 
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
  []
 
 
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
+Overfull \hbox (58.25676pt too wide) in paragraph at lines 380--380
 []\T1/pcr/m/n/10 ##       0.5257163       0.6187467       0.5419488[] 
  []
 
-<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=139, 578.16pt x 289.08pt
+<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=144, 578.16pt x 289.08pt
 >
 File: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf  use
-d on input line 395.
+d on input line 399.
 (pdftex.def)             Requested size: 241.74043pt x 120.87021pt.
 
-Overfull \hbox (4.79712pt too wide) in paragraph at lines 395--396
+Overfull \hbox (4.79712pt too wide) in paragraph at lines 399--400
  []\T1/ptm/m/n/10 {[] 
  []
 
 
-Overfull \hbox (77.09587pt too wide) in paragraph at lines 409--420
+Overfull \hbox (77.09587pt too wide) in paragraph at lines 413--424
  [][] 
  []
 
-<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=140, 469.755pt x 325.215
+<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=145, 469.755pt x 325.215
 pt>
 File: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 
 <use SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf  use
-d on input line 423.
+d on input line 427.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
 
-Overfull \hbox (39.28462pt too wide) in paragraph at lines 433--444
+Overfull \hbox (39.28462pt too wide) in paragraph at lines 437--448
  [] 
  []
 
 [6 <./SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf> <./SF_Paper_files/figu
 re-latex/unnamed-chunk-3-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 474.
 [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 474.
 (./SF_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 474.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 474.
 Package rerunfilecheck Info: File `SF_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 23ADB4557ACEA087262D5B7CC0EB4F90;1818.
+(rerunfilecheck)             Checksum: 76C2738E2E0A3BB75B9ADE2E58D0FFF3;1942.
  ) 
 Here is how much of TeX's memory you used:
- 13933 strings out of 482941
- 205050 string characters out of 5959719
- 469225 words of memory out of 5000000
- 28851 multiletter control sequences out of 15000+600000
+ 13937 strings out of 482941
+ 205106 string characters out of 5959719
+ 471294 words of memory out of 5000000
+ 28853 multiletter control sequences out of 15000+600000
  591641 words of font info for 117 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,11n,46p,1367b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,11n,46p,1385b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
 gellr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></Users/gel
 lr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/gellr/
@@ -891,10 +891,10 @@ brary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gellr/Libr
 ary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/gellr/Library/T
 inyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/gellr/Library/TinyTe
 X/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SF_Paper.pdf (7 pages, 164650 bytes).
+Output written on SF_Paper.pdf (7 pages, 166426 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 
