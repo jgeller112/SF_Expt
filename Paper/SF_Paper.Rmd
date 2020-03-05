@@ -25,7 +25,7 @@ authornote: |
   Enter author note here.
 
 abstract: |
- Recent claims have demonstrated that Sans Forgetica font serves as a desirbale difficulty--defined as processing difficulty that improves long-term retention. Despite these claims, there is very little empircal evidence. This led us to examine more closely Sans Forgetica as a potential desirable difficulty. In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (*N* = 215), participants studied weakly realted cue-target word pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL). Cued recall performance showed a robust generation effect, but no Sans Forgetica memory benefit. In Experiment 2 (*N*=528), participants read a passage on ground water with select sentences presented in either Sans Forgetcia, yellow highlighting, or unchanged. Cued recall for selelct words were better for pre-highlighted information than when no changes to the passage were made. Critically, presenting sentences in Sans Forgetica did not produce better cued recall than pre-highlighted sentences or sentences presented unchanged. Our findings suggests that Sans Forgetica is really forgeticable. 
+ Recent claims suggest Sans Forgetica font serves as a desirbale difficulty--defined as processing difficulty that improves long-term retention. Despite these claims, there is very little empircal evidence. This led us to examine the mnnmonic effects of Sans Forgetica more closely. In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (*N* = 215), participants studied weakly realted cue-target word pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL). Cued recall performance showed a robust generation effect, but no Sans Forgetica memory benefit. In Experiment 2 (*N*=528), participants read a passage about ground water with select sentences presented in either Sans Forgetcia, yellow highlighting, or unchanged. Cued recall for selelct words were better for pre-highlighted information than when unmodified. Critically, presenting sentences in Sans Forgetica did not produce better cued recall than pre-highlighted sentences or sentences presented unchanged. Our findings suggest that Sans Forgetica is really forgeticable. 
   
 keywords          : "Disfluency"
 wordcount         : "X"
@@ -40,7 +40,7 @@ mask              : no
 draft             : no
 
 documentclass     : "apa6"
-classoption       : "doc"
+classoption       : "man"
 output            : papaja::apa6_word
 ---
 
@@ -111,9 +111,6 @@ Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package (ver
 To examine the strength of the interaction we examined the full model against the main effects model using the brms package (vers. 2.3.1). We used normal priors on all fixed effects. These are uninformative in terms of direction–both positive and negative effects are equally likely–but they are informative in terms of magnitude. The prior indicated that a model with the interaction term was strongly preferred over the model without the interaction (BF > 100; Jeffreys, 1961). This suggests that the magnitide of the generation effect is larger than the Sans Forgetica effect. This can be clearly seen in Fig. 2.
 
 
-```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% HDI dervied from the brms model.")}
-
-=======
 Spell checking was automated with the hunspell package in R (Ooms, 2018) using spellCheck.R. At the next step we manually examined the output to catch incorrect suggestions and to add their own corrections.  Becasuse participants were recruited in the United States, we used the American English dictionary. A nice walkthrough on how to use the package can be found in Buchcamam, De Deyne, and Montefinese (2019). Using the package, each response was corrected for misspelings. Corrected spellings are provided in the most probable order, therefore, the first suggestion is selected as the correct answer. In the package,  As a second pass, we went throigh and made sure the program slected the correct
 spelling. If the response was close to the correct response, it was marked as correct.
 
@@ -122,7 +119,6 @@ spelling. If the response was close to the correct response, it was marked as co
 In Experiment 1 there was no effect of difficulty type, *Estimate* = -0.043, *exp(b)* = .961, *SE* .102, *Z* = -.430, *p* = .667, **d* =. There was an effect of disfluency, *Estimate* = 0.224, *exp(b)* = 1.251, *SE* =  .062, *Z* = 3.622, *p* < .001, *d* = .654. Crucially, there was a significant interacion between difficulty type and disfluency, *Estimate* = 0.249, *exp(b)* = 1.28, *SE* =  .041, *Z* = 6.098, *p* < .001, *d* = .67. This reflected a sizeable generation effect, but no Sans Forgetica effect (See figure below). As specified in our pre-registration, a Bayes factor (BF) was computed using brms () and bayestestR to ecxamine evidence for the main effect models vs. the interaction model. The BF (9.19) indicated more support for a model with the interaction over a model without the interaction.
 
 ```{r, echo=TRUE, include=FALSE, message=FALSE}
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -146,7 +142,7 @@ ex1=sfgen %>% mutate(difftype = case_when(
          dis == "fluent" ~ 0.5, 
          dis== "disfluent" ~ -0.5))
 
-full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+#full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 
 
 
@@ -168,12 +164,12 @@ bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 
 #dis_plot=plot(dis_inter, horizontal=FALSE, by="condition", colors="darkgreen") + ggtitle ("Cued Recall Accuracy") + labs(x="Condition Type", y= "Probability Answering Question", subtitle = "95% HDI Intervals") + facet_grid(~condition) + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
-<<<<<<< HEAD
 #dis_plot
 
 ```
 
-```{r,fig.width=12, fig.align="center", fig.height=4,echo=FALSE}
+
+```{r, echo=FALSE, fig.height=4,fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% HDI dervied from the brms model.")}
 knitr::include_graphics(here('brms_dis_plot.png'))
 
 ```	
@@ -190,17 +186,15 @@ The resulst for Experiment 1 are clear-cut. Cued recall performance was equivoca
 
 # Experiment 2
 
-Experiment 1 failed to find a Sans Forgetica effect. One caveat of Experiment 1 is that simple paired associate learning lacks educational realsim. To remedy this, Experiment 2 tested the effects of SF  using more realistic materials.  Whereas Experiment 1 tested whether Sans Forgetica is driven by generation, Experiment 2 examined another possible mechanism of action--that is, the Sans Forgetcia effect might exert its mnnmenonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. Pre-highlighting is purpoted to arise via a similar mechanism.  Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage (Fowler and Barker 1974; Silvers and Kreiner 1997). To this end, Experiment 2 compared cued recall performance between Sans Forgetica and with a passage on ground water where some of the material were either presented in: SF, pre-highlighted in yellow, or unmarked. Each condition was manipulated between-subjects. 
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
+Experiment 1 failed to find a Sans Forgetica effect. One caveat of Experiment 1 is that simple paired associate learning lacks educational realsim. To remedy this, Experiment 2 tested the effects of SF  using more realistic materials.  Whereas Experiment 1 tested whether Sans Forgetica is driven by generation, Experiment 2 examined another possible mechanism of action--that is, the Sans Forgetcia effect might exert its mnnmenonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. Pre-highlighting is purpoted to arise via a similar mechanism.  Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage (Fowler and Barker 1974; Silvers and Kreiner 1997). To this end, Experiment 2 compared cued recall performance between Sans Forgetica and with a passage on ground water where some of the material were either presented in: SF, pre-highlighted in yellow, or unmarked. Each condition was manipulated between-subjects.
 
 
 ## Participants
 
-<<<<<<< HEAD
 Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). Similar to Experiment 1, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 per group is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we ran six more pariticpants per group, giving us 176 participants in each of the three conditions.
-=======
+
 Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we ran six more pariticpants per group, giving us 176 participants in each of the three conditions.
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
+
 
 ## Materials
 
@@ -221,7 +215,7 @@ After 10 minutes, all participants were given a brief questionnaire (2 questions
 We fit a logistic mixed model in a similar fashion to Experiment 1. We fit a model with passage type as a fixed effect and random intercepts for subjects (*n*=528) and questions (*n*=11): (formual: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Standardized parameters were obtained by fitting the model on a standardized version of the dataset. The model's total explanatory power is substantial (conditional R2 = 0.45) and the part related to the fixed effects alone (marginal R2) is of 0.00. We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Figure 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, beta = 0.38, SE = 0.17, 95% CI [0.05, 0.71], std. beta = 0.38, p < .05, and were marginally better remembered than sentences presented in Sans Forgetcia,*Estimate* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia (beta = 0.06, SE = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, p = 0.700. A Bayes factor using the brms package (Burkner, 2015) was computed and there is moderate evidence that the effects are equal (BF = 7.47). 
 
 
-```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Test. Error bars are 95% HDI dervied from the brms model.")}
+```{r, message=FALSE, echo=FALSE}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -264,7 +258,7 @@ ground_change <- ground %>%
 #c_main
 ```
 
-```{r}
+```{r, fig.cap=paste("Passage accuracy. Error bars are 95% HDI dervied from the brms model")}
 knitr::include_graphics(here('brms_passage.png'))
 ```	
 
