@@ -76,7 +76,11 @@ The question of whether Sans Forgetica prodices mnnmenomic benefits has clear pr
 
 # Experiment 1
 
+<<<<<<< HEAD
 In Experiment 1, we were interested in two questions. First, is Sans Forgetica more memorable than a normal, fluent, font (e.g., Arial)? Second, is the Sans Forgetica effect on memory similar in magnitude to the generation effect? One potetntial mechanism dirivng the mnnmenic benefit for Sans Forgetica is related to the design features. Essentailly, the intermiten gaps of Sans Forgetica may require readers to generate or fill in the missing pieces. This is similar to the mechanism of action of the generation effect which is a phenomenon  wherein information is better remembered when generated or filled-in compared to if it is simply read. In a prototypical experiment, participants are asked to generate words from word fragments DOLL - DR__ or read intact cue-target pairs (*DOLL-DRESS*). In Experiment 1 we examined the mnnemonic benefit of  Sans Forgetica and generation looking at cued recall performance with weakly realted pairs. If Sans Forgetica does produce a mnnmoneic benefit we should that cued recall is higher for Sans forgetica comarped to normal font. Futhrer, if it is similar to the generation effect, the magnitude of the memory benefit between the two should be similar. 
+=======
+In Experiment 1, we were interested in two questions. First, is Sans Forgetica more memorable than a normal, fluent, font (e.g., Arial)? Second, is the Sans Forgetica effect on memory similar in magnitude to the generation effect? One potetntial mechanism dirivng the mnnmenic benefit for Sans Forgetica is related to the design features. Essentailly, the intermiten gaps of Sans Forgetica may require readers to generate or fill in the missing pieces. This is realted to the generation effect which is a phenomenon  wherein information is better remembered when generated or filled-in compared to if it is simply read. In a prototypical experiment, participants are asked to generate words from word fragments DOLL - DR__ or read intact cue-target pairs (*DOLL-DRESS*). In Experiment 1 we examined the mnnemonic benefit affored by Sans Forgetica font and generation looking at cued recall performance with weakly realted pairs. If Sans Forgetica does produce a mnnmoneic benefit we should that cued recall is higher for Sans forgetica comarped to normal font. Futhrer, if it is similar to the generation effect, the magnitude of the memory benefit between the two should be similar. 
+>>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
 
 
 ## Participants
@@ -97,6 +101,7 @@ Particpants completed the experiment on-line via the Qualtrics survey platfom ho
 
 ## Scoring
 
+<<<<<<< HEAD
 Spell checking was automated with the hunspell package in R (Ooms, 2018) using spellCheck.R. At the next step we manually examined the output to catch incorrect suggestions and to add their own corrections.  Becasuse participants were recruited in the United States, we used the American English dictionary. A nice walkthrough on how to use the package can be found in Buchcamam, De Deyne, and Montefinese (2019). Using the package, each response was corrected for misspelings. Corrected spellings are provided in the most probable order, therefore, the first suggestion is selected as the correct answer. In the package,  As a second pass, we went throigh and made sure the program slected the correct spelling. If the response was close to the correct response, it was marked as correct.
 
 # Results
@@ -108,6 +113,16 @@ To examine the strength of the interaction we examined the full model against th
 
 ```{r, message=FALSE, echo=FALSE, fig.align="center", fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% HDI dervied from the brms model.")}
 
+=======
+Spell checking was automated with the hunspell package in R (Ooms, 2018) using spellCheck.R. At the next step we manually examined the output to catch incorrect suggestions and to add their own corrections.  Becasuse participants were recruited in the United States, we used the American English dictionary. A nice walkthrough on how to use the package can be found in Buchcamam, De Deyne, and Montefinese (2019). Using the package, each response was corrected for misspelings. Corrected spellings are provided in the most probable order, therefore, the first suggestion is selected as the correct answer. In the package,  As a second pass, we went throigh and made sure the program slected the correct
+spelling. If the response was close to the correct response, it was marked as correct.
+
+# Results
+
+In Experiment 1 there was no effect of difficulty type, *Estimate* = -0.043, *exp(b)* = .961, *SE* .102, *Z* = -.430, *p* = .667, **d* =. There was an effect of disfluency, *Estimate* = 0.224, *exp(b)* = 1.251, *SE* =  .062, *Z* = 3.622, *p* < .001, *d* = .654. Crucially, there was a significant interacion between difficulty type and disfluency, *Estimate* = 0.249, *exp(b)* = 1.28, *SE* =  .041, *Z* = 6.098, *p* < .001, *d* = .67. This reflected a sizeable generation effect, but no Sans Forgetica effect (See figure below). As specified in our pre-registration, a Bayes factor (BF) was computed using brms () and bayestestR to ecxamine evidence for the main effect models vs. the interaction model. The BF (9.19) indicated more support for a model with the interaction over a model without the interaction.
+
+```{r, echo=TRUE, include=FALSE, message=FALSE}
+>>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -153,6 +168,7 @@ bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 
 #dis_plot=plot(dis_inter, horizontal=FALSE, by="condition", colors="darkgreen") + ggtitle ("Cued Recall Accuracy") + labs(x="Condition Type", y= "Probability Answering Question", subtitle = "95% HDI Intervals") + facet_grid(~condition) + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
+<<<<<<< HEAD
 #dis_plot
 
 ```
@@ -167,11 +183,24 @@ The results for Experiment 1 are clear-cut. Cued recall performance for target p
 # Experiment 2
 
 Experiment 1 failed to find a memory benefit for Sans Forgetica effect. One caveat of Experiment 1 is that simple paired associate learning lacks educational realsim. To remedy this, Experiment 2 tested the effects of SF  using more realistic materials.  Whereas Experiment 1 tested whether Sans Forgetica is driven by generation, Experiment 2 examined another possible mechanism of action--that is, the Sans Forgetcia effect might exert its mnnmenonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. This is similar to the effects of pre-highlighting on learning. Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage (Fowler and Barker 1974; Silvers and Kreiner 1997). To this end, Experiment 2 compared cued recall performance on a passage where some of the material were either presented in: SF, pre-highlighted in yellow, or unmarked. Each condition was manipulated between-subjects. 
+=======
+# Dicussion
+
+The resulst for Experiment 1 are clear-cut. Cued recall performance was equivocal between target pairs presented intact and in Sans Forgetica font. That is, we did not observe a memory benefit for Sans Forgetica font. We did, however, observe better cued recall performance for targets that had to be generated that when simply read intact, which replicates decades of litearture (cite some shit). This suggests that (1) Sans Forgetica does not produce better memory and (2) the Sans Forgetica effect does not arise due to similar mechanisms as generation.  
+
+# Experiment 2
+
+Experiment 1 failed to find a Sans Forgetica effect. One caveat of Experiment 1 is that simple paired associate learning lacks educational realsim. To remedy this, Experiment 2 tested the effects of SF  using more realistic materials.  Whereas Experiment 1 tested whether Sans Forgetica is driven by generation, Experiment 2 examined another possible mechanism of action--that is, the Sans Forgetcia effect might exert its mnnmenonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. Pre-highlighting is purpoted to arise via a similar mechanism.  Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage (Fowler and Barker 1974; Silvers and Kreiner 1997). To this end, Experiment 2 compared cued recall performance between Sans Forgetica and with a passage on ground water where some of the material were either presented in: SF, pre-highlighted in yellow, or unmarked. Each condition was manipulated between-subjects. 
+>>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
 
 
 ## Participants
 
+<<<<<<< HEAD
 Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). Similar to Experiment 1, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 per group is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we ran six more pariticpants per group, giving us 176 participants in each of the three conditions.
+=======
+Participants were 528 undergraduates who participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the samllest effect of interest (Lakens & Evers, 2014). In this case, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion critera, we were left with unequal group sizes. Becasue of this, we ran six more pariticpants per group, giving us 176 participants in each of the three conditions.
+>>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
 
 ## Materials
 
