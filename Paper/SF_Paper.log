@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  27 FEB 2020 14:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  4 MAR 2020 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,40 +427,19 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip69
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 36.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count276
-\FV@InFile=\read2
-\FV@TabBox=\box52
-\c@FancyVerbLine=\count277
-\FV@StepNumber=\count278
-\FV@OutFile=\write3
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip70
-\fb@frw=\dimen179
-\fb@frh=\dimen180
-\FrameRule=\dimen181
-\FrameSep=\dimen182
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
-\csq@reset=\count279
-\csq@gtype=\count280
-\csq@glevel=\count281
-\csq@qlevel=\count282
-\csq@maxlvl=\count283
-\csq@tshold=\count284
+\csq@reset=\count276
+\csq@gtype=\count277
+\csq@glevel=\count278
+\csq@qlevel=\count279
+\csq@maxlvl=\count280
+\csq@tshold=\count281
 \csq@ltx@everypar=\toks24
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
@@ -477,47 +456,47 @@ LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip71
-\LTright=\skip72
-\LTpre=\skip73
-\LTpost=\skip74
-\LTchunksize=\count285
-\LTcapwidth=\dimen183
-\LT@head=\box53
-\LT@firsthead=\box54
-\LT@foot=\box55
-\LT@lastfoot=\box56
-\LT@cols=\count286
-\LT@rows=\count287
-\c@LT@tables=\count288
-\c@LT@chunks=\count289
+\LTleft=\skip70
+\LTright=\skip71
+\LTpre=\skip72
+\LTpost=\skip73
+\LTchunksize=\count282
+\LTcapwidth=\dimen179
+\LT@head=\box52
+\LT@firsthead=\box53
+\LT@foot=\box54
+\LT@lastfoot=\box55
+\LT@cols=\count283
+\LT@rows=\count284
+\c@LT@tables=\count285
+\c@LT@chunks=\count286
 \LT@p@ftn=\toks25
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip75
-\multirow@cntb=\count290
-\multirow@dima=\skip76
-\bigstrutjot=\dimen184
+\multirow@colwidth=\skip74
+\multirow@cntb=\count287
+\multirow@dima=\skip75
+\bigstrutjot=\dimen180
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen185
-\ar@mcellbox=\box57
-\extrarowheight=\dimen186
+\col@sep=\dimen181
+\ar@mcellbox=\box56
+\extrarowheight=\dimen182
 \NC@list=\toks26
-\extratabsurround=\skip77
-\backup@length=\skip78
-\ar@cellbox=\box58
+\extratabsurround=\skip76
+\backup@length=\skip77
+\ar@cellbox=\box57
 )
-\TX@col@width=\dimen187
-\TX@old@table=\dimen188
-\TX@old@col=\dimen189
-\TX@target=\dimen190
-\TX@delta=\dimen191
-\TX@cols=\count291
+\TX@col@width=\dimen183
+\TX@old@table=\dimen184
+\TX@old@col=\dimen185
+\TX@target=\dimen186
+\TX@delta=\dimen187
+\TX@cols=\count288
 \TX@ftn=\toks27
 )
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttab
@@ -528,25 +507,25 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip79
+\TPTL@width=\skip78
 )
-\longtablewidth=\skip80
+\longtablewidth=\skip79
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count292
+\linenopenalty=\count289
 \output=\toks28
-\linenoprevgraf=\count293
-\linenumbersep=\dimen192
-\linenumberwidth=\dimen193
-\c@linenumber=\count294
-\c@pagewiselinenumber=\count295
-\c@LN@truepage=\count296
-\c@internallinenumber=\count297
-\c@internallinenumbers=\count298
-\quotelinenumbersep=\dimen194
-\bframerule=\dimen195
-\bframesep=\dimen196
-\bframebox=\box59
+\linenoprevgraf=\count290
+\linenumbersep=\dimen188
+\linenumberwidth=\dimen189
+\c@linenumber=\count291
+\c@pagewiselinenumber=\count292
+\c@LN@truepage=\count293
+\c@internallinenumber=\count294
+\c@internallinenumbers=\count295
+\quotelinenumbersep=\dimen190
+\bframerule=\dimen191
+\bframesep=\dimen192
+\bframebox=\box58
 
 LaTeX Warning: Command \@parboxrestore  has changed.
                Check if current package is valid.
@@ -559,8 +538,8 @@ Package csquotes Info: ... none found.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.
 def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count299
-\l__pdf_internal_box=\box60
+\l__kernel_color_stack_int=\count296
+\l__pdf_internal_box=\box59
 )
 
 LaTeX Warning: Unused global option(s):
@@ -569,24 +548,24 @@ LaTeX Warning: Unused global option(s):
 (./SF_Paper.aux)
 \openout1 = `SF_Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -642,8 +621,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 151.
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 111.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -653,65 +632,65 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ing.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count300
+\c@section@level=\count297
 )
-LaTeX Info: Redefining \ref on input line 151.
-LaTeX Info: Redefining \pageref on input line 151.
-LaTeX Info: Redefining \nameref on input line 151.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 (./SF_Paper.out) (./SF_Paper.out)
-\@outlinefile=\write4
-\openout4 = `SF_Paper.out'.
+\@outlinefile=\write3
+\openout3 = `SF_Paper.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
- 153.
+ 113.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
- 153.
+ 113.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
- 153.
+ 113.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
- 153.
+ 113.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-53.
+13.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 153
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 113
 .
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 153
+LaTeX Font Info:    Trying to load font information for U+msb on input line 113
 .
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 153.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 15
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
 5.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -722,179 +701,90 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ] [2]
-Overfull \hbox (48.01334pt too wide) in paragraph at lines 208--209
-\T1/ptm/m/n/10 trol=glmerControl(optimizer=^^P  bobyqa^^Q,optCtrl=list(maxfun=1
-00000))).
- []
-
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
-3.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 17
+0.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
-30.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
+72.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (70.25676pt too wide) in paragraph at lines 230--230
+Overfull \hbox (70.25676pt too wide) in paragraph at lines 172--172
 []\T1/pcr/m/n/10 ## Warning: Missing column names filled in: \TS1/pcr/m/n/10 '\
 T1/pcr/m/n/10 X1\TS1/pcr/m/n/10 ' \T1/pcr/m/n/10 [1][] 
  []
 
-[3]
-Overfull \hbox (7762.25676pt too wide) in paragraph at lines 244--244
-[]\T1/pcr/m/n/10 ## [1] "We fitted a logistic mixed model (estimated using ML a
-nd BOBYQA optimizer) to predict acc with condition and dis (formula = acc ~ con
-dition * dis). The model included dis, ResponseID, condition and target as rand
-om effects (formula = ~1 + dis | ResponseID + ~1 + dis + condition | target). S
-tandardized parameters were obtained by fitting the model on a standardized ver
-sion of the dataset. Effect sizes were labelled following Chen\TS1/pcr/m/n/10 '
-\T1/pcr/m/n/10 s (2010) recommendations.The model\TS1/pcr/m/n/10 '\T1/pcr/m/n/1
-0 s total explanatory power is substantial (conditional R2 = 0.60) and the part
- related to the fixed effects alone (marginal R2) is of 0.01. The model\TS1/pcr
-/m/n/10 '\T1/pcr/m/n/10 s intercept, corresponding to acc = 0, condition = Gene
-rate, dis = disfluent, ResponseID = E10 and target = branch, is at -1.21 (SE = 
-0.34, 95% CI [-1.88, -0.54], p < .001). Within this model:\n\n  - The effect of
- condition1 is negative and can be considered as very small and not significant
- (beta = -0.09, SE = 0.11, 95% CI [-0.30, 0.13], std. beta = -0.09, p = 0.431).
-\n  - The effect of dis1 is positive and can be considered as very small and si
-gnificant (beta = 0.21, SE = 0.06, 95% CI [0.09, 0.33], std. beta = 0.22, p < .
-001).\n  - The effect of condition1:dis1 is positive and can be considered as v
-ery small and significant (beta = 0.22, SE = 0.04, 95% CI [0.14, 0.30], std. be
-ta = 0.21, p < .001)."[] 
+</Users/gellr/SF_Expt2/brms_dis_plot.png, id=99, 2409.0pt x 1204.5pt>
+File: /Users/gellr/SF_Expt2/brms_dis_plot.png Graphic file (type png)
+<use /Users/gellr/SF_Expt2/brms_dis_plot.png>
+Package pdftex.def Info: /Users/gellr/SF_Expt2/brms_dis_plot.png  used on input
+ line 176.
+(pdftex.def)             Requested size: 578.17183pt x 289.0859pt.
+
+Overfull \hbox (336.42859pt too wide) in paragraph at lines 176--177
+ [][] 
  []
 
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 248.
-<SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=110, 469.755pt x 325.215
-pt>
-File: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+[3] [4 </Users/gellr/SF_Expt2/brms_dis_plot.png>]
+</Users/gellr/SF_Expt2/brms_passage.png, id=124, 2409.0pt x 1204.5pt>
+File: /Users/gellr/SF_Expt2/brms_passage.png Graphic file (type png)
+<use /Users/gellr/SF_Expt2/brms_passage.png>
+Package pdftex.def Info: /Users/gellr/SF_Expt2/brms_passage.png  used on input 
+line 217.
+(pdftex.def)             Requested size: 578.17183pt x 289.0859pt.
 
-<use SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf  use
-d on input line 290.
-(pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
-
-Overfull \hbox (0.0005pt too wide) in paragraph at lines 290--291
+Overfull \hbox (336.42859pt too wide) in paragraph at lines 217--217
 [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[4 <./SF_Paper_files/figure-latex/unnamed-chunk-1-1.pdf>]
-Overfull \hbox (6628.25676pt too wide) in paragraph at lines 351--351
-[]\T1/pcr/m/n/10 ## [1] "We fitted a logistic mixed model (estimated using ML a
-nd Nelder-Mead optimizer) to predict auto_acc with Passage (formula = auto_acc 
-~ Passage). The model included ResponseId and Question as random effects (formu
-la = ~1 | ResponseId + ~1 | Question). Standardized parameters were obtained by
- fitting the model on a standardized version of the dataset. Effect sizes were 
-labelled following Chen\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s (2010) recommendations
-.The model\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s total explanatory power is substant
-ial (conditional R2 = 0.45) and the part related to the fixed effects alone (ma
-rginal R2) is of 0.00. The model\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s intercept, co
-rresponding to auto_acc = 0, Passage = Normal, ResponseId = R_01xBIjc5ddf5oWd a
-nd Question = Q434, is at -0.47 (SE = 0.29, 95% CI [-1.04, 0.10], p = 0.108). W
-ithin this model:\n\n  - The effect of PassagePre-highlighted is positive and c
-an be considered as very small and significant (beta = 0.38, SE = 0.17, 95% CI 
-[0.05, 0.71], std. beta = 0.38, p < .05).\n  - The effect of PassageSans Forget
-ica is positive and can be considered as very small and not significant (beta =
- 0.06, SE = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, p = 0.700)."[] 
+Overfull \hbox (77.09587pt too wide) in paragraph at lines 227--238
+[][] 
  []
 
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##       0.3847685       0.4779490       0.4001575[] 
- []
-
-[5]
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##       0.2608280       0.3405702       0.2733269[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 376--376
-[]\T1/pcr/m/n/10 ##       0.5257163       0.6187467       0.5419488[] 
- []
-
-<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=139, 578.16pt x 289.08pt
->
-File: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-
-<use SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf  use
-d on input line 395.
-(pdftex.def)             Requested size: 241.74043pt x 120.87021pt.
-
-Overfull \hbox (4.79712pt too wide) in paragraph at lines 395--396
- []\T1/ptm/m/n/10 {[] 
- []
-
-
-Overfull \hbox (77.09587pt too wide) in paragraph at lines 409--420
- [][] 
- []
-
-<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=140, 469.755pt x 325.215
+<SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf, id=125, 469.755pt x 325.215
 pt>
-File: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+File: SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 
-<use SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf  use
-d on input line 423.
+<use SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf  use
+d on input line 241.
 (pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
 
-Overfull \hbox (39.28462pt too wide) in paragraph at lines 433--444
+Overfull \hbox (39.28462pt too wide) in paragraph at lines 251--262
  [] 
  []
 
-[6 <./SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf> <./SF_Paper_files/figu
-re-latex/unnamed-chunk-3-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+[5 </Users/gellr/SF_Expt2/brms_passage.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
+[6 <./SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
 (./SF_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
 Package rerunfilecheck Info: File `SF_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 23ADB4557ACEA087262D5B7CC0EB4F90;1818.
+(rerunfilecheck)             Checksum: 7C8BDACF703F8A0E050F0365D7922DEE;1861.
  ) 
 Here is how much of TeX's memory you used:
- 13933 strings out of 482941
- 205050 string characters out of 5959719
- 469225 words of memory out of 5000000
- 28851 multiletter control sequences out of 15000+600000
- 591641 words of font info for 117 fonts, out of 8000000 for 9000
+ 13428 strings out of 482941
+ 197281 string characters out of 5959719
+ 458397 words of memory out of 5000000
+ 28359 multiletter control sequences out of 15000+600000
+ 590283 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,11n,46p,1367b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,10n,46p,1618b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
-gellr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></Users/gel
-lr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/gellr/
-Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/gellr/Li
-brary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gellr/Libr
-ary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/gellr/Library/T
-inyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/gellr/Library/TinyTe
-X/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SF_Paper.pdf (7 pages, 164650 bytes).
+gellr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/gel
+lr/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gellr
+/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/gellr/Libr
+ary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/gellr/Library/T
+inyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SF_Paper.pdf (6 pages, 282773 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
+ 181 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
  144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
