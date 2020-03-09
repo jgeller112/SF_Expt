@@ -1,22 +1,17 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  4 MAR 2020 20:25
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.27)  28 FEB 2020 14:04
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.4)  9 MAR 2020 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **SF_Paper.tex
 (./SF_Paper.tex
-LaTeX2e <2020-02-02> patch level 4
+LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-02-25> (/Users/gellr/Library/TinyTeX/texmf-dist/tex/
 latex/apa6/apa6.cls
 Document Class: apa6 2020/01/13 v2.34 APA formatting (6th edition)
-Class apa6 Info: Using default mode (jou) on input line 147.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
 \c@section=\count168
@@ -75,51 +70,11 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty
-Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/mathptm.sty
-Package: mathptm 2005/04/12 PSNFSS-v9.2a Times w/ Math (SPQR, WaS) 
-
-Package mathptm Warning: This package is to be regarded as obsolete.
-(mathptm)                See the PSNFSS documentation.
-
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 31.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/ptmcm/m/n on input line 31.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/ptmcm/m/n on input line 31.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 32.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/lmm/m/it --> OML/ptmcm/m/it on input line 32.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/lmm/b/it --> OML/ptmcm/m/it on input line 32.
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 33.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> OMS/pzccm/m/n on input line 33.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> OMS/pzccm/m/n on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 34.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> OMX/psycm/m/n on input line 34.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> OMX/psycm/m/n on input line 34.
-\symbold=\mathgroup4
-\symitalic=\mathgroup5
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/ptm/bx/n on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/ptm/bx/n on input line 37.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 38.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/ptm/m/it on input line 38.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/ptm/m/it on input line 38.
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+)) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
@@ -136,7 +91,7 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layoutheight=\dimen140
 \Gm@layouthoffset=\dimen141
 \Gm@layoutvoffset=\dimen142
-\Gm@dimlist=\toks15
+\Gm@dimlist=\toks16
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -212,44 +167,49 @@ Package caption Info: threeparttable package is loaded.
 \gr@boxheight=\skip61
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
 \c@appendix=\count186
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/ftnright.sty
-Package: ftnright 2014/10/28 v1.1f footnote layout package (FMi)
-\rcol@footinsskip=\skip62
-\ftn@amount=\dimen165
-)
-\auone@box=\box47
-\autwo@box=\box48
-\autot@box=\box49
-\auone@boxwidth=\skip63
-\autwo@boxwidth=\skip64
-\autot@boxwidth=\skip65
-) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip62
+\f@nch@O@elh=\skip63
+\f@nch@O@erh=\skip64
+\f@nch@O@olh=\skip65
+\f@nch@O@orh=\skip66
+\f@nch@O@elf=\skip67
+\f@nch@O@erf=\skip68
+\f@nch@O@olf=\skip69
+\f@nch@O@orf=\skip70
+)) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks16
-\symAMSa=\mathgroup6
-\symAMSb=\mathgroup7
+\@emptytoks=\toks17
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip66
+\@mathmargin=\skip71
 For additional information on amsmath, use the `?' option.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen166
+\@emptytoks=\toks18
+\ex@=\dimen165
 )) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 LaTeX Info: Redefining \boldsymbol on input line 28.
-\pmbraise@=\dimen167
+\pmbraise@=\dimen166
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
@@ -263,9 +223,9 @@ LaTeX Info: Redefining \overline on input line 389.
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen168
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen167
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count192
@@ -273,21 +233,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip16
 \c@parentequation=\count194
 \dspbrk@lvl=\count195
-\tag@help=\toks18
+\tag@help=\toks19
 \row@=\count196
 \column@=\count197
 \maxfields@=\count198
-\andhelp@=\toks19
-\eqnshift@=\dimen169
-\alignsep@=\dimen170
-\tagshift@=\dimen171
-\tagwidth@=\dimen172
-\totwidth@=\dimen173
-\lineht@=\dimen174
-\@envbody=\toks20
-\multlinegap=\skip67
-\multlinetaggap=\skip68
-\mathdisplay@stack=\toks21
+\andhelp@=\toks20
+\eqnshift@=\dimen168
+\alignsep@=\dimen169
+\tagshift@=\dimen170
+\tagwidth@=\dimen171
+\totwidth@=\dimen172
+\lineht@=\dimen173
+\@envbody=\toks21
+\multlinegap=\skip72
+\multlinetaggap=\skip73
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
@@ -305,14 +265,10 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
-2.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
@@ -349,7 +305,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen175
+\@linkdim=\dimen174
 \Hy@linkcounter=\count199
 \Hy@pagecounter=\count266
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -382,7 +338,7 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen176
+\XeTeXLinkMargin=\dimen175
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
@@ -390,8 +346,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count270
-\Field@Width=\dimen177
-\Fld@charsize=\dimen178
+\Field@Width=\dimen176
+\Fld@charsize=\dimen177
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -428,7 +384,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip69
+\Hy@SectionHShift=\skip74
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 36.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
@@ -444,7 +400,7 @@ Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 \csq@qlevel=\count279
 \csq@maxlvl=\count280
 \csq@tshold=\count281
-\csq@ltx@everypar=\toks24
+\csq@ltx@everypar=\toks25
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
 )
@@ -455,53 +411,53 @@ File: csquotes.cfg
 )) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/was/upgreek.sty
 Package: upgreek 2003/02/12 v2.0 (WaS)
 Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
-\symugrf@m=\mathgroup8
+\symugrf@m=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip70
-\LTright=\skip71
-\LTpre=\skip72
-\LTpost=\skip73
+\LTleft=\skip75
+\LTright=\skip76
+\LTpre=\skip77
+\LTpost=\skip78
 \LTchunksize=\count282
-\LTcapwidth=\dimen179
-\LT@head=\box52
-\LT@firsthead=\box53
-\LT@foot=\box54
-\LT@lastfoot=\box55
+\LTcapwidth=\dimen178
+\LT@head=\box49
+\LT@firsthead=\box50
+\LT@foot=\box51
+\LT@lastfoot=\box52
 \LT@cols=\count283
 \LT@rows=\count284
 \c@LT@tables=\count285
 \c@LT@chunks=\count286
-\LT@p@ftn=\toks25
+\LT@p@ftn=\toks26
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip74
+\multirow@colwidth=\skip79
 \multirow@cntb=\count287
-\multirow@dima=\skip75
-\bigstrutjot=\dimen180
+\multirow@dima=\skip80
+\bigstrutjot=\dimen179
 ) (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen181
-\ar@mcellbox=\box56
-\extrarowheight=\dimen182
-\NC@list=\toks26
-\extratabsurround=\skip76
-\backup@length=\skip77
-\ar@cellbox=\box57
+\col@sep=\dimen180
+\ar@mcellbox=\box53
+\extrarowheight=\dimen181
+\NC@list=\toks27
+\extratabsurround=\skip81
+\backup@length=\skip82
+\ar@cellbox=\box54
 )
-\TX@col@width=\dimen183
-\TX@old@table=\dimen184
-\TX@old@col=\dimen185
-\TX@target=\dimen186
-\TX@delta=\dimen187
+\TX@col@width=\dimen182
+\TX@old@table=\dimen183
+\TX@old@col=\dimen184
+\TX@target=\dimen185
+\TX@delta=\dimen186
 \TX@cols=\count288
-\TX@ftn=\toks27
+\TX@ftn=\toks28
 )
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttab
 lex.sty
@@ -511,25 +467,25 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip78
+\TPTL@width=\skip83
 )
-\longtablewidth=\skip79
+\longtablewidth=\skip84
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count289
-\output=\toks28
+\output=\toks29
 \linenoprevgraf=\count290
-\linenumbersep=\dimen188
-\linenumberwidth=\dimen189
+\linenumbersep=\dimen187
+\linenumberwidth=\dimen188
 \c@linenumber=\count291
 \c@pagewiselinenumber=\count292
 \c@LN@truepage=\count293
 \c@internallinenumber=\count294
 \c@internallinenumbers=\count295
-\quotelinenumbersep=\dimen190
-\bframerule=\dimen191
-\bframesep=\dimen192
-\bframebox=\box58
+\quotelinenumbersep=\dimen189
+\bframerule=\dimen190
+\bframesep=\dimen191
+\bframebox=\box55
 
 LaTeX Warning: Command \@parboxrestore  has changed.
                Check if current package is valid.
@@ -543,33 +499,28 @@ Package csquotes Info: ... none found.
 def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count296
-\l__pdf_internal_box=\box59
-)
-
-LaTeX Warning: Unused global option(s):
-    [pdf].
-
-(./SF_Paper.aux)
+\l__pdf_internal_box=\box56
+) (./SF_Paper.aux)
 \openout1 = `SF_Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -577,30 +528,30 @@ LaTeX Font Info:    ... okay on input line 111.
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: 
 * h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
 * v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=501.55397pt
-* \textheight=643.20255pt
-* \oddsidemargin=-18.06749pt
-* \evensidemargin=-18.06749pt
-* \topmargin=-19.8738pt
-* \headheight=13.4457pt
-* \headsep=13.72546pt
-* \topskip=10.0pt
+* \textwidth=433.62pt
+* \textheight=614.295pt
+* \oddsidemargin=18.06749pt
+* \evensidemargin=18.06749pt
+* \topmargin=-18.06749pt
+* \headheight=15.2pt
+* \headsep=25.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=121.0pt
-* \marginparsep=11.0pt
-* \columnsep=18.06749pt
-* \skip\footins=10.0pt plus 5.0pt minus 3.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -625,8 +576,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring OFF on input line 111.
+\AtBeginShipoutBox=\box57
+Package hyperref Info: Link coloring OFF on input line 109.
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -638,285 +589,156 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count297
 )
-LaTeX Info: Redefining \ref on input line 111.
-LaTeX Info: Redefining \pageref on input line 111.
-LaTeX Info: Redefining \nameref on input line 111.
+LaTeX Info: Redefining \ref on input line 109.
+LaTeX Info: Redefining \pageref on input line 109.
+LaTeX Info: Redefining \nameref on input line 109.
 (./SF_Paper.out) (./SF_Paper.out)
 \@outlinefile=\write3
 \openout3 = `SF_Paper.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
- 113.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
-File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+Using title for running head
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+11.
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
- 113.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlptmcm.fd
-File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+11.
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
- 113.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omspzccm.fd
-File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+11.
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
- 113.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxpsycm.fd
-File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+111.
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-13.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+111.
+(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 111.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 111
 .
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113
+LaTeX Font Info:    Trying to load font information for U+msb on input line 111
 .
 (/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
-5.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 111.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 111.
+[1
 
-[1{/Users/gellr/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-<<<<<<< HEAD
-] [2]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 17
-0.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
-72.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-Overfull \hbox (70.25676pt too wide) in paragraph at lines 172--172
-[]\T1/pcr/m/n/10 ## Warning: Missing column names filled in: \TS1/pcr/m/n/10 '\
-T1/pcr/m/n/10 X1\TS1/pcr/m/n/10 ' \T1/pcr/m/n/10 [1][] 
+{/Users/gellr/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 1590) in paragraph at lines 116--117
+[]\T1/lmr/m/n/10.95 Despite the weak ev-i-dence, per-cep-tual dis-flu-ency is s
+till be-ing touted as a
  []
 
-</Users/gellr/SF_Expt2/brms_dis_plot.png, id=99, 2409.0pt x 1204.5pt>
+
+Underfull \hbox (badness 2005) in paragraph at lines 116--117
+\T1/lmr/m/n/10.95 vi-able learn-ing tool, es-pe-cially in the pop-u-lar press. 
+Re-cently, rep-utable news
+ []
+
+[2]
+</Users/gellr/SF_Expt2/sf.png, id=118, 1766.6pt x 1606.0pt>
+File: /Users/gellr/SF_Expt2/sf.png Graphic file (type png)
+<use /Users/gellr/SF_Expt2/sf.png>
+Package pdftex.def Info: /Users/gellr/SF_Expt2/sf.png  used on input line 124.
+(pdftex.def)             Requested size: 424.20831pt x 385.64392pt.
+[3 </Users/gellr/SF_Expt2/sf.png>] [4] [5]
+</Users/gellr/SF_Expt2/brms_dis_plot.png, id=145, 2409.0pt x 1204.5pt>
 File: /Users/gellr/SF_Expt2/brms_dis_plot.png Graphic file (type png)
 <use /Users/gellr/SF_Expt2/brms_dis_plot.png>
 Package pdftex.def Info: /Users/gellr/SF_Expt2/brms_dis_plot.png  used on input
  line 176.
 (pdftex.def)             Requested size: 578.17183pt x 289.0859pt.
 
-Overfull \hbox (336.42859pt too wide) in paragraph at lines 176--177
- [][] 
+Overfull \hbox (244.96869pt too wide) in paragraph at lines 175--178
+[]\T1/lmr/m/n/10.95 \begin{figure} []
  []
 
-[3] [4 </Users/gellr/SF_Expt2/brms_dis_plot.png>]
-</Users/gellr/SF_Expt2/brms_passage.png, id=124, 2409.0pt x 1204.5pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6] [7 </Users/gellr/SF_Expt2/brms_dis_plot.png>] [8]
+</Users/gellr/SF_Expt2/brms_passage.png, id=172, 2409.0pt x 1204.5pt>
 File: /Users/gellr/SF_Expt2/brms_passage.png Graphic file (type png)
 <use /Users/gellr/SF_Expt2/brms_passage.png>
 Package pdftex.def Info: /Users/gellr/SF_Expt2/brms_passage.png  used on input 
-line 217.
+line 221.
 (pdftex.def)             Requested size: 578.17183pt x 289.0859pt.
 
-Overfull \hbox (336.42859pt too wide) in paragraph at lines 217--217
-[][] 
+Overfull \hbox (244.96869pt too wide) in paragraph at lines 220--223
+[]\T1/lmr/m/n/10.95 \begin{figure} []
  []
 
-
-Overfull \hbox (77.09587pt too wide) in paragraph at lines 227--238
-[][] 
- []
-
-<SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf, id=125, 469.755pt x 325.215
-=======
-] [2] [3] [4]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24
-8.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 262.
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
-73.
-(/Users/gellr/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-Overfull \hbox (6628.25676pt too wide) in paragraph at lines 273--273
-[]\T1/pcr/m/n/10 ## [1] "We fitted a logistic mixed model (estimated using ML a
-nd Nelder-Mead optimizer) to predict auto_acc with Passage (formula = auto_acc 
-~ Passage). The model included ResponseId and Question as random effects (formu
-la = ~1 | ResponseId + ~1 | Question). Standardized parameters were obtained by
- fitting the model on a standardized version of the dataset. Effect sizes were 
-labelled following Chen\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s (2010) recommendations
-.The model\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s total explanatory power is substant
-ial (conditional R2 = 0.45) and the part related to the fixed effects alone (ma
-rginal R2) is of 0.00. The model\TS1/pcr/m/n/10 '\T1/pcr/m/n/10 s intercept, co
-rresponding to auto_acc = 0, Passage = Normal, ResponseId = R_01xBIjc5ddf5oWd a
-nd Question = Q434, is at -0.47 (SE = 0.29, 95% CI [-1.04, 0.10], p = 0.108). W
-ithin this model:\n\n  - The effect of PassagePre-highlighted is positive and c
-an be considered as very small and significant (beta = 0.38, SE = 0.17, 95% CI 
-[0.05, 0.71], std. beta = 0.38, p < .05).\n  - The effect of PassageSans Forget
-ica is positive and can be considered as very small and not significant (beta =
- 0.06, SE = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, p = 0.700)."[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##       0.3847685       0.4779490       0.4001575[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##       0.2608280       0.3405702       0.2733269[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##          Normal Pre-highlighted  Sans Forgetica[] 
- []
-
-
-Overfull \hbox (58.25676pt too wide) in paragraph at lines 298--298
-[]\T1/pcr/m/n/10 ##       0.5257163       0.6187467       0.5419488[] 
- []
-
-<SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf, id=125, 578.16pt x 289.08pt
->
-File: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-
-<use SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf  use
-d on input line 317.
-(pdftex.def)             Requested size: 241.74043pt x 120.87021pt.
-
-Overfull \hbox (4.79712pt too wide) in paragraph at lines 317--318
- []\T1/ptm/m/n/10 {[] 
- []
-
-
-Overfull \hbox (77.09587pt too wide) in paragraph at lines 331--342
- [][] 
- []
-
-<SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf, id=126, 469.755pt x 325.215
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
+[9]
+<SF_Paper_files/figure-latex/unnamed-chunk-6-1.pdf, id=180, 469.755pt x 325.215
 pt>
-File: SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+File: SF_Paper_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 
-<<<<<<< HEAD
-<use SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf  use
-d on input line 241.
-(pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
+<use SF_Paper_files/figure-latex/unnamed-chunk-6-1.pdf>
+Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-6-1.pdf  use
+d on input line 243.
+(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+[10 </Users/gellr/SF_Expt2/brms_passage.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (39.28462pt too wide) in paragraph at lines 251--262
- [] 
- []
-
-[5 </Users/gellr/SF_Expt2/brms_passage.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
-[6 <./SF_Paper_files/figure-latex/unnamed-chunk-5-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
+[11 <./SF_Paper_files/figure-latex/unnamed-chunk-6-1.pdf>] [12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
 (./SF_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 311.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
 Package rerunfilecheck Info: File `SF_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 7C8BDACF703F8A0E050F0365D7922DEE;1861.
+(rerunfilecheck)             Checksum: 6626AC55CD1131A2993D3193DE6D424C;2874.
  ) 
 Here is how much of TeX's memory you used:
- 13428 strings out of 482941
- 197281 string characters out of 5959719
- 458397 words of memory out of 5000000
- 28359 multiletter control sequences out of 15000+600000
- 590283 words of font info for 113 fonts, out of 8000000 for 9000
+ 13484 strings out of 482938
+ 198071 string characters out of 5959668
+ 452838 words of memory out of 5000000
+ 28401 multiletter control sequences out of 15000+600000
+ 627019 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,10n,46p,1618b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
-gellr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/gel
-lr/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gellr
-/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/gellr/Libr
-ary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/gellr/Library/T
-inyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SF_Paper.pdf (6 pages, 282773 bytes).
+ 49i,10n,51p,1651b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users
+/gellr/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/gell
+r/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/gellr/Libr
+ary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/gellr/Library/Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/gellr/Library/TinyTeX/
+texmf-dist/fonts/type1/public/lm/lmr6.pfb></Users/gellr/Library/TinyTeX/texmf-d
+ist/fonts/type1/public/lm/lmr8.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fon
+ts/type1/public/lm/lmr9.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fonts/type
+1/public/lm/lmri10.pfb></Users/gellr/Library/TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmss8.pfb>
+Output written on SF_Paper.pdf (14 pages, 499666 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-<use SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf  use
-d on input line 345.
-(pdftex.def)             Requested size: 241.74374pt x 167.36105pt.
-
-Overfull \hbox (39.28462pt too wide) in paragraph at lines 355--366
- [] 
- []
-
-[5 <./SF_Paper_files/figure-latex/unnamed-chunk-2-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
-[6 <./SF_Paper_files/figure-latex/unnamed-chunk-3-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
-(./SF_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
-Package rerunfilecheck Info: File `SF_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: CBDD2312721788367AA2135E4F2539E0;1952.
- ) 
-Here is how much of TeX's memory you used:
- 13930 strings out of 482941
- 204799 string characters out of 5959719
- 472308 words of memory out of 5000000
- 28848 multiletter control sequences out of 15000+600000
- 591641 words of font info for 117 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 49i,11n,46p,1385b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/gellr/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
-gellr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></Users/gel
-lr/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/gellr/
-Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/gellr/Li
-brary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gellr/Libr
-ary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/gellr/Library/T
-inyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/gellr/Library/TinyTe
-X/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SF_Paper.pdf (6 pages, 156789 bytes).
-PDF statistics:
- 194 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> cc39c8e83ffa551328dbc187f36afc8839b39eb8
+ 267 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
