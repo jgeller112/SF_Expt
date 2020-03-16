@@ -1,45 +1,51 @@
 ---
-title             : "Sans Forgetica is Really Forgettable"
-shorttitle        : "Sans Forgetica"
-
-author: 
-  - name          : "Jason Geller"
-    affiliation   : "1"
-    corresponding : yes    # Define only one corresponding author
-    address       : "Postal address"
-    email         : "jason-geller@uiowa.edu"
-  - name          : "Sara D. Davis"
-    affiliation   : "2"
-  - name          : "Daniel Peterson"
-    affiliation   : "2"
-
+title: "Sans Forgetica is Really Forgettable"
+author:
+- address: Postal address
+  affiliation: '1'
+  corresponding: yes
+  email: jason-geller@uiowa.edu
+  name: Jason Geller
+- affiliation: '2'
+  name: Sara D. Davis
+- affiliation: '2'
+  name: Daniel Peterson
 affiliation:
-  - id            : "1"
-    institution   : "University of Iowa"
-  - id            : "2"
-    institution   : "Skidmore College"
-
+- id: '1'
+  institution: University of Iowa
+- id: '2'
+  institution: Skidmore College
+output: papaja::apa6_pdf
+bibliography: r-references.bib
+classoption: "doc"
+documentclass: "apa6"
+draft: no
+figurelist: no
+floatsintext: no
+footnotelist: no
+keywords: Disfluency, Recall, Desirable Difficulty, Learning and Memory
+linenumbers: yes
+mask: no
 authornote: |
   Jason Geller, Department of Psychology and Brain Sciences, University of Iowa; John E. Scofield, Department of Psychology, University of Missouri, Columbia, MO, 65211; Nathan Nunley, University of Mississippi, P.O. Box 1848, University, MS, 28677.
-
-abstract: |
- Do students learn better with material that is perceptually harder-to-process? While evidence is equivocal on the matter, recent claims suggest that placing materials in Sans Forgetica font, which is perceptually hard-to-process, has positive effects on student learning. Given the weak evidence for perceptual disfluency effects, this led us to examine the mnnmonic effects of Sans Forgetica more closely. In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (*N* = 233), participants studied weakly realted cue-target pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL). Cued recall performance showed a robust generation effect, but no Sans Forgetica memory benefit. In Experiment 2 (*N*=528), participants read a passage about ground water with select sentences presented in either Sans Forgetcia, yellow highlighting, or unchanged. Cued recall for select words were better for pre-highlighted information than when unmodified. Critically, presenting sentences in Sans Forgetica did not produce better cued recall than pre-highlighted sentences or sentences presented unchanged. Our findings suggest that Sans Forgetica is really forgeticable. 
-  
-keywords          : "Disfluency, Recall, Desirable Difficulty, Learning and Memory"
-wordcount         : "X"
-bibliography      : ["r-references.bib"]
-
-floatsintext      : no
-figurelist        : no
-tablelist         : no
-footnotelist      : no
-linenumbers       : yes
-mask              : no
-draft             : no
-
-documentclass     : "apa6" 
-classoption       : "doc"
-output            : papaja::apa6_pdf
+shorttitle: Sans Forgetica
+tablelist: no
+abstract: "Do students learn better with material that is perceptually harder-to-process?
+  While evidence is equivocal on the matter, recent claims suggest that placing materials
+  in Sans Forgetica font, which is perceptually hard-to-process, has positive effects
+  on student learning. Given the weak evidence for perceptual disfluency effects,
+  this led us to examine the mnnmonic effects of Sans Forgetica more closely. In two
+  preregistered experiments, we tested if Sans Forgetica is really unforgetable. In
+  Experiment 1 (*N* = 233), participants studied weakly realted cue-target pairs with
+  targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL).
+  Cued recall performance showed a robust generation effect, but no Sans Forgetica
+  memory benefit. In Experiment 2 (*N*=528), participants read a passage about ground
+  water with select sentences presented in either Sans Forgetcia, yellow highlighting,
+  or unchanged. Cued recall for select words were better for pre-highlighted information
+  than when unmodified. Critically, presenting sentences in Sans Forgetica did not
+  produce better cued recall than pre-highlighted sentences or sentences presented
+  unchanged. Our findings suggest that Sans Forgetica is really forgeticable. \n \n"
+wordcount: 4322
 ---
 
 ```{r setup, include = FALSE}
@@ -64,10 +70,10 @@ There is not a lot information on Sans Forgetica. What we do know is that the ty
 
 ```{r, fig.cap=paste("Example of Sans Forgetica font. ")}
 library(here)
-knitr::include_graphics(here('sf.png'))
+knitr::include_graphics(here('sf.jpg'))
 ```	
 
-Accoring to an interview conducted by Earp (2018), In the first experiment (*N*=96), the Sans Forgetica team had participants read 20 word pairs (e.g., girl - guy) in three new fonts (one of them being SF) and a typical or common font. The font pairs were presented in was counterbalanced participants. What this means is that all fonts were showns, but the same pairs were never presneted in more than one type of font. Each word pair was presnted on the screen for 100 ms. For a final test, they were given the cue (e.g., *girl*) and had to respond with the target (*guy*). According to the interview, targets were recalled 68% of time when presented in a common font. For cue-target pairs in Sans Forgetica, targets were recalled 69% of the time--a negeliable difference. 
+According to an interview conducted by Earp (2018), In the first experiment (*N*=96), the Sans Forgetica team had participants read 20 word pairs (e.g., girl - guy) in three new fonts (one of them being SF) and a typical or common font. The font pairs were presented in was counterbalanced participants. What this means is that all fonts were showns, but the same pairs were never presneted in more than one type of font. Each word pair was presnted on the screen for 100 ms. For a final test, they were given the cue (e.g., *girl*) and had to respond with the target (*guy*). According to the interview, targets were recalled 68% of time when presented in a common font. For cue-target pairs in Sans Forgetica, targets were recalled 69% of the time--a negeliable difference. 
 
 In the second experiment (*N* = 300), participants were presented passages (250 words in total) where one of the paragraphs was presented in Sans Forgetica font. Each participant saw five different texts in total. For each text they were asked one question about the part written in SF and another question about the part written in standard Arial. Participants remembered 57% of the text when a section was written in Sans Forgetica, compared to 50% of the surrounding text that was written in a plain Arial font.
 
@@ -110,7 +116,7 @@ Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package (ver
 To examine the strength of the interaction we examined the full model against the main effects model using the brms package (vers. 2.3.1). We used normal priors on all fixed effects. These are uninformative in terms of direction–both positive and negative effects are equally likely–but they are informative in terms of magnitude. The prior indicated that a model with the interaction term was strongly preferred over the model without the interaction (BF > 100; Jeffreys, 1961). This suggests that the magnitide of the generation effect is larger than the Sans Forgetica effect. This can be clearly seen in Fig. 2.
 
 
-```{r, echo=TRUE, include=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. 95% CIs dervied from the glmer model using the effects package in R.")}
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -119,7 +125,6 @@ library(lme4)
 library(ggpol)
 library(knitr)
 library(here)
-library(report)
 ### To install without vignettes (faster):
 devtools::install_github("rvlenth/emmeans")
 library(emmeans)
@@ -134,21 +139,19 @@ ex1=sfgen %>% mutate(difftype = case_when(
          dis == "fluent" ~ 0.5, 
          dis== "disfluent" ~ -0.5))
 
-#full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 
 
-
-#ef1 <- effect("condition:dis", full_model) #take final glmer model 
-#summary(ef1)
-#x1 <- as.data.frame(ef1)
+ef1 <- effect("condition:dis", full_model) #take final glmer model 
+x1 <- as.data.frame(ef1)
 
 bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 
-#p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
-#  geom_bar(stat="identity", position="dodge") + 
-#  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Proporition Recalled on Final Test", x="Disfluency") + 
- # theme(legend.position = "none") +
- #scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
+p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
+  geom_bar(stat="identity", position="dodge") + 
+  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Proporition Recalled on Final Test", x="Disfluency") + 
+  theme(legend.position = "none") +
+ scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
 #m1<-read_rds(here("Brms", "brms1.rds.gz"))
 
@@ -158,13 +161,10 @@ bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 
 #dis_plot
 
+p 
+
 ```
 
-
-```{r, echo=FALSE, fig.height=4,fig.cap=paste("Accuracy on Cued Recall Test. Error bars are 95% HDI dervied from the brms model.")}
-knitr::include_graphics(here('brms_dis_plot.png'))
-
-```	
 
 The results for Experiment 1 are clear-cut. Cued recall performance for cue-target pairs presented intact and in Sans Forgetica font were equivocial. That is, we did not observe a memory benefit for Sans Forgetica. We did, however, observe better cued recall performance for generated compared to read targets, which replicates decades of litearture (Bertsch et al., 2007). This suggests that (1) presenting materials in Sans Forgetica does not lead to better memory  and (2) the Sans Forgetica effect is most likely not generated by the same mechanisms that give rise to the generation effect. 
 
@@ -203,7 +203,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 We fit a logistic mixed model in a similar fashion to Experiment 1. We fit a model with passage type as a fixed effect and random intercepts for participants (*n*=528) and questions (*n*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *b* = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], std. beta = 0.38, *p* < .05, *d* = .21,  and were marginally better remembered than sentences presented in Sans Forgetcia, *b*  = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, *b*= 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, *p* = 0.700, d = .03. A Bayes factor using the brms package (Burkner, 2015) was computed and there is moderate evidence that there is no difference between the two conditions (BF = 7.47). 
 
 
-```{r, message=FALSE, echo=FALSE}
+```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage Cued Recall Accuracy as a function of passage type. Passage Error bars are 95% CIs dervied from the glmer model using the effects package in R.")}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -220,7 +220,7 @@ ground_change <- ground %>%
 
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 # loading needed libraries
-#full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1+Passage|Question), data=ground_change, family="binomial")
+full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1+Passage|Question), data=ground_change, family="binomial")
 #fit full model
 
 #m2<-read_rds(here("Brms", "brms_gw.rds.gz"))
@@ -230,24 +230,19 @@ ground_change <- ground %>%
 #c_main1=plot(c_main, horizontal =FALSE, colors="darkgreen")  + labs(x="Passage Type", y= "Probability Answering Question") + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
 
-#ef1 <- effect("Passage", full_model) #take final glmer model 
-#summary(ef1)
-#x1 <- as.data.frame(ef1)
+ef1 <- effect("Passage", full_model) #take final glmer model 
+x1 <- as.data.frame(ef1)
 
-#bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
-#p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
-#  geom_bar(stat="identity", position="dodge") + 
-#  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Recall Accuracy", x="Passage Type") + 
- # scale_fill_manual(values=c("grey", "yellow", "black"))+
- # theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
+bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
+p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
+  geom_bar(stat="identity", position="dodge") + 
+  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Recall Accuracy", x="Passage Type") + 
+  scale_fill_manual(values=c("grey", "yellow", "black"))+
+  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
-#p 
-#c_main
+p 
+
 ```
-
-```{r, fig.cap=paste("Passage accuracy. Error bars are 95% HDI dervied from the brms model")}
-knitr::include_graphics(here('brms_passage.png'))
-```	
 
 
 ## Exploratory Analysis

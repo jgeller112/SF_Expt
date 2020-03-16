@@ -1,7 +1,7 @@
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[doc]{apa6}
+\documentclass[english,doc]{apa6}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -30,7 +30,6 @@
 \usepackage{hyperref}
 \hypersetup{
             pdftitle={Sans Forgetica is Really Forgettable},
-            pdfauthor={Jason Geller, Sara D. Davis, \& Daniel Peterson},
             pdfkeywords={Disfluency, Recall, Desirable Difficulty, Learning and Memory},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -48,62 +47,77 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
 
 % set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
-\shorttitle{Sans Forgetica}
-\affiliation{
-\vspace{0.5cm}
-\textsuperscript{1} University of Iowa\\\textsuperscript{2} Skidmore College}
-\keywords{Disfluency, Recall, Desirable Difficulty, Learning and Memory\newline\indent Word count: X}
-\usepackage{csquotes}
+% Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
 
+% Table formatting
 \usepackage{longtable}
 \usepackage{lscape}
-\usepackage{multirow}
-\usepackage{tabularx}
-\usepackage[flushleft]{threeparttable}
-\usepackage{threeparttablex}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
 
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
 \newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
 
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
 \makeatletter
 \newcommand\LastLTentrywidth{1em}
 \newlength\longtablewidth
 \setlength{\longtablewidth}{1in}
 \newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
 
+% \setlength{\parindent}{0.5in}
+% \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% \usepackage{etoolbox}
+\makeatletter
+\patchcmd{\HyOrg@maketitle}
+  {\section{\normalfont\normalsize\abstractname}}
+  {\section*{\normalfont\normalsize\abstractname}}
+  {}{\typeout{Failed to patch abstract.}}
+\makeatother
+\shorttitle{Sans Forgetica}
+\author{Jason Geller\textsuperscript{1}, Sara D. Davis\textsuperscript{2}, \& Daniel Peterson\textsuperscript{2}}
+\affiliation{
+\vspace{0.5cm}
+\textsuperscript{1} University of Iowa\\\textsuperscript{2} Skidmore College}
+\authornote{Jason Geller, Department of Psychology and Brain Sciences, University of Iowa; John E. Scofield, Department of Psychology, University of Missouri, Columbia, MO, 65211; Nathan Nunley, University of Mississippi, P.O. Box 1848, University, MS, 28677.
+
+
+Correspondence concerning this article should be addressed to Jason Geller, Postal address. E-mail: jason-geller@uiowa.edu}
+\keywords{Disfluency, Recall, Desirable Difficulty, Learning and Memory\newline\indent Word count: 4322}
 \usepackage{lineno}
 
 \linenumbers
+\usepackage{csquotes}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=english]{babel}
+\else
+  % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\fi
 
 \title{Sans Forgetica is Really Forgettable}
-\author{Jason Geller\textsuperscript{1}, Sara D. Davis\textsuperscript{2}, \& Daniel Peterson\textsuperscript{2}}
+
 \date{}
-
-\authornote{Jason Geller, Department of Psychology and Brain Sciences, University of Iowa; John E. Scofield, Department of Psychology, University of Missouri, Columbia, MO, 65211; Nathan Nunley, University of Mississippi, P.O. Box 1848, University, MS, 28677.
-
-Correspondence concerning this article should be addressed to Jason Geller, Postal address. E-mail: \href{mailto:jason-geller@uiowa.edu}{\nolinkurl{jason-geller@uiowa.edu}}}
 
 \abstract{
 Do students learn better with material that is perceptually harder-to-process? While evidence is equivocal on the matter, recent claims suggest that placing materials in Sans Forgetica font, which is perceptually hard-to-process, has positive effects on student learning. Given the weak evidence for perceptual disfluency effects, this led us to examine the mnnmonic effects of Sans Forgetica more closely. In two preregistered experiments, we tested if Sans Forgetica is really unforgetable. In Experiment 1 (\emph{N} = 233), participants studied weakly realted cue-target pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., G\_RL). Cued recall performance showed a robust generation effect, but no Sans Forgetica memory benefit. In Experiment 2 (\emph{N}=528), participants read a passage about ground water with select sentences presented in either Sans Forgetcia, yellow highlighting, or unchanged. Cued recall for select words were better for pre-highlighted information than when unmodified. Critically, presenting sentences in Sans Forgetica did not produce better cued recall than pre-highlighted sentences or sentences presented unchanged. Our findings suggest that Sans Forgetica is really forgeticable.
-
-
 }
 
 \begin{document}
@@ -121,10 +135,12 @@ Despite the weak evidence, perceptual disfluency is still being touted as a viab
 There is not a lot information on Sans Forgetica. What we do know is that the typyface itself is a variation of a sans-serif typeface. Sans Forgetica is a typeface that consists of intermitten gaps in letters that are back slanted (see fig. 1). As it pertains to the empirical validation of the claims made, the website does offer some information about Sans Forgetica and how the original results were obtained, but not enough information to replicate the studies.
 
 \begin{figure}
-\includegraphics[width=5.87in]{/Users/gellr/SF_Expt2/sf} \caption{Example of Sans Forgetica font. }\label{fig:unnamed-chunk-1}
+\centering
+\includegraphics{/Users/hang/SF_Expt2/sf.jpg}
+\caption{\label{fig:unnamed-chunk-1}Example of Sans Forgetica font.}
 \end{figure}
 
-Accoring to an interview conducted by Earp (2018), In the first experiment (\emph{N}=96), the Sans Forgetica team had participants read 20 word pairs (e.g., girl - guy) in three new fonts (one of them being SF) and a typical or common font. The font pairs were presented in was counterbalanced participants. What this means is that all fonts were showns, but the same pairs were never presneted in more than one type of font. Each word pair was presnted on the screen for 100 ms. For a final test, they were given the cue (e.g., \emph{girl}) and had to respond with the target (\emph{guy}). According to the interview, targets were recalled 68\% of time when presented in a common font. For cue-target pairs in Sans Forgetica, targets were recalled 69\% of the time--a negeliable difference.
+According to an interview conducted by Earp (2018), In the first experiment (\emph{N}=96), the Sans Forgetica team had participants read 20 word pairs (e.g., girl - guy) in three new fonts (one of them being SF) and a typical or common font. The font pairs were presented in was counterbalanced participants. What this means is that all fonts were showns, but the same pairs were never presneted in more than one type of font. Each word pair was presnted on the screen for 100 ms. For a final test, they were given the cue (e.g., \emph{girl}) and had to respond with the target (\emph{guy}). According to the interview, targets were recalled 68\% of time when presented in a common font. For cue-target pairs in Sans Forgetica, targets were recalled 69\% of the time--a negeliable difference.
 
 In the second experiment (\emph{N} = 300), participants were presented passages (250 words in total) where one of the paragraphs was presented in Sans Forgetica font. Each participant saw five different texts in total. For each text they were asked one question about the part written in SF and another question about the part written in standard Arial. Participants remembered 57\% of the text when a section was written in Sans Forgetica, compared to 50\% of the surrounding text that was written in a plain Arial font.
 
@@ -172,8 +188,17 @@ Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package (ver
 
 To examine the strength of the interaction we examined the full model against the main effects model using the brms package (vers. 2.3.1). We used normal priors on all fixed effects. These are uninformative in terms of direction--both positive and negative effects are equally likely--but they are informative in terms of magnitude. The prior indicated that a model with the interaction term was strongly preferred over the model without the interaction (BF \textgreater{} 100; Jeffreys, 1961). This suggests that the magnitide of the generation effect is larger than the Sans Forgetica effect. This can be clearly seen in Fig. 2.
 
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X1' [1]
+\end{verbatim}
+
 \textbackslash{}begin\{figure\}
-\includegraphics[width=8in]{/Users/gellr/SF_Expt2/brms_dis_plot} \textbackslash{}caption\{Accuracy on Cued Recall Test. Error bars are 95\% HDI dervied from the brms model.\}\label{fig:unnamed-chunk-3}
+
+\{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-2-1}
+
+\}
+
+\textbackslash{}caption\{Accuracy on Cued Recall Test. 95\% CIs dervied from the glmer model using the effects package in R.\}\label{fig:unnamed-chunk-2}
 \textbackslash{}end\{figure\}
 
 The results for Experiment 1 are clear-cut. Cued recall performance for cue-target pairs presented intact and in Sans Forgetica font were equivocial. That is, we did not observe a memory benefit for Sans Forgetica. We did, however, observe better cued recall performance for generated compared to read targets, which replicates decades of litearture (Bertsch et al., 2007). This suggests that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not generated by the same mechanisms that give rise to the generation effect.
@@ -218,7 +243,12 @@ Spell checking was automated with the same procedure as Experiment 1.
 We fit a logistic mixed model in a similar fashion to Experiment 1. We fit a model with passage type as a fixed effect and random intercepts for participants (\emph{n}=528) and questions (\emph{n}=11): (formula: acc=glmer(auto\_acc\textasciitilde{}passage\_type+(1\textbar{}Participant) + (1\textbar{}Question), data=data, family=\enquote{binomial}). We hypothesized that recall for pre-highlighted and sans forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, \emph{b} = 0.38, \emph{SE} = 0.17, 95\% CI {[}0.05, 0.71{]}, std. beta = 0.38, \emph{p} \textless{} .05, \emph{d} = .21, and were marginally better remembered than sentences presented in Sans Forgetcia, \emph{b} = -.317, \emph{exp(B)} = 1.37, \emph{SE} = .168, \emph{z} = -1.89, \emph{p} = .059, \emph{d} = .76. Critically, there was no difference between sentences presented normally and in sans forgetcia, \emph{b}= 0.06, \emph{SE} = 0.17, 95\% CI {[}-0.26, 0.39{]}, std. beta = 0.06, \emph{p} = 0.700, d = .03. A Bayes factor using the brms package (Burkner, 2015) was computed and there is moderate evidence that there is no difference between the two conditions (BF = 7.47).
 
 \textbackslash{}begin\{figure\}
-\includegraphics[width=8in]{/Users/gellr/SF_Expt2/brms_passage} \textbackslash{}caption\{Passage accuracy. Error bars are 95\% HDI dervied from the brms model\}\label{fig:unnamed-chunk-5}
+
+\{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-3-1}
+
+\}
+
+\textbackslash{}caption\{Passage Cued Recall Accuracy as a function of passage type. Passage Error bars are 95\% CIs dervied from the glmer model using the effects package in R.\}\label{fig:unnamed-chunk-3}
 \textbackslash{}end\{figure\}
 
 \hypertarget{exploratory-analysis}{%
@@ -240,17 +270,20 @@ Normal - Passage & 3.562500 & 2.7792 & 525 & 1.281844 & 0.4060534\\
 
 \begin{figure}
 
-{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-6-1} 
+{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-4-1} 
 
 }
 
-\caption{Judgements of learning as a function of passage type.}\label{fig:unnamed-chunk-6}
+\caption{Judgements of learning as a function of passage type.}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 \begin{table}[tbp]
+
 \begin{center}
 \begin{threeparttable}
-\caption{\label{tab:unnamed-chunk-6}}
+
+\caption{\label{tab:unnamed-chunk-4}}
+
 \begin{tabular}{llllll}
 \toprule
 contrast & \multicolumn{1}{c}{estimate} & \multicolumn{1}{c}{SE} & \multicolumn{1}{c}{df} & \multicolumn{1}{c}{t.ratio} & \multicolumn{1}{c}{p.value}\\
@@ -260,11 +293,11 @@ Highlight - Passage & -3.52 & 2.78 & 525.00 & -1.27 & 0.42\\
 Normal - Passage & 3.56 & 2.78 & 525.00 & 1.28 & 0.41\\
 \bottomrule
 \end{tabular}
+
 \end{threeparttable}
 \end{center}
-\end{table}
 
-NULL
+\end{table}
 
 Words presented in Sans Forgetica did not lead to better recall than words left unmodifed or pre-highlighted. We did, however, observe better memory for pre-highlighted information compared to words presented unmodifed or in a Sans Forgetica font.
 
