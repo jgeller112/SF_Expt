@@ -107,7 +107,7 @@ Spell checking was automated with the hunspell package in R [@Ooms2018] using sp
 Although we had pre-registered a simple 2 X 2 mixed ANOVA approach, we opted for a more powerful analytic approach that better represents the data: generalized linear mixed modeling [@Hoffman2007; @Locker2007]. Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package [vers. 2.3.1; @Bates2015]. All models were analyzed using maximal random effects structures with random slopes where allowed [@Barr2013]. All figures were created with ggplot [@Wickham2016]. We fit a logistic mixed model to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency). We fit the maximal model (formula: "glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data"). Effect sizes (Cohen's *d*) were labelled following @Chen2010 recommendations. The effect of difficulty type was non-significant, *b* = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], std. beta = -0.09, *p* = 0.431, *d* = 0.05). Individuals did recall more disfluent target words than fluney target words,  *b* = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], std. beta = 0.22, p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency was significant, *b* = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], std. beta = 0.21, *p* < .001, *d* = .11). A Bayes factor was derived using the brms package [@Burkner2018; vers. 2.3.1] to determine the strength of the interaction effect. We used normal priors on all fixed effects. These are uninformative in terms of direction–both positive and negative effects are equally likely–but they are informative in terms of magnitude. The prior indicated that a model with the interaction term was strongly preferred over the model without the interaction [BF > 100; @Jeff1961). This suggests that the magnitude of the generation effect is larger than the magnitude of the Sans Forgetica effect. This can be clearly seen in Fig. 2. 
 
 
-```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on Cued Recall Test. 95% CIs dervied from the glmer model using the effects package in R.")}
+```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on cued recall test. Raw data points (black) with mean (white dot) and 95% CIs were dervied using the modelbased R package.")}
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -119,7 +119,8 @@ library(here)
 ### To install without vignettes (faster):
 devtools::install_github("rvlenth/emmeans")
 library(emmeans)
-
+library(modelbased)
+library(see)
 sfgen=read_csv(here("Expt1_data", "sfgenerate_final.csv"))
 
 #for the brms model
@@ -130,7 +131,16 @@ ex1=sfgen %>% mutate(difftype = case_when(
          dis == "fluent" ~ 0.5, 
          dis== "disfluent" ~ -0.5))
 
+ex1_agg <- sfgen %>%
+  group_by(ResponseID, condition, dis)%>%
+  summarise(mean_acc=mean(acc))
+
+x_label=c("Disfluent", "Fluent")
+
 full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+
+means<-estimate_means(full_model)
 
 
 ef1 <- effect("condition:dis", full_model) #take final glmer model 
@@ -144,6 +154,17 @@ p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+
   theme(legend.position = "none") +
  scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
+
+p1<- ggplot(ex1_agg, aes(dis, mean_acc, fill=dis))+ facet_grid(~condition)+ 
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
+  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
+  scale_x_discrete(labels= x_label)+
+  theme_bw(base_size=14)+labs(y="Recall on Cued Recall Test (Pr)", x="Disfluency") + 
+  theme(legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold) 
+
+
 #m1<-read_rds(here("Brms", "brms1.rds.gz"))
 
 #dis_inter <- emmeans(m1, ~ dis*condition, type="response")
@@ -152,7 +173,7 @@ p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+
 
 #dis_plot
 
-p 
+p1
 
 ```
 
@@ -189,7 +210,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion (this goes against our pre-registration). We fit a model with passage type as a fixed effect and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *b* = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], std. beta = 0.38, *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, *b*  = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, *b*= 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, *p* = 0.700, *d* = .03. A Bayes factor using the brms package [@Burkner2018) was computed and there is moderate evidence that there is no difference between the two conditions (BF01 = 7.47). 
 
 
-```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage Cued Recall Accuracy as a function of passage type. Passage Error bars are 95% CIs dervied from the glmer model using the effects package in R.")}
+```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage Accuracy as a function of passage type. Raw data points (black) with mean (white dot) and 95% CIs were dervied using the modelbased R package..")}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -203,10 +224,15 @@ ground <- qualtRics::read_survey(here("Expt2_Data", "memory_acc_gw_final.csv"))
 ground_change <- ground %>%
   mutate(Passage=ifelse(FL_149_DO=="Highlight", "Pre-highlighted", ifelse(FL_149_DO=="Passage", "Sans Forgetica", "Unmodified")))
 
+ground_change_agg<-ground_change %>%
+  group_by(ResponseId, Passage) %>%
+  summarise(mean_acc=mean(auto_acc))
+            
+ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-highlighted", "Unmodified", "Sans Forgetica"))     
 
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 # loading needed libraries
-full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1+Passage|Question), data=ground_change, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 #fit full model
 
 #m2<-read_rds(here("Brms", "brms_gw.rds.gz"))
@@ -215,6 +241,7 @@ full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1+Passage|Question), data=gr
 
 #c_main1=plot(c_main, horizontal =FALSE, colors="darkgreen")  + labs(x="Passage Type", y= "Probability Answering Question") + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
+means<-estimate_means(full_model)
 
 ef1 <- effect("Passage", full_model) #take final glmer model 
 x1 <- as.data.frame(ef1)
@@ -226,7 +253,23 @@ p<- ggplot(x1, aes(Passage, fit, fill=Passage))+
   scale_fill_manual(values=c("grey", "yellow", "black"))+
   theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
-p 
+
+p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
+  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
+  theme_bw(base_size=14)+
+  labs(y="Recall on Test (Pr)", x="Passage Type") + 
+  theme(legend.position = "none") + 
+  ggplot2::coord_cartesian(ylim = c(0, 1)) + 
+  theme(axis.text=bold) 
+
+
+
+
+
+p1
 
 ```
 
