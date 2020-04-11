@@ -83,7 +83,7 @@ In Experiment 1 we were interested in answering two questions. First, is Sans Fo
 
 ### Participants
 
-Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect  medium-to-large effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies (Bulter et al., 2014). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
+Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect  medium-to-large effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Bulter2014]. Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
 
 ### Materials
 
@@ -323,9 +323,41 @@ Words presented in Sans Forgetica did not lead to better recall than words left 
 
 Examining metamemory judgments, we showed that a passage in Sans Forgetica font does not produce lower judgement of learning compared to unmodified or pre-highlighted passages. Interestingly, individuals gave lower JOLs to pre-highlighted information compared to materials presented in a normal font. One potential reason for pre-highlighted information receiving lower JOLs than the normal passage is that pre-highlighted information served to focus participants attention specific parts of the passage. Given the question, participants might have thought this would hinder them if tested over the passage as a whole. 
 
+## Experiment 3
+
+The pre-registration form for Experiment 3, which includes hypotheses, planned analyses,exclusion criteria, and sample size justification, can be found at: https://osf.io/ekqh5.
+
+### Participants
+
+Sixty participants participated for partial completion of course credit. Saample size was determined by a simialr criteria to the above experiments.
+
+# Design and Procedure
+
+Type of script (Arial vs. Sans Forgetica) was manipulated within-subjects. A total of 188 words were presented, 94 at study (47 in
+each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned
+to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
+
+Word order was completely randomized, such that Arial and Sans Forgetica
+words were randomly intermixed in the study phase, and Arial and
+Sans Forgetica old and new words were randomly intermixed in the test phase.
+All old words were presented at test in the same manner in which they
+were presented at study; that is, Arial words during study were presented in Arial font at test, and Sans Forgetica words during study were presented in Sans Forgetica font at test.
+
+Each trial began with a fixation cross appearing at the center of the screen for 500 ms. The fixation cross was then replaced by a word in the same location. Study was self-paced. The participants pressed the continue button to go to the next trial.
+
+
+After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many
+United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented
+in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two buttons displayed on the screen: a  button labeled “old” to indicate that they had named the word during study, and a button labeled “new” to indicate they did
+not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants
+were debriefed. The entire experiment took about 30 minutes
+to complete.
+
+
 # Discussion
 
 Taken together, these results suggests that Sans Forgetica might not be a desirable difficulty. While it has been reported that Sans Forgetica font can enhance performance [see @Eskenazi2020], we report results from two high-powered experiments arguing against this claim. Specifically, we demonstrated that Sans Forgetica does not enhance recall for cue-target pairs (Experiment 1) or words embedded in sentences from a passage (Experiment 2). This adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance (e.g., @Magreehan2016; @Rhodes2008; @Rhodes2009; @Rummer2016; @Xie2018; @Yue), While Sans Forgetica did not produce a memory benefit, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were  pre-highlighted, thereby replicating previous results (). 
+
 ## Limitations
 
 ### Transfer-appropriate processing 
