@@ -15,9 +15,9 @@ affiliation:
   institution: University of Iowa
 - id: '2'
   institution: Skidmore College
-output: papaja::apa6_word
+output: papaja::apa6_pdf
 bibliography: ref.bib
-classoption: "docx"
+classoption: "pdf"
 documentclass: "apa6"
 draft: no
 figurelist: no
@@ -83,7 +83,7 @@ In Experiment 1 we were interested in answering two questions. First, is Sans Fo
 
 ### Participants
 
-Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect  medium-to-large effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Bulter2014]. Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
+Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect  medium-to-large effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Butler2014]. Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
 
 ### Materials
 
@@ -104,7 +104,7 @@ Spell checking was automated with the hunspell package in R [@Ooms2018] using sp
 
 # Results and Discussion
 
-Although we had pre-registered a simple 2 X 2 mixed ANOVA approach, we opted for a more powerful mixed modeling approach that better represents the structure of the data [@Hoffman2007; @Locker2007]. Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package [vers. 2.3.1; @Bates2015]. All models were analyzed using maximal random effects structures with random slopes where allowed [@Barr2013]. All figures were created with ggplot [@Wickham2016]. We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency). We fit the maximal model (formula: "glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data"). Effect sizes (Cohen's *d*) were labelled following @Chinn2010's recommendations. The effect of difficulty type was non-significant, *b* = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], std. beta = -0.09, *p* = 0.431, *d* = 0.05). Individuals did recall more disfluent target words than fluney target words,  *b* = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], std. beta = 0.22, p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency was significant, *b* = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], std. beta = 0.21, *p* < .001, *d* = .11). As seen in Fig. 2, the magnitude of the generation effect is larger than the Sans Forgetica effect. 
+Although we had pre-registered a simple 2 X 2 mixed ANOVA approach, we opted for a more powerful mixed modeling approach that better represents the structure of the data [@Hoffman2007; @Locker2007]. Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package [vers. 2.3.1; @Bates2015]. All models were analyzed using maximal random effects structures with random slopes where allowed [@Barr2013]. All figures were created with ggplot [@Wickham2016]. We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency). We fit the maximal model (formula: "glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data"). Effect sizes (Cohen's *d*) were labelled following @Chinn2000's recommendations. The effect of difficulty type was non-significant, *b* = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], std. beta = -0.09, *p* = 0.431, *d* = 0.05). Individuals did recall more disfluent target words than fluney target words,  *b* = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], std. beta = 0.22, p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency was significant, *b* = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], std. beta = 0.21, *p* < .001, *d* = .11). As seen in Fig. 2, the magnitude of the generation effect is larger than the Sans Forgetica effect. 
 
 
 ```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on cued recall test. Raw data points (black) with mean (white dot) and 95% CIs were dervied using the modelbased R package.")}
@@ -278,7 +278,7 @@ p1
 
 In Experiment 2 we also asked students about their metacognitive awareness of the manipulatons. Specifically we asked participants: "How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?" Initial analyses suggest that the normal passages were given higher JOLs (*M* = 57.4, *SE* = 1.97) than the pre-highlighted passage (*M* = 50.3, *SE* = 1.97), t(525) = -7.08,  *p* = .023. There were no reliable differences between the pre-highlighted passage and Sans Forgetica (*M* = 53.8, *SE* = 1.97), *t*(525) = -3.52,  *p* = .415 or between the passage in Sans Forgetica and the passage presented normally, *t*(525) = 3.56,  *p* = .406. 
 
-```{r, fig.align="center", fig.cap="Judgements of learning as a function of passage type.",  messages=FALSE, echo=FALSE, results="asis"}
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Judgements of learning as a function of passage type.",  messages=FALSE, echo=FALSE, results="asis"}
 
 jols=ground %>% 
   group_by(ResponseId, FL_149_DO)%>%
