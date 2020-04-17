@@ -1,5 +1,5 @@
 ---
-title: "Don't believe the hype: Sans Forgetica is not desirable for learning"
+title: "Don't believe the font: Sans Forgetica is not desirable for learning"
 author:
 - address: 'Department of Psychological and Brain Science, W113 Seashore Hall, Iowa City, IA, 52242'
   affiliation: '1'
@@ -34,7 +34,7 @@ abstract: "Do students learn better with material that is perceptually harder-to
   While evidence is equivocal on the matter, recent claims suggest that placing materials
   in Sans Forgetica font, which is perceptually hard-to-process, has positive effects
   on student learning. Given the weak evidence for perceptual disfluency effects,
-  this led us to examine the mnnmonic effects of Sans Forgetica more closely. In two
+  this led us to examine the mnnmonic effects of Sans Forgetica more closely. In three
   preregistered experiments, we tested if Sans Forgetica is really unforgetable. In
   Experiment 1 (*N* = 233), participants studied weakly realted cue-target pairs with
   targets presented in either Sans Forgetcia or with missing letters (e.g., G_RL).
@@ -44,7 +44,7 @@ abstract: "Do students learn better with material that is perceptually harder-to
   or unmodified. Cued recall for select words were better for pre-highlighted information
   than when unmodified. Critically, presenting sentences in Sans Forgetica did not
   produce better cued recall than pre-highlighted sentences or sentences presented
-  unchanged. Our findings suggest that Sans Forgetica is really forgeticable. \n \n"
+  unchanged. In Experiment 3 (*N* = 60), indiviudals did not have better discriminabiliy for Sans Forgetic in an old-new recognition test. Our findings   suggest that Sans Forgetica is really forgeticable."
 wordcount: 3945
 ---
 
@@ -210,7 +210,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion (this goes against our pre-registration). We fit a model with passage type as a fixed effect and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *b* = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], std. beta = 0.38, *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, *b*  = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, *b*= 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, *p* = 0.700, *d* = .03. A Bayes factor computed with the hypothesis function from the brms package [@Burkner2018) indicated strong evidence for no effect between the two conditions (BF01 = 7.47). 
 
 
-```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage Accuracy as a function of passage type. Raw data points (black) with mean (white dot) and 95% CIs were dervied using the modelbased R package..")}
+```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage accuracy as a function of passage type. Violin plots represents the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95% CIs derived from the glmer model.")}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -264,10 +264,6 @@ p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
   theme(legend.position = "none") + 
   ggplot2::coord_cartesian(ylim = c(0, 1)) + 
   theme(axis.text=bold) 
-
-
-
-
 
 p1
 
@@ -368,13 +364,23 @@ to complete.
 
 # Results
 
-In recognition memory, signal detection theory has proven to be a very informative and efficient approach to
-analyzing binary accuracy data. However, considering the deficiency in precision and
-power in traditional analyses compared to mixed effects analyses , it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a GLMM to participant responses (their actual response (old vs. new)) as a function of the actual status of the item (whether the item was old vs. new) and condition (model: oldnew=glmer(sayold~isold*condition+(condition|Participant.Private.ID)+ (condition|Stims), data=data contrasts = list(condition="contr.sum"), family=binomial(link="probit"), control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))). The variables isold and condituon were treatment coded to allow for the estimation of the d' paramter. 
+In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a GLMM to participant responses (their actual response (sayold; whether they responded with old vs. new)) as a function of the actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica). Similar to Experiments 1 and 2, a maximal model was fit (model: oldnew=glmer(sayold~isold*condition+(condition|Participant.Private.ID)+ (condition|Stims), data=data contrasts = list(condition="contr.sum"), family=binomial(link="probit"), control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))). The variables isold and condituon were contrast coded (0.5 -0.5) to allow for the estimation of the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values. 
 
 The results are pretty staright-forward. 
 
+```{r}
+#frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 
+#oldnew=glmer(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=sfrecog, family=binomial(link="probit"))
+
+
+
+#oldnew=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex1, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4)
+
+
+
+
+```
 
 
 # Discussion
