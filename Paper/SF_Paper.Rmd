@@ -45,7 +45,7 @@ abstract: "Do students learn better with material that is perceptually harder-to
   than when unmodified. Critically, presenting sentences in Sans Forgetica did not
   produce better cued recall than pre-highlighted sentences or sentences presented
   unchanged. In Experiment 3 (*N* = 60), indiviudals did not have better discriminabiliy for Sans Forgetic in an old-new recognition test. Our findings   suggest that Sans Forgetica is really forgeticable."
-wordcount: 3945
+wordcount: 4458
 ---
 
 ```{r setup, include = FALSE}
@@ -83,7 +83,7 @@ In Experiment 1 we were interested in answering two questions. First, is Sans Fo
 
 ### Participants
 
-Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect  medium-to-large effect size (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Butler2014]. Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
+Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect a medium effect size interaction effect (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Butler2014]. Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English [^2]: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group. 
 
 ### Materials
 
@@ -101,13 +101,17 @@ Participants completed the experiment on-line via the Qualtrics survey platform 
 
 Spell checking was automated with the hunspell package in R [@Ooms2018] using spellCheck.R. Because participants were recruited in the United States, we used the American English dictionary. A nice walk through on how to use this package can be found in @Buchanan2019. Using this package, each response was corrected for misspellings. Corrected spellings are provided in the most probable order, therefore, the first suggestion was always selected as the correct answer. As a second pass, we manually examined the output to catch incorrect suggestions. If the response was close to the correct response, it was marked as correct.
 
+### Analysis
+
+Although we pre-registered a traditional ANOVA approach, in Experiment 1, 2, and 3we opted for a more powerful mixed modeling approach that better represents the structure of the data [@Hoffman2007; @Locker2007]. All data were anayzed in R (vers. 3.5.0; R Core Team, 2019), with models fit using the lme4 package [vers. 2.3.1; @Bates2015] and the brms package [vers. 2.11.0; @Burkner2018). All figures were created with ggplot [@Wickham2016]. In all three experiments, logistic mxied-effects models were used to model binary outcomes. All models were analyzed using maximal random effects structures with random slopes where allowed [@Barr2013]. All figures were created with ggplot [@Wickham2016]. In cases were null effects arose, a Bayes Factor was dervided by fitting the maximal model and using the hypothesis function in brms [@Burkner2018].
+
 
 # Results and Discussion
 
-Although we had pre-registered a simple 2 X 2 mixed ANOVA approach, we opted for a more powerful mixed modeling approach that better represents the structure of the data [@Hoffman2007; @Locker2007]. Models were fit in R (vers. 3.5.0; R Core Team, 2019) with the lme4 package [vers. 2.3.1; @Bates2015]. All models were analyzed using maximal random effects structures with random slopes where allowed [@Barr2013]. All figures were created with ggplot [@Wickham2016]. We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency). We fit the maximal model (formula: "glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data"). Effect sizes (Cohen's *d*) were labelled following @Chinn2000's recommendations. The effect of difficulty type was non-significant, *b* = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], std. beta = -0.09, *p* = 0.431, *d* = 0.05). Individuals did recall more disfluent target words than fluney target words,  *b* = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], std. beta = 0.22, p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency was significant, *b* = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], std. beta = 0.21, *p* < .001, *d* = .11). As seen in Fig. 2, the magnitude of the generation effect is larger than the Sans Forgetica effect. 
+We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency) as categorical predictors. Each categorcal preictor was devaition coded to assess each main effect and inteaction independently of all the other predictors in the model. This is the final model used: formula: glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data). Each categorcal preictor was devaition coded (0.5, -0.5) to assess each main effect and inteaction independently of all the other predictors in the model. Effect sizes (Cohen's *d*) were labelled following @Chinn2000's recommendations. There was no difference in cued recall between Generation and Sans Forgetica groups, $\beta$ = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], *p* = 0.431, *d* = 0.05). Individuals recalled more disfluent target words than fluney target words,  $\beta$ = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency, $\beta$ = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], *p* < .001, *d* = 0.11). As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect. 
 
 
-```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on cued recall test. Raw data points (black) with mean (white dot) and 95% CIs were dervied using the modelbased R package.")}
+```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on cued recall test.Violin plots represent the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95% CIs derived from the glmer model.")}
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -189,7 +193,7 @@ The pre-registration form for Experiment 2, which includes hypotheses, planned a
 
 ### Participants
 
-Five hundred and twenty-eight undergraduates participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the smallest effect of interest [@Lakens2014]. Similar to Experiment 1, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 per group is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion criteria, we were left with unequal group sizes. Because of this, we ran six more participants per group, giving us 176 participants in each of the three conditions.
+Five hundred and twenty-eight undergraduates (*N* = 528) participated for partial completion of course credit. Sample size was based on a priori power analyses conducted using PANGEA v0.2. Sample size was calculated based on the smallest effect of interest [@Lakens2014]. Similar to Experiment 1, we were interested in powering our study to detect a medium-sized effect size (*d* = .35). Therefore, assuming an alpha of .05 and  a desired power of 90%, a sample size of 170 per group is required to detect whether an effect size of .35 differs from zero. After excluding participants based on our preregistered exclusion criteria, we were left with unequal group sizes. Because of this, we ran six more participants per group, giving us 176 participants in each of the three conditions.
 
 ### Materials
 
@@ -207,7 +211,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 
 ## Results and Discussion
 
-For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion (this goes against our pre-registration). We fit a model with passage type as a fixed effect and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *b* = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], std. beta = 0.38, *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, *b*  = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, *b*= 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], std. beta = 0.06, *p* = 0.700, *d* = .03. A Bayes factor computed with the hypothesis function from the brms package [@Burkner2018) indicated strong evidence for no effect between the two conditions (BF01 = 7.47). 
+For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion. We fit a model with the fixed effect of passage type and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, $\beta$ = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, $\beta$ = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, $\beta$ = 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], *p* = 0.700, *d* = .03. A Bayes factor indicated strong evidence for no effect between the two conditions (BF = 7.47). 
 
 
 ```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage accuracy as a function of passage type. Violin plots represents the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95% CIs derived from the glmer model.")}
@@ -334,40 +338,37 @@ Examining metamemory judgments, we showed that a passage in Sans Forgetica font 
 
 ## Experiment 3
 
-The pre-registration form for Experiment 3, which includes hypotheses, planned analyses,exclusion criteria, and sample size justification, can be found at: https://osf.io/ekqh5.
+The pre-registration form for Experiment 3, which includes hypotheses, planned analyses, exclusion criteria, and sample size justification, can be found at: https://osf.io/ekqh5.
 
 ### Participants
 
-Sixty participants participated for partial completion of course credit. Saample size was determined by a similar procedure to the above experiments.
+Sixty participants (*N* = 60) participated for partial completion of course credit. Saample size was determined by a similar procedure to the above experiments. No participnats had to be thrown out for failing to meet the exclusion criteraia noted above. 
+
+### Materials
+
+The full set of stimuli can be found at https://osf.io/dsxrc/
+
+Stimuli were 188 nouns taken from @Geller2018. ALl words were from the English Lexicon Project database (Balota et al., 2007). Both frequency (all words were high frequency; mean log HAL frequency = 9.2) and length (all words were four letters in length) were controlled. 
 
 # Design and Procedure
 
-Type of script (Arial vs. Sans Forgetica) was manipulated within-subjects. A total of 188 words were presented, 94 at study (47 in
-each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned
-to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
+The experiment employed a completly within-subject design. Type of script (Arial vs. Sans Forgetica) was manipulated within-subjects. ,94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
 
-Word order was completely randomized, such that Arial and Sans Forgetica
-words were randomly intermixed in the study phase, and Arial and
-Sans Forgetica old and new words were randomly intermixed in the test phase.
-All old words were presented at test in the same manner in which they
+Word order was completely randomized, such that Arial and Sans Forgetica words were randomly intermixed in the study phase, and Arial and
+Sans Forgetica old and new words were randomly intermixed in the test phase. All old words were presented at test in the same manner in which they
 were presented at study; that is, Arial words during study were presented in Arial font at test, and Sans Forgetica words during study were presented in Sans Forgetica font at test.
 
-Each trial began with a fixation cross appearing at the center of the screen for 500 ms. The fixation cross was then replaced by a word in the same location. Study was self-paced. The participants pressed the continue button to go to the next trial.
+The experiment was created and conducted using the Gorilla Experiment Builder [@Anwyl-Irvine2020; http://www.gorilla.sc]. The experiment protocol and all tasks are available to preview and copy from Gorilla Open Materials at http://www.gorilla.sc/openmaterials/36778.
 
 
-After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many
-United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented
-in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two buttons displayed on the screen: a  button labeled “old” to indicate that they had named the word during study, and a button labeled “new” to indicate they did
-not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants
-were debriefed. The entire experiment took about 30 minutes
+During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two boxes displayed on the screen: a box labeled “old” to indicate that they had named the word during study, and a box labeled “new” to indicate they did not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes
 to complete.
 
-# Results
+# Results and dicussion
 
-In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a GLMM to participant responses (their actual response (sayold; whether they responded with old vs. new)) as a function of the actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica). Similar to Experiments 1 and 2, a maximal model was fit (model: oldnew=glmer(sayold~isold*condition+(condition|Participant.Private.ID)+ (condition|Stims), data=data contrasts = list(condition="contr.sum"), family=binomial(link="probit"), control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))). The variables isold and condituon were contrast coded (0.5 -0.5) to allow for the estimation of the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values. 
+In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs. new)) with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): model: oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition which represents the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values. 
 
-The results are pretty staright-forward. 
-
+Hit rates and false alarm rates can be seen in Fig. 3. The results are staright-forward. Indivausls were more biased to say Sans Forgetica stimuli were old, $\beta$ = 0.26, *SE* = 0..026, 95% CI [0.05, 0.71], *p* < .005, *d* = 0.21. However, there was no difference in d-prime between the two conditions, $\beta$ = 0.033, *SE* = 0.05, 95% CI [0.05, 0.71], *p* = .519, *d* = 0.21. The Bayes factor indicated strong evidence that the effect was zero, BF = 13.68. 
 ```{r}
 #frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 
