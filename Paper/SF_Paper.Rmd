@@ -369,11 +369,55 @@ to complete.
 In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs. new)) with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): model: oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition which represents the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values. 
 
 Hit rates and false alarm rates can be seen in Fig. 3. The results are staright-forward. Indivausls were more biased to say Sans Forgetica stimuli were old, $\beta$ = 0.26, *SE* = 0..026, 95% CI [0.05, 0.71], *p* < .005, *d* = 0.21. However, there was no difference in d-prime between the two conditions, $\beta$ = 0.033, *SE* = 0.05, 95% CI [0.05, 0.71], *p* = .519, *d* = 0.21. The Bayes factor indicated strong evidence that the effect was zero, BF = 13.68. 
-```{r}
+```{r, fig.cap= "Mean proportions of “old” responses for Experiment 3. The fixed effect mean (black dot) and 95% CIs derived from the glmer model" }
 #frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 
 #oldnew=glmer(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=sfrecog, family=binomial(link="probit"))
+data=here('Expt3_data', 'Gorilla_raw_data' 'ex3_recog.csv')  
 
+
+ex3=read_csv(data)
+
+oldnewglme=glmer(sayold~old.new*condition+(1|Participant.Private.ID)+ (1|Stims), data=ex3, family=binomial(link="probit"))
+
+
+means<-estimate_means(oldnewglme)
+
+
+#classic SDT for those wanting to compare
+sdt <- dd %>% 
+  mutate(type = "hit",
+         type = ifelse(isold==1 & sayold==0, "miss", type),
+         type = ifelse(isold==0 & sayold==0, "cr", type),  # Correct rejection
+         type = ifelse(isold==0 & sayold==1, "fa", type))  # False alarm
+
+sdt <- sdt %>% 
+  group_by(Participant.Private.ID, type, condition) %>% 
+  summarise(count = n()) %>% 
+  spread(type, count)  # Format data to one row per person
+
+sdt <- sdt %>% 
+  group_by(Participant.Private.ID, condition)%>%
+  mutate(hr = hit / (hit+miss),
+         fa = fa / (fa+cr),
+         dprime = hr-fa,
+         crit = -fa)
+
+means$old.new<-factor(means$old.new, levels=c("old", "new"))
+
+means$condition<-factor(means$condition, levels=c("SF", "normal"))
+
+p1<- ggplot(means, aes(condition, Probability, color=condition))+ facet_grid(~old.new)+
+  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
+  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="black")+ 
+  theme_bw(base_size=14)+
+  labs(y="(Pr) saying old", x="Font Type") + 
+  theme(legend.position = "none") + 
+  ggplot2::coord_cartesian(ylim = c(0, 1)) + 
+  theme(axis.text=bold) 
+
+p1
+# path to data files
 
 
 #oldnew=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex1, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4)
