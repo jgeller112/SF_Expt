@@ -17,7 +17,7 @@ affiliation:
   institution: Skidmore College
 output: papaja::apa6_pdf
 bibliography: ref.bib
-classoption: "pdf"
+classoption: "doc"
 documentclass: "apa6"
 draft: no
 figurelist: no
@@ -110,8 +110,7 @@ Although we pre-registered a traditional ANOVA approach, in Experiment 1, 2, and
 
 We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs. sans forgetcia) and disfluency (fluent vs. disfluency) as categorical predictors. Each categorcal preictor was devaition coded to assess each main effect and inteaction independently of all the other predictors in the model. This is the final model used: formula: glmer(acc~difftypedisflu + (1+disflu|ResponseID) + (1+difftype|target), family=binomial, data=data). Each categorcal preictor was devaition coded (0.5, -0.5) to assess each main effect and inteaction independently of all the other predictors in the model. Effect sizes (Cohen's *d*) were labelled following @Chinn2000's recommendations. There was no difference in cued recall between Generation and Sans Forgetica groups, $\beta$ = -0.09, *SE* = 0.11, 95% CI [-0.30, 0.13], *p* = 0.431, *d* = 0.05). Individuals recalled more disfluent target words than fluney target words,  $\beta$ = 0.21, *SE* = 0.06, 95% CI [0.09, 0.33], p < .001, *d* = 0.12). This was qualified by an interaction between difficulty type and disfluency, $\beta$ = 0.22, *SE* = 0.04, 95% CI [0.14, 0.30], *p* < .001, *d* = 0.11). As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect. 
 
-
-```{r, echo=FALSE, message=FALSE, fig.align="center",  fig.height=4, fig.width=8, fig.cap=paste("Accuracy on cued recall test.Violin plots represent the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95% CIs derived from the glmer model.")}
+```{r,fig.align="center",  fig.height=4, fig.width=8, fig.cap="Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\\% CIs derived from the GLMER model.", messages=FALSE, echo=FALSE, results="asis"}
 library(qualtRics)
 library(tidyverse)
 library(effects)
@@ -165,7 +164,7 @@ p1<- ggplot(ex1_agg, aes(dis, mean_acc, fill=dis))+ facet_grid(~condition)+
   geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
   geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
   scale_x_discrete(labels= x_label)+
-  theme_bw(base_size=14)+labs(y="Recall on Cued Recall Test (Pr)", x="Disfluency") + 
+  theme_bw(base_size=14)+labs(y="Recall on Cued Recall Test", x="Disfluency") + 
   theme(legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold) 
 
 
@@ -181,15 +180,16 @@ p1
 
 ```
 
-The results for Experiment 1 are clear-cut. Cued recall for items presented intact and in Sans Forgetica font were equivocal. That is, we did not observe a memory benefit for Sans Forgetica font. We did, however, observe greater recall for generated items, which replicates decades of literature (Bertsch et al., 2007). This suggests that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty. 
+The results for Experiment 1 are clear-cut. Cued recall for items presented intact and in Sans Forgetica font were equivocal. That is, we did not observe a memory benefit for Sans Forgetica font. We did, however, observe greater recall for generated items, which replicates decades of literature [@Bertsch2007]. This suggests that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty. 
 
 # Experiment 2
 
 Experiment 1 failed to find a memory benefit for Sans Forgetica effect. A limitation of Experiment 1 is that simple stimulus-response learning lacks educational realism. To remedy this, Experiment 2 tested the mnemonic effects of Sans Forgetica using more realistic materials. Whereas Experiment 1 tested whether Sans Forgetica is driven by the generative process of retrieval, Experiment 2 examined  whether the Sans Forgetcia effect might exert its mnemonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. This is similar to the effects of pre-highlighting on learning. Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage [@Fowler1974; @Silvers1997]. To this end, Experiment 2 compared cued recall performance on a passage where some of the sentences were either presented in: Sans Forgetica, pre-highlighted in yellow, or unmodified. We hypothesized that if the Sans Forgetica effect is mainly driven by distinctiveness, words presented in Sans Forgetica should benefit more from the disfluency than the passage presented unmodified. Further, the benefit for Sans Forgetica should be similar in magnitude to the pre-highlighting condition as both manipulations serve to increase the distinctiveness of the text. 
 
+## Method
+
 The pre-registration form for Experiment 2, which includes hypotheses, planned analyses,exclusion criteria, and sample size justification, can be found at: https://aspredicted.org/3jz3z.pdf.
 
-## Method
 
 ### Participants
 
@@ -197,11 +197,11 @@ Five hundred and twenty-eight undergraduates (*N* = 528) participated for partia
 
 ### Materials
 
-Participants read a passage on ground water (856 words) taken from from the U.S. Geological Survey [see @Yue2014]. Eleven critical phrases ^[originally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unmodified. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). There was 1 manipulation check question: "What was the passage you read on?."
+All materials used for this experiment can be found on our OSF page (https://osf.io/d2vy8/) under our Expt 2 Stims folder.  Participants read a passage on ground water (856 words) taken from from the U.S. Geological Survey [see @Yue2014]. Eleven critical phrases ^[originally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unmodified. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). There was 1 manipulation check question: "What was the passage you read on?."
 
 ### Design and Procedure
 
-Participants were randomly assigned to either the pre-highlighted condition, sans forgetica condition, or unmodified condition. Our design manipulated three difference types of passages between-subjects: pre-highlighting, Sans Forgetica, and unmodified.
+Participants were randomly assigned to either the pre-highlighted condition, Sans Forgetica condition, or unmodified condition. Our design manipulated three difference types of passages between-subjects: pre-highlighting, Sans Forgetica, and unmodified.
 
 Participants completed the experiment on-line via the Qualtrics survey platform. After reading and signing a consent form, participants were randomly assigned to one of three conditions: pre-highlighting, Sans Forgetica, or unmodified. Participants read a passage on ground water. All participants were instructed to read the passage as though they were studying material for a class. After 10 minutes, all participants were given a brief questionnaire (2 questions) asking them to indicate their metacognitive beliefs afte reading the passage. The two questions were: “Do you feel that the presentation fo the material helped you remember" and "How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?" Participants were then given a short distraction task (anagrams) for 3 minutes. Finally, all participants were given 12 fill-in-the-blank test questions, presented one at a time.
 
@@ -214,7 +214,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion. We fit a model with the fixed effect of passage type and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(auto_acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, $\beta$ = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, $\beta$ = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, $\beta$ = 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], *p* = 0.700, *d* = .03. A Bayes factor indicated strong evidence for no effect between the two conditions (BF = 7.47). 
 
 
-```{r, fig.align="center", message=FALSE, echo=FALSE, fig.height=4, fig.width=8, fig.cap=paste("Passage accuracy as a function of passage type. Violin plots represents the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95% CIs derived from the glmer model.")}
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Passage accuracy as a function of passage type. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\\%  CIs derived from the GLMER model.", messages=FALSE, echo=FALSE, warning=FALSE,  results="asis"}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -352,28 +352,27 @@ Stimuli were 188 nouns taken from @Geller2018. ALl words were from the English L
 
 # Design and Procedure
 
-The experiment employed a completly within-subject design. Type of script (Arial vs. Sans Forgetica) was manipulated within-subjects. ,94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
+The experiment employed a within-subject design. The factor of script type (Arial vs. Sans Forgetica) was manipulated within-subjects. We employed 188 words, 94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
 
 Word order was completely randomized, such that Arial and Sans Forgetica words were randomly intermixed in the study phase, and Arial and
 Sans Forgetica old and new words were randomly intermixed in the test phase. All old words were presented at test in the same manner in which they
 were presented at study; that is, Arial words during study were presented in Arial font at test, and Sans Forgetica words during study were presented in Sans Forgetica font at test.
 
-The experiment was created and conducted using the Gorilla Experiment Builder [@Anwyl-Irvine2020; http://www.gorilla.sc]. The experiment protocol and all tasks are available to preview and copy from Gorilla Open Materials at http://www.gorilla.sc/openmaterials/36778.
+The experiment was created and conducted using the Gorilla Experiment Builder ([@Anwyl-Irvine2020]; http://www.gorilla.sc). The experiment protocol and all tasks are available to preview and copy from Gorilla Open Materials at http://www.gorilla.sc/openmaterials/36778.
 
-
-During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two boxes displayed on the screen: a box labeled “old” to indicate that they had named the word during study, and a box labeled “new” to indicate they did not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes
-to complete.
+After reading and signing a consent form, participants first completed a study phase. During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two boxes displayed on the screen: a box labeled “old” to indicate that they had named the word during study, and a box labeled “new” to indicate they did not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes to complete.
 
 # Results and dicussion
 
-In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs. new)) with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): model: oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition which represents the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values. 
+In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs. new)) with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition. Within this mode, the fixed effect of condition is the difference in c between groups, and the interaction term isold:condition would describe the difference in d’ between conditions. 
 
 Hit rates and false alarm rates can be seen in Fig. 3. The results are staright-forward. Indivausls were more biased to say Sans Forgetica stimuli were old, $\beta$ = 0.26, *SE* = 0..026, 95% CI [0.05, 0.71], *p* < .005, *d* = 0.21. However, there was no difference in d-prime between the two conditions, $\beta$ = 0.033, *SE* = 0.05, 95% CI [0.05, 0.71], *p* = .519, *d* = 0.21. The Bayes factor indicated strong evidence that the effect was zero, BF = 13.68. 
-```{r, fig.cap= "Mean proportions of “old” responses for Experiment 3. The fixed effect mean (black dot) and 95% CIs derived from the glmer model" }
+
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap = "Mean proportions of “old” responses for Experiment 3. Violin plots represent the kernal density of average probability (black dots) with the fixed effect mean (white dot) and 95\\% CIs derived from the glmer model.", warning=FALSE,  messages=FALSE, echo=FALSE, results="asis"}
 #frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 
 #oldnew=glmer(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=sfrecog, family=binomial(link="probit"))
-data=here('Expt3_data', 'Gorilla_raw_data' 'ex3_recog.csv')  
+data=here('Expt3_data', 'Gorilla_raw_data', 'ex3_recog.csv')  
 
 
 ex3=read_csv(data)
@@ -384,9 +383,12 @@ oldnewglme=glmer(sayold~old.new*condition+(1|Participant.Private.ID)+ (1|Stims),
 means<-estimate_means(oldnewglme)
 
 
+#recode Response as sayold and old.new as isold
+ex3$isold=ifelse(ex3$old.new== "new", 0, 1)
+
 #classic SDT for those wanting to compare
-sdt <- dd %>% 
-  mutate(type = "hit",
+sdt <- ex3 %>% 
+  dplyr::mutate(type = "hit",
          type = ifelse(isold==1 & sayold==0, "miss", type),
          type = ifelse(isold==0 & sayold==0, "cr", type),  # Correct rejection
          type = ifelse(isold==0 & sayold==1, "fa", type))  # False alarm
@@ -403,30 +405,49 @@ sdt <- sdt %>%
          dprime = hr-fa,
          crit = -fa)
 
-means$old.new<-factor(means$old.new, levels=c("old", "new"))
+sdt1=sdt  %>% select(Participant.Private.ID, condition, hr, fa) %>% 
+  pivot_longer(hr:fa, names_to="type") %>%
+  mutate(isold=case_when(type=="hr" ~ "Old", type=="fa" ~ "New"), Condition=case_when(
+  condition=="SF"~ "Sans Forgetica", 
+  condition=="normal"~ "Arial"
+))
 
-means$condition<-factor(means$condition, levels=c("SF", "normal"))
+sdt1$isold<-factor(sdt1$isold, levels=c("Old", "New"))
 
-p1<- ggplot(means, aes(condition, Probability, color=condition))+ facet_grid(~old.new)+
+sdt1$Condition<-factor(sdt1$Condition, levels=c("Sans Forgetica", "Arial"))
+
+
+
+means <- means %>% mutate(isold=case_when(
+  old.new=="new"~ "New", 
+  old.new=="old"~ "Old"), Condition=case_when(
+  condition=="SF"~ "Sans Forgetica", 
+  condition=="normal"~ "Arial"
+))
+
+means$isold<-factor(means$isold, levels=c("Old", "New")) 
+means$Condition<-factor(means$Condition, levels=c("Sans Forgetica", "Arial"))
+  
+# path to data files
+
+p1<- ggplot(sdt1, aes(Condition, value, fill=Condition))+ 
+  facet_grid(~isold) + 
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
   geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
-  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="black")+ 
+  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
   theme_bw(base_size=14)+
-  labs(y="(Pr) saying old", x="Font Type") + 
+  labs(y="(Pr)saying Old", x="Font Type") + 
   theme(legend.position = "none") + 
   ggplot2::coord_cartesian(ylim = c(0, 1)) + 
   theme(axis.text=bold) 
 
-p1
-# path to data files
-
-
 #oldnew=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex1, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4)
 
-
+p1
 
 
 ```
-
 
 # Discussion
 
