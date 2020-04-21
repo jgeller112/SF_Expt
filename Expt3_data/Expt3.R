@@ -1,8 +1,12 @@
-setwd('/Users/hang/Desktop/data')
-data='/Users/hang/Desktop/data'
+library(janitor)
 
-file_list=list.files(data, pattern=".csv")
 
+here('Expt3_data' 'Gorilla_raw_data')
+
+data=here('Expt3_data', 'Gorilla_raw_data')  # path to data files
+
+file_list=list.files(data, pattern=".csv") # list of data files
+ 
 # read in all files
 dataset <-
   do.call("rbind", lapply(file_list, FUN=function(files){
@@ -12,21 +16,34 @@ dataset <-
         message( "now processing:", files[i])
       }
     }
-    read.csv(files, header=TRUE, sep=",", na.strings = "", fill=TRUE)})) #fread makes reading in files quick
-#turn to tibble
-dataset=as_tibble(dataset)
+    fread(files, header=TRUE, sep=",", na.strings = "", fill=TRUE)})) #fread makes reading in files quick
+#
 
-dd<-dataset %>% filter(Zone.Type=="continue_button")
+dd<-dataset %>% filter(Zone.Type=="response_button_text")
 #response as character
 dd$Response<-as.character(dd$Response)
 
+rt<-dataset %>% janitor::clean_names(.) %>%  filter(zone_type=="continue_button", display=="study") # get RT
+
+
+rt$reaction_time<-as.numeric(rt$reaction_time)
+
+
+
+rt1<- rt %>% 
+  group_by(Participant.Private.ID , condition) %>% 
+  summarise(mean=mean(Reaction.Time, na.rm=TRUE))
+
+
+#response as character
+
 #recode Response as sayold and old.new as isold
-dd$sayold=ifelse(dataset$Response=="old ", 1, 0)
-dd$isold=ifelse(dataset$old.new== "new", 0, 1)
+dd$sayold=ifelse(dd$Response=="old ", 1, 0)
+dd$isold=ifelse(dd$old.new== "new", 0, 1)
 
 
-#for the brms model
-ex1=dd %>% mutate(condition1= case_when( 
+#contrast code condition and old.new for the model
+ex3=dd %>% mutate(condition1= case_when( 
   condition == "SF" ~ 0.5, 
   condition =="normal" ~  -0.5, 
 ), isold= case_when (
@@ -34,13 +51,17 @@ ex1=dd %>% mutate(condition1= case_when(
   old.new== "new" ~ -0.5))
 
 #fit GLMM in brms to extract the BF
-oldnew=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex1, family=bernoulli(link="probit"), prior=prior, sample_prior = "only",  cores = 4)
+
+oldnewglme=glmer(sayold~isold*condition1+(1+condition1|Participant.Private.ID)+ (1+condition1|Stims), data=ex3, family=binomial(link="probit"))
+
+prior<-prior(normal(0,1), class="b") # weakly informed prior on the coefficents
+
+#fit the brms model
+oldnewbrm=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex3, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4) 
 
 
-
-#get BF for interaction which is difference in dprime
-dprime=hypothesis(oldnew, 'isold:condition1 = 0')
-
+#get BF for interaction which is difference in dprime from brms model
+dprime=hypothesis(oldnewbrm, 'isold:condition1 = 0')
 
 
 

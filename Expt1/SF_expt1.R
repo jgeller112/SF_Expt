@@ -142,11 +142,11 @@ spelling.dict$spelling.pattern <- paste0("\\b", spelling.dict$spelling.errors, "
 # Write out spelling dictionary
 
 # Parse features
-tokens <- unnest_tokens(tbl = sfgen, output = token,
+tokens <- unnest_tokens(tbl = comb, output = token,
                         input = answer, token = stringr::str_split,
                         pattern = " |\\, |\\.|\\,|\\;")
 
-tokens$acc <-ifelse(tokens$target==tokens$token, 1, 0)
+tokens$acc <-ifelse(tokens$wird==tokens$token, 1, 0)
 
 #error in expt these targets were not presented
 
@@ -175,10 +175,10 @@ p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+
 
 # run full bayesian model 
 
-prior<-prior(student_t(3,0, 2), class="b") # weakly informed
+prior<-prior(normal(0,1), class="b") # weakly informed
 
 
-dis=brm(acc~condition*dis+ (1+dis|ResponseID)+(1+condition*dis|target), data=gen, family=bernoulli(), prior=prior, sample_prior=TRUE)
+dis=brm(acc~difftype*disflu+ (1+disflu|ResponseID)+(1+difftype*disflu|target), data=ex1, family=bernoulli(), prior=prior, sample_prior=TRUE, cores = 4)
 
 #run brms model
 c_dis_main <- pairs(emmeans(dis, ~ dis)) # get marginal for dis

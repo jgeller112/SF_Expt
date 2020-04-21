@@ -1,7 +1,7 @@
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[english,pdf]{apa6}
+\documentclass[english,doc]{apa6}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -104,6 +104,8 @@ Correspondence concerning this article should be addressed to Jason Geller, Depa
 
 \linenumbers
 \usepackage{csquotes}
+\usepackage{endnotes}
+\let\footnote\endnote
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[shorthands=off,main=english]{babel}
 \else
@@ -149,7 +151,7 @@ In Experiment 1 we were interested in answering two questions. First, is Sans Fo
 \hypertarget{participants}{%
 \subsubsection{Participants}\label{participants}}
 
-Two-hundred and thirty people from Amazon's Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest (SEOI; Lakens \& Evers, 2014). In this case, we were interested in powering our study to detect a medium effect size interaction effect (\emph{d} = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies (Butler, Marsh, Slavinsky, \& Baraniuk, 2014). Therefore, assuming an alpha of .05 and a desired power of 90\%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English {[}\^{}2{]}: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group.
+Two-hundred and thirty people from Amazon's Mechanical Turk Service participated for money. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest (SEOI; Lakens \& Evers, 2014). In this case, we were interested in powering our study to detect a medium sized interaction effect (\emph{d} = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies (Butler, Marsh, Slavinsky, \& Baraniuk, 2014). Therefore, assuming an alpha of .05 and a desired power of 90\%, a sample size of 230 is required to detect whether an effect size of .35 differs from zero. After excluding participants who 1) did not complete every phase of the experiment, 2) started the experiment multiple times, 3) reported experiencing technical problems did not indicate that they were fluent in English {[}\^{}2{]}: This question was not asked during the experiment., or 5) reported seeing our stimuli before, we were left with 115 participants per group.
 
 \hypertarget{materials}{%
 \subsubsection{Materials}\label{materials}}
@@ -173,37 +175,37 @@ Spell checking was automated with the hunspell package in R (Ooms, 2018) using s
 \hypertarget{analysis}{%
 \subsubsection{Analysis}\label{analysis}}
 
-Although we pre-registered a traditional ANOVA approach, in Experiment 1, 2, and 3we opted for a more powerful mixed modeling approach that better represents the structure of the data (Hoffman \& Rovine, 2007; Locker, Huffman, \& Bovaird, 2007). All data were anayzed in R (vers. 3.5.0; R Core Team, 2019), with models fit using the lme4 package (vers. 2.3.1; Bates, Mächler, Bolker, \& Walker, 2015) and the brms package {[}vers. 2.11.0; Bürkner (2018)). All figures were created with ggplot (Wickham, 2016). In all three experiments, logistic mxied-effects models were used to model binary outcomes. All models were analyzed using maximal random effects structures with random slopes where allowed ({\textbf{???}}). All figures were created with ggplot (Wickham, 2016). In cases were null effects arose, a Bayes Factor was dervided by fitting the maximal model and using the hypothesis function in brms (Bürkner, 2018).
+In Eperiments 1 and 2 we pre-registered more traditional approaches to data analysis. However, during writing we opted for a more powerful mixed modeling approach that better represents the structure of the data--generalized linear mixed modeling {[}\^{}3:{]}. In all cases traditonal approaches convered with the analsyses conducted here. All data were anayzed in R (vers. 3.5.0; R Core Team, 2019), with models fit using the lme4 (vers. 2.3.1; Bates, Mächler, Bolker, \& Walker, 2015) and brms package (vers. 2.11.0; Bürkner, 2018). All figures were created with ggplot (Wickham, 2016). In all three experiments, logistic mxied-effects models were used to model binary outcomes. All models were analyzed using maximal random effects structures with random slopes where allowed ({\textbf{???}}). If a model failed to converge, a backward selection process was used. Null findings are supplemented by Bayes factors in favor of the null. Bayes Factors were derived by fitting the maximal model and using the hypothesis function in brms (Bürkner, 2018).
 
 \hypertarget{results-and-discussion}{%
 \section{Results and Discussion}\label{results-and-discussion}}
 
-We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs.~sans forgetcia) and disfluency (fluent vs.~disfluency) as categorical predictors. Each categorcal preictor was devaition coded to assess each main effect and inteaction independently of all the other predictors in the model. This is the final model used: formula: glmer(acc\textasciitilde{}difftypedisflu + (1+disflu\textbar{}ResponseID) + (1+difftype\textbar{}target), family=binomial, data=data). Each categorcal preictor was devaition coded (0.5, -0.5) to assess each main effect and inteaction independently of all the other predictors in the model. Effect sizes (Cohen's \emph{d}) were labelled following Chinn (2000)'s recommendations. There was no difference in cued recall between Generation and Sans Forgetica groups, \(\beta\) = -0.09, \emph{SE} = 0.11, 95\% CI {[}-0.30, 0.13{]}, \emph{p} = 0.431, \emph{d} = 0.05). Individuals recalled more disfluent target words than fluney target words, \(\beta\) = 0.21, \emph{SE} = 0.06, 95\% CI {[}0.09, 0.33{]}, p \textless{} .001, \emph{d} = 0.12). This was qualified by an interaction between difficulty type and disfluency, \(\beta\) = 0.22, \emph{SE} = 0.04, 95\% CI {[}0.14, 0.30{]}, \emph{p} \textless{} .001, \emph{d} = 0.11). As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect.
+We fit a generalzied linear mixed model (logit link) to predict cued recall accuracy with difficulty type (generation vs.~sans forgetcia) and disfluency (fluent vs.~disfluency) as categorical predictors. Each categorcal preictor was devaition coded to assess each main effect and inteaction independently of all the other predictors in the model. This is the final model used: formula: glmer(acc\textasciitilde{}difftypedisflu + (1+disflu\textbar{}ResponseID) + (1+difftype\textbar{}target), family=binomial, data=data). Each categorcal preictor was devaition coded (0.5, -0.5) to assess each main effect and inteaction independently of all the other predictors in the model. Effect sizes (Cohen's \emph{d}) were labelled following Chinn (2000)'s recommendations. There was no difference in cued recall between the Generation and Sans Forgetica groups, \emph{b} = -0.09, \emph{SE} = 0.11, 95\% CI {[}-0.30, 0.13{]}, \emph{p} = 0.431, \emph{d} = 0.05). Individuals recalled more disfluent target words than fluney target words, \emph{b} = 0.21, \emph{SE} = 0.06, 95\% CI {[}0.09, 0.33{]}, p \textless{} .001, \emph{d} = 0.12). This was qualified by an interaction between difficulty type and disfluency, \emph{b} = 0.22, \emph{SE} = 0.04, 95\% CI {[}0.14, 0.30{]}, \emph{p} \textless{} .001, \emph{d} = 0.11). As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect.
 
 \begin{verbatim}
 ## Warning: Missing column names filled in: 'X1' [1]
 \end{verbatim}
 
-\textbackslash{}begin\{figure\}
+\begin{figure}
 
-\{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-2-1}
+{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-2-1} 
 
-\}
+}
 
-\textbackslash{}caption\{Accuracy on cued recall test.Violin plots represent the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95\% CIs derived from the glmer model.\}\label{fig:unnamed-chunk-2}
-\textbackslash{}end\{figure\}
+\caption{Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\% CIs derived from the glmer model.}\label{fig:unnamed-chunk-2}
+\end{figure}
 
-The results for Experiment 1 are clear-cut. Cued recall for items presented intact and in Sans Forgetica font were equivocal. That is, we did not observe a memory benefit for Sans Forgetica font. We did, however, observe greater recall for generated items, which replicates decades of literature (Bertsch et al., 2007). This suggests that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty.
+The results for Experiment 1 are clear-cut. Cued recall for Sans Forgetica font was equviocal to normal, Arial, font. We did, however, observe greater recall for generated items, which replicates decades of literature on the generation effect (Bertsch et al., 2007). Taken together, these results suggest that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty.
 
 \hypertarget{experiment-2}{%
 \section{Experiment 2}\label{experiment-2}}
 
 Experiment 1 failed to find a memory benefit for Sans Forgetica effect. A limitation of Experiment 1 is that simple stimulus-response learning lacks educational realism. To remedy this, Experiment 2 tested the mnemonic effects of Sans Forgetica using more realistic materials. Whereas Experiment 1 tested whether Sans Forgetica is driven by the generative process of retrieval, Experiment 2 examined whether the Sans Forgetcia effect might exert its mnemonic benefit by making material more distinctive. Specifically, Sans Forgetica may make the marked portion of text more memorable because it stands out from the surrounding text. This is similar to the effects of pre-highlighting on learning. Indeed, some evidence supports this type of role for highlighting: When students read pre-highlighted passages, they recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage (Fowler \& Barker, 1974; Silvers \& Kreiner, 1997). To this end, Experiment 2 compared cued recall performance on a passage where some of the sentences were either presented in: Sans Forgetica, pre-highlighted in yellow, or unmodified. We hypothesized that if the Sans Forgetica effect is mainly driven by distinctiveness, words presented in Sans Forgetica should benefit more from the disfluency than the passage presented unmodified. Further, the benefit for Sans Forgetica should be similar in magnitude to the pre-highlighting condition as both manipulations serve to increase the distinctiveness of the text.
 
-The pre-registration form for Experiment 2, which includes hypotheses, planned analyses,exclusion criteria, and sample size justification, can be found at: \url{https://aspredicted.org/3jz3z.pdf}.
-
 \hypertarget{method-1}{%
 \subsection{Method}\label{method-1}}
+
+The pre-registration form for Experiment 2, which includes hypotheses, planned analyses,exclusion criteria, and sample size justification, can be found at: \url{https://aspredicted.org/3jz3z.pdf}.
 
 \hypertarget{participants-1}{%
 \subsubsection{Participants}\label{participants-1}}
@@ -213,12 +215,12 @@ Five hundred and twenty-eight undergraduates (\emph{N} = 528) participated for p
 \hypertarget{materials-1}{%
 \subsubsection{Materials}\label{materials-1}}
 
-Participants read a passage on ground water (856 words) taken from from the U.S. Geological Survey (see {\textbf{???}}). Eleven critical phrases\footnote{originally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention} each containing a different keyword, were selected from the passage (e.g., the term \emph{recharge} was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unmodified. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called \_\_\_\_\_\_\_\_\_\_ water). There was 1 manipulation check question: \enquote{What was the passage you read on?.}
+All materials used for this experiment can be found on our OSF page (\url{https://osf.io/d2vy8/}) under our Expt 2 Stims folder. Participants read a passage on ground water (856 words) taken from from the U.S. Geological Survey (see Yue, Storm, Kornell, \& Bjork, 2014). Eleven critical phrases {[}\^{}2{]}: originally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention{]} each containing a different keyword, were selected from the passage (e.g., the term \emph{recharge} was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in SF, highlighted, or unmodified. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called \_\_\_\_\_\_\_\_\_\_ water). There was 1 manipulation check question: \enquote{What was the passage you read on?.}
 
 \hypertarget{design-and-procedure-1}{%
 \subsubsection{Design and Procedure}\label{design-and-procedure-1}}
 
-Participants were randomly assigned to either the pre-highlighted condition, sans forgetica condition, or unmodified condition. Our design manipulated three difference types of passages between-subjects: pre-highlighting, Sans Forgetica, and unmodified.
+Participants were randomly assigned to either the pre-highlighted condition, Sans Forgetica condition, or unmodified condition. Our design manipulated three difference types of passages between-subjects: pre-highlighting, Sans Forgetica, and unmodified.
 
 Participants completed the experiment on-line via the Qualtrics survey platform. After reading and signing a consent form, participants were randomly assigned to one of three conditions: pre-highlighting, Sans Forgetica, or unmodified. Participants read a passage on ground water. All participants were instructed to read the passage as though they were studying material for a class. After 10 minutes, all participants were given a brief questionnaire (2 questions) asking them to indicate their metacognitive beliefs afte reading the passage. The two questions were: \enquote{Do you feel that the presentation fo the material helped you remember} and \enquote{How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?} Participants were then given a short distraction task (anagrams) for 3 minutes. Finally, all participants were given 12 fill-in-the-blank test questions, presented one at a time.
 
@@ -230,16 +232,16 @@ Spell checking was automated with the same procedure as Experiment 1.
 \hypertarget{results-and-discussion-1}{%
 \subsection{Results and Discussion}\label{results-and-discussion-1}}
 
-For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion. We fit a model with the fixed effect of passage type and random intercepts for participants (\emph{N}=528) and questions (\emph{N}=11): (formula: acc=glmer(auto\_acc\textasciitilde{}passage\_type+(1\textbar{}Participant) + (1\textbar{}Question), data=data, family=\enquote{binomial}). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, \(\beta\) = 0.38, \emph{SE} = 0.17, 95\% CI {[}0.05, 0.71{]}, \emph{p} \textless{} .05, \emph{d} = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, \(\beta\) = -.317, \emph{exp(B)} = 1.37, \emph{SE} = .168, \emph{z} = -1.89, \emph{p} = .059, \emph{d} = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, \(\beta\) = 0.06, \emph{SE} = 0.17, 95\% CI {[}-0.26, 0.39{]}, \emph{p} = 0.700, \emph{d} = .03. A Bayes factor indicated strong evidence for no effect between the two conditions (BF = 7.47).
+For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion. We fit a model with the fixed effect of passage type and random intercepts for participants (\emph{N}=528) and questions (\emph{N}=11): (formula: acc=glmer(auto\_acc\textasciitilde{}passage\_type+(1\textbar{}Participant) + (1\textbar{}Question), data=data, family=\enquote{binomial}). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, \emph{b} = 0.38, \emph{SE} = 0.17, 95\% CI {[}0.05, 0.71{]}, \emph{p} \textless{} .05, \emph{d} = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, \emph{b} = -.317, \emph{exp(B)} = 1.37, \emph{SE} = .168, \emph{z} = -1.89, \emph{p} = .059, \emph{d} = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, \emph{b} = 0.06, \emph{SE} = 0.17, 95\% CI {[}-0.26, 0.39{]}, \emph{p} = 0.700, \emph{d} = .03. A Bayes factor indicated strong evidence of no effect between the two conditions (BF\textsubscript{01} = 7.47).
 
-\textbackslash{}begin\{figure\}
+\begin{figure}
 
-\{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-3-1}
+{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-3-1} 
 
-\}
+}
 
-\textbackslash{}caption\{Passage accuracy as a function of passage type. Violin plots represents the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95\% CIs derived from the glmer model.\}\label{fig:unnamed-chunk-3}
-\textbackslash{}end\{figure\}
+\caption{Passage accuracy as a function of passage type. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\%  CIs derived from the glmer model.}\label{fig:unnamed-chunk-3}
+\end{figure}
 
 \hypertarget{exploratory-analysis}{%
 \subsection{Exploratory Analysis}\label{exploratory-analysis}}
@@ -272,7 +274,9 @@ Words presented in Sans Forgetica did not lead to better recall than words left 
 Examining metamemory judgments, we showed that a passage in Sans Forgetica font does not produce lower judgement of learning compared to unmodified or pre-highlighted passages. Interestingly, individuals gave lower JOLs to pre-highlighted information compared to materials presented in a normal font. One potential reason for pre-highlighted information receiving lower JOLs than the normal passage is that pre-highlighted information served to focus participants attention specific parts of the passage. Given the question, participants might have thought this would hinder them if tested over the passage as a whole.
 
 \hypertarget{experiment-3}{%
-\subsection{Experiment 3}\label{experiment-3}}
+\section{Experiment 3}\label{experiment-3}}
+
+Experiment 1 and 2 looked at cued recall. A recent transfer-appropriate processing (TAP) framework has contextualized when difficulties are desirable and when they are not (McDaniel \& Butler, 2011). Its essence emphasizes the qualitative mismatch of the evoked encoding processes of the applied difficulty (and by the material) with respect to the required retrieval processes of the memory test. Thus, one important aspect postulated by this framework denotes the specific encoding processes stimulated by the type of difficulty applied. For example, generating incomplete word-fragments within a text intensifies the processing of the word cue and the word surroundings that help to identify the word, thus enhancing proposition-specific encoding. In contrast, creating sentence coherency in a text with randomized sentences intensifies the processing of the relationships of information in the text, thus enhancing relational encoding (McDaniel, Hines, Waddill, \& Einstein, 1994). Consequently, the generation-task, which required word-generation, led to improved verbatim recall, but it was not desirable for relational test questions (and vice versa). These differently evoked encoding processes (proposition-specific versus relational) by the generation task predicted different memory effects. Extending this to disfluency, it is possible that the desirable effects of disfluency memory paradigms (e.g., recognition). Indeed, Geller et al. (2018; also see Rosner et al., 2015) found positive effects of disfluency in recognition memory. It is possible then that Sans Forgetica serves to increase familaility with a stimulus, while recollection is unchanged. This is tested in Experiment 3 by employing an old-new recognition test.
 
 The pre-registration form for Experiment 3, which includes hypotheses, planned analyses, exclusion criteria, and sample size justification, can be found at: \url{https://osf.io/ekqh5}.
 
@@ -284,53 +288,62 @@ Sixty participants (\emph{N} = 60) participated for partial completion of course
 \hypertarget{materials-2}{%
 \subsubsection{Materials}\label{materials-2}}
 
-The full set of stimuli can be found at \url{https://osf.io/dsxrc/}
+The full set of stimuli can be found at \url{https://osf.io/dsxrc/}.
 
-Stimuli were 188 nouns taken from Geller et al. (2018). ALl words were from the English Lexicon Project database (Balota et al., 2007). Both frequency (all words were high frequency; mean log HAL frequency = 9.2) and length (all words were four letters in length) were controlled.
+Stimuli were 188 nouns taken from Geller et al. (2018). All words were from the English Lexicon Project database (Balota et al., 2007). Both frequency (all words were high frequency; mean log HAL frequency = 9.2) and length (all words were four letters in length) were controlled.
 
 \hypertarget{design-and-procedure-2}{%
 \section{Design and Procedure}\label{design-and-procedure-2}}
 
-The experiment employed a completly within-subject design. Type of script (Arial vs.~Sans Forgetica) was manipulated within-subjects. ,94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new.
+The experiment employed a within-subject design. The factor of script type (Arial vs.~Sans Forgetica) was manipulated within-subjects. We employed 188 words, 94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new.
 
 Word order was completely randomized, such that Arial and Sans Forgetica words were randomly intermixed in the study phase, and Arial and
 Sans Forgetica old and new words were randomly intermixed in the test phase. All old words were presented at test in the same manner in which they
 were presented at study; that is, Arial words during study were presented in Arial font at test, and Sans Forgetica words during study were presented in Sans Forgetica font at test.
 
-The experiment was created and conducted using the Gorilla Experiment Builder {[}Anwyl-Irvine, Massonnié, Flitton, Kirkham, and Evershed (2020); \url{http://www.gorilla.sc}{]}. The experiment protocol and all tasks are available to preview and copy from Gorilla Open Materials at \url{http://www.gorilla.sc/openmaterials/36778}.
+The experiment was created and conducted using the Gorilla Experiment Builder ((Anwyl-Irvine, Massonnié, Flitton, Kirkham, \& Evershed, 2020); \url{http://www.gorilla.sc}). The experiment protocol and tasks are available to preview and copy from Gorilla Open Materials at \url{https://gorilla.sc/openmaterials/72765}.
 
-During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (\enquote{old}) or had not been presented during study (\enquote{new}). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two boxes displayed on the screen: a box labeled \enquote{old} to indicate that they had named the word during study, and a box labeled \enquote{new} to indicate they did not remember naming the word. Words stayed on the screen until participants gave an \enquote{old} or \enquote{new} response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes
-to complete.
+After reading and signing a consent form, participants first completed the study phase. During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (\enquote{old}) or had not been presented during study (\enquote{new}). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chosee from one of two boxes displayed on the screen: a box labeled \enquote{old} to indicate that they had named the word during study, and a box labeled \enquote{new} to indicate they did not remember naming the word. Words stayed on the screen until participants gave an \enquote{old} or \enquote{new} response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes to complete.
 
 \hypertarget{results-and-dicussion}{%
 \section{Results and dicussion}\label{results-and-dicussion}}
 
-In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory ({\textbf{???}}). In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs.~new)) with fixed effects for actual status of the item (isold; whether the item was old vs.~new) and condition (Arial vs.~Sans Forgetica) and the interaction between the two with random intercepts for participants (\emph{N}=60) and targets (\emph{N}=188): model: oldnew=glmer(sayold\textasciitilde{}isold*condition+(1\textbar{}Participant)+ (1\textbar{}target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition which represents the difference in d prime between the two conditions. In this model, main effects represent bias (C') and the interaction repsents d-prime values.
+In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory (DeCarlo, 1998). In its simplest from, SDT models are probit regressions. To estimate the SDT paramater of interest (d'), we fit a logiftical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs.~new)) with fixed effects for actual status of the item (isold; whether the item was old vs.~new) and condition (Arial vs.~Sans Forgetica) and the interaction between the two with random intercepts for participants (\emph{N}=60) and targets (\emph{N}=188): oldnew=glmer(sayold\textasciitilde{}isold*condition+(1\textbar{}Participant)+ (1\textbar{}target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition. Within this mode, the fixed effect of condition is the difference in c between groups, and the interaction term isold:condition would describe the difference in d' between conditions. We hypothesized that there would be no difference in d' between Sans Forgetica and Arial font.
 
-Hit rates and false alarm rates can be seen in Fig. 3. The results are staright-forward. Indivausls were more biased to say Sans Forgetica stimuli were old, \(\beta\) = 0.26, \emph{SE} = 0..026, 95\% CI {[}0.05, 0.71{]}, \emph{p} \textless{} .005, \emph{d} = 0.21. However, there was no difference in d-prime between the two conditions, \(\beta\) = 0.033, \emph{SE} = 0.05, 95\% CI {[}0.05, 0.71{]}, \emph{p} = .519, \emph{d} = 0.21. The Bayes factor indicated strong evidence that the effect was zero, BF = 13.68.
+Hit rates and false alarm rates can be seen in Fig. 3. The results are staright-forward. Indivausls were more biased to say Sans Forgetica stimuli were old, \emph{b} = 0.26, \emph{SE} = 0.026, 95\% CI {[}0.217, 0.319{]}, \emph{p} \textless{} .005. Consistent with our hypothesis, there was no difference in d-prime between Sans Forgetica and Arial fonts, \emph{b} = 0.033, \emph{SE} = 0.05, 95\% CI {[}-0.138, 0.065{]}, \emph{p} = .519. The Bayes factor (BF\textsubscript{01} = 13.68) indicated strong evidence for no effect.
+
+Similar to experiments 1 and 2, we did not find an effect of Sans Forgetica font on recognition memory.
+
+\begin{figure}
+
+{\centering \includegraphics{SF_Paper_files/figure-latex/unnamed-chunk-5-1} 
+
+}
+
+\caption{Mean proportions of “old” responses for Experiment 3. Violin plots represent the kernal density of average probability (black dots) with the fixed effect mean (white dot) and 95\% CIs derived from the glmer model.}\label{fig:unnamed-chunk-5}
+\end{figure}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-Taken together, these results suggests that Sans Forgetica might not be a desirable difficulty. While it has been reported that Sans Forgetica font can enhance performance (see Eskenazi \& Nix, 2020), we report results from two high-powered experiments arguing against this claim. Specifically, we demonstrated that Sans Forgetica does not enhance recall for cue-target pairs (Experiment 1) or words embedded in sentences from a passage (Experiment 2). This adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance (e.g., Magreehan et al. (2016); Rhodes and Castel (2008); Rhodes and Castel (2009); Rummer et al. (2016); Xie et al. (2018); Yue et al. (2013)), While Sans Forgetica did not produce a memory benefit, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were pre-highlighted, thereby replicating previous results ().
-
-\hypertarget{limitations}{%
-\subsection{Limitations}\label{limitations}}
-
-\hypertarget{transfer-appropriate-processing}{%
-\subsubsection{Transfer-appropriate processing}\label{transfer-appropriate-processing}}
-
-In both experiments we looked at cued recall. A recent transfer-appropriate processing (TAP) framework has contextualized when difficulties are desirable and when they are not (McDaniel \& Butler, 2011). Its essence emphasizes the qualitative mismatch of the evoked encoding processes of the applied difficulty (and by the material) with respect to the required retrieval processes of the memory test. Thus, one important aspect postulated by this framework denotes the specific encoding processes stimulated by the type of difficulty applied. For example, generating incomplete word-fragments within a text intensifies the processing of the word cue and the word surroundings that help to identify the word, thus enhancing proposition-specific encoding. In contrast, creating sentence coherency in a text with randomized sentences intensifies the processing of the relationships of information in the text, thus enhancing relational encoding (McDaniel, Hines, Waddill, \& Einstein, 1994). Consequently, the generation-task, which required word-generation, led to improved verbatim recall, but it was not desirable for relational test questions (and vice versa). These differently evoked encoding processes (proposition-specific versus relational) by the generation task predicted different memory effects. It is thus possible that the Sans Forgetica effect arises only under certain memory paradigms (e.g., free recall or recognition). It is hard to test this however, as the mechanisms that give rise to the effect are unclear and currently there is not strong evidence that the Sans Forgetica effect is reliable. Future research should explore different testing conditions.
+The puprose of the three experiments was to determine whether Sans Forgteica served as a desirble diffculty. The main finding from all three experiments is that Sans Forgetica is not a desirable difficulty. While it has been claimed in unpublushed and published studies (Eskenazi \& Nix, 2020) that Sans Forgetica has a positive effect on memory, we report results from three high-powered memory experiments arguing against this claim. Specifically, we demonstrated that Sans Forgetica does not enhance recall for cue-target pairs (Experiment 1), words embedded in sentences from a passage (Experiment 2), or recognition memory (Experiment 3). This adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance (e.g., Magreehan et al., 2016; Rhodes \& Castel, 2008, 2009; Rummer et al., 2016; Xie et al., 2018; Yue et al., 2013). Nonsurprisngly, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were pre-highlighted (Experiment 2).
 
 \hypertarget{processing-difficulty}{%
 \subsubsection{Processing Difficulty}\label{processing-difficulty}}
 
-One criticism put forth when examining perceptual disfluency is that studies do not objectively test (e.g., by using RTs) that stimuli are in fact perceptually disfluent {[}see Geller et al. (2018)). Given that the two experiments contained herein were presented on-line using the Qualtircs platform, it was difficult to test this assumption. However, recently, a eye-tracking study by (Eskenazi \& Nix, 2020) provided evidence that Sans Forgetica is perceptually disfluent. In their study, as better spellers had longer gaze duration and spent more total time on words presented in Sans Forgetica than poor spellers. This suggests that Sans Forgetica is perceptually disfluent as long as you are a good speller.
+We did not explicly test processing difficulty in the three studies. It could be that the failure to observe an effect of Sans Forgetica font is becasue it is not perceptually disfluent. Although not pre-registered, Experiments 2 and 3 included subjective and objective measures of disfluency that can speak to this question. In Experiment 2, participnats elicited JOLs after reading each passage. JOLs provide a subjetive assessment of disfluncy. Perceptually dsiflunet stimuli usually elicit lower JOLs{[}Geller et al. (2018); Xie2018{]}. In Experiment 2, Sans Forgetica font did not elicit lower JOLs. In Experiment 3, we collected self-paced reading times for each stimulus. Self-paced reading times have been used as an objective proxy for disfluency (see Carpenter \& Geller, 2020). Looking at the difference in self-paced reading times, we did not a difference between Sans Forgetica (\emph{M} = 1481 ms, \emph{SD} = 1750 ms) and Arial (\emph{M} = 1500 ms, \emph{SD} = 2344 ms), \emph{t}(59) = 0.469, \emph{p} = 0.641. This can be taken as evidence that Sans Forgetica is not perceptually disfluent {[}but see Eskenazi2020{]}. This could explain why we did not observe an effect of Sans Forgetica on memory acorss three experiments.
+
+\hypertarget{limitations}{%
+\subsection{Limitations}\label{limitations}}
+
+There are a number of boundary conditions or moderating factors that determine whether perceptual disflunecy is desirable or not (Eskenazi \& Nix, 2020, @Geller2018, Geller \& Still, 2018). This makes it impossible to test ever single moderating factor in a single paper. We concede that it is possible that the Sans Forgetica effect does have positive effects, but is limited to a certain set of conditons. For instance, (Eskenazi \& Nix, 2020) showed that Sans Forgetica can have a desirbale effect, but only if you are are a good speller. Better spellers are thought to have a more precise mental lexicon which allows for more efficent processing at multiple levels of representaion (i.e,, orthographic, phonological, and semantic; Perfetti, 2007). When conforonted with perceptual degradiation, better spellers would be able to process a stumuliat a deeper level, which could give rise to memory beneifts. It is unclear how this could explain some of the results obatined herein. For instance, in Experiment 3, we used high-frequency words that are well known. Nonetheless, future studies should examine spelling ability as a potential moderating factor into the perceptual disfluency effect.
+
+It is also possible that there is an effect of Sans Forgetica, but the effect size is smaller than we could detect across our three studies. We powered our studies to detect a medium-sized effect (\emph{d}=.35). If the Sans Forgetica effect is small, it is not clear what the eductaional use for it would be. If more research is published, a meta-analysis can be conducted to determine the true effect size and any moderating factors of the Sans Forgetica effect.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-The two experiments herein present evidence against claims put forth by its creators and the media {[}also see Eskenazi and Nix (2020)). We concede that our conclusions of no effect might be a bit premature. It is possible that there is an effect of Sans Forgetica, but the effect size might be smaller than we could detect across our two studies. We powered our studies to detect a medium-sized effect. Further, as noted by (Eskenazi \& Nix, 2020) and others {[}Geller2018; Geller2019{]} there are important moderating factors of the disfluency effect that should be considered. Once more research is published, a meta-analysis can be conducted to determine the effect size and any moderating factors of the Sans Forgetica effect. Regardless, it is our conclusion that Sans Forgetica lives up its name. Students looking to remember more and forget less should use other \enquote{power tools} shown to enhance learning.
+The three experiments herein present evidence against claims put forth by its creators and the media {[}also see Eskenazi and Nix (2020)) that Sans Forgetica font can boost memory. We reccomend caution in using Sans Forgetica font. Students looking to remember more and forget less should use other \enquote{power tools} shown to enhance learning. It is our conclusion that Sans Forgetica lives up to its name and is forgetible.
 
 \newpage
 
@@ -369,11 +382,17 @@ Bürkner, P.-C. (2018). Advanced Bayesian multilevel modeling with the R package
 \leavevmode\hypertarget{ref-Carpenter2016}{}%
 Carpenter, S. K. (2016). Spacing effects on learning and memory. In \emph{The curated reference collection in neuroscience and biobehavioral psychology} (pp. 465--485). Elsevier Science Ltd. \url{https://doi.org/10.1016/B978-0-12-809324-5.21054-7}
 
+\leavevmode\hypertarget{ref-Carpenter2020}{}%
+Carpenter, S. K., \& Geller, J. (2020). Is a picture really worth a thousand words? Evaluating contributions of fluency and analytic processing in metacognitive judgements for pictures in foreign language vocabulary learning. \emph{Quarterly Journal of Experimental Psychology}, \emph{73}(2), 211--224. \url{https://doi.org/10.1177/1747021819879416}
+
 \leavevmode\hypertarget{ref-Carpenter2006}{}%
 Carpenter, S. K., Pashler, H., \& Vul, E. (2006). What types of learning are enhanced by a cued recall test? \emph{Psychonomic Bulletin and Review}, \emph{13}(5), 826--830. \url{https://doi.org/10.3758/BF03194004}
 
 \leavevmode\hypertarget{ref-Chinn2000}{}%
 Chinn, S. (2000). A simple method for converting an odds ratio to effect size for use in meta-analysis. \emph{Statistics in Medicine}, \emph{19}(22), 3127--3131. \href{https://doi.org/10.1002/1097-0258(20001130)19:22\%3C3127::AID-SIM784\%3E3.0.CO;2-M}{https://doi.org/10.1002/1097-0258(20001130)19:22\textless{}3127::AID-SIM784\textgreater{}3.0.CO;2-M}
+
+\leavevmode\hypertarget{ref-DeCarlo1998}{}%
+DeCarlo, L. T. (1998). Signal Detection Theory and Generalized Linear Models. \emph{Psychological Methods}, \emph{3}(2), 186--205. \url{https://doi.org/10.1037/1082-989X.3.2.186}
 
 \leavevmode\hypertarget{ref-Diemand-Yauman2011}{}%
 Diemand-Yauman, C., Oppenheimer, D. M., \& Vaughan, E. B. (2011). Fortune favors the: Effects of disfluency on educational outcomes. \emph{Cognition}, \emph{118}(1), 111--115. \url{https://doi.org/10.1016/j.cognition.2010.09.012}
@@ -393,17 +412,11 @@ French, M. M., Blood, A., Bright, N. D., Futak, D., Grohmann, M. J., Hasthorpe, 
 \leavevmode\hypertarget{ref-Geller2018}{}%
 Geller, J., Still, M. L., Dark, V. J., \& Carpenter, S. K. (2018). Would disfluency by any other name still be disfluent? Examining the disfluency effect with cursive handwriting. \emph{Memory and Cognition}, \emph{46}(7), 1109--1126. \url{https://doi.org/10.3758/s13421-018-0824-6}
 
-\leavevmode\hypertarget{ref-Hoffman2007}{}%
-Hoffman, L., \& Rovine, M. J. (2007). Multilevel models for the experimental psychologist: Foundations and illustrative examples. \emph{Behavior Research Methods}, \emph{39}(1), 101--117. \url{https://doi.org/10.3758/BF03192848}
-
 \leavevmode\hypertarget{ref-Kornell2016}{}%
 Kornell, N., \& Vaughn, K. E. (2016). How Retrieval Attempts Affect Learning: A Review and Synthesis. \emph{Psychology of Learning and Motivation - Advances in Research and Theory}, \emph{65}, 183--215. \url{https://doi.org/10.1016/bs.plm.2016.03.003}
 
 \leavevmode\hypertarget{ref-Lakens2014}{}%
 Lakens, D., \& Evers, E. R. K. (2014). Sailing From the Seas of Chaos Into the Corridor of Stability: Practical Recommendations to Increase the Informational Value of Studies. \emph{Perspectives on Psychological Science : A Journal of the Association for Psychological Science}, \emph{9}(3), 278--292. \url{https://doi.org/10.1177/1745691614528520}
-
-\leavevmode\hypertarget{ref-Locker2007}{}%
-Locker, L., Huffman, L., \& Bovaird, J. A. (2007). On the use of multilevel modeling as an alternative to items analysis in psycholinguistic research. \emph{Behavior Research Methods}, \emph{39}(4), 723--730. \url{https://doi.org/10.3758/BF03192962}
 
 \leavevmode\hypertarget{ref-Magreehan2016}{}%
 Magreehan, D. A., Serra, M. J., Schwartz, N. H., \& Narciss, S. (2016). Further boundary conditions for the effects of perceptual disfluency on judgments of learning. \emph{Metacognition and Learning}, \emph{11}(1), 35--56. \url{https://doi.org/10.1007/s11409-015-9147-1}
@@ -450,6 +463,12 @@ Xie, H., Zhou, Z., \& Liu, Q. (2018). Null Effects of Perceptual Disfluency on L
 \leavevmode\hypertarget{ref-Yue2013}{}%
 Yue, C. L., Castel, A. D., \& Bjork, R. A. (2013). When disfluency is-and is not-a desirable difficulty: The influence of typeface clarity on metacognitive judgments and memory. \emph{Memory and Cognition}, \emph{41}(2), 229--241. \url{https://doi.org/10.3758/s13421-012-0255-8}
 
+\leavevmode\hypertarget{ref-Yue2014}{}%
+Yue, C. L., Storm, B. C., Kornell, N., \& Bjork, E. L. (2014). Highlighting and Its Relation to Distributed Study and Students' Metacognitive Beliefs. \emph{Educational Psychology Review}, \emph{27}(1), 69--78. \url{https://doi.org/10.1007/s10648-014-9277-z}
+
 \endgroup
+
+\clearpage
+\theendnotes
 
 \end{document}
