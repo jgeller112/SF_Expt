@@ -75,73 +75,47 @@ tokens[is.na(tokens)] <- 0 #change all NAs to 0
 
 write.csv(tokens, file="memory_acc_gw_final.csv")
 
-full_model=glmer(auto_acc~FL_149_DO+(1|ResponseId) + (1|Question), data=tokens, family="binomial")
-#fit full model
 
-ef1 <- effect("FL_149_DO", full_model) #take final glmer model 
-summary(ef1)
+ground <- qualtRics::read_survey(here("Expt2_Data", "memory_acc_gw_final.csv"))
+
+ground_change <- ground %>%
+  mutate(Passage=ifelse(FL_149_DO=="Highlight", "Pre-highlighted", ifelse(FL_149_DO=="Passage", "Sans Forgetica", "Unmodified")))
+
+ground_change_agg<-ground_change %>%
+  group_by(ResponseId, Passage) %>%
+  summarise(mean_acc=mean(auto_acc))
+
+ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-highlighted", "Unmodified", "Sans Forgetica"))     
+
+#data was collected until the last day of the fall semester 2019 Decemeber13th. 
+# loading needed libraries
+full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+
+prior<-prior(normal(0,1), class="b") # weakly informed prior on the coefficents
+
+#fit the brms model
+groundbrms=brm(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family=bernoulli(link="logit"), prior=prior, sample_prior = TRUE,  cores = 4) 
+
+
+#get BF for interaction which is difference in dprime from brms model
+SansvsUnmod=hypothesis(groundbrms, 'PassageSF + PasageUnmodified = 0')
+#get means and CIs
+means<-estimate_means(full_model)
+
+ef1 <- effect("Passage", full_model) #take final glmer model 
 x1 <- as.data.frame(ef1)
+#plot
+p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
+  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
+  theme_bw(base_size=14)+
+  labs(y="Proportion Recalled on Test", x="Passage Type") + 
+  theme(legend.position = "none") + 
+  ggplot2::coord_cartesian(ylim = c(0, 1)) + 
+  theme(axis.text=bold) 
 
-bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
-p<- ggplot(x1, aes(FL_149_DO, fit, fill=FL_149_DO))+ 
-  geom_bar(stat="identity", position="dodge") + 
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="", x="Passage Type") + 
-  scale_fill_manual(values=c("grey", "black", "yellow"))+
-  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
-
-
-
-
-source("https://gist.githubusercontent.com/benmarwick/2a1bb0133ff568cbe28d/raw/fb53bd97121f7f9ce947837ef1a4c65a73bffb3f/geom_flat_violin.R")
-
-g <- 
-  ggplot(data = repalce, 
-         aes(x = Passage, y = acc, fill = Passage)) +
-  geom_flat_violin(position = position_nudge(x = .2, y = 0), alpha = .8) +
-  geom_point(aes(y = acc, color = Passage), 
-             position = position_jitter(width = .15), size = .5, alpha = 0.8) +
-  geom_boxplot(width = .1, outlier.shape = NA, alpha = 0.5) +
-  expand_limits(x = 4.00) +
-  guides(fill = FALSE) +
-  guides(color = FALSE) +
-  scale_color_brewer(palette = "Spectral") +
-  scale_fill_brewer(palette = "Spectral") +
-  coord_flip() + # flip or not
-  theme_bw() + labs(x="Passage Type", y="Accuracy") + ggtitle("Passage Performance Across Manipualtion Type")
-  raincloud_theme
-
-g
-
-ggsave("SF_raincloud.png", width=8, height=4, dpi=500, type="cairo")
-
-
-
-#Bayesian
-
-dis=brm(acc~condition*dis+ (1+dis|ResponseID)+(1+condition*dis|target), data=gen, family=bernoulli(), prior=prior1, sample_prior=TRUE)
-
-model ran
-
-```
-c_color_main <- pairs(emmeans(dis, ~ dis))
-
-c_color_cond <- pairs(emmeans(dis, ~ condition))
-
-em_color_simple<-emmeans(dis, ~dis*condition)
-
-
-pairs(em_color_simple, by = "condition") #
-
-c_color_all <- rbind(c_color_main,color_cond,
-                     c_color_shape_interaction)
-c_color_shape_interaction <- contrast(em_color_simple, interaction = c("pairwise","pairwise"))
-
-bayestestR::describe_posterior(c_color_all,
-                               estimate = "median", dispersion = TRUE,
-                               ci = .9, ci_method = "hdi",
-                               test = c("bayesfactor"),
-                               bf_prior = dis)
-
-# get the BF for model with and without interaction. Wealk informed prior Gleman
 
 
