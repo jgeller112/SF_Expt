@@ -1,5 +1,7 @@
 library(janitor)
-
+library(here)
+library(brms)
+library(lme4)
 
 here('Expt3_data' 'Gorilla_raw_data')
 
@@ -22,14 +24,9 @@ dataset <-
 dd<-dataset %>% filter(Zone.Type=="response_button_text")
 #response as character
 dd$Response<-as.character(dd$Response)
-
+#get Rts
 rt<-dataset %>% janitor::clean_names(.) %>%  filter(zone_type=="continue_button", display=="study") # get RT
-
-
 rt$reaction_time<-as.numeric(rt$reaction_time)
-
-
-
 rt1<- rt %>% 
   group_by(Participant.Private.ID , condition) %>% 
   summarise(mean=mean(Reaction.Time, na.rm=TRUE))
@@ -84,8 +81,6 @@ sdt <- sdt %>%
          dprime = zhr-zfa,
          crit = -zfa)
 
-p<- ggplot(dd, aes(condition, Propability, fill=condition))+ geom_bar(stat="identity", position="dodge") + geom_errorbar(aes(ymin=CI_low, ymax=CI_high), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="", x="Semantic Type", fill="Relatedness") + scale_fill_manual(values=c("grey", "black"))+theme(axis.text=bold)
-ggsave('../results/fig1.png', p, width=12, height=6)
 
 
 p1<- ggplot(sdr, aes(condition, dprime, fill=condition))+
