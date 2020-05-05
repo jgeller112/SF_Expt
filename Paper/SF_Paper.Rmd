@@ -95,7 +95,7 @@ Participants were presented with 22 weakly related cue-target pairs taken from @
 
 Disfluency (fluent vs. disfluent) was manipulated within-subjects and within-items and difficulty type (Generation vs. Sans Forgetcia) was manipulated between participants. For half the participants, targets were presented in Sans Forgetica while the other half were presented in Arial font; for the other half of participants, targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (Arial font). After a short 2 minute distraction task (anagram generation), they completed a cued recall test. During cued recall, participants were presented 24 cues one at a time and asked to provide the target word. After they were thanked and debriefed. 
 
-Participants completed the experiment on-line via the Qualtrics survey platform hosted on Amazon Mechanical Turk. After reading and consenting, participants were randomly assigned to one of two conditions: The generation condition or the Sans Forgetica condition. Participants were told to study word pairs so that later they could recall second word (target) when cued with the first word (cue). The experiment began with the presentation of 22 word pairs, shown one at a time, for 2 seconds each. The cue word always appeared on the left and the target always on the right. Immediately proceeding this, participants did a short 2 minute distraction task (anagram generation). Finally participants completed a cued recall test. During cued recall, participants were presented 22 cues one at a time and asked to provide the target word. Responses were self-paced. Once completed, participants clicked on a button to advance to the next question. At the end, participants were asked several demographic questions.
+Participants completed the experiment on-line via the Qualtrics survey platform hosted on Amazon Mechanical Turk. After reading and consenting, participants were randomly assigned to one of two conditions: The generation condition or the Sans Forgetica condition. Participants were told to study word pairs so that later they could recall the second word (target) when cued with the first word (cue). The experiment began with the presentation of 22 word pairs, shown one at a time, for 2 seconds each. The cue word always appeared on the left and the target always on the right. Immediately proceeding this, participants did a short 2 minute distraction task (anagram generation). Finally, participants completed a cued recall test. During cued recall, participants were presented 22 cues one at a time and asked to provide the target word. Responses were self-paced. Once completed, participants clicked on a button to advance to the next question. At the end, participants were asked several demographic questions.
 
 ### Scoring
 
@@ -118,6 +118,7 @@ library(lme4)
 library(ggpol)
 library(knitr)
 library(here)
+library(BayesFactor)
 ### To install without vignettes (faster):
 devtools::install_github("rvlenth/emmeans")
 library(emmeans)
@@ -137,31 +138,56 @@ ex1_agg <- sfgen %>%
   group_by(ResponseID, condition, dis)%>%
   summarise(mean_acc=mean(acc))
 
+
+a1 <- aov_ez("ResponseID", "mean_acc", ex1_agg, 
+             between = c("condition"), within=c("dis")) # mixed
+
+summary(a1)
+
 x_label=c("Disfluent", "Fluent")
 
-full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+ls1 <-emmeans(a1, specs="dis", by="condition") 
+ls1<-as.data.frame(ls1)
+
+#BayesFactor evidence for Full (Main + Inter) vs. Main Effects model
+
+bf = anovaBF(mean_acc ~ condition*dis + ResponseID, ex1_agg, 
+             whichRandom="ResponseID")
+
+b1comp=bf[4] /bf[3]
+
+#Bayes factor analysis >100
+#--------------
+#[1] condition + dis + condition:dis + ResponseID : 12585.92 ±4.67%
+
+#Against denominator:
+ # mean_acc ~ condition + dis + ResponseID 
+---
+#Bayes factor type: BFlinearModel, JZS
+  
+#full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), #family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 
 
-means<-estimate_means(full_model)
+#eans<-estimate_means(full_model)
 
 
-ef1 <- effect("condition:dis", full_model) #take final glmer model 
-x1 <- as.data.frame(ef1)
+#ef1 <- effect("condition:dis", full_model) #take final glmer model 
+#x1 <- as.data.frame(ef1)
 
 bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 
-p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
-  geom_bar(stat="identity", position="dodge") + 
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall", x="Disfluency") + 
-  theme(legend.position = "none") +
- scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
+#p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
+ # geom_bar(stat="identity", position="dodge") + 
+ # geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall", x="Disfluency") + 
+#  theme(legend.position = "none") +
+# scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
 
 p1<- ggplot(ex1_agg, aes(dis, mean_acc, fill=dis))+ facet_grid(~condition)+ 
   geom_violin() + 
   geom_jitter2(width=0.11, alpha=.5)+ 
-  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
-  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
+  geom_line(data=ls1,aes(y=emmean, group=1), size=1)+ 
+  geom_pointrange(data=ls1, aes(y=emmean, ymin=lower.CL, ymax=upper.CL), size=1, color="white")+ 
   scale_x_discrete(labels= x_label)+
   theme_bw(base_size=14)+labs(y="Proportion Recalled on Final Test", x="Disfluency") + 
   theme(legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold) 
@@ -213,7 +239,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 For congruence with Experiment 1, we fit a logistic mixed model in a similar fashion. We fit a model with the fixed effect of passage type and random intercepts for participants (*N*=528) and questions (*N*=11): (formula: acc=glmer(acc~passage_type+(1|Participant) + (1|Question), data=data, family="binomial"). Passage type was coded using treatment coding. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *b* = 0.38, *SE* = 0.17, 95% CI [0.05, 0.71], *p* < .05, *d* = 0.21, and were marginally better remembered than sentences presented in Sans Forgetcia, *b* = -.317, *exp(B)* = 1.37, *SE* = .168, *z* = -1.89, *p* = .059, *d*  = -0.18. Critically, there was no difference between sentences presented normally and in Sans Forgetcia, *b* = 0.06, *SE* = 0.17, 95% CI [-0.26, 0.39], *p* = 0.700, *d* = .03. A Bayes factor indicated strong evidence of no effect between the two conditions (BF~01~ = 7.47). 
 
 
-```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Probablity of recall as a function of passage type. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\\%  CIs derived from the glmer model.", messages=FALSE, echo=FALSE, warning=FALSE,  results="asis"}
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Probablity of recall as a function of passage type. Violin plots represent the kernal density of avearge accuracy(black dots) with the fixed effect mean (white dot) and 95\\%  CIs derived from the ANOVA model.", messages=FALSE, echo=FALSE, warning=FALSE,  results="asis"}
 library(qualtRics)
 library(tidyverse)
 library(afex)
@@ -230,12 +256,29 @@ ground_change <- ground %>%
 ground_change_agg<-ground_change %>%
   group_by(ResponseId, Passage) %>%
   summarise(mean_acc=mean(auto_acc))
-            
+
+#Classic ANOVA
+
+a1 <- aov_ez("ResponseId", "mean_acc", ground_change_agg, 
+             between = c("Passage")) # one way
+
+ls1 <- emmeans(a1, specs = "Passage") # get the simple effects test for signifcant interaction. 
+
+
+
+flex1=pairs(ls1)
+
+effsexp2=eff_size(flex1, sigma = sigma(a1$lm), edf = 525, method = "identity")
+
+ls1<-as.data.frame(ls1)
+
 ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-highlighted", "Unmodified", "Sans Forgetica"))     
 
+
+#GLMER model
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 # loading needed libraries
-full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+#full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_change, family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 #fit full model
 
 #m2<-read_rds(here("Brms", "brms_gw.rds.gz"))
@@ -244,26 +287,26 @@ full_model=glmer(auto_acc~Passage+(1|ResponseId) + (1|Question), data=ground_cha
 
 #c_main1=plot(c_main, horizontal =FALSE, colors="darkgreen")  + labs(x="Passage Type", y= "Probability Answering Question") + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
 
-means<-estimate_means(full_model)
+#means<-estimate_means(full_model)
 
-ef1 <- effect("Passage", full_model) #take final glmer model 
-x1 <- as.data.frame(ef1)
+#ef1 <- effect("Passage", full_model) #take final glmer model 
+#x1 <- as.data.frame(ef1)
 
-bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
-p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
-  geom_bar(stat="identity", position="dodge") + 
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall ", x="Passage Type") + 
-  scale_fill_manual(values=c("grey", "yellow", "black"))+
-  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
+#old <- element_text(face = "bold", color = "black", size = 14) #axis bold
+#p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
+#  geom_bar(stat="identity", position="dodge") + 
+#  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall ", x="Passage Type") + 
+ # scale_fill_manual(values=c("grey", "yellow", "black"))+
+#  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
 
 p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
   geom_violin() + 
   geom_jitter2(width=0.11, alpha=.5)+ 
-  geom_line(data=means,aes(y=Probability, group=1), size=1)+ 
-  geom_pointrange(data=means, aes(y=Probability, ymin=CI_low, ymax=CI_high), size=1, color="white")+ 
+  geom_line(data=ls1,aes(y=emmean, group=1), size=1)+ 
+  geom_pointrange(data=ls1, aes(y=emmean, ymin=lower.CL, ymax=upper.CL), size=1, color="white")+ 
   theme_bw(base_size=14)+
-  labs(y="Proportion Recalled on Test", x="Passage Type") + 
+  labs(y="Pr Recall", x="Passage Type") + 
   theme(legend.position = "none") + 
   ggplot2::coord_cartesian(ylim = c(0, 1)) + 
   theme(axis.text=bold) 
@@ -285,6 +328,14 @@ jols=ground %>%
   ungroup() %>%
   dplyr::rename(Passage="FL_149_DO") %>% 
   mutate(Passage=ifelse(Passage=="Highlight", "Pre-highlighted",     ifelse(Passage=="Passage", "Sans Forgetica", "Unmodified")))
+
+
+ground_change_agg<-ground %>%
+  group_by(ResponseId, Passage) %>%
+  summarise(mean_acc=mean(auto_acc))
+
+
+
 
 jols$Passage <- factor(jols$Passage, level=c("Pre-highlighted", "Unmodified", "Sans Forgetica"))     
 
@@ -363,9 +414,9 @@ After reading and signing a consent form, participants first completed the study
 
 # Results and discussion
 
-In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT parameter of interest (d'), we fit a logistical mixed model (with a probit link) to participant responses (their actual response (sayold; whether they responded with old vs. new)) with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition. Within this mode, the fixed effect of condition is the difference in c between groups, and the interaction term isold:condition would describe the difference in d’ between conditions. We hypothesized that there would be no difference in d' between Sans Forgetica and Arial font. 
+In recognition memory, signal detection theory has proven to be a very informative and efficient approach to analyzing binary accuracy data. However, considering the deficiency in precision and power in traditional analyses compared to mixed effects analyses, it is worth considering a generalized linear mixed effect approach to signal detection theory [@DeCarlo1998]. In its simplest from, SDT models are probit regressions. To estimate the SDT parameter of interest (d'), we fit a logistical mixed model (with a probit link) to participant responses (sayold; whether participants said "old" or "new") with fixed effects for actual status of the item (isold; whether the item was old vs. new) and condition (Arial vs. Sans Forgetica) and the interaction between the two with random intercepts for participants (*N*=60) and targets (*N*=188): oldnew=glmer(sayold~isold*condition+(1|Participant)+ (1|target)). The variables isold and condition were contrast coded (0.5, -0.5) to allow for the estimation of the interaction between isold and condition. Within this model, the fixed effect of condition is the difference in c between groups, and the interaction term isold:condition would describe the difference in d’ between conditions. We hypothesized that there would be no difference in d' between Sans Forgetica and Arial font. 
 
-Hit rates and false alarm rates can be seen in Fig. 3. The results are straight-forward. Individuals were more biased to say Sans Forgetica stimuli were old, *b* = 0.26, *SE* = 0.026, 95% CI [0.217, 0.319], *p* < .005. Consistent with our hypothesis, there was no difference in d-prime between Sans Forgetica and Arial fonts, *b* = 0.033, *SE* = 0.05, 95% CI [-0.138, 0.065], *p* = .519. The Bayes factor (BF~01~ = 13.68) indicated strong evidence for no effect. 
+Hit rates and false alarm rates can be seen in Fig. 3. The results are straight-forward. Individuals were more biased to say Sans Forgetica stimuli were old, *b* = 0.26, *SE* = 0.026, 95% CI [0.217, 0.319], *p* < .005. Consistent with our hypothesis, there was no difference in d' between Sans Forgetica and Arial fonts, *b* = 0.033, *SE* = 0.05, 95% CI [-0.138, 0.065], *p* = .519. There was strong evidence for no effect (BF~01~ = 13.68). 
 
 Similar to experiments 1 and 2, we did not find an effect of Sans Forgetica font on recognition memory. 
 
@@ -378,7 +429,7 @@ data=here('Expt3_data', 'Gorilla_raw_data', 'ex3_recog.csv')
 
 ex3=read_csv(data)
 
-oldnewglme=glmer(sayold~old.new*condition+(1|Participant.Private.ID)+ (1|Stims), data=ex3, family=binomial(link="probit"))
+oldnewglme=brm(sayold~isold*condition1+(1+isold*condition|Participant.Private.ID)+ (1+isold*condition|Stims), data=ex3, family=bernoulli(link="probit"))
 
 
 means<-estimate_means(oldnewglme)
@@ -443,16 +494,24 @@ p1<- ggplot(sdt1, aes(Condition, value, fill=Condition))+
   ggplot2::coord_cartesian(ylim = c(0, 1)) + 
   theme(axis.text=bold) 
 
-#oldnew=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex1, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4)
+
+#oldnew=brm(glmm2, data=ex3, family=bernoulli(link="identity"), prior=Priors, sample_prior = TRUE,  cores=6, inits = 0, control = list(adapt_delta = .9), iter=3000)
 
 p1
 
 
 ```
 
+
+```{r}
+library(sjPlot)
+
+tab_model(oldnewglme)
+
+```
 # Discussion
 
-The purpose of the three experiments was to determine whether Sans Forgetica served as a desirable difficulty. The main finding from all three experiments is that Sans Forgetica is not a desirable difficulty. While it has been claimed in unpublished and published studies [@Eskenazi2020] that Sans Forgetica has a positive effect on memory, we report results from three high-powered memory experiments arguing against this claim. Specifically, we demonstrated that Sans Forgetica does not enhance recall for cue-target pairs (Experiment 1), words embedded in sentences from a passage (Experiment 2), or recognition memory (Experiment 3). This adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance [e.g., @Magreehan2016; @Rhodes2008; @Rhodes2009; @Rummer2016; @Xie2018; @Yue2013]. Nonsurprisngly, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were pre-highlighted (Experiment 2).
+The purpose of the three experiments was to determine whether Sans Forgetica served as a desirable difficulty. The main finding from all three experiments is that Sans Forgetica is not a desirable difficulty. While it has been claimed in unpublished and published studies [@Eskenazi2020] that Sans Forgetica has a positive effect on memory, we report results from three high-powered memory experiments arguing against this claim. Specifically, we demonstrated that Sans Forgetica does not enhance recall for cue-target pairs (Experiment 1), words embedded in sentences from a passage (Experiment 2), or recognition memory (Experiment 3). This adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance [e.g., @Magreehan2016; @Rhodes2008; @Rhodes2009; @Rummer2016; @Xie2018; @Yue2013]. Nonsurprisingly, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were pre-highlighted (Experiment 2).
 
 ## Limitations
 
