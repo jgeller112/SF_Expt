@@ -18,6 +18,7 @@ library(hunspell)
 library(tidytext)
 library(bayestestR)
 library(brms)
+library(lrd)
 
 #Read in each qualtrics file. For SF and Generate conditions, we used two counterbalanced lists so each cue-target pair was presented in the fluent (read) and disfluent conditions (generate or SF font) across participants. 
 
@@ -121,81 +122,94 @@ gen12$dis <- ifelse(gen12$cond=="flu", "fluent", "disfluent")
 sf12$condition <- "Sans Forgetica"
 
 
-
 #We can Combine all the lists, but before we run our statistical analysis, we need to remove two cue-target pairs. There was an error in the generate CB 1 list wherein *train-plane* was presented twice during encoding and *rifle-range* was not presented at all. 
 sfgen<-rbind(gen12, sf12)
 
+
+
+
+
+# Compute percent match
+
+matched = percent_match(sfgen$Response, key = sfgen$key, id = sfgen$ResponseID)
+
+score_recall(matched, set.cutoff = .65) 
+
+
 #auto spellcheck
-# Extract a list of words
-tokens <- unnest_tokens(tbl = sfgen, output = token, input = answer)
-wordlist <- unique(tokens$token)
-# Spell check the words
-spelling.errors <- hunspell(wordlist)
-spelling.errors <- unique(unlist(spelling.errors))
-spelling.sugg <- hunspell_suggest(spelling.errors, dict = dictionary("en_US"))
+#analyze and plot 
+sfgen=read_csv(here::here("Expt1_data", "sfgenerate_final.csv")) # read in corrected csv
+
+ex1=sfgen %>% 
+  dplyr::mutate(difftype = case_when( 
+    condition == "Generate" ~ 0.5, 
+    condition=="Sans Forgetica" ~  -0.5, 
+  ), disflu= case_when (
+    dis == "fluent" ~ 0.5, 
+    dis== "disfluent" ~ -0.5))
+
+ex1_agg <- sfgen %>%
+  dplyr::group_by(id, condition, dis)%>%
+  dplyr::summarise(mean_acc=mean(Scored))
 
 
-# Pick the first suggestion
-spelling.sugg <- unlist(lapply(spelling.sugg, function(x) x[1]))
-spelling.dict <- as.data.frame(cbind(spelling.errors,spelling.sugg))
-spelling.dict$spelling.pattern <- paste0("\\b", spelling.dict$spelling.errors, "\\b")
-# Write out spelling dictionary
+a1 <- aov_ez("id", "mean_acc", ex1_agg, 
+             between = c("condition"), within=c("dis")) # mixed
 
-# Parse features
-tokens <- unnest_tokens(tbl = comb, output = token,
-                        input = answer, token = stringr::str_split,
-                        pattern = " |\\, |\\.|\\,|\\;")
+summary(a1)
 
-tokens$acc <-ifelse(tokens$wird==tokens$token, 1, 0)
-
-#error in expt these targets were not presented
-
-sfgen1<- tokens %>% 
-  dplyr::filter(target!="plane", target!="rifle")
-
-sfgen1$acc <-ifelse(sfgen1$target==sfgen1$token, 1, 0)
-#exact match accuracy
-sfgen1[is.na(sfgen1)] <- 0 #change all NAs to 0 
-## get aggreagte recall per subject, condition, and dis
-
-full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (0+dis+condition|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
-
-write.csv(tokens, file="sfgenerate_final.csv")
-
-ef1 <- effect("condition:dis", full_model) #take final glmer model 
-summary(ef1)
-x1 <- as.data.frame(ef1)
-
-bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
-p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
-  geom_bar(stat="identity", position="dodge") + 
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Proporition Recalled on Final Test", x="Disfluency") + 
-  theme(legend.position = "none") +
-  scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1))
-
-# run full bayesian model 
-
-prior<-prior(normal(0,1), class="b") # weakly informed
+x_label=c("Disfluent", "Fluent")
 
 
-dis=brm(acc~difftype*disflu+ (1+disflu|ResponseID)+(1+difftype*disflu|target), data=ex1, family=bernoulli(), prior=prior, sample_prior=TRUE, cores = 4)
 
-#run brms model
-c_dis_main <- pairs(emmeans(dis, ~ dis)) # get marginal for dis
+sfgen1=summarySEwithin(data = ex1_agg, measurevar = "mean_acc",
+                       withinvars = "dis", betweenvars = "condition", idvar = "id")
 
-em_dis_simple<-emmeans(dis, ~dis*condition) # interaction
+#BayesFactor evidence for Full (Main + Inter) vs. Main Effects model
 
-pairs(em_dis_simple, by = "condition") #
+#bf = anovaBF(mean_acc ~ condition*dis + ResponseID, ex1_agg, 
+#       whichRandom="ResponseID")
 
-c_dis_condition_interaction <- contrast(em_dis_simple, interaction = c("pairwise","pairwise"))
+#b1comp=bf[4] /bf[3]
 
-c_dis_all <- rbind(c_dis_main,
-                   c_dis_condition_interaction)
+#Bayes factor analysis >100
+#--------------
+#[1] condition + dis + condition:dis + ResponseID : 12585.92 ±4.67%
 
-bayestestR::describe_posterior(c_color_all,
-                               estimate = "median", dispersion = TRUE,
-                               ci = .9, ci_method = "hdi",
-                               test = c("bayesfactor"),
-                               bf_prior = dis)
+#Against denominator:
+# mean_acc ~ condition + dis + ResponseID 
+#---
+#Bayes factor type: BFlinearModel, JZS
 
-# get the BF for model with and without interaction.
+#full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (1+dis+condition|target), data=sfgen, contrasts = list(dis="contr.sum", condition="contr.sum"), #family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
+
+
+#eans<-estimate_means(full_model)
+
+
+#ef1 <- effect("condition:dis", full_model) #take final glmer model 
+#x1 <- as.data.frame(ef1)
+
+#axis bold
+
+#p<- ggplot(x1, aes(dis, fit, fill=dis))+ facet_grid(~condition)+ 
+# geom_bar(stat="identity", position="dodge") + 
+# geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall", x="Disfluency") + 
+#  theme(legend.position = "none") +
+# scale_fill_manual(values=c("grey", "black")) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
+
+bold <- element_text(face = "bold", color = "black", size = 14) 
+p1<-ggplot(ex1_agg, aes(dis, mean_acc, fill=dis))+ facet_grid(~condition)+ 
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=sfgen1,aes(y=mean_acc, group=1), size=1)+ 
+  geom_pointrange(data=sfgen1, aes(y=mean_acc, ymin=mean_acc-ci, ymax=mean_acc+ci), size=1, color="white")+ 
+  scale_x_discrete(labels= x_label)+
+  theme_bw(base_size=14)+labs(y="Proportion Recalled on Final Test", x="Fluency") + 
+  theme(legend.position = "none") + 
+  ggplot2::coord_cartesian(ylim = c(0, 1)) + 
+  theme(axis.title = bold)
+
+p1
+
+
