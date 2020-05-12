@@ -102,9 +102,9 @@ Alongside traditional analyses that utilize null hypothesis significance testing
 
 # Results and Discussion
 
-Per our pregreistation, cued-recall accuracy was analyzed with a 2 (Fluency: Fluent vs. Disfluent) x 2 (Disfluency Type: Generation vs. Sans Forgetica) Mixed ANOVA. There was no difference in cued recall between the Generation and Sans Forgetica groups, *F*(1, 230) = 0.19, ges <.001, p = .752. Individuals recalled more disfluent target words than fluency target words, *F*(1, 230) = 25.31, ges=.017, *p* < .001. This was qualified by an interaction between difficulty type and disfluency, *F*(1, 230) = 25.06, ges = .017, *p* < .001. A Bayesian ANOVA indicated strong evidence for the interaction model over the main effects model, BF~10~ > 100. As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect. 
+Per our pregreistation, cued recall accuracy was analyzed with a 2 (Fluency: Fluent vs. Disfluent) x 2 (Disfluency Type: Generation vs. Sans Forgetica) Mixed ANOVA. There was no difference in cued recall between the Generation and Sans Forgetica groups, *F*(1, 230) = 0.19, ges <.001, p = .752. Individuals recalled more disfluent target words than fluency target words, *F*(1, 230) = 25.31, ges=.017, *p* < .001. This was qualified by an interaction between difficulty type and disfluency, *F*(1, 230) = 25.06, ges = .017, *p* < .001. A Bayesian ANOVA indicated strong evidence for the interaction model over the main effects model, BF~10~ > 100. As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect. 
 
-```{r,fig.align="center",  fig.height=4, fig.width=8, fig.cap="Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy (black dots) with the mean (white dot) and within-subject 95\\% CIs.", warnings=FALSE, messages=FALSE, echo=FALSE, results="asis"}
+```{r echo=FALSE, fig.cap="Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy (black dots) with the mean (white dot) and within-subject 95\\% CIs.", fig.height=4, fig.width=8, message=FALSE, warning=FALSE, messages=FALSE, results="asis", warnings=FALSE}
 
 library(qualtRics)
 library(tidyverse)
@@ -118,6 +118,7 @@ library(BayesFactor)
 ### To install without vignettes (faster):
 devtools::install_github("rvlenth/emmeans")
 library(emmeans)
+library(patchwork)
 library(modelbased)
 library(see)
 library(afex)
@@ -214,12 +215,12 @@ p1
 
 ```
 
-The results for Experiment 1 are clear-cut. While the benefit of generating information was clear, there was no benefit of studying items in the Sans Forgetica font. This was confirmed by a Bayesian analysis denoting strong eveidence for the presence of the interaction compared to a main effects model. Although overall accuracy was low (38%), it is important to note that the level of performance was comparable to what was observed by @Carpenter2006 using the same materials (30% overall for study trial). In additon, accuracy was comparable to Epeiment 2 from @Taylor which used highly associated cue-targets (~45%). Taken together, these results suggest that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty.
+The results for Experiment 1 are clear-cut. While the benefit of generating information was clear, there was no benefit of studying items in the Sans Forgetica font. This was confirmed by a Bayesian analysis denoting strong eveidence for the presence of the interaction compared to a main effects model. Although overall accuracy was low (38%), it is important to note that the level of performance was comparable to what was observed by @Carpenter2006 using the same materials (30% overall for study trial). In additon, accuracy was comparable to Experiment 2 from @Taylor2020 which used highly associated cue-targets (~45%). Taken together, these results suggest that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty.
 
 
 # Experiment 2
 
-@Taylor examined recall performance for Sans Forgetica using a within-subjects manipulation wherein a participant sees two levels of memoranda—a fluent level and disfluent (Sans Forgetica) level. Doing this, they did not see a memory benefit for Sans Forgetica font. In our Experiment 1, we also did not observe a benefit. @Atler2007 has argued that the utilization of a within-subjects design might have the undesriable consequence of masking a disfluency effect. That is, deeper processing evoked by disfluent items might carry-over to the fluent items. This could be a potential reason @Taylor and our (Experiment 1) failed to find a Sans Forgetica effect. To remedy this, Experiment 2 tested the mnemonic effects of Sans Forgetica with a between-subjects manipulation. Instead of using simple cue-target paris, we examined memory for sentences presented in Sans Forgetica which is more represenative of what students do while studying. In addition to examining the effects of Sans Forgetica, we also looked at the effects of pre-highlighting. One of the main functions of the Sans Forgetica font is to highlight information one needs to remember. This is similar to pre-highlighting, whereby important study information is highlghted prior to studying. This is used by instructors and textbook creators to enhance learning. Indeed, it has been shown that when students read pre-highlighted passages, there is some evience that they may recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage [@Fowler1974; @Silvers1997]. To this end, Experiment 2 compared cued recall performance on a prose passage where some of the sentences were either presented in: Sans Forgetica, pre-highlighted in yellow, or unmodified. We hypothesized that if the Sans Forgetica effect is moderated by task design (within vs. between) words presented in Sans Forgetica should benefit more from the disfluency than the passage presented unmodified. Further, the benefit for Sans Forgetica should be similar in magnitude to the pre-highlighting condition as both manipulations serve to draw attention to the material. 
+@Taylor2020 examined recall performance for Sans Forgetica using a within-subjects manipulation wherein a participant sees two levels of memoranda—a fluent level and disfluent (Sans Forgetica) level. Doing this, they did not see a memory benefit for Sans Forgetica font. In our Experiment 1, we also did not observe a benefit. @Atler2007 has argued that the utilization of a within-subjects design might have the undesriable consequence of masking a disfluency effect. That is, deeper processing evoked by disfluent items might carry-over to the fluent items. This could be a potential reason @Taylor and our (Experiment 1) failed to find a Sans Forgetica effect. To remedy this, Experiment 2 tested the mnemonic effects of Sans Forgetica with a between-subjects manipulation. Instead of using simple cue-target paris, we examined memory for sentences presented in Sans Forgetica which is more represenative of what students do while studying. In addition to examining the effects of Sans Forgetica, we also looked at the effects of pre-highlighting. One of the main functions of the Sans Forgetica font is to highlight information one needs to remember. This is similar to pre-highlighting, whereby important study information is highlghted prior to studying. This is used by instructors and textbook creators to enhance learning. Indeed, it has been shown that when students read pre-highlighted passages, there is some evience that they may recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage [@Fowler1974; @Silvers1997]. To this end, Experiment 2 compared cued recall performance on a prose passage where some of the sentences were either presented in: Sans Forgetica, pre-highlighted in yellow, or unmodified. We hypothesized that if the Sans Forgetica effect is moderated by task design (within vs. between) words presented in Sans Forgetica should benefit more from the disfluency than the passage presented unmodified. Further, the benefit for Sans Forgetica should be similar in magnitude to the pre-highlighting condition as both manipulations serve to draw attention to the material. 
 
 ## Method
 
@@ -243,7 +244,7 @@ Spell checking was automated with the same procedure as Experiment 1.
 
 ## Results and Discussion
 
-Per our pregreistation, cued-recall accuracy was analyzed with a one-way ANOVA (Passage Type: Pre-highlighting vs. Sans Forgetica vs. Unmodified). We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *t*(525) = 2.45, *SE* = 0.028, *p* = .039, *d* = 0.26. There was weak evidence for no effect between sentences presented in Sans Forgetcia and pre-highlighted, *t*(525) = 0.049, *SE* = 0.028, *p* = .202, *d* = 0.18, BF~01~ = 2.36. Critically, there was no difference between sentences presented normally or in Sans Forgetcia, *t*(525) = 0.02, *SE* = 0.028, *p* = .734, *d* = 0.079. A Bayes factor indicated strong evidence of no effect between the two conditions (BF~01~ = 6.47). 
+Per our pregreistation, cued-recall accuracy was analyzed with a one-way ANOVA (Passage Type: Pre-highlighting vs. Sans Forgetica vs. Unmodified). The one-way ANOVA was significant, *F*(2, 525) = 3.16, ges = .012, **p* = .043. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *t*(525) = 2.45, *SE* = 0.028, *p* = .039, *d* = 0.26. There was weak evidence for no effect between sentences presented in Sans Forgetcia and pre-highlighted, *t*(525) = 0.049, *SE* = 0.028, *p* = .202, *d* = 0.18, BF~01~ = 2.36. Critically, there was no difference between sentences presented normally or in Sans Forgetcia, *t*(525) = 0.02, *SE* = 0.028, *p* = .734, *d* = 0.079. A Bayes factor indicated strong evidence of no effect between the two conditions (BF~01~ = 6.47). 
 
 
 ```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Proportion recalled as a function of passage type. Violin plots represent the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95\\%  CIs derived from the ANOVA model.", messages=FALSE, echo=FALSE, warning=FALSE,  results="asis"}
@@ -255,14 +256,14 @@ library(here)
 library(ggpol)
 library(knitr)
 
-ground<-qualtRics::read_survey(here("Expt2_Data", "final_scored_acc"))
+ground<-qualtRics::read_survey(here::here("Expt2_Data", "final_scored_acc.csv"))
 
 ground_change <- ground %>%
   mutate(Passage=ifelse(FL_149_DO=="Highlight", "Pre-highlighted", ifelse(FL_149_DO=="Passage", "Sans Forgetica", "Unmodified")))
 
 ground_change_agg<-ground_change %>%
   dplyr::group_by(id, Passage) %>%
-  dplyr::summarise(mean_acc=mean(Scored))
+  dplyr::summarise(mean_acc=mean(auto_acc))
 
 #Classic ANOVA
 
@@ -342,8 +343,8 @@ In Experiment 2 we also asked students about their metacognitive awareness of th
 ground <- qualtRics::read_survey(here::here("Expt2_Data", "memory_acc_gw_final.csv"))
 
 jols=ground %>% 
-  dplr::group_by(ResponseId, FL_149_DO)%>%
-  dplr::summarise(jols=mean(Q163_1)) %>%
+  dplyr::group_by(ResponseId, FL_149_DO)%>%
+  dplyr::summarise(jols=mean(Q163_1)) %>%
   dplyr::ungroup() %>%
   dplyr::rename(Passage="FL_149_DO") %>% 
   dplyr::mutate(Passage=ifelse(Passage=="Highlight", "Pre-highlighted",     ifelse(Passage=="Passage", "Sans Forgetica", "Unmodified")))
@@ -426,9 +427,9 @@ During the study phase, a fixation cross appeared at the center of the screen fo
 
 D' values along with hit rates and false alarm rates can be seen in Fig. 3. The results are straight-forward.  Consistent with our hypothesis, there was no difference in d' between Sans Forgetica and Arial fonts, *t* (59) = 0.281 , *SE* = 0.05, 95% CI [-0.096, 0.127], *p* = .780. There was strong evidence for no effect (BF~01~ = 13.68). 
 
-Similar to experiments 1 and 2, we did not find an effect of Sans Forgetica font on recognition memory. 
+ We did not find an effect of Sans Forgetica font on recognition memory. Given that we did not observe a significant effect of Sans Forgetica in Experiment 1 and 2 using cued recall, it does not seem like Sans Forgetica is moderated by type of test. 
 
-```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap = "A. Mean proportions of “old” responses. Violin plots represent the kernal density of average probability (black dots) with the mean (white dot) and within-subject 95\\% CIs. B. Memory sensitivity (d'). Violin plots represent the kernal density of average sensitivity (black dots) with the mean (white dot) and within-subject 95\\% CIs ", warning=FALSE,  messages=FALSE, echo=FALSE, results="asis", eval=FALSE}
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap = "A. Mean proportions of “old” responses. Violin plots represent the kernal density of average probability (black dots) with the mean (white dot) and within-subject 95\\% CIs. B. Memory sensitivity (d'). Violin plots represent the kernal density of average sensitivity (black dots) with the mean (white dot) and within-subject 95\\% CIs ", warning=FALSE,  messages=FALSE, echo=FALSE, results="asis"}
 #frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 #oldnew=glmer(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=sfrecog, family=binomial(link="probit"))
 data=here::here('Expt3_data', 'Gorilla_raw_data', 'ex3_recog.csv')  
@@ -512,9 +513,9 @@ means$Condition<-factor(means$Condition, levels=c("Sans Forgetica", "Arial"))
 
 
 oldnewsub=summarySEwithin(data = means, measurevar = "value",
-                       withinvars = c("condition", "isold","type"), idvar = "Participant.Private.ID")
+                       withinvars = c("Condition", "isold","type"), idvar = "Participant.Private.ID")
 
-p1<- ggplot(sdt1, aes(condition, value, fill=condition))+
+p1<- ggplot(means, aes(Condition, value, fill=Condition))+
   facet_grid(~isold) + 
   geom_violin() + 
   geom_jitter2(width=0.11, alpha=.5)+ 
@@ -559,8 +560,8 @@ p2<- ggplot(sdt, aes(condition, dprime, fill=condition))+
 p2
 
 
-patchwork=p1/ p2 + 
-patchwork + plot_annotation(tag_levels = 'A')
+patchwork1= p1/ p2 
+patchwork1 + plot_annotation(tag_levels = 'A')
 
 ```
 

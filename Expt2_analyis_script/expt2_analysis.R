@@ -6,6 +6,7 @@ install.packages("hunspell")
 install.packages("tidytext")
 install.packages("brms")
 install.packages("bayestestR")
+install.packages("lrd")
 
 library(qualtRics)
 library(tidyverse)
@@ -22,15 +23,16 @@ library(lrd)
 
 #spelling
 
-
-library(lrd)
-
+#spelling
+library(hunspell)
+library(tidytext)
+library(stringi)
 
 here()
 
 set.seed(456)
 
-ground <- qualtRics::read_survey(here::here("Expt2_data", "memory_for_words_final.csv"))
+ground <- qualtRics::read_survey(here::here("Expt2_data", "memory_for_words_final.csv")) # raw data
 
 #data was collected until the last day of the fall semester 2019 Decemeber13th. 
 
@@ -56,9 +58,30 @@ ground_native_question<-dplyr::left_join(ground_native, question) #merge
 
 # Compute percent match automatic scoring
 
-matched = percent_match(ground_native_question$Reponse, key = ground_native_question$Correct, id = ground_native_question$ResponseId)
+tokens <- unnest_tokens(tbl = ground_native_question, output = token, input = Response)
+wordlist <- unique(tokens$token)
 
-score_recall(matched, set.cutoff = .65) 
+# Spell check the words
+spelling.errors <- hunspell(wordlist)
+spelling.errors <- unique(unlist(spelling.errors))
+spelling.sugg <- hunspell_suggest(spelling.errors, dict = dictionary("en_US"))
+
+# Pick the first suggestion
+spelling.sugg <- unlist(lapply(spelling.sugg, function(x) x[1]))
+spelling.dict <- as.data.frame(cbind(spelling.errors,spelling.sugg))
+spelling.dict$spelling.pattern <- paste0("\\b", spelling.dict$spelling.errors, "\\b")
+# Write out spelling dictionary
+
+
+# Parse features
+tokens <- unnest_tokens(tbl = ground_native_question, output = token,
+                        input = Response, token = stringr::str_split,
+                        pattern = " |\\, |\\.|\\,|\\;")
+
+tokens$auto_acc <- ifelse(tokens$Correct==tokens$token, 1, 0)
+
+tokens[is.na(tokens)] <- 0 #change all NAs to 0 
+
 
 ground<-qualtRics::read_survey(here("Expt2_Data", "final_scored_acc"))
 
@@ -67,7 +90,7 @@ ground_change <- ground %>%
 
 ground_change_agg<-ground_change %>%
   dplyr::group_by(id, Passage) %>%
-  dplyr::summarise(mean_acc=mean(Scored))
+  dplyr::summarise(mean_acc=mean(auto_acc))
 
 #Classic ANOVA
 
