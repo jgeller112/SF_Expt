@@ -125,16 +125,29 @@ sf12$condition <- "Sans Forgetica"
 #We can Combine all the lists, but before we run our statistical analysis, we need to remove two cue-target pairs. There was an error in the generate CB 1 list wherein *train-plane* was presented twice during encoding and *rifle-range* was not presented at all. 
 sfgen<-rbind(gen12, sf12)
 
+#auto spellcheck
+# Extract a list of words
+tokens <- unnest_tokens(tbl = sfgen, output = token, input = answer)
+wordlist <- unique(tokens$token)
+# Spell check the words
+spelling.errors <- hunspell(wordlist)
+spelling.errors <- unique(unlist(spelling.errors))
+spelling.sugg <- hunspell_suggest(spelling.errors, dict = dictionary("en_US"))
 
 
+# Pick the first suggestion
+spelling.sugg <- unlist(lapply(spelling.sugg, function(x) x[1]))
+spelling.dict <- as.data.frame(cbind(spelling.errors,spelling.sugg))
+spelling.dict$spelling.pattern <- paste0("\\b", spelling.dict$spelling.errors, "\\b")
+# Write out spelling dictionary
 
+# Parse features
+tokens <- unnest_tokens(tbl = comb, output = token,
+                        input = answer, token = stringr::str_split,
+                        pattern = " |\\, |\\.|\\,|\\;")
 
-# Compute percent match
-
-matched = percent_match(sfgen$Response, key = sfgen$key, id = sfgen$ResponseID)
-
-score_recall(matched, set.cutoff = .65) 
-
+#score correct 
+tokens$acc <-ifelse(tokens$word==tokens$token, 1, 0)
 
 #auto spellcheck
 #analyze and plot 
@@ -150,7 +163,7 @@ ex1=sfgen %>%
 
 ex1_agg <- sfgen %>%
   dplyr::group_by(id, condition, dis)%>%
-  dplyr::summarise(mean_acc=mean(Scored))
+  dplyr::summarise(mean_acc=mean(acc))
 
 
 a1 <- aov_ez("id", "mean_acc", ex1_agg, 
