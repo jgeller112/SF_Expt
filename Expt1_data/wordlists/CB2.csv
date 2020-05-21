@@ -1,0 +1,25 @@
+cue1,targ1,font
+angle,corner,generate
+block,street,generate
+throat ,voice ,generate
+child,mother,generate
+factory,product,generate
+group,meeting,generate
+native,foreign,generate
+object,symbol,generate
+people,world,generate
+sheet,cover,generate
+stick,branch,generate
+taste,touch,generate
+curve,shape,flu
+engine,machine,flu
+lunch,supper,flu
+nation,state,flu
+novel,story,flu
+office,doctor ,flu
+paint,picture,flu
+range,rifle,flu
+report,weather,flu
+quarter,dollar,flu
+college,student,flu
+train,plane,flu
