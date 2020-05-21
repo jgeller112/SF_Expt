@@ -1,0 +1,529 @@
+"","id","Passage","mean_acc"
+"1","R_01xBIjc5ddf5oWd","Unmodified",0.357142857142857
+"2","R_03wSumO4vsJ3T2h","Sans Forgetica",1
+"3","R_07nlzQQalec72dH","Unmodified",0.818181818181818
+"4","R_0cDAFoyUZ8xU5Il","Sans Forgetica",0.25
+"5","R_0CYZUnbmWShcF1f","Sans Forgetica",0.0666666666666667
+"6","R_0f9JmwhjokQnyOR","Pre-highlighted",0.266666666666667
+"7","R_0JsqxTVtXov2UCJ","Unmodified",0.727272727272727
+"8","R_0T9G9M78fmSfz3P","Pre-highlighted",0.272727272727273
+"9","R_0uYH5I8JBiXG5qx","Sans Forgetica",0.285714285714286
+"10","R_10Ocg6ZgfpYINpT","Sans Forgetica",0.818181818181818
+"11","R_10rrGtJk7wMUnPS","Sans Forgetica",0.363636363636364
+"12","R_11bEhdxDKuDg7Dq","Sans Forgetica",0.909090909090909
+"13","R_11jvwhZ9aDbXzZi","Sans Forgetica",0.153846153846154
+"14","R_11WVD1MhAN1xmAK","Pre-highlighted",1
+"15","R_12R1ONE0Wl3GaVX","Pre-highlighted",0.636363636363636
+"16","R_12sSaRQZ46uJjoo","Pre-highlighted",0.818181818181818
+"17","R_1BP1WIAoaLq3kos","Unmodified",0.333333333333333
+"18","R_1CCI46B4eL1WsXp","Sans Forgetica",0.818181818181818
+"19","R_1CgcGKdhazJNX3o","Sans Forgetica",0.181818181818182
+"20","R_1CHC0jnQZdA4f5d","Unmodified",0.454545454545455
+"21","R_1CHIsB7eGd963KS","Pre-highlighted",0.636363636363636
+"22","R_1CKMtwj1iKr6bR9","Unmodified",0.636363636363636
+"23","R_1CpRBUT5DOcoZnw","Sans Forgetica",0.636363636363636
+"24","R_1DAXMwE9eKdz1h4","Unmodified",0.363636363636364
+"25","R_1dbEZIk4gYpi1j4","Sans Forgetica",0.153846153846154
+"26","R_1dEluYygKoIxeSC","Pre-highlighted",1
+"27","R_1DFKxeha9FJRt1b","Pre-highlighted",0.454545454545455
+"28","R_1dfRmGUzKJMyICn","Sans Forgetica",0.545454545454545
+"29","R_1DGMTkCZNuIsCX9","Unmodified",0.909090909090909
+"30","R_1diRszsXAAai2MA","Sans Forgetica",0.727272727272727
+"31","R_1dKdYH54DUtlUP0","Unmodified",0.0909090909090909
+"32","R_1DNhLPzgUtLBsSv","Sans Forgetica",0
+"33","R_1DO8x61lgTtsRlI","Unmodified",0.6
+"34","R_1Dr8qKhjiQ2d02b","Pre-highlighted",0.818181818181818
+"35","R_1dyTtbBRvdVFG2D","Unmodified",0.272727272727273
+"36","R_1eEInFq6vlvG9t7","Pre-highlighted",0.0666666666666667
+"37","R_1eFymJIt9KAc0pM","Pre-highlighted",0.166666666666667
+"38","R_1EgsFtUHdeDNEGI","Sans Forgetica",0.5
+"39","R_1eKtydWwq6C8SDO","Sans Forgetica",0.363636363636364
+"40","R_1eP0NiIrTrMHuf4","Unmodified",0.636363636363636
+"41","R_1EWLawqvCl9mWqC","Unmodified",0.727272727272727
+"42","R_1EXpqyU0fzn9bha","Sans Forgetica",0.818181818181818
+"43","R_1Fh71HG3FWmFmh4","Sans Forgetica",0.909090909090909
+"44","R_1fk3n9y6BWQB0sJ","Unmodified",0.272727272727273
+"45","R_1FsqKed6i3exEn9","Unmodified",0.272727272727273
+"46","R_1Fu1zlZqrDUL7zZ","Sans Forgetica",0.0909090909090909
+"47","R_1g6MBdFpmCS7aZ6","Sans Forgetica",0.636363636363636
+"48","R_1g79cyX9IsucinY","Unmodified",0.272727272727273
+"49","R_1gbAmdKjg6darTR","Sans Forgetica",0.181818181818182
+"50","R_1GEAknNmqaRIROM","Sans Forgetica",0.909090909090909
+"51","R_1gejSCG9U3t3Kl0","Unmodified",0.636363636363636
+"52","R_1ginRNwckOH57cJ","Pre-highlighted",0.0588235294117647
+"53","R_1GNfs1zYml1pNC2","Unmodified",0.133333333333333
+"54","R_1go1F6VWH3qh3SD","Sans Forgetica",0.727272727272727
+"55","R_1gSVEZ4c3vxbhoQ","Sans Forgetica",0.214285714285714
+"56","R_1GVUxSNIpLnPtE8","Unmodified",0.416666666666667
+"57","R_1GZeYmi3tFdAW4Y","Unmodified",0.818181818181818
+"58","R_1H74umFtuE4SxFb","Sans Forgetica",0.166666666666667
+"59","R_1hFEOk9ZcNHSFch","Pre-highlighted",0.333333333333333
+"60","R_1HizLeIKAKI9mPQ","Pre-highlighted",0.25
+"61","R_1hySsWin4LKhyto","Unmodified",0.363636363636364
+"62","R_1i2987A6fE019j7","Unmodified",0.285714285714286
+"63","R_1i3WJk78VnGNbUM","Pre-highlighted",0.909090909090909
+"64","R_1IFPjQHG46Npu3h","Sans Forgetica",0.363636363636364
+"65","R_1IGE56Stu4lujeP","Unmodified",0.0833333333333333
+"66","R_1ILyOicjr43hZDi","Sans Forgetica",0
+"67","R_1IN9fcIToghSChF","Pre-highlighted",0.272727272727273
+"68","R_1InMZbP3temrZnF","Unmodified",0.0833333333333333
+"69","R_1IQovaQ1aUSK6ys","Sans Forgetica",0.75
+"70","R_1IsgJW8oeWr2zrw","Unmodified",0.272727272727273
+"71","R_1IuBoDixyLANOaD","Pre-highlighted",0.909090909090909
+"72","R_1IYOe6xhINVksvX","Unmodified",0.833333333333333
+"73","R_1IYR3IPUnfyVRKQ","Sans Forgetica",0.153846153846154
+"74","R_1j7VURvpkEPdYvO","Sans Forgetica",0.181818181818182
+"75","R_1JD5lRg4xo4jx8l","Sans Forgetica",0
+"76","R_1jE8vQXJWMIVJ1n","Unmodified",0.166666666666667
+"77","R_1jHcMWxAl0OGOTK","Sans Forgetica",0.230769230769231
+"78","R_1jiyjKAEs2mZr76","Unmodified",0.0909090909090909
+"79","R_1jjguBUhZfaidgm","Unmodified",0.266666666666667
+"80","R_1JKoZGleqT0wUbK","Unmodified",0.545454545454545
+"81","R_1jpp5j8OJW8ZWPL","Pre-highlighted",0.181818181818182
+"82","R_1JVMqXBXvBEK0OJ","Pre-highlighted",0.181818181818182
+"83","R_1K74YN41u7CZ1yW","Unmodified",0.666666666666667
+"84","R_1KcZ8y3bqddn789","Unmodified",0.363636363636364
+"85","R_1Kf2sLOQgDQi0Np","Sans Forgetica",0.727272727272727
+"86","R_1kGHlB0AdtiJtOx","Pre-highlighted",0.583333333333333
+"87","R_1KvH2ZxFK0hcjEr","Sans Forgetica",0.0833333333333333
+"88","R_1KxnAwsaaVCyqtS","Sans Forgetica",0.272727272727273
+"89","R_1l4UY6s2cgki7NK","Sans Forgetica",0.181818181818182
+"90","R_1l9Ig5WIrOTGEOp","Sans Forgetica",0.454545454545455
+"91","R_1lgAGK4E7jw50dQ","Pre-highlighted",0.0714285714285714
+"92","R_1LikhhO0kzct25X","Pre-highlighted",0.727272727272727
+"93","R_1lip6vYq32kFctd","Unmodified",0.181818181818182
+"94","R_1Ln9xIWNIT7LeL1","Pre-highlighted",0.0769230769230769
+"95","R_1LpWeKjg7sikctE","Pre-highlighted",0.583333333333333
+"96","R_1LSfIFI7U1VaLnj","Pre-highlighted",0
+"97","R_1luVf7AdsaFWERM","Unmodified",0.454545454545455
+"98","R_1mEkF3wJavgplAt","Pre-highlighted",0.363636363636364
+"99","R_1mIOo5LypVujsBz","Sans Forgetica",0.285714285714286
+"100","R_1mJFNQduzE3p3eD","Pre-highlighted",0.25
+"101","R_1MJOOx3DMn5aqXi","Pre-highlighted",0.545454545454545
+"102","R_1MNgSodlYxj937k","Pre-highlighted",0.818181818181818
+"103","R_1mQlG3TnjNCktl2","Unmodified",0.272727272727273
+"104","R_1mXIb9YtbJAcjK1","Unmodified",0.727272727272727
+"105","R_1N9AdypIoF2tR4K","Pre-highlighted",0.727272727272727
+"106","R_1nOOiUkvMFMC8Tt","Sans Forgetica",0.75
+"107","R_1nOZHJdIX2lyUly","Sans Forgetica",0.363636363636364
+"108","R_1NyICa1GJ2cDHEd","Unmodified",1
+"109","R_1oB8wFRHgAaZwfn","Unmodified",0.166666666666667
+"110","R_1OId3jAYBgYZSWC","Pre-highlighted",0.235294117647059
+"111","R_1OO9rxbDVQRLIc3","Pre-highlighted",0.727272727272727
+"112","R_1pn9LutBM2Spx8s","Unmodified",0.272727272727273
+"113","R_1prGGS39LJdZAX2","Unmodified",0.272727272727273
+"114","R_1pyRy3HJzlyfwYs","Unmodified",0.727272727272727
+"115","R_1Q4aXpnh3OjCoHH","Pre-highlighted",0.5
+"116","R_1QmwItbplK6bOye","Pre-highlighted",0.125
+"117","R_1qX6CQzdn12hyS4","Sans Forgetica",0.5
+"118","R_1r19di9SzoCwviq","Pre-highlighted",0.307692307692308
+"119","R_1r2EGYAudmwDEC6","Pre-highlighted",0.545454545454545
+"120","R_1r3vM5vAo0gYLSt","Unmodified",0.272727272727273
+"121","R_1r9qBy0JzWQISyC","Unmodified",0.307692307692308
+"122","R_1RABJB0TXYQh9br","Pre-highlighted",0.545454545454545
+"123","R_1ri7THxs18OvFxF","Sans Forgetica",0.0625
+"124","R_1rIDttzW7rBQAKJ","Sans Forgetica",0.75
+"125","R_1roa4DAPGFPENRQ","Sans Forgetica",1
+"126","R_1rubkFuV4ZIYqJ4","Unmodified",0.333333333333333
+"127","R_1rw5HfDwAokcmI0","Pre-highlighted",0.25
+"128","R_20Uyi3xT0FwbCZD","Sans Forgetica",0.2
+"129","R_21A1WX1EDVIEYlt","Pre-highlighted",0.583333333333333
+"130","R_21alDN6R6IP9TQc","Pre-highlighted",0.454545454545455
+"131","R_21baAr0TFrYfg1B","Sans Forgetica",0.5
+"132","R_21bPuKcPablxGs0","Sans Forgetica",0.909090909090909
+"133","R_21iZ5WhX4G4e4XE","Pre-highlighted",0.2
+"134","R_22Dhmhy9iPvu5G8","Unmodified",0.454545454545455
+"135","R_22G6aNPlBr3DScP","Pre-highlighted",0.909090909090909
+"136","R_22LDGdQQMlI4Syv","Pre-highlighted",0.0909090909090909
+"137","R_24oAJurd1WbTB3y","Sans Forgetica",0.181818181818182
+"138","R_24pENftpTZqFdHJ","Unmodified",0.272727272727273
+"139","R_25AtJsS9F9gf9Il","Unmodified",0.0909090909090909
+"140","R_25EDnJRkyOSZDS4","Pre-highlighted",0.583333333333333
+"141","R_25F8XDs8qoJqTTd","Sans Forgetica",0.454545454545455
+"142","R_25MEkH0e08A7wSe","Unmodified",0.428571428571429
+"143","R_25sW4YbTl1EEz6x","Unmodified",0.307692307692308
+"144","R_264OUtM5zOyO6rO","Pre-highlighted",0.727272727272727
+"145","R_2673yFCZWP3JTO1","Pre-highlighted",0.636363636363636
+"146","R_268tHQ9NCQMiNcQ","Sans Forgetica",0.818181818181818
+"147","R_269KRiLE2YyU8QH","Unmodified",0.181818181818182
+"148","R_26c2KFqCcaZZAXb","Unmodified",0.272727272727273
+"149","R_26gWgRsHaP60jZN","Unmodified",0.363636363636364
+"150","R_27kDwUZ6CyrrW7l","Unmodified",0.727272727272727
+"151","R_27O4vdjnsra1yTJ","Pre-highlighted",0.545454545454545
+"152","R_27PQv3aKRwjXDzO","Sans Forgetica",0.636363636363636
+"153","R_27r0xXcfFFIOtsm","Unmodified",0.272727272727273
+"154","R_27xMPh2AVjwhEDj","Sans Forgetica",0.272727272727273
+"155","R_28SvgojaYsPqKcP","Unmodified",0.727272727272727
+"156","R_28zD5FD65CUsuRf","Sans Forgetica",0.636363636363636
+"157","R_2aDYyfOJm36NxZG","Sans Forgetica",0.454545454545455
+"158","R_2aeM7u3WkyzzpAd","Pre-highlighted",0.272727272727273
+"159","R_2algaKasB0uFo0I","Unmodified",0.181818181818182
+"160","R_2an2fFYVe8dOLTL","Pre-highlighted",0.363636363636364
+"161","R_2aOD2vis41J4xgK","Unmodified",0.454545454545455
+"162","R_2arkx2dMytmg2Ot","Unmodified",0.25
+"163","R_2AWhPQg345FE3qe","Sans Forgetica",0
+"164","R_2AXQBFwaadD5EnH","Pre-highlighted",0.636363636363636
+"165","R_2b3N9HpOdXzQ6Qv","Sans Forgetica",0.142857142857143
+"166","R_2Ba4l9Fj2H1Afua","Unmodified",1
+"167","R_2BbrHRGsLFQl4Jl","Sans Forgetica",0.75
+"168","R_2BbxgnkzpYNmwyx","Pre-highlighted",0.363636363636364
+"169","R_2bK9aVYGmvd0dQk","Unmodified",0.454545454545455
+"170","R_2bNNujEw4Apc4k6","Unmodified",0.454545454545455
+"171","R_2bTsML5wGBi2sj3","Sans Forgetica",0.25
+"172","R_2bV69F3cEPZjGGE","Pre-highlighted",0.454545454545455
+"173","R_2bVrZR8XSbbYScM","Unmodified",0.272727272727273
+"174","R_2BxiFauwpctBDEM","Sans Forgetica",0.818181818181818
+"175","R_2bZ45SMI4WK9Ee5","Sans Forgetica",0.545454545454545
+"176","R_2c15gzgD3OLgXyL","Unmodified",0.454545454545455
+"177","R_2CfYzYUgZELxGgU","Sans Forgetica",0.583333333333333
+"178","R_2chnS2z6oc7mQJf","Pre-highlighted",0.454545454545455
+"179","R_2ClUfwGDTLHpUC8","Pre-highlighted",0.166666666666667
+"180","R_2COKhbzCiUVPut3","Pre-highlighted",0.25
+"181","R_2D1WzxaIWR7oB26","Sans Forgetica",0.545454545454545
+"182","R_2D6zyKhoYS1aova","Pre-highlighted",0.818181818181818
+"183","R_2dGF17dtOPnSvsn","Pre-highlighted",0.153846153846154
+"184","R_2dgY6iJ4nP17zta","Unmodified",0
+"185","R_2dQ5dZIpnpTaCYJ","Sans Forgetica",0.416666666666667
+"186","R_2dRBNhV7SZrvtBg","Pre-highlighted",0.157894736842105
+"187","R_2DYW9KGAbnKfawj","Pre-highlighted",0
+"188","R_2E5y1l5Bo2gRXiJ","Pre-highlighted",0
+"189","R_2ElRv8lWPp8ZwBh","Pre-highlighted",0.166666666666667
+"190","R_2ElZ0UfTvYRjMUw","Sans Forgetica",0.0909090909090909
+"191","R_2EmFVpwMpw6lGXf","Pre-highlighted",0.909090909090909
+"192","R_2eRKXe0YZdVzznl","Unmodified",0.545454545454545
+"193","R_2f7KOIS0RLr8k3z","Unmodified",0.454545454545455
+"194","R_2fCZE02oMKu2i7g","Pre-highlighted",0.818181818181818
+"195","R_2fDLOjl3zo91U4z","Pre-highlighted",0.727272727272727
+"196","R_2fEgz5oiCUzvDHG","Unmodified",0.166666666666667
+"197","R_2fIBJeE804RyBbb","Pre-highlighted",0.416666666666667
+"198","R_2fJQhcVjckcf24R","Pre-highlighted",0.909090909090909
+"199","R_2fqX4YQUV3KRUe5","Sans Forgetica",0.363636363636364
+"200","R_2fxIWKc4Xg8ByER","Unmodified",0.461538461538462
+"201","R_2OJb0LolQH0PS8x","Unmodified",0.636363636363636
+"202","R_2OPAXIvBv2tKmxC","Pre-highlighted",0.363636363636364
+"203","R_2OTGrYmR60QQWlO","Pre-highlighted",0.333333333333333
+"204","R_2P0Fifv2du0Jmms","Unmodified",0.454545454545455
+"205","R_2P5SXuSsFL6EyEZ","Unmodified",0.454545454545455
+"206","R_2Pd0UHgwFjq8O0u","Pre-highlighted",0.454545454545455
+"207","R_2PecyTBcieBRrU8","Sans Forgetica",0.454545454545455
+"208","R_2Ph4LN25XWvNOkL","Sans Forgetica",0
+"209","R_2pKNguCsDwZZ4Tc","Pre-highlighted",0.454545454545455
+"210","R_2Pna07D0j5sZl6s","Pre-highlighted",0.272727272727273
+"211","R_2pSIwq2mqqkwcxt","Pre-highlighted",0.363636363636364
+"212","R_2PtlwEbdQGLRRjI","Unmodified",0.181818181818182
+"213","R_2Pv3IkJxlWGt7kj","Pre-highlighted",0.230769230769231
+"214","R_2pVHGGNZDdALKA4","Sans Forgetica",0.0769230769230769
+"215","R_2q98bjQZEk7GduY","Unmodified",0.583333333333333
+"216","R_2QF0rTKeJJTwqKL","Unmodified",0.307692307692308
+"217","R_2qlO1qKcOZrhKXs","Pre-highlighted",0.818181818181818
+"218","R_2qlOm7p0DHh662N","Unmodified",0.818181818181818
+"219","R_2qmTIHw3YxJVWYF","Unmodified",0.636363636363636
+"220","R_2QPYjdl4KDhSsl7","Pre-highlighted",0.636363636363636
+"221","R_2qqLbQxAusFgIdr","Pre-highlighted",0.818181818181818
+"222","R_2QRoOWWKYOnz1vl","Pre-highlighted",0.583333333333333
+"223","R_2QWBCyF8hzyEwwC","Pre-highlighted",0.363636363636364
+"224","R_2R4fU4KLkHkKhvq","Sans Forgetica",0.5
+"225","R_2riHOjMPOaXyOAW","Pre-highlighted",0.266666666666667
+"226","R_2RODQFHktdd2cTr","Sans Forgetica",0.727272727272727
+"227","R_2rwoMeBXKyBV1s2","Pre-highlighted",0.636363636363636
+"228","R_2S06Q9RT68fW5M4","Sans Forgetica",0.25
+"229","R_2SAM4FuAvefw9cd","Pre-highlighted",0.0714285714285714
+"230","R_2ScLVlPN14CttTE","Sans Forgetica",0.307692307692308
+"231","R_2SCScdo6tikYEht","Pre-highlighted",0.454545454545455
+"232","R_2SHLeqFjCikywOq","Sans Forgetica",0.153846153846154
+"233","R_2SpC2tMG4QDA9Oa","Unmodified",0.545454545454545
+"234","R_2t5RBNQ4BcRJstp","Pre-highlighted",1
+"235","R_2TBJOXgGm6DpCj8","Sans Forgetica",0.727272727272727
+"236","R_2thUg531IE5CJZN","Pre-highlighted",0.727272727272727
+"237","R_2tm9KgUFLY0Zy9o","Pre-highlighted",1
+"238","R_2tmmh1sgHXrtk5y","Sans Forgetica",0.384615384615385
+"239","R_2tnBLxk8VHNKnHC","Pre-highlighted",0.818181818181818
+"240","R_2tnxOiq6ndG1lNf","Unmodified",0.214285714285714
+"241","R_2tyQnBsQuwV6NTj","Sans Forgetica",0.272727272727273
+"242","R_2U9IqPRx3IbePrD","Sans Forgetica",0.545454545454545
+"243","R_2uCb6symjEueHr2","Pre-highlighted",0.727272727272727
+"244","R_2uE9Ep4FGdQL1w9","Unmodified",0.5
+"245","R_2uKiGPSfdm08sD8","Sans Forgetica",0.545454545454545
+"246","R_2urIj9MfrpOuXKl","Unmodified",0.818181818181818
+"247","R_2uUMf0kvNagfJG4","Pre-highlighted",0.384615384615385
+"248","R_2ux31jzzm1o5JOX","Unmodified",0.454545454545455
+"249","R_2uxMU3uPfcyCXLA","Unmodified",0.636363636363636
+"250","R_2uyuUXhwTSm6Qw3","Sans Forgetica",0.454545454545455
+"251","R_2V9exjKEq98RAnH","Pre-highlighted",0.454545454545455
+"252","R_2VC51BinpzqL1ll","Sans Forgetica",0.272727272727273
+"253","R_2vcu60gKo4KxxhQ","Unmodified",0
+"254","R_2VD4JNQpV2f1zOi","Unmodified",0.333333333333333
+"255","R_2VDvE0OJ5tFbMLA","Pre-highlighted",0.666666666666667
+"256","R_2Vf5MLOEzLPdqq8","Unmodified",0.272727272727273
+"257","R_2vhLZCIgEioZJCR","Pre-highlighted",0.818181818181818
+"258","R_2viZ72ESPQGCGIX","Pre-highlighted",0.818181818181818
+"259","R_2VJf3awmGb4KWm7","Unmodified",0.363636363636364
+"260","R_2VpCDeALlM7KvHl","Pre-highlighted",0.545454545454545
+"261","R_2WIH9Y5pzVmkJ9u","Pre-highlighted",0.545454545454545
+"262","R_2wLgZ0TW9Ai4X12","Sans Forgetica",0.181818181818182
+"263","R_2WM7DoeucTu7bP6","Sans Forgetica",0.818181818181818
+"264","R_2woAr9fF10l2bs1","Unmodified",0.153846153846154
+"265","R_2WzZ0jj5VgaMgM3","Unmodified",0.272727272727273
+"266","R_2X657TOyLl3ZsFP","Pre-highlighted",0.0833333333333333
+"267","R_2Xj4gXVYvhBx2Ry","Sans Forgetica",0.818181818181818
+"268","R_2xK1zatEhxKsTkR","Sans Forgetica",0.545454545454545
+"269","R_2xKS44cBfiI3JUd","Unmodified",0.666666666666667
+"270","R_2xW6IbOvdM39TYm","Unmodified",0.545454545454545
+"271","R_2y3pau4Tp3sxeOd","Pre-highlighted",0
+"272","R_2yj7K6qAAsItkx8","Sans Forgetica",0.454545454545455
+"273","R_2ZByr3zw9nsxXIf","Sans Forgetica",0.538461538461538
+"274","R_2zCr63jfha3NIhs","Unmodified",0.166666666666667
+"275","R_2ZDknfDYJwftQbu","Pre-highlighted",0.545454545454545
+"276","R_2ZHNFaDACTZA9EM","Pre-highlighted",0.909090909090909
+"277","R_2ZOhi7geypF1TQx","Unmodified",0.727272727272727
+"278","R_30khx9TnpPbOFaL","Pre-highlighted",0.545454545454545
+"279","R_30qwqWdGwEEf9LN","Pre-highlighted",0.0909090909090909
+"280","R_30v0M7G6ciojJNq","Pre-highlighted",0.363636363636364
+"281","R_31FdRW4XeDcepbE","Unmodified",0.272727272727273
+"282","R_31L4BSIk5iBgAAv","Pre-highlighted",0.25
+"283","R_31mBr4FBb9MAthk","Unmodified",0.818181818181818
+"284","R_31uybj6g2z4mFkr","Unmodified",0.636363636363636
+"285","R_31XWOeCdB7paziT","Unmodified",0.272727272727273
+"286","R_31ZqOQo2hz2l0Ju","Sans Forgetica",0.636363636363636
+"287","R_324pVwNwq12yzyj","Unmodified",0.454545454545455
+"288","R_32KNCvxUBO46cZJ","Pre-highlighted",0.454545454545455
+"289","R_32Mkhzh8CEvhBgW","Unmodified",0.363636363636364
+"290","R_333xeYqoXvSSQaJ","Pre-highlighted",0.153846153846154
+"291","R_33EB7F6yazYgxof","Pre-highlighted",0.727272727272727
+"292","R_33EjDTDBUeKfPTX","Sans Forgetica",0.583333333333333
+"293","R_3CCrKB2XByIYRXM","Pre-highlighted",0.181818181818182
+"294","R_3CIBP38e3anBW2U","Pre-highlighted",0.727272727272727
+"295","R_3D24pRFqRuyXtUZ","Unmodified",0.166666666666667
+"296","R_3D2sVmLiwkmeYof","Sans Forgetica",0.545454545454545
+"297","R_3DDyWenbWrWLiKJ","Unmodified",0.363636363636364
+"298","R_3Dvb5sZhyyplEsa","Unmodified",0.818181818181818
+"299","R_3EA6p3CiuWLlUXC","Pre-highlighted",0.153846153846154
+"300","R_3eaYXwJcd97nmEB","Pre-highlighted",0.181818181818182
+"301","R_3edWI1B29ZvTyz6","Pre-highlighted",0.545454545454545
+"302","R_3EiowEcjzs24HDQ","Unmodified",0.272727272727273
+"303","R_3EJVciN4LkxUgt2","Unmodified",1
+"304","R_3EKozJioeyPWKZt","Pre-highlighted",0.0769230769230769
+"305","R_3ELkQzmUAFKt2gI","Pre-highlighted",0.909090909090909
+"306","R_3ELsbo6gRQx3rq1","Unmodified",0.333333333333333
+"307","R_3Em0xF6a8L4HIZM","Sans Forgetica",0.363636363636364
+"308","R_3ENgYKSJs22frPh","Unmodified",0.727272727272727
+"309","R_3EYxksglbUEP1RI","Sans Forgetica",0.0909090909090909
+"310","R_3fAVXbJ5euIMCnt","Pre-highlighted",0.181818181818182
+"311","R_3fDd6V86GO61pjk","Unmodified",0.0769230769230769
+"312","R_3ffLI70cpVqWteg","Pre-highlighted",0.818181818181818
+"313","R_3FOKTsTiDHSA7v5","Unmodified",0.454545454545455
+"314","R_3FQenqEC9d3k9Dy","Unmodified",0.636363636363636
+"315","R_3fxG3hjXK4rCsKa","Pre-highlighted",0.545454545454545
+"316","R_3G6Pnu6RqVlvaD6","Pre-highlighted",0.181818181818182
+"317","R_3GeQGGYrnk1hcLv","Sans Forgetica",0.454545454545455
+"318","R_3GkcU79b13fqZww","Pre-highlighted",0.545454545454545
+"319","R_3gOereUo0HSzuPC","Sans Forgetica",0.75
+"320","R_3GpSbN41h3hveIt","Unmodified",0.0769230769230769
+"321","R_3GqSJGN3pHl66Hk","Sans Forgetica",0.181818181818182
+"322","R_3gT4zATfISIWH38","Pre-highlighted",0.818181818181818
+"323","R_3GuAWlVheOsBbsB","Unmodified",0.181818181818182
+"324","R_3gZWlaOLYttQXTT","Sans Forgetica",0.363636363636364
+"325","R_3HGPdDT1fRoaCK1","Pre-highlighted",0.333333333333333
+"326","R_3HjotYmeBe1aZae","Pre-highlighted",0.416666666666667
+"327","R_3HMOtDmMV4LKbKm","Sans Forgetica",0.333333333333333
+"328","R_3HRJcA3FxvhYPPG","Sans Forgetica",0
+"329","R_3hrTFNEw2kLhk1f","Sans Forgetica",0.214285714285714
+"330","R_3HTbL33p7eH1NPC","Sans Forgetica",0.166666666666667
+"331","R_3hxQ4rXGtshOKww","Sans Forgetica",0.333333333333333
+"332","R_3I49ugvYYsRfXDy","Unmodified",0.384615384615385
+"333","R_3I4gHeyOnEZY2dz","Unmodified",0.0769230769230769
+"334","R_3iP5HkFndgMLJYi","Sans Forgetica",0.727272727272727
+"335","R_3IRhfqg3P3UFks3","Pre-highlighted",0.181818181818182
+"336","R_3is9dgt0rNsaqzI","Pre-highlighted",0.363636363636364
+"337","R_3iyZkKCKYZBdtu9","Unmodified",0.181818181818182
+"338","R_3j86z7Yetcwgi7h","Unmodified",0
+"339","R_3J90hN5j6p3Iu36","Pre-highlighted",0.0909090909090909
+"340","R_3JIaTRyDOuvfnVf","Sans Forgetica",0.818181818181818
+"341","R_3JKwkM2K4tt3R84","Sans Forgetica",0
+"342","R_3JmAolr4b0m5Vo7","Unmodified",0.307692307692308
+"343","R_3JmWaTWYnJ3FHQw","Pre-highlighted",0.545454545454545
+"344","R_3JqRlz1sWxHfXb5","Unmodified",0.272727272727273
+"345","R_3JwkgtPzoDHbS8w","Sans Forgetica",0.909090909090909
+"346","R_3k7AHSgl3lde4zA","Pre-highlighted",0.818181818181818
+"347","R_3KC3H3VELJPS5G8","Pre-highlighted",0.2
+"348","R_3kjL0uVaaUbpTpq","Unmodified",0.545454545454545
+"349","R_3KJY8jS0FCCAzgM","Pre-highlighted",0.727272727272727
+"350","R_3KTrhUkZ8eUXECI","Unmodified",0.454545454545455
+"351","R_3L4zC2hQ3L3S4ZH","Pre-highlighted",0.0909090909090909
+"352","R_3L6Ks92yZXW6Pe5","Unmodified",0.454545454545455
+"353","R_3LaUBELvoC38Bj2","Unmodified",0.272727272727273
+"354","R_3lMjWHDjoldU8Mn","Pre-highlighted",0.363636363636364
+"355","R_3lMSAfdPPu8obJm","Unmodified",0.636363636363636
+"356","R_3lQ4jHAE14gjyeH","Sans Forgetica",0.909090909090909
+"357","R_3lWfXlMLnwfhovJ","Unmodified",0
+"358","R_3LYFB9dz3VCKxaX","Pre-highlighted",0.272727272727273
+"359","R_3MfjriSwWESG9j2","Unmodified",0.153846153846154
+"360","R_3Mi2vpEjZcsDRwl","Pre-highlighted",0.363636363636364
+"361","R_3mjWhxTbnhTtQCv","Pre-highlighted",0.909090909090909
+"362","R_3MKzKPuY3RkQPgW","Unmodified",0.666666666666667
+"363","R_3MzBvC6HtWArs0t","Sans Forgetica",0.636363636363636
+"364","R_3n0dsZcWAY3NYHN","Sans Forgetica",0.454545454545455
+"365","R_3n1oHjIlEujujNp","Sans Forgetica",0.272727272727273
+"366","R_3n79ZmXx3omsjbG","Sans Forgetica",0.166666666666667
+"367","R_3nf793iLeprrb9k","Unmodified",0.272727272727273
+"368","R_3NKzLp1CWMydQBR","Pre-highlighted",0.272727272727273
+"369","R_3NQ93s2Nmbkopvs","Unmodified",0.5
+"370","R_3nrpKF8EX6QfM9q","Sans Forgetica",0.545454545454545
+"371","R_3NVsdNccUNXVXHB","Sans Forgetica",0.769230769230769
+"372","R_3oGR6vRxzRI4q1z","Unmodified",0.363636363636364
+"373","R_3Oixyswoh23ViGJ","Unmodified",0.181818181818182
+"374","R_3OoCrNaJSbxykEH","Pre-highlighted",0.0909090909090909
+"375","R_3oRQMbG7zzVvRYV","Unmodified",0.727272727272727
+"376","R_3oTsG4AwxR6DCa4","Unmodified",0.181818181818182
+"377","R_3Ou9STafx7HFVG9","Unmodified",0.416666666666667
+"378","R_3P65TuVTnnRCNfQ","Sans Forgetica",0.166666666666667
+"379","R_3p6nAs2zyw8zag9","Unmodified",0.181818181818182
+"380","R_3pbd7EisxVu0Dul","Sans Forgetica",0.636363636363636
+"381","R_3pbEEnhuruQxgMv","Sans Forgetica",0.230769230769231
+"382","R_3Pcqi1nI7HjXErf","Pre-highlighted",0.416666666666667
+"383","R_3PFvGNmuimyXpqM","Unmodified",0.363636363636364
+"384","R_3pl3dQon7gRLwtg","Sans Forgetica",0.636363636363636
+"385","R_3pm7MSKiYK8RTUP","Unmodified",0.538461538461538
+"386","R_3PmB7SIWoUjG69h","Sans Forgetica",0.181818181818182
+"387","R_3pmZY7DY10hklHU","Pre-highlighted",0.571428571428571
+"388","R_3po0cT865xNF73K","Unmodified",0.25
+"389","R_3PpOR6112VzwRIq","Unmodified",0.363636363636364
+"390","R_3prvhBPpCry73Lj","Pre-highlighted",0.454545454545455
+"391","R_3PTBBCqVCT2TlcA","Sans Forgetica",0.636363636363636
+"392","R_3qapEeo3uSpIA2u","Unmodified",0.727272727272727
+"393","R_3qkXD1GTLU7mpdZ","Pre-highlighted",0.0769230769230769
+"394","R_3qL2WIz0qYNwsBf","Unmodified",0.636363636363636
+"395","R_3qO7sZ1dik1P0Z1","Pre-highlighted",0.142857142857143
+"396","R_3QRCcUlAW5b7stq","Unmodified",0.909090909090909
+"397","R_3r09nufdARaOpLX","Sans Forgetica",0
+"398","R_3rTJd2qbrgw2ZbH","Unmodified",0.636363636363636
+"399","R_3rTk2tmNMv3x42t","Pre-highlighted",0.363636363636364
+"400","R_3rUidhyJVhUT8Qz","Unmodified",0.333333333333333
+"401","R_3rVEh3RtNwg7U0G","Sans Forgetica",0.363636363636364
+"402","R_3rZJfG638Pzewgs","Unmodified",0.636363636363636
+"403","R_3rZY37ePVvyFpBg","Unmodified",0
+"404","R_3s5jXDY4OS98rUX","Sans Forgetica",0.0909090909090909
+"405","R_3sb8nUEiAP5wEWn","Pre-highlighted",0.909090909090909
+"406","R_41kMqSBlU9XieaZ","Unmodified",0.7
+"407","R_4YJfwbZ4U9TtFuh","Unmodified",0.214285714285714
+"408","R_5zMnqZUzC2hOnIt","Unmodified",0.333333333333333
+"409","R_6M4sAIjU2eWWYg1","Pre-highlighted",0.230769230769231
+"410","R_6MfaExg1vUNRF0l","Sans Forgetica",0.181818181818182
+"411","R_6tj907urFJX2wBH","Pre-highlighted",0.636363636363636
+"412","R_74EE5c5w4Vcwx57","Sans Forgetica",0.181818181818182
+"413","R_79BGx45Wf3aM53j","Sans Forgetica",0.692307692307692
+"414","R_7NFZbxzgkIAWmBz","Pre-highlighted",0.272727272727273
+"415","R_7OMHhUjqyHhxL21","Unmodified",0.545454545454545
+"416","R_85Josxq3CUyQ3IJ","Sans Forgetica",0.454545454545455
+"417","R_88s3EgycHGeZ3EJ","Sans Forgetica",1
+"418","R_8D2GwPYj8LYMTUl","Sans Forgetica",0.636363636363636
+"419","R_8D4auXgEF7mWJEd","Sans Forgetica",0.333333333333333
+"420","R_8xoMdG2WO6ujswF","Sans Forgetica",1
+"421","R_9p1a7yYUtPpP0zf","Sans Forgetica",0.545454545454545
+"422","R_9sIOvzJu7dL9O7v","Sans Forgetica",0.545454545454545
+"423","R_9tBeIH2PJzu5TTr","Pre-highlighted",0.545454545454545
+"424","R_a5F23L8k3yn2A81","Pre-highlighted",0.333333333333333
+"425","R_a8K7lF3jlKOkWRz","Sans Forgetica",0
+"426","R_ac69rGfc2wewOC5","Pre-highlighted",0.909090909090909
+"427","R_AMxwBBSBJWa4E37","Unmodified",0.692307692307692
+"428","R_AsNLRSrIugSIarL","Pre-highlighted",0.363636363636364
+"429","R_AsO3By8nhDBVuuZ","Sans Forgetica",0.1
+"430","R_AtzPlKvbaR32ta1","Sans Forgetica",0.454545454545455
+"431","R_aUW1AIiUMdOlV2F","Unmodified",0.272727272727273
+"432","R_BFAGRdkgUS8mnVD","Unmodified",0.230769230769231
+"433","R_bpzvadupHLgz7gt","Sans Forgetica",0.545454545454545
+"434","R_broKvk5h1rlw0Qp","Pre-highlighted",0.454545454545455
+"435","R_BsKHnDa6hunEbex","Sans Forgetica",0.909090909090909
+"436","R_BtufUSHlR6MrsnT","Sans Forgetica",0.818181818181818
+"437","R_bwHmE4Z59DzAqt3","Pre-highlighted",0.545454545454545
+"438","R_BxrFDv0SyZM8M8h","Sans Forgetica",0.0909090909090909
+"439","R_C7ep5PzJdYyq03n","Unmodified",0.272727272727273
+"440","R_cBC29h6Gn6UJHYl","Sans Forgetica",0.545454545454545
+"441","R_cCnd8OYjatkNOet","Sans Forgetica",0.4
+"442","R_CdKWGfH2C9f0qYx","Unmodified",0.545454545454545
+"443","R_CdmT2VJ8L3Zjpe1","Sans Forgetica",0.0909090909090909
+"444","R_CfS8ubKfSiuJ4Wd","Pre-highlighted",0.636363636363636
+"445","R_cYlEURIftoqnKsV","Unmodified",0.454545454545455
+"446","R_d5z0BlqKSlhDu93","Sans Forgetica",0.833333333333333
+"447","R_D8IDJ5iR94VhWSt","Sans Forgetica",0.181818181818182
+"448","R_DC2LGzrNYauKoCt","Sans Forgetica",0.818181818181818
+"449","R_DCz9gIO7TvimUUx","Unmodified",0.142857142857143
+"450","R_DeDT0ZgscWP1QYx","Sans Forgetica",0.636363636363636
+"451","R_DMLqLn1dwofZIWt","Sans Forgetica",0.181818181818182
+"452","R_DqI0yH9ZJsFugpP","Sans Forgetica",0.636363636363636
+"453","R_DqnUrBZS6bqLpzX","Unmodified",0.454545454545455
+"454","R_e4CKyVByiMCPgIN","Sans Forgetica",0.125
+"455","R_egiKvIrcLjXNISl","Pre-highlighted",0.727272727272727
+"456","R_eQJOWSkyTM3bLNL","Pre-highlighted",0.363636363636364
+"457","R_eX5zGEUl5ObE31D","Unmodified",0.909090909090909
+"458","R_NUXGJ63KCkU12Zr","Pre-highlighted",1
+"459","R_NVyhz14W7BDvKJH","Pre-highlighted",0.272727272727273
+"460","R_O7Poz2bmtY4abex","Sans Forgetica",0
+"461","R_OB9rBNFE7LLEI4F","Unmodified",1
+"462","R_OdSaGcSBQNuud3z","Sans Forgetica",0.181818181818182
+"463","R_OIq93cMlJAGaJ4B","Pre-highlighted",0.454545454545455
+"464","R_p5xuubNUXqbbMIx","Pre-highlighted",0.909090909090909
+"465","R_pfmJrNEjp11xzSp","Sans Forgetica",0.0833333333333333
+"466","R_pGWnYCWSkVNHI8F","Unmodified",0.230769230769231
+"467","R_PHgaZSnYtbigAX7","Pre-highlighted",0.363636363636364
+"468","R_pRbasyrv8BfWmkN","Sans Forgetica",0.5
+"469","R_PZMW8CGO4O8DbSp","Unmodified",0.0714285714285714
+"470","R_Q5Iq0yeVaGdX2rn","Unmodified",0.181818181818182
+"471","R_Q5r6JSmVTQRRhUB","Pre-highlighted",0.909090909090909
+"472","R_QazEg8YJXgs3bKF","Unmodified",0.3125
+"473","R_qEfhQoDUiLkIczT","Sans Forgetica",0.454545454545455
+"474","R_QmnXTjfry8ikU49","Unmodified",0.25
+"475","R_QnxTZ2TFX7FSJH3","Pre-highlighted",0.454545454545455
+"476","R_R53w7jYMTzrko6t","Sans Forgetica",0.0833333333333333
+"477","R_R7Snz9ZbzSLBRpT","Pre-highlighted",0.181818181818182
+"478","R_rcCfFlyrZFocDJv","Sans Forgetica",0
+"479","R_Reom65nGgbP4W3f","Unmodified",0.0909090909090909
+"480","R_RKucqPSMyShkXGp","Sans Forgetica",0.272727272727273
+"481","R_rooWU8yY4DaNJPr","Unmodified",0.210526315789474
+"482","R_s4PmBNH0VlQDRZv","Pre-highlighted",1
+"483","R_SGF18rkSm6hhiQV","Pre-highlighted",0.636363636363636
+"484","R_sMv2s95DAQxhFxT","Sans Forgetica",0.272727272727273
+"485","R_stLdOexYQT1rFmh","Sans Forgetica",0.916666666666667
+"486","R_sUpng1kHbGEAfjH","Pre-highlighted",0.636363636363636
+"487","R_T8bpwk73iLlt8rL","Unmodified",0.181818181818182
+"488","R_Tejq5zkmWmmaNjP","Pre-highlighted",0.363636363636364
+"489","R_ToQr4ENBEsDQ9ih","Pre-highlighted",0.583333333333333
+"490","R_TqqpE9AdjvGvZGV","Sans Forgetica",0.454545454545455
+"491","R_Tw3fPT2OmHFtw8F","Unmodified",0.636363636363636
+"492","R_Twrz7ssvwffiysh","Unmodified",0.545454545454545
+"493","R_u1yEAtZT3MZqXSx","Pre-highlighted",0.454545454545455
+"494","R_u3Mzx9DoKnHKdSV","Sans Forgetica",0.25
+"495","R_UDwVuvMiZ31tvEJ","Sans Forgetica",0.727272727272727
+"496","R_UEZgbbqf0pOexAl","Pre-highlighted",1
+"497","R_UhaWGzuuBXEfMYN","Sans Forgetica",0.818181818181818
+"498","R_UrmJwU5oa57Lygx","Pre-highlighted",0.818181818181818
+"499","R_UXU548n56wzFbGx","Unmodified",0.166666666666667
+"500","R_V3BfkJzOfGwbA2J","Sans Forgetica",0.153846153846154
+"501","R_vBJQnHHYaPWOE6t","Unmodified",0.461538461538462
+"502","R_vc6o5CfJDlzlyI9","Unmodified",0.333333333333333
+"503","R_vdxNIxt8egXKBRT","Pre-highlighted",0.818181818181818
+"504","R_VKcqe4sddCbDjzz","Sans Forgetica",0.454545454545455
+"505","R_vkKnSDlrkNXSRG1","Pre-highlighted",0.909090909090909
+"506","R_VRo1CyYQWxc8qcN","Sans Forgetica",1
+"507","R_vTtlNv3L910YwO5","Pre-highlighted",0.545454545454545
+"508","R_vZGnEySlguFuijv","Sans Forgetica",0.454545454545455
+"509","R_W21US4FUsuZLgY1","Sans Forgetica",0.454545454545455
+"510","R_WlpD2eRTsGtCUaR","Sans Forgetica",0.454545454545455
+"511","R_wTM8dqidzfqfaMh","Unmodified",0.0625
+"512","R_xD96ne3Fh1D5nl7","Unmodified",0.916666666666667
+"513","R_xFAAQFAfnu7f7MJ","Pre-highlighted",0.545454545454545
+"514","R_xgOCVuP0CYKLUBz","Unmodified",0.636363636363636
+"515","R_XHsvcGHN56hk2Rj","Sans Forgetica",0.4375
+"516","R_XI1CQHe54LzugSJ","Pre-highlighted",0.454545454545455
+"517","R_XTdFXYg7v3FXr9L","Sans Forgetica",0.545454545454545
+"518","R_yEcP0W4YxMurCiB","Unmodified",0.454545454545455
+"519","R_yJ95VEeGuChlzzP","Pre-highlighted",0.727272727272727
+"520","R_YRBNgAMdzqmBCPT","Sans Forgetica",0.416666666666667
+"521","R_YS4ZV7Vuhi2sp7b","Sans Forgetica",0
+"522","R_ysin8WXoCm5zwNb","Sans Forgetica",1
+"523","R_YXD3wVBaeeMGniV","Unmodified",0.545454545454545
+"524","R_YXsT79eefQoDHSp","Sans Forgetica",0.166666666666667
+"525","R_zezvmYgXW2OujcZ","Sans Forgetica",0
+"526","R_ZgT9FoBvnPGqlm9","Pre-highlighted",0.363636363636364
+"527","R_ZrsKRJKVsi11cop","Unmodified",0.363636363636364
+"528","R_ZsnZqTp0TXukQsF","Sans Forgetica",0.636363636363636

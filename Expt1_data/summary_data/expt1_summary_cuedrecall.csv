@@ -1,0 +1,465 @@
+"","id","condition","dis","mean_acc"
+"1","E10","Generate","disfluent",0.583333333333333
+"2","E10","Generate","fluent",0.416666666666667
+"3","E11","Generate","disfluent",0.416666666666667
+"4","E11","Generate","fluent",0.166666666666667
+"5","E12","Generate","disfluent",0.416666666666667
+"6","E12","Generate","fluent",0.166666666666667
+"7","E13","Generate","disfluent",0.0833333333333333
+"8","E13","Generate","fluent",0.0833333333333333
+"9","E14","Generate","disfluent",0.833333333333333
+"10","E14","Generate","fluent",0.583333333333333
+"11","E15","Generate","disfluent",0.583333333333333
+"12","E15","Generate","fluent",0.416666666666667
+"13","E16","Generate","disfluent",0
+"14","E16","Generate","fluent",0
+"15","E17","Generate","disfluent",0.5
+"16","E17","Generate","fluent",0
+"17","E18","Generate","disfluent",0.666666666666667
+"18","E18","Generate","fluent",0.666666666666667
+"19","E19","Generate","disfluent",0.25
+"20","E19","Generate","fluent",0.0833333333333333
+"21","E2","Generate","disfluent",0.583333333333333
+"22","E2","Generate","fluent",0.416666666666667
+"23","E20","Generate","disfluent",0.416666666666667
+"24","E20","Generate","fluent",0.166666666666667
+"25","E21","Generate","disfluent",0.333333333333333
+"26","E21","Generate","fluent",0.25
+"27","E22","Generate","disfluent",0.416666666666667
+"28","E22","Generate","fluent",0.416666666666667
+"29","E23","Generate","disfluent",0.166666666666667
+"30","E23","Generate","fluent",0.0833333333333333
+"31","E24","Generate","disfluent",0.416666666666667
+"32","E24","Generate","fluent",0.25
+"33","E25","Generate","disfluent",0.666666666666667
+"34","E25","Generate","fluent",0.0833333333333333
+"35","E26","Generate","disfluent",0.75
+"36","E26","Generate","fluent",0.666666666666667
+"37","E27","Generate","disfluent",0.583333333333333
+"38","E27","Generate","fluent",0.166666666666667
+"39","E28","Generate","disfluent",0.333333333333333
+"40","E28","Generate","fluent",0.166666666666667
+"41","E29","Generate","disfluent",0.583333333333333
+"42","E29","Generate","fluent",0.5
+"43","E3","Generate","disfluent",0
+"44","E3","Generate","fluent",0
+"45","E30","Generate","disfluent",0.5
+"46","E30","Generate","fluent",0.25
+"47","E31","Generate","disfluent",0.333333333333333
+"48","E31","Generate","fluent",0.0833333333333333
+"49","E32","Generate","disfluent",0.75
+"50","E32","Generate","fluent",0.416666666666667
+"51","E33","Generate","disfluent",0.0833333333333333
+"52","E33","Generate","fluent",0
+"53","E34","Generate","disfluent",0.666666666666667
+"54","E34","Generate","fluent",0.166666666666667
+"55","E35","Generate","disfluent",0.166666666666667
+"56","E35","Generate","fluent",0.166666666666667
+"57","E36","Generate","disfluent",0.166666666666667
+"58","E36","Generate","fluent",0
+"59","E37","Generate","disfluent",0.5
+"60","E37","Generate","fluent",0.666666666666667
+"61","E38","Generate","disfluent",0.75
+"62","E38","Generate","fluent",0.5
+"63","E39","Generate","disfluent",0.5
+"64","E39","Generate","fluent",0.333333333333333
+"65","E4","Generate","disfluent",0.75
+"66","E4","Generate","fluent",0.166666666666667
+"67","E40","Generate","disfluent",0.583333333333333
+"68","E40","Generate","fluent",0.416666666666667
+"69","E41","Generate","disfluent",0.25
+"70","E41","Generate","fluent",0
+"71","E42","Generate","disfluent",0.166666666666667
+"72","E42","Generate","fluent",0.0833333333333333
+"73","E43","Generate","disfluent",0.416666666666667
+"74","E43","Generate","fluent",0.166666666666667
+"75","E44","Generate","disfluent",0.583333333333333
+"76","E44","Generate","fluent",0.166666666666667
+"77","E45","Generate","disfluent",0.333333333333333
+"78","E45","Generate","fluent",0.0833333333333333
+"79","E46","Generate","disfluent",0.75
+"80","E46","Generate","fluent",0.916666666666667
+"81","E47","Generate","disfluent",0.25
+"82","E47","Generate","fluent",0.0833333333333333
+"83","E48","Generate","disfluent",0.583333333333333
+"84","E48","Generate","fluent",0.583333333333333
+"85","E49","Generate","disfluent",0.583333333333333
+"86","E49","Generate","fluent",0
+"87","E5","Generate","disfluent",0.333333333333333
+"88","E5","Generate","fluent",0.25
+"89","E50","Generate","disfluent",0.166666666666667
+"90","E50","Generate","fluent",0.0833333333333333
+"91","E51","Generate","disfluent",0.25
+"92","E51","Generate","fluent",0
+"93","E52","Generate","disfluent",0.166666666666667
+"94","E52","Generate","fluent",0
+"95","E53","Generate","disfluent",0.333333333333333
+"96","E53","Generate","fluent",0
+"97","E54","Generate","disfluent",0.5
+"98","E54","Generate","fluent",0
+"99","E55","Generate","disfluent",0.666666666666667
+"100","E55","Generate","fluent",0.583333333333333
+"101","E56","Generate","disfluent",0.416666666666667
+"102","E56","Generate","fluent",0.416666666666667
+"103","E57","Generate","disfluent",0.416666666666667
+"104","E57","Generate","fluent",0.25
+"105","E58","Generate","disfluent",0.25
+"106","E58","Generate","fluent",0
+"107","E59","Generate","disfluent",0.25
+"108","E59","Generate","fluent",0
+"109","E6","Generate","disfluent",0.333333333333333
+"110","E6","Generate","fluent",0.0833333333333333
+"111","E7","Generate","disfluent",0.75
+"112","E7","Generate","fluent",0.25
+"113","E8","Generate","disfluent",0.583333333333333
+"114","E8","Generate","fluent",0.25
+"115","E9","Generate","disfluent",0
+"116","E9","Generate","fluent",0
+"117","M10","Sans Forgetica","disfluent",0.25
+"118","M10","Sans Forgetica","fluent",0.416666666666667
+"119","M11","Sans Forgetica","disfluent",0
+"120","M11","Sans Forgetica","fluent",0.166666666666667
+"121","M12","Sans Forgetica","disfluent",0
+"122","M12","Sans Forgetica","fluent",0
+"123","M13","Sans Forgetica","disfluent",0
+"124","M13","Sans Forgetica","fluent",0
+"125","M14","Sans Forgetica","disfluent",0.416666666666667
+"126","M14","Sans Forgetica","fluent",0.166666666666667
+"127","M16","Sans Forgetica","disfluent",0.5
+"128","M16","Sans Forgetica","fluent",0.75
+"129","M17","Sans Forgetica","disfluent",0
+"130","M17","Sans Forgetica","fluent",0
+"131","M18","Sans Forgetica","disfluent",0.166666666666667
+"132","M18","Sans Forgetica","fluent",0.166666666666667
+"133","M19","Sans Forgetica","disfluent",0.25
+"134","M19","Sans Forgetica","fluent",0.583333333333333
+"135","M2","Sans Forgetica","disfluent",0.0833333333333333
+"136","M2","Sans Forgetica","fluent",0.166666666666667
+"137","M20","Sans Forgetica","disfluent",0.333333333333333
+"138","M20","Sans Forgetica","fluent",0.583333333333333
+"139","M21","Sans Forgetica","disfluent",0.333333333333333
+"140","M21","Sans Forgetica","fluent",0.583333333333333
+"141","M22","Sans Forgetica","disfluent",0.0833333333333333
+"142","M22","Sans Forgetica","fluent",0.25
+"143","M23","Sans Forgetica","disfluent",0.166666666666667
+"144","M23","Sans Forgetica","fluent",0.416666666666667
+"145","M24","Sans Forgetica","disfluent",0.0833333333333333
+"146","M24","Sans Forgetica","fluent",0.166666666666667
+"147","M25","Sans Forgetica","disfluent",0.166666666666667
+"148","M25","Sans Forgetica","fluent",0.166666666666667
+"149","M26","Sans Forgetica","disfluent",0
+"150","M26","Sans Forgetica","fluent",0.166666666666667
+"151","M27","Sans Forgetica","disfluent",0.333333333333333
+"152","M27","Sans Forgetica","fluent",0.416666666666667
+"153","M28","Sans Forgetica","disfluent",0.166666666666667
+"154","M28","Sans Forgetica","fluent",0.0833333333333333
+"155","M29","Sans Forgetica","disfluent",0.666666666666667
+"156","M29","Sans Forgetica","fluent",0.583333333333333
+"157","M3","Sans Forgetica","disfluent",0.25
+"158","M3","Sans Forgetica","fluent",0.5
+"159","M30","Sans Forgetica","disfluent",0.333333333333333
+"160","M30","Sans Forgetica","fluent",0.166666666666667
+"161","M31","Sans Forgetica","disfluent",0.25
+"162","M31","Sans Forgetica","fluent",0.0769230769230769
+"163","M32","Sans Forgetica","disfluent",0
+"164","M32","Sans Forgetica","fluent",0.0833333333333333
+"165","M33","Sans Forgetica","disfluent",0.416666666666667
+"166","M33","Sans Forgetica","fluent",0.333333333333333
+"167","M34","Sans Forgetica","disfluent",0.166666666666667
+"168","M34","Sans Forgetica","fluent",0.416666666666667
+"169","M35","Sans Forgetica","disfluent",0.166666666666667
+"170","M35","Sans Forgetica","fluent",0.25
+"171","M36","Sans Forgetica","disfluent",0.166666666666667
+"172","M36","Sans Forgetica","fluent",0.153846153846154
+"173","M37","Sans Forgetica","disfluent",0.25
+"174","M37","Sans Forgetica","fluent",0.0833333333333333
+"175","M38","Sans Forgetica","disfluent",0.0625
+"176","M38","Sans Forgetica","fluent",0.0714285714285714
+"177","M39","Sans Forgetica","disfluent",0.166666666666667
+"178","M39","Sans Forgetica","fluent",0.416666666666667
+"179","M4","Sans Forgetica","disfluent",0.666666666666667
+"180","M4","Sans Forgetica","fluent",0.583333333333333
+"181","M40","Sans Forgetica","disfluent",0.166666666666667
+"182","M40","Sans Forgetica","fluent",0.5
+"183","M41","Sans Forgetica","disfluent",0.166666666666667
+"184","M41","Sans Forgetica","fluent",0.166666666666667
+"185","M42","Sans Forgetica","disfluent",0.583333333333333
+"186","M42","Sans Forgetica","fluent",0.75
+"187","M43","Sans Forgetica","disfluent",0
+"188","M43","Sans Forgetica","fluent",0.416666666666667
+"189","M44","Sans Forgetica","disfluent",0
+"190","M44","Sans Forgetica","fluent",0.166666666666667
+"191","M45","Sans Forgetica","disfluent",0.25
+"192","M45","Sans Forgetica","fluent",0.416666666666667
+"193","M46","Sans Forgetica","disfluent",0.666666666666667
+"194","M46","Sans Forgetica","fluent",0.666666666666667
+"195","M47","Sans Forgetica","disfluent",0.5
+"196","M47","Sans Forgetica","fluent",0.75
+"197","M48","Sans Forgetica","disfluent",0.333333333333333
+"198","M48","Sans Forgetica","fluent",0.416666666666667
+"199","M49","Sans Forgetica","disfluent",0.166666666666667
+"200","M49","Sans Forgetica","fluent",0.416666666666667
+"201","M5","Sans Forgetica","disfluent",0.666666666666667
+"202","M5","Sans Forgetica","fluent",0.583333333333333
+"203","M50","Sans Forgetica","disfluent",0.75
+"204","M50","Sans Forgetica","fluent",0.916666666666667
+"205","M51","Sans Forgetica","disfluent",0.583333333333333
+"206","M51","Sans Forgetica","fluent",0.833333333333333
+"207","M52","Sans Forgetica","disfluent",0.166666666666667
+"208","M52","Sans Forgetica","fluent",0.0833333333333333
+"209","M53","Sans Forgetica","disfluent",0.833333333333333
+"210","M53","Sans Forgetica","fluent",0.666666666666667
+"211","M54","Sans Forgetica","disfluent",0.333333333333333
+"212","M54","Sans Forgetica","fluent",0.666666666666667
+"213","M55","Sans Forgetica","disfluent",0.166666666666667
+"214","M55","Sans Forgetica","fluent",0
+"215","M56","Sans Forgetica","disfluent",0
+"216","M56","Sans Forgetica","fluent",0
+"217","M57","Sans Forgetica","disfluent",0.75
+"218","M57","Sans Forgetica","fluent",0.833333333333333
+"219","M58","Sans Forgetica","disfluent",0.25
+"220","M58","Sans Forgetica","fluent",0.416666666666667
+"221","M59","Sans Forgetica","disfluent",0.166666666666667
+"222","M59","Sans Forgetica","fluent",0
+"223","M6","Sans Forgetica","disfluent",0.166666666666667
+"224","M6","Sans Forgetica","fluent",0.333333333333333
+"225","M60","Sans Forgetica","disfluent",0.75
+"226","M60","Sans Forgetica","fluent",0.666666666666667
+"227","M7","Sans Forgetica","disfluent",0.75
+"228","M7","Sans Forgetica","fluent",0.75
+"229","M8","Sans Forgetica","disfluent",0.416666666666667
+"230","M8","Sans Forgetica","fluent",0.666666666666667
+"231","M9","Sans Forgetica","disfluent",0
+"232","M9","Sans Forgetica","fluent",0
+"233","T10","Generate","disfluent",0
+"234","T10","Generate","fluent",0.166666666666667
+"235","T11","Generate","disfluent",0.0833333333333333
+"236","T11","Generate","fluent",0.0833333333333333
+"237","T12","Generate","disfluent",0.416666666666667
+"238","T12","Generate","fluent",0.25
+"239","T13","Generate","disfluent",0.583333333333333
+"240","T13","Generate","fluent",0.75
+"241","T14","Generate","disfluent",0.416666666666667
+"242","T14","Generate","fluent",0.166666666666667
+"243","T15","Generate","disfluent",0.583333333333333
+"244","T15","Generate","fluent",0.25
+"245","T16","Generate","disfluent",0.25
+"246","T16","Generate","fluent",0.333333333333333
+"247","T17","Generate","disfluent",0
+"248","T17","Generate","fluent",0
+"249","T18","Generate","disfluent",0.333333333333333
+"250","T18","Generate","fluent",0
+"251","T19","Generate","disfluent",0.0833333333333333
+"252","T19","Generate","fluent",0.166666666666667
+"253","T2","Generate","disfluent",0.75
+"254","T2","Generate","fluent",0.75
+"255","T21","Generate","disfluent",0.583333333333333
+"256","T21","Generate","fluent",0.666666666666667
+"257","T22","Generate","disfluent",0.416666666666667
+"258","T22","Generate","fluent",0.25
+"259","T23","Generate","disfluent",0
+"260","T23","Generate","fluent",0
+"261","T24","Generate","disfluent",0
+"262","T24","Generate","fluent",0.0833333333333333
+"263","T25","Generate","disfluent",0.5
+"264","T25","Generate","fluent",0.5
+"265","T26","Generate","disfluent",0.0833333333333333
+"266","T26","Generate","fluent",0
+"267","T27","Generate","disfluent",0.666666666666667
+"268","T27","Generate","fluent",0.333333333333333
+"269","T29","Generate","disfluent",0.333333333333333
+"270","T29","Generate","fluent",0.583333333333333
+"271","T3","Generate","disfluent",0.666666666666667
+"272","T3","Generate","fluent",0.583333333333333
+"273","T30","Generate","disfluent",0.5
+"274","T30","Generate","fluent",0.5
+"275","T31","Generate","disfluent",0
+"276","T31","Generate","fluent",0
+"277","T32","Generate","disfluent",0
+"278","T32","Generate","fluent",0
+"279","T33","Generate","disfluent",0.5
+"280","T33","Generate","fluent",0.583333333333333
+"281","T34","Generate","disfluent",0.416666666666667
+"282","T34","Generate","fluent",0
+"283","T35","Generate","disfluent",0.333333333333333
+"284","T35","Generate","fluent",0.166666666666667
+"285","T36","Generate","disfluent",0.666666666666667
+"286","T36","Generate","fluent",0.916666666666667
+"287","T37","Generate","disfluent",0.25
+"288","T37","Generate","fluent",0
+"289","T39","Generate","disfluent",0.583333333333333
+"290","T39","Generate","fluent",0.166666666666667
+"291","T4","Generate","disfluent",0.583333333333333
+"292","T4","Generate","fluent",0.583333333333333
+"293","T40","Generate","disfluent",0.333333333333333
+"294","T40","Generate","fluent",0.333333333333333
+"295","T41","Generate","disfluent",0.166666666666667
+"296","T41","Generate","fluent",0.25
+"297","T42","Generate","disfluent",0.833333333333333
+"298","T42","Generate","fluent",0.833333333333333
+"299","T43","Generate","disfluent",0.0833333333333333
+"300","T43","Generate","fluent",0.166666666666667
+"301","T44","Generate","disfluent",0.333333333333333
+"302","T44","Generate","fluent",0.5
+"303","T45","Generate","disfluent",0
+"304","T45","Generate","fluent",0
+"305","T46","Generate","disfluent",0.583333333333333
+"306","T46","Generate","fluent",0.5
+"307","T47","Generate","disfluent",0.166666666666667
+"308","T47","Generate","fluent",0.0833333333333333
+"309","T48","Generate","disfluent",0.166666666666667
+"310","T48","Generate","fluent",0.0833333333333333
+"311","T49","Generate","disfluent",0.583333333333333
+"312","T49","Generate","fluent",0.333333333333333
+"313","T50","Generate","disfluent",0.333333333333333
+"314","T50","Generate","fluent",0.666666666666667
+"315","T51","Generate","disfluent",0
+"316","T51","Generate","fluent",0
+"317","T52","Generate","disfluent",0.25
+"318","T52","Generate","fluent",0.333333333333333
+"319","T53","Generate","disfluent",0.583333333333333
+"320","T53","Generate","fluent",0.666666666666667
+"321","T54","Generate","disfluent",0.666666666666667
+"322","T54","Generate","fluent",0.0833333333333333
+"323","T55","Generate","disfluent",0.583333333333333
+"324","T55","Generate","fluent",0.5
+"325","T56","Generate","disfluent",0.333333333333333
+"326","T56","Generate","fluent",0.166666666666667
+"327","T57","Generate","disfluent",0.0833333333333333
+"328","T57","Generate","fluent",0
+"329","T58","Generate","disfluent",0.666666666666667
+"330","T58","Generate","fluent",0.583333333333333
+"331","T59","Generate","disfluent",0.666666666666667
+"332","T59","Generate","fluent",0.333333333333333
+"333","T6","Generate","disfluent",0.833333333333333
+"334","T6","Generate","fluent",0.583333333333333
+"335","T60","Generate","disfluent",0.75
+"336","T60","Generate","fluent",0.833333333333333
+"337","T61","Generate","disfluent",0.416666666666667
+"338","T61","Generate","fluent",0.333333333333333
+"339","T62","Generate","disfluent",0.5
+"340","T62","Generate","fluent",0.333333333333333
+"341","T63","Generate","disfluent",0.0833333333333333
+"342","T63","Generate","fluent",0.25
+"343","T7","Generate","disfluent",0.416666666666667
+"344","T7","Generate","fluent",0.25
+"345","T8","Generate","disfluent",0.416666666666667
+"346","T8","Generate","fluent",0.25
+"347","T9","Generate","disfluent",0.416666666666667
+"348","T9","Generate","fluent",0.416666666666667
+"349","W10","Sans Forgetica","disfluent",0.0833333333333333
+"350","W10","Sans Forgetica","fluent",0
+"351","W11","Sans Forgetica","disfluent",0.583333333333333
+"352","W11","Sans Forgetica","fluent",0.25
+"353","W12","Sans Forgetica","disfluent",0.583333333333333
+"354","W12","Sans Forgetica","fluent",0.333333333333333
+"355","W13","Sans Forgetica","disfluent",0.833333333333333
+"356","W13","Sans Forgetica","fluent",0.916666666666667
+"357","W14","Sans Forgetica","disfluent",0.333333333333333
+"358","W14","Sans Forgetica","fluent",0.5
+"359","W15","Sans Forgetica","disfluent",0.0833333333333333
+"360","W15","Sans Forgetica","fluent",0.166666666666667
+"361","W16","Sans Forgetica","disfluent",0.5
+"362","W16","Sans Forgetica","fluent",0.416666666666667
+"363","W17","Sans Forgetica","disfluent",0.333333333333333
+"364","W17","Sans Forgetica","fluent",0.166666666666667
+"365","W18","Sans Forgetica","disfluent",0.5
+"366","W18","Sans Forgetica","fluent",0.833333333333333
+"367","W19","Sans Forgetica","disfluent",0.333333333333333
+"368","W19","Sans Forgetica","fluent",0
+"369","W2","Sans Forgetica","disfluent",0.25
+"370","W2","Sans Forgetica","fluent",0.25
+"371","W20","Sans Forgetica","disfluent",0.0833333333333333
+"372","W20","Sans Forgetica","fluent",0.0833333333333333
+"373","W21","Sans Forgetica","disfluent",0.333333333333333
+"374","W21","Sans Forgetica","fluent",0.5
+"375","W22","Sans Forgetica","disfluent",0.0833333333333333
+"376","W22","Sans Forgetica","fluent",0
+"377","W23","Sans Forgetica","disfluent",0.25
+"378","W23","Sans Forgetica","fluent",0
+"379","W24","Sans Forgetica","disfluent",0.333333333333333
+"380","W24","Sans Forgetica","fluent",0.0833333333333333
+"381","W25","Sans Forgetica","disfluent",0.5
+"382","W25","Sans Forgetica","fluent",0.166666666666667
+"383","W26","Sans Forgetica","disfluent",0
+"384","W26","Sans Forgetica","fluent",0
+"385","W27","Sans Forgetica","disfluent",0.25
+"386","W27","Sans Forgetica","fluent",0.0833333333333333
+"387","W28","Sans Forgetica","disfluent",0.583333333333333
+"388","W28","Sans Forgetica","fluent",0.25
+"389","W29","Sans Forgetica","disfluent",0.333333333333333
+"390","W29","Sans Forgetica","fluent",0.25
+"391","W3","Sans Forgetica","disfluent",0.583333333333333
+"392","W3","Sans Forgetica","fluent",0.416666666666667
+"393","W30","Sans Forgetica","disfluent",0.25
+"394","W30","Sans Forgetica","fluent",0.25
+"395","W31","Sans Forgetica","disfluent",0.666666666666667
+"396","W31","Sans Forgetica","fluent",0.583333333333333
+"397","W32","Sans Forgetica","disfluent",0.166666666666667
+"398","W32","Sans Forgetica","fluent",0.333333333333333
+"399","W33","Sans Forgetica","disfluent",0.5
+"400","W33","Sans Forgetica","fluent",0.583333333333333
+"401","W34","Sans Forgetica","disfluent",0.75
+"402","W34","Sans Forgetica","fluent",0.583333333333333
+"403","W35","Sans Forgetica","disfluent",0.333333333333333
+"404","W35","Sans Forgetica","fluent",0.416666666666667
+"405","W36","Sans Forgetica","disfluent",0.5
+"406","W36","Sans Forgetica","fluent",0.166666666666667
+"407","W37","Sans Forgetica","disfluent",0.833333333333333
+"408","W37","Sans Forgetica","fluent",0.583333333333333
+"409","W38","Sans Forgetica","disfluent",0.583333333333333
+"410","W38","Sans Forgetica","fluent",0.416666666666667
+"411","W39","Sans Forgetica","disfluent",0.5
+"412","W39","Sans Forgetica","fluent",0.0833333333333333
+"413","W4","Sans Forgetica","disfluent",0.666666666666667
+"414","W4","Sans Forgetica","fluent",0.416666666666667
+"415","W40","Sans Forgetica","disfluent",0.333333333333333
+"416","W40","Sans Forgetica","fluent",0.333333333333333
+"417","W41","Sans Forgetica","disfluent",0.0833333333333333
+"418","W41","Sans Forgetica","fluent",0.166666666666667
+"419","W42","Sans Forgetica","disfluent",0.333333333333333
+"420","W42","Sans Forgetica","fluent",0.666666666666667
+"421","W43","Sans Forgetica","disfluent",0.25
+"422","W43","Sans Forgetica","fluent",0.25
+"423","W44","Sans Forgetica","disfluent",0.25
+"424","W44","Sans Forgetica","fluent",0.0833333333333333
+"425","W45","Sans Forgetica","disfluent",0.916666666666667
+"426","W45","Sans Forgetica","fluent",0.916666666666667
+"427","W46","Sans Forgetica","disfluent",0.25
+"428","W46","Sans Forgetica","fluent",0.583333333333333
+"429","W47","Sans Forgetica","disfluent",0.666666666666667
+"430","W47","Sans Forgetica","fluent",0.5
+"431","W48","Sans Forgetica","disfluent",0.583333333333333
+"432","W48","Sans Forgetica","fluent",0.5
+"433","W49","Sans Forgetica","disfluent",0.166666666666667
+"434","W49","Sans Forgetica","fluent",0.166666666666667
+"435","W5","Sans Forgetica","disfluent",0.416666666666667
+"436","W5","Sans Forgetica","fluent",0.166666666666667
+"437","W50","Sans Forgetica","disfluent",0.666666666666667
+"438","W50","Sans Forgetica","fluent",0.333333333333333
+"439","W51","Sans Forgetica","disfluent",0
+"440","W51","Sans Forgetica","fluent",0.333333333333333
+"441","W52","Sans Forgetica","disfluent",0.5
+"442","W52","Sans Forgetica","fluent",0.583333333333333
+"443","W53","Sans Forgetica","disfluent",0.5
+"444","W53","Sans Forgetica","fluent",0.583333333333333
+"445","W54","Sans Forgetica","disfluent",0.0833333333333333
+"446","W54","Sans Forgetica","fluent",0
+"447","W55","Sans Forgetica","disfluent",0.0833333333333333
+"448","W55","Sans Forgetica","fluent",0.0833333333333333
+"449","W56","Sans Forgetica","disfluent",0.333333333333333
+"450","W56","Sans Forgetica","fluent",0.0833333333333333
+"451","W57","Sans Forgetica","disfluent",0.583333333333333
+"452","W57","Sans Forgetica","fluent",0.916666666666667
+"453","W58","Sans Forgetica","disfluent",0.333333333333333
+"454","W58","Sans Forgetica","fluent",0.0833333333333333
+"455","W59","Sans Forgetica","disfluent",0.5
+"456","W59","Sans Forgetica","fluent",0.25
+"457","W6","Sans Forgetica","disfluent",0.75
+"458","W6","Sans Forgetica","fluent",0.666666666666667
+"459","W7","Sans Forgetica","disfluent",0.714285714285714
+"460","W7","Sans Forgetica","fluent",0.1875
+"461","W8","Sans Forgetica","disfluent",0.75
+"462","W8","Sans Forgetica","fluent",0.583333333333333
+"463","W9","Sans Forgetica","disfluent",0.583333333333333
+"464","W9","Sans Forgetica","fluent",0.416666666666667
