@@ -1,0 +1,227 @@
+---
+title: "Expt 3"
+output: html_notebook
+---
+
+
+```{r}
+library(janitor)
+library(here)
+library(afex)
+library(emmeans)
+library(Rmisc)
+library(data.table)
+```
+
+```{r}
+
+
+setwd(here::here('Expt3_data', 'Gorilla_raw_data'))
+
+data=here::here('Expt3_data', 'Gorilla_raw_data')  # path to data files
+
+file_list=list.files(data, pattern=".csv") # list of data files
+ 
+# read in all files
+dataset <-
+  do.call("rbind", lapply(file_list, FUN=function(files){
+    
+    for (i in 1:length(files)){ 
+      if(file.exists(files[i])){
+        message( "now processing:", files[i])
+      }
+    }
+    fread(files, header=TRUE, sep=",", na.strings = "", fill=TRUE)})) #fread makes reading in files quick
+#
+
+```
+
+
+```{r}
+
+
+dd<-dataset %>% 
+  janitor::clean_names(.) %>%
+  filter(zone_type=="response_button_text")
+
+#response as character
+dd$response<-as.character(dd$response)
+
+
+
+#get Rts
+rt<-dataset %>% janitor::clean_names(.) %>%  filter(zone_type=="continue_button", display=="study") 
+
+# get RT
+rt$reaction_time<-as.numeric(rt$reaction_time)
+rt1<- rt %>% 
+  group_by(participant_private_id , condition) %>% 
+  summarise(mean=mean(reaction_time, na.rm=TRUE))
+
+```
+
+
+```{r}
+#response as character
+
+ex3=dd %>% mutate(condition1= case_when( 
+  condition == "SF" ~ "Sans Forgetica", 
+  condition =="normal" ~  "Arial", 
+), isold= case_when (
+  old_new== "old" ~ 1, 
+  old_new== "new" ~ 0), 
+sayold=case_when( 
+  response=="old"~ 1, 
+  response=="new" ~ 0, 
+  ))
+
+
+
+#classic SDT for those wanting to compare
+sdt <- ex3 %>% 
+  dplyr::mutate(type = "hit",
+         type = ifelse(isold==1 & sayold==0, "miss", type),
+         type = ifelse(isold==0 & sayold==0, "cr", type),  # Correct rejection
+         type = ifelse(isold==0 & sayold==1, "fa", type))  # False alarm
+sdt <- sdt %>% 
+  dplyr::group_by(participant_private_id, type, condition1) %>% 
+  dplyr::summarise(count = n()) %>% 
+  spread(type, count)  # Format data to one row per person
+
+sdt <- sdt %>% 
+  group_by(participant_private_id, condition1)%>%
+  dplyr::mutate(hr = hit / (hit+miss),
+         fa = fa / (fa+cr)) %>%
+  dplyr::mutate(hr=case_when(
+    is.na(hr) ~ 0.99,
+    TRUE ~ hr), 
+    fa=case_when(
+      is.na(fa)  ~ 0.01,
+    TRUE ~ fa),
+     zhr=qnorm(hr), 
+     zfa=qnorm(fa), 
+    dprime = zhr-zfa) %>%
+  ungroup()
+
+sdt
+
+```
+```{r}
+sdt1=sdt  %>% select(participant_private_id, condition1, hr, fa) %>% 
+  pivot_longer(hr:fa, names_to="type") %>%
+  dplyr::mutate(isold=case_when(type=="hr" ~ "Old", type=="fa" ~ "New"))
+
+
+
+sdt1$isold<-factor(sdt1$isold, levels=c("Old", "New"))
+
+sdt1$Condition<-factor(sdt1$condition1, levels=c("Sans Forgetica", "Arial"))
+
+
+dprimebf=sdt  %>% select(participant_private_id, condition1, dprime) %>%
+  pivot_wider(names_from=condition1, values_from = dprime)
+
+
+```
+
+```{r}
+#paired ttest
+a1 <- t.test(dprimebf$Arial,dprimebf$`Sans Forgetica`, paired=TRUE, data=dprimebf)
+
+#Bayes Factor
+dprimebf<-as.data.frame(dprimebf)
+
+ttestBF(x=dprimebf$Arial, y=dprimebf$`Sans Forgetica`, paired=TRUE, data=dprimebf)
+
+#BF=7.14
+
+# path to data files
+```
+
+```{r}
+means <- sdt1 %>% mutate(Condition=case_when(
+  condition=="SF"~ "Sans Forgetica", 
+  condition=="normal"~ "Arial"
+))
+
+means$Condition<-factor(means$Condition, levels=c("Sans Forgetica", "Arial"))
+
+
+
+oldnewsub=summarySEwithin(data = means, measurevar = "value",
+                       withinvars = c("Condition", "isold","type"), idvar = "participant_private_id")
+```
+
+
+```{r}
+p1<- ggplot(means, aes(Condition, value, fill=Condition))+
+  facet_grid(~isold) + 
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=oldnewsub,aes(y=value, group=1), size=1)+ 
+  geom_pointrange(data=oldnewsub, aes(y=value, ymin=value-ci, ymax=value+ci), size=1, color="white")+ 
+  theme_bw(base_size=14)+
+  labs(y="Pr Saying Old", x="Font Type") + 
+  theme(legend.position = "none") + 
+  theme(axis.text=bold) 
+
+
+#oldnew=brm(glmm2, data=ex3, family=bernoulli(link="identity"), prior=Priors, sample_prior = TRUE,  cores=6, inits = 0, control = list(adapt_delta = .9), iter=3000)
+
+p1
+
+```
+
+
+```{r}
+
+
+
+sdt$condition<-factor(sdt$condition1, levels=c("Sans Forgetica", "Arial"))
+
+
+dsw=summarySEwithin(data = sdt, measurevar = "dprime",
+                       withinvars = "condition1", idvar = "participant_private_id")
+ 
+ 
+ 
+p2<- ggplot(sdt, aes(condition1, dprime, fill=condition1))+
+  geom_violin() + 
+  geom_jitter2(width=0.11, alpha=.5)+ 
+  geom_line(data=dsw,aes(y=dprime, group=1), size=1)+ 
+  geom_pointrange(data=dsw, aes(y=dprime, ymin=dprime-ci, ymax=dprime+ci), size=1, color="white")+ 
+  theme_bw(base_size=14)+
+  labs(y="Sensitivity (d')", x="Font Type") + 
+  theme(legend.position = "none") + 
+  theme(axis.text=bold)
+
+p2
+
+
+patchwork1= p1/ p2 
+patchwork1 + plot_annotation(tag_levels = 'A')
+
+
+```
+
+
+#Supplemental Analysis
+
+```{r}
+#fit GLMM in brms to extract the BF
+
+oldnewglme=glmer(sayold~isold*condition1+(1+condition1|Participant.Private.ID)+ (1+condition1|Stims), data=ex3, family=binomial(link="probit"))
+
+prior<-prior(normal(0,1), class="b") # weakly informed prior on the coefficents
+
+#fit the brms model
+oldnewbrm=brm(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=ex3, family=bernoulli(link="probit"), prior=prior, sample_prior = TRUE,  cores = 4) 
+
+
+#get BF for interaction which is difference in dprime from brms model
+dprime=hypothesis(oldnewbrm, 'isold:condition1 = 0')
+
+
+
+
+```
