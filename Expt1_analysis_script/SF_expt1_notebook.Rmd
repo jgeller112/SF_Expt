@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Expt 1: Cued-Recall"
 output: html_notebook
 ---
 
@@ -225,7 +225,7 @@ x_label=c("Disfluent", "Fluent")
 
 
 
-sfgen1=summarySEwithin(data = ex1_agg, measurevar = "mean_acc",
+sfgen_wsci=summarySEwithin(data = ex1_agg, measurevar = "mean_acc",
                        withinvars = "dis", betweenvars = "condition", idvar = "ResponseID")
 
 
@@ -266,8 +266,8 @@ bold <- element_text(face = "bold", color = "black", size = 14)
 p1<-ggplot(ex1_agg, aes(dis, mean_acc, fill=dis))+ facet_grid(~condition)+ 
   geom_violin() + 
   geom_jitter2(width=0.11, alpha=.5)+ 
-  geom_line(data=sfgen1,aes(y=mean_acc, group=1), size=1)+ 
-  geom_pointrange(data=sfgen1, aes(y=mean_acc, ymin=mean_acc-ci, ymax=mean_acc+ci), size=1, color="white")+ 
+  geom_line(data=sfgen_wsci,aes(y=mean_acc, group=1), size=1)+ 
+  geom_pointrange(data=sfgen_wsci, aes(y=mean_acc, ymin=mean_acc-ci, ymax=mean_acc+ci), size=1, color="white")+ 
   scale_x_discrete(labels= x_label)+
   theme_bw(base_size=14)+labs(y="Proportion Recalled on Final Test", x="Fluency") + 
   theme(legend.position = "none") + 
@@ -290,16 +290,19 @@ p1
 
 ```
 
-
 #Supplemental Analysis (GLMER)
+#Results between both converge on same conclusion
 
 ```{r}
 
 library(lme4)
+library(sjPlot)
 
-full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (0+dis+condition|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
-kable(full_model)
+full_model=glmer(acc~condition*dis + (1+ dis|ResponseID) + (dis|target), data=sfgen1, contrasts = list(dis="contr.sum", condition="contr.sum"), family="binomial", control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=100000)))
 
+f=sjPlot::tab_model(full_model)
+
+f
 
 ef1 <- effect("condition:dis", full_model) #take final glmer model 
 summary(ef1)
