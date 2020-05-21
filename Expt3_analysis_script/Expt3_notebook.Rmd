@@ -48,16 +48,23 @@ dd<-dataset %>%
 dd$response<-as.character(dd$response)
 
 
+```
 
+```{r}
 #get Rts
 rt<-dataset %>% janitor::clean_names(.) %>%  filter(zone_type=="continue_button", display=="study") 
 
 # get RT
 rt$reaction_time<-as.numeric(rt$reaction_time)
 rt1<- rt %>% 
-  group_by(participant_private_id , condition) %>% 
-  summarise(mean=mean(reaction_time, na.rm=TRUE))
+  dplyr::group_by(participant_private_id , condition) %>% 
+  dplyr::summarise(mean=mean(reaction_time, na.rm=TRUE))
 
+rt2=rt1 %>% pivot_wider(names_from=condition, values_from = "mean")
+
+ttestBF(x=rt2$normal, y=rt2$SF, paired=TRUE, data=rt2)
+
+#6.67
 ```
 
 
