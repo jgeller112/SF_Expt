@@ -17,7 +17,7 @@ affiliation:
   institution: Skidmore College
 output: papaja::apa6_pdf
 bibliography: ref.bib
-classoption: "doc"
+classoption: "jou"
 documentclass: "apa6"
 draft: no
 figurelist: no
@@ -27,10 +27,14 @@ keywords: Disfluency, Recall, Desirable Difficulty, Learning and Memory
 linenumbers: yes
 mask: no
 authornote: |
-  Jason Geller, Department of Psychology and Brain Sciences, University of Iowa, W113 Seashore Hall, Iowa City, IA, 52242;
+ Funding: This research was supported by grant number 220020429 from the James S. McDonnell Foundation awarded to the third author.
+  
+ Declaration of Interest: The authors declare no competing interests.
+  
+  
 shorttitle: Sans Forgetica
 tablelist: no
-abstract: "Do students learn better with material that is perceptually harder to process? While evidence is equivocal on the matter, recent claims suggest that placing materials in Sans Forgetica font, which is perceptually hard to process, has positive effects on student learning. Given the weak evidence for other similar perceptual disfluency effects, this led us to examine the mnemonic effects of Sans Forgetica more closely in comparison to other learning strategies. In three preregistered experiments, we tested if Sans Forgetica is really unforgettable. In Experiment 1 (*N* = 233), participants studied weakly related  cue-target pairs with targets presented in either Sans Forgetcia or with missing letters (e.g., CUE- G_RL, the generation effect). Cued recall performance showed a robust effect of generation, but no Sans Forgetica memory benefit. In Experiment 2 (*N*=528), participants read a passage about ground water with select sentences presented in either Sans Forgetica, yellow pre-highlighting, or unmodified. Cued recall for select words was better for pre-highlighted information than when unmodified. Critically, presenting sentences in Sans Forgetica did not elevate cued recall, but neither did the pre-highlighting manipulation relative to a pure reading condition. In Experiment 3 (*N* = 60), indiviudals did not have better discriminability for Sans Forgetica relative to a fluent condition in an old-new recognition test. Our findings suggest that Sans Forgetica really is forgettable."
+abstract: "Do students learn better with material that is perceptually hard to process? While evidence is equivocal on the matter, recent claims suggest that placing materials in Sans Forgetica, a perceptually difficult-to-process font, has positive impacts on student learning. Given the weak evidence for other similar perceptual disfluency effects, we examined the mnemonic effects of Sans Forgetica more closely in comparison to other learning strategies across three preregistered experiments. In Experiment 1 (N = 233), participants studied weakly related cue-target pairs with targets presented in either Sans Forgetica or with missing letters (e.g., cue: G_RL, the generation effect). Cued recall performance showed a robust effect of generation, but no Sans Forgetica memory benefit. In Experiment 2 (N = 528), participants read an educational passage about ground water with select sentences presented in either Sans Forgetica font, yellow pre-highlighting, or unmodified. Cued recall for select words was better for pre-highlighted information than a unmodified pure reading condition. Critically, presenting sentences in Sans Forgetica did not elevate cued recall compared to an unmodified pure reading condition or a pre-highlighted condition. In Experiment 3 (N = 60), individuals did not have better discriminability for Sans Forgetica relative to a fluent condition in an old-new recognition test. Our findings suggest that Sans Forgetica really is forgettable."
 wordcount: 4458
 ---
 
@@ -44,68 +48,70 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-Students want to remember more and forget less. Being able to recall and apply previously learned information is key for successful acadmeic performance at all levels. Many students are attracted to learning interventions that require little effort, but these are not always the best was to achieve durable learning. Importantly, decades of research in the laboratory and in the classroom have put forth the paradoxical idea that making learning harder (not easier) should have the desirable effect of improving long-term retention of material--called the desirable difficulty principle [@Bjork2011]. Notable examples of desirable difficulties include having participants generate information from word fragments instead of passively reading intact words [@Bertsch2007], spacing out study sessions instead of massing them [@Carpenter2016], and having participants engage in retrieval practice after studying instead of simply restudying the information [@Kornell2016]. 
+Students want to remember more and forget less. Being able to recall and apply previously learned information is key for successful academic performance at all levels. Many students are attracted to learning interventions that require minimal effort, but such approaches are rarely the best ways to achieve durable learning [@Geller2018]. Research in both the laboratory and classroom supports the paradoxical idea that making the encoding or retrieval of information more difficult, not easier, has the desirable effect of  improving  long-term retention [@Bjork2011]. Notable examples of desirable difficulties include the generation effect [improved memory for information that has been actively generated rather than passively read; @Bertsch2007; @Slamecka1978], and the testing effect [improved memory for information that was actively recalled rather than passively re-read; see @Kornell2016]. 
 
-Another startegy that may impart a desirable difficulty involves changing the physical characteritics of stimuli to make it harder to read or more disfluent.  Whereas making stimuli easier to proccess or more fluent produces overconfidence (predicted memory > actual memory; @Rhodes2008, @Rhodes2009), disflueny (i.e., the subjective experience of effort during processing) serves to better calibrate learners and produces better memory. In a seminal article by @Diemand-Yauman2011 demonstrated in the laboratroy and classroom that  placing to be studied materials in atypical fonts (e.g., Comic Sans Montype Corsiva, Bodoni, and Haettenshweiler) resulted in better memory than if the material was in a common font. This finding has been found with other perceptual manipulations such as masking [presenting a row of hashmarks before the presentation of a stimulus;  @Mulligan1996], inversion [@Sungkhasettee2011], blurring [@Rosner2015], and handwriting [@Geller2018]. The predominate theoritical explanaton for this finding is that the experience of disfluency serves as a metacognitive (subjective) cue, and this engenders deeper, more semantic, processing of material [but see @Geller2018 for an alternative account]. The benefit associated with processing difficulty brought forth by changing perceptual characteristics of stimuli is called the disfluency effect. 
+Research has conclusively established that when encoding is sufficiently effortful, memory outcomes improve. More recently, attention has focused on just how effortful that processing needs to be to observe mnemonic benefits.  Specifically, researchers have examined whether subtle perceptual manipulations that change the physical characteristics of to-be-learned stimuli (rendering them harder to read or more disfluent) can similarly improve retention. Some research suggests it can. @Diemand-Yauman2011, for instance, demonstrated that placing words in atypical fonts (e.g., Comic Sans, Montype Corsiva) resulted in better memory than if the material was in a common font. A similar perceptual disfluency effect has been found with other perceptual manipulations including masking [e.g., presenting a stimulus very briefly (~100 ms)  and forward or backing masking it; @Mulligan1996, inversion [@Sungkhasettee2011], blurring [@Rosner2015], and handwriting [@Geller2018]. The predominant theoretical explanation unifying these effects is that disfluency triggers metacognitive monitoring (“This is difficult to process”), which subsequently cues the learner to engage in deeper (i.e., more semantic) processing of material [but see @Geller2018 for an alternative account).
 
-Given the desribale effects on memory and the relative ease of implementation, it is clear why perceptual disfluency is such an appealing strategy. However, there have been several experiments that failed to find memorial benefits for perceptually disfluent materials [e.g., @Magreehan2016; @Rhodes2008, @Rhodes2009; @Rummer2016; @Yue2013], casting doubt upon the robustness of the disfluency effect. Corroborating this, A recent meta-analysis by @Xie2018 with 25 studies and 3,135 participants found a small, non-significant, effect of perceptual disfluency on recall and (*d* = -0.01) and transfer (*d* = 0.03). Despite having no mnemonic effect, perceptual disfluency produced longer reading times (*d* = 0.52) and lower judgments of learning (i.e., metamemory judgements that assess future memory) (*d* =  -0.043).
+Though this makes for a compelling story, other research casts serious doubt on disfluency as an effective pedagogical tool [e.g., @Magreehan2016; @Rhodes2008, @Rhodes2009; @Rummer2016; @Yue2013]. A recent meta-analysis by @Xie2018 which included 25 studies and 3,135 participants found a small non-significant effect of perceptual disfluency on recall (d = -0.01) and transfer (d = 0.03). Most damning, despite having no mnemonic effect, perceptual disfluency manipulations generally produced longer reading times (d = 0.52) and lower judgments of learning (JOLs) (d =-0.43).
 
-Although evidence for perceptual disflueny is weak, it important to point out that there are important boundary conditions of the disfluency effect (see Geller & Still, 2018). One important boundary condition to consider is the level of disfluency used. Not all perceptual disfluency manipulations are created equal. Using handwritten cursive that was either easy to read or hard to read, they observed an inverted u-shaped pattern--easy to read and hard to read cursive were better remembered than print, but easy to read cursive was better remembered than hard to read cursive. This pattern suggests that manipulations that are disfluent can produce better memory, but they need to be optimally disfluent. 
+In trying to make sense of these disparate results, it is important to consider boundary conditions of the disfluency effect (see Geller & Still, 2018). As @Geller2018 argue, not all perceptual disfluency manipulations are created equal. In the study, researchers compared memory outcomes for information that was presented in print or handwritten cursive that was either easy or hard-to-read. Results showed both easy and hard-to-read cursive were better remembered than print, but easy-to-read cursive was better remembered than hard-to-read cursive. This pattern suggests that disfluency manipulations can enhance memory, but such manipulations need to be optimally disfluent to exert a positive effect on memory.
 
-Recently, a team of psychologists, graphic designers, and marketers set out to find the optimal level of disfluency needed to be desirable for learning. According to an interview conducted by @Earp2018, to find the optimal font, the team conducted a cued recall experiment (*N*=96) werein participants read 20 highly associated word pairs (e.g., girl - guy) each for 100 ms in a moderate disfluent font, an extremely disfluent font, a slighly disfluent font, and a normal, fluent, font. Results showed that the pairs in the moderate disfluent font were recalled slighly better (69%) than the normal font (68%). The team named this font Sans Forgetica. The font itself is a varaint of sans serif font with intermittent gaps in letters that are back slanted (see figure 1). The intermittent gaps of Sans Forgetica are thought to require readers to generate or fill in the missing pieces thereby producing a memory advantage. This mechanism of action is similar to that of the generation effect, wherein information is better remembered when generated or filled-in compared to if it is simply read. 
+Recently, a team of psychologists, graphic designers, and marketers set to create a new font specifically optimized to improve retention through perceptual disfluency. According to unpublished data from an interview taken from @Earp2018, to create the optimal font, the team conducted a cued recall experiment (N = 96) wherein participants read 20 related word pairs (e.g., girl - guy) each for 100 ms in a normal font or one of three different disfluent fonts (slight disfluency, moderate disfluency, or extreme disfluency).  They found that pairs in the moderate disfluent font were recalled slightly better (69%) than the normal font (68%), although whether this meets the criteria for statistical significance is unclear, and unlikely. As a result of the memory boost, the team named this font Sans Forgetica. Sans Forgetica font itself is a variant of sans serif typeface with intermittent gaps in letters that are back slanted (see Figure 1). The intermittent gaps of Sans Forgetica are thought to require readers to generate or fill in the missing pieces, thereby producing a memory advantage. This mechanism of action is thought to be similar to that of the generation effect, wherein information is better remembered when generated or filled in compared to if it is simply read [@Slamecka1978].
 
-Since the release of the Sans Forgetica font, there has been a lot of attention and press. Sans Forgetica was covered by major news sources like the Washington Post [@Telford2018]  National Public Radio (NPR; https://www.npr.org/2018/10/06/655121384/sans-forgetica-a-font-to-remember), and The Guardian. In 2019, Sans Forgetica won the GoodDesign, Best in Class award (Good Desigm, 2019). Sans Forgetica font can even be downloaded and used on your computer. 
+To further test the mnemonic effects of Sans Forgetica font, the team conducted an online experimental follow-up (*N* = 303) [@Earp2018]. In this study, participants were presented passages (250 words in total) where one paragraph of three was presented in the Sans Forgetica font.  Each participant saw five different texts in total. For each text, participants were asked one question about the information written in the moderately disfluent font and another question about the information written in normal font. Placing text passages in the moderately disfluent font resulted in better memory (57%) than if materials were presented in normal font (50%). 
 
+Since the release of the Sans Forgetica font, there has been a great deal of attention from the press. Sans Forgetica received coverage from major news sources like the Washington Post, National Public Radio, and The Guardian. In 2019, Sans Forgetica won the GoodDesign, Best in Class Award (Good Design, 2019). Commercially, Sans Forgetica font is freely available to users, and is marketed as a study tool Despite all the attention and marketing, empirical evidence for Sans Forgetica font is lacking.
 
-```{r, fig.cap=paste("Example of Sans Forgetica font. ")}
-library(here)
-knitr::include_graphics(here('SF.png'))
-```	
+Initial evidence for the Sans Forgetica font comes from the aforementioned unpublished studies by the Sans Forgetica development team [@Earp2018]. Note, however, that the modest group differences observed were not accompanied by any inferential hypothesis testing, nor were any of these claims subjected to the peer-review process. However, some evidence for the effectiveness of the Sans Forgetica font comes from a study by Eskenazi and Nix (2020), who found that words and definitions in Sans Forgetica font led to better orthographic discriminabity (i.e., choosing the correct spelling of a word) and semantic acquisition (i.e., retrieving the definition of a word), but only if participants were good spellers.  This suggests that the utility of the Sans Forgetica font as a study tool may be quite limited. Recently, Taylor et al. (2020) conducted one of the first conceptual replications of the Sans Forgetica team’s initial findings.  Looking at memory performance for related word pairs (Experiment 2) and prose passages (Experiments 3-4) they found no evidence that Sans Forgetica font served as a desirable difficulty. In fact, Sans Forgetica seemed to attenuate rather than enhance memory for cued recall (Experiment 2). 
 
-Despite all the attention and marketing, evidence for Sans Forgetica font is mixed. Initial evidence for the Sans Forgetica font comes from an unpublished study by the Sans Forgetica team [@Earp2018]. In an online experiment (*N* = 303), participants were presented passages (250 words in total) where one of the paragraphs was presented in Sans Forgetica. Each participant saw five different texts in total. For each text participants were asked one question about the part written in Sans Forgetica and another question about the part written in normal font. Placing text passages in Sans Forgetica font resulted in better memeory (57%) than if matearis were presented in normal font (50%). Additonal evidence for the Sans Forgetica font comes from a study conducted by @Eskenazi2020. They found that words and definitions in Sans Forgetica font lead to better orthographic discriminabity (i.e., choosing the correct spelling of the word) and semantic acquisition (i.e., retrieving the definition of a word), but only if participants were good spellers. Despite positive evidence for Sans Forgetica, @Taylor2020 recently conducted a conceptual replication of the studies by the Sans Forgetica team and found no evidence for Sans Forgetica font enhancing memory. In fact, Sans Forgetica seemed to harm memory (Expeirment 2). 
+# The Present Studies
 
-The current set of experiments comprised an attempt to conceptually replicate and extend the work by @Taylor and the Sans Forgetica team to examine whether Sans Forgetica font has a desirable effect on memory. As the @Taylor study is the only published replication attempt, we thought it pertinent to follow up on their claims. The question of whether Sans Forgetica produces a mnnmenomic benefit has clear practical implications. In the educational domain, it would be relatively quick and easy to place materials in Sans Forgetica font. However, in order for Sans Forgetica font to be useful, it is important to note and understand both its successes and failures. Given the equivocal findings in the literature, the current research aims to identify some of the moderating or boundary conditions of the Sans Fogetica effect [@Oppenheimer2014]
+The question of Sans Forgetica’s effectiveness at producing a mnemonic benefit has clear educational implications. Demonstrating support for a purported study aid as quick and easy as swapping to-be-learned text from one font to another would be a boon for students. However, recent research calls into question the legitimacy of this font as a study aid at all (Taylor et al., 2020). Given the mixed evidence, the current set of studies aimed to further investigate the mnemonic benefit of the Sans Forgetica effect on memory. 
 
-In Experiment 1, we examined the impact of cue strength by looking at weakly related cue-target pairs. In Experiment 2, we examined design type by examining prose passage recall using a between-subjects manipulation. In Experiment 3, we examined if the type of test moderated the Sans Forgetica effect by using a yes/no recognition test. In addition, we aimed to compared the Sans forgetica effect with other notable learning technqies--generation (Experiment 1) and pre-highlighting (Experiment 2). Comparing Sans Forgetica to other study techniques allows us to examine the mechanisms underlying the effect, if any. 
+In Experiment 1, we examined the impact of cue strength and study duration on cue-target pairs presented in a normal font or Sans Forgetica. In Experiment 2, we focused on more complex, educationally relevant prose passages. In Experiment 3, we examined if the type of test moderated the Sans Forgetica effect by using a yes/no recognition test. Importantly, we also compared the Sans Forgetica effect with other, more empirically supported learning techniques: generation (Experiment 1) and pre-highlighting (Experiment 2).
 
 # Experiment 1
 
-In Experiment 1 we were interested in answering two questions. Can we get a benefit for Sans Forgetica when using weakly associated pairs? If so, is the Sans Forgetica effect on memory similar in magnitude to another desriable difficulty--generation? In Experiment 1 we examined the mnemonic benefit of Sans Forgetica and generation by looking at cued recall performance. While @Taylor2020 and The Sans Forgetica team [@Earp2018] examined the effect of Sans Forgetica font on cued recall memory using highly associated words, we used wealkly assoicated word pairs. It is possible that @Taylor2020 failed to find a Sans Forgetica effect due to the high cue-target strength. With highly associated paris, retreival success is high. This could shift the focus of attention from the disfluent font to that of cue strength resulting in a null Sans Forgetica effect [@Magreehan2016]. In Experiment 1 participants studied weakly associated pairs for 2 seconds to examine the effect of Sans Forgetica and generation on memory. We opted to present pairs for 2 seconds rather than the 100 ms duration used by @Taylor and Sans Forgetica team [@Earp2018]. With a 100 ms duration, participants might have struggled to read the word pairs properly, or to process the word pairs deeply enough, for any benefits of Sans Forgetica to take effect. We predict that if Sans Forgetica does produce a mnemonic benefit, we should observe better cued recall performance for targets in Sans forgetica font compared to Arial font. Further, if it is similar to the generation effect, the magnitude of the memory benefit between the two should be similar. 
+In Experiment 1 we were interested in answering two questions. Does Sans Forgetica facilitate the retention of weakly associated cue-target pairs? If so, is this facilitation similar in magnitude to another desirable difficulty phenomenon—the generation effect? @Taylor2020(Experiment 2) used cue-target pairs that were highly associated and failed to find a memory benefit for Sans Forgetica font. It has been argued [e.g. @Carpenter2009] that weakly related cue-target pairs produce more elaborative processing and lead to better memory, especially when the targets to be remembered require generation or retrieval (called the elaborative retrieval hypothesis). It is possible, then, that the use of highly associated pairs in @Taylor2020 served to dampen the Sans Forgetica font effect. In Experiment 1 we examined the mnemonic benefit of Sans Forgetica font and generation by looking at cued recall performance with weakly associated cue-target pairs.  In addition, we opted to present pairs for two seconds rather than the 100 ms duration used by @Taylor2020 and Sans Forgetica team [@Earp2018]. With a 100 ms duration, participants might have struggled to read the word pairs properly, or to process the word pairs deeply enough, for any benefits of Sans Forgetica to take effect. 
 
 ## Method
 
-Sample size, experimental design, hypotheses, outcome measures, and analysis plan for each experiment were pre-registered and can be found on the Open Science Framework  (https://osf.io/mjcn9). Raw data and R scripts for analysis and plots can be found at https://osf.io/m42wq/. 
+Sample size, experimental design, hypotheses, outcome measures, and analysis plan for each experiment were pre-registered and can be found on the Open Science Framework (Experiments 1 and 2: https://osf.io/d2vy8/; Experiment 3: https://osf.io/dsxrc/). All raw and summary data along with R scripts for pre-processing, analysis, and plotting can be found at https://github.com/jgeller112/SF_Expt.
 
 ### Participants
 
-Two-hundred and thirty people from Amazon’s Mechanical Turk Service participated for monetary compensation. Sample size was based on a priori power analyses conducted using PANGEA v0.2 (Westfall, 2015). Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect a medium sized interaction effect (*d* = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Butler2014]. Therefore, assuming an alpha of .05 and a desired power of 90%, a sample size of 230 is required to detect whether aninteraction effect size of .35 differs from zero. No participants met our pre-registered exclusion criteria (i.e., did not complete the experiment, started the experiment multiple times, experienced technical problems, or reported familiarity with the stimuli), yielding 115 participants in each between-subjects condition. 
-
+ We recruited subjects on Amazon’s Mechanical Turk (MTurk) platform, all of whom completed the study using Qualtrics survey software. A total of 232 people completed the experiment in return for U.S.$1.00. Sample size was based on a priori power analyses conducted using PANGEA v0.2 [@Westfall2015]. Sample size was calculated based on the smallest effect of interest [SEOI; @Lakens2014]. In this case, we were interested in powering our study to detect a medium sized interaction effect between the generation effect and the Sans Forgettica effect (d = .35). We choose this effect size as our SESOI due in part to the small effect sizes seen in actual classroom studies [@Butler2014]. Therefore, assuming an alpha of .05 and a desired power of 90%, a sample size of 230 is required to detect whether an interaction effect size of .35 differs from zero. No participants met our pre-registered exclusion criteria (i.e., did not complete the experiment, started the experiment multiple times, experienced technical problems, or reported familiarity with the stimuli), yielding 116 participants in each between-subjects condition. 
 
 ### Design
 
-Fluency (fluent vs. disfluent) was manipulated within-subjects and Disfluency Type (Generation vs. Sans Forgetica) was manipulated between participants. For the Sans Forgetica condition, disfluent targets were presented in Sans Forgetica while the fluent targets were presented in Arial font. In the Generation condition, disfluent targets were presented with missing letters (vowels were replaced by underscores) and the other half were intact (Arial font). 
+Fluency (fluent vs. disfluent) was manipulated within subjects and Disfluency Type (Generation vs. Sans Forgetica) was manipulated between subjects. For the Sans Forgetica condition, disfluent targets were presented in Sans Forgetica font while fluent targets were presented in Arial font. In the Generation condition, disfluent targets were presented in Arial font with missing letters (vowels replaced by underscores) and fluent targets were intact. See Figure 1 for an example of the stimuli used.
 
-### Materials, and Procedure
+```{r fig.align="center", fig.cap=paste("Example of cue-target pairs. Left: Sans Forgetica condition. Right: Generation condition."), fig.height=4, fig.width=4}
+library(here)
+knitr::include_graphics(here('Picture1.png'))
+```	
 
-Participants were presented with 24 weakly related cue-target pairs taken from @Carpenter2006). Two cue-target pairs (e.g., range-rifle and train-plane) had to be thrown out as they were not presented due to a coding error. This left us with 22 weakly realted cue-target pairs. The 22 cue-target pairs were all nouns, 5–7 letters and 1–3 syllables in length, high in concreteness (400–700), high-frequency (at least 30 per million), and had similar forward and backward association strengths (@Nelson2004). Two counterbalanced lists were created for each Disfluency Type (generation and Sans Forgetica) so that each item could be presented in each fluency condition without repeating any items for an individual participant. 
 
-Participants completed the experiment on-line via the Qualtrics survey platform hosted on Amazon Mechanical Turk. Participants were randomly assigned to one of two conditions: The Generation condition or the Sans Forgetica condition. Prior to studying the pairs, participants were instructed to mentally “fill in” the targets to come up with the correct target. Participants were also told to study word pairs so that later they could recall the second word (target) when cued with the first word (cue). The experiment began with the presentation of 22 word pairs, shown one at a time, for 5 seconds each.  After a short 2-minute distraction task (anagram generation), participants completed a self-paced cued recall test. During cued recall, participants were presented 22 cues one at a time and asked to provide the target word.  A short demographics survey followed this final test, after which participants were debriefed. 
+### Materials and Procedure
+
+Participants were presented with 22 weakly related cue-target pairs taken from Carpenter et al., (2006).  The pairs were all nouns, 5–7 letters and 1–3 syllables in length, high in concreteness (400–700), high in frequency (at least 30 per million), and had similar forward (M = 0.031) and backward (M = 0.033) association strengths. Two counterbalanced lists were created for each Disfluency Type (Generation and Sans Forgetica) so that each item could be presented in each fluency condition without repeating any items for an individual participant. All materials can be found at (https://osf.io/d2vy8/)/ 
+ 
+
+Participants were randomly assigned to one of two conditions: the generation condition or the Sans Forgetica condition. Prior to studying the pairs, participants were instructed to mentally “fill in” the targets to come up with the correct target. Participants were also told to study word pairs so that later they could recall the target when presented with the cue. The experiment began with the presentation of the word pairs, presented one at a time, for five seconds each. After a short two-minute distraction task (anagram generation), participants completed a self-paced cued recall test. During cued recall, participants were presented 22 cues, one at a time, and asked to type in the target word. A short demographics survey followed this final test, after which participants were debriefed.
 
 ### Scoring
 
-Spell checking was automated with the hunspell package in R [@Ooms2018] using spellCheck.R. Because participants were recruited in the United States, we used the American English dictionary. A nice walk-through on how to use this package can be found in @Buchanan2019. Using this package, each response was corrected for misspellings. Corrected spellings are provided in the most probable order, therefore, the first suggestion was always selected as the correct answer. As a second pass, we manually examined the output to catch incorrect suggestions. If the response was close to the correct response, it was marked as correct.
+Spell checking was automated with the hunspell package in R (Ooms, 2018). Using this package, each response was corrected for misspellings. Corrected spellings are provided in the most probable order; therefore, the first suggestion was always selected as the correct answer. As a second pass, we manually examined the output to catch incorrect suggestions. If the response was close to the correct response, it was marked as correct.
 
-### Analysis
+### Analytic Strategy
 
-For all the experiments described, an alpha level of .05 is maintained. Cohen’s d and
-generalized eta-squared ( ; Olejnik & Algina, 2003) are used as effect size measures.
-Alongside traditional analyses that utilize null hypothesis significance testing (NHST), we also report the Bayes’ factors for pre-registered analyses.  All prior probabilities are Cauchy distributions centered at zero, and effect sizes are specified through the r-scale, which is the interquartile range (i.e., how spread out the middle 50% of the distribution is). For the null model, the prior is set to zero. All data were analyzed in R (vers. 3.5.0; R Core Team, 2019), with models fit using the afex [vers. 0.27-2; @Singmann2020] and BayesFactor packages [vers. 0.9.12-4.2; @Morey2018].
+For all the experiments, an alpha level of .05 is maintained. Cohen’s d and generalized eta-squared ($\eta_{g}^{2}$}; Olejnik & Algina, 2003) are used as effect size measures. Alongside traditional analyses that utilize null hypothesis significance testing (NHST), we also report the Bayes factors for each analysis. All prior probabilities are Cauchy distributions centered at zero, and effect sizes are specified through the r-scale, which is the interquartile range (i.e., how spread out the middle 50% of the distribution is). For the null model, the prior is set to zero. All data were analyzed in R (vers. 3.5.0; R Core Team, 2019), with models fit using the afex (vers. 0.27-2; Singmann et al., 2020) and BayesFactor packages (vers. 0.9.12-4.2; Morey & Rouder, 2018). All figures were generated using ggplot2 (vers. 3.3.0; Wickham, 2006). 
 
 # Results and Discussion
 
-Per our pregreistation, cued recall accuracy was analyzed with a 2 (Fluency: Fluent vs. Disfluent) x 2 (Disfluency Type: Generation vs. Sans Forgetica) Mixed ANOVA. There was no difference in cued recall between the Generation and Sans Forgetica groups, *F*(1, 230) = 0.19, ges <.001, p = .752. Individuals recalled more disfluent target words than fluency target words, *F*(1, 230) = 25.31, ges=.017, *p* < .001. This was qualified by an interaction between difficulty type and disfluency, *F*(1, 230) = 25.06, ges = .017, *p* < .001. A Bayesian ANOVA indicated strong evidence for the interaction model over the main effects model, BF~10~ > 100. As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect. 
+Per our pregreistation, cued recall accuracy was analyzed with a 2 (Fluency: Fluent vs. Disfluent) x 2 (Disfluency Type: Generation vs. Sans Forgetica) Mixed ANOVA. There was no difference in cued recall between the Generation and Sans Forgetica groups, *F*(1, 230) = 0.19, $\eta_{g}^{2}$ <.001, p = .752. Individuals recalled more disfluent target words than fluency target words, *F*(1, 230) = 25.31, $\eta_{g}^{2}$ =.017, *p* < .001. This was qualified by an interaction between difficulty type and disfluency, *F*(1, 230) = 25.06, $\eta_{g}^{2}$ = .017, *p* < .001. A Bayesian ANOVA indicated strong evidence for the interaction model over the main effects model, BF~10~ > 100. As seen in Fig. 2, the magnitude of the generation effect was larger than the Sans Forgetica effect, which was, in fact, negligible. 
 
-```{r echo=FALSE, fig.cap="Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy (black dots) with the mean (white dot) and within-subject 95\\% CIs.", fig.height=4, fig.width=8, message=FALSE, warning=FALSE, messages=FALSE, results="asis", warnings=FALSE}
+```{r echo=FALSE, fig.cap="Accuracy on cued recall test. Violin plots represent the kernal density of avearge accuracy (black dots) with the mean (white dot) and within-subject 95\\% CIs.", fig.height=4, fig.width=8, message=FALSE, warning=FALSE, results="asis"}
 
 library(qualtRics)
 library(tidyverse)
@@ -129,7 +135,7 @@ library(patchwork)
 
 #auto spellcheck
 #analyze and plot 
-sfgen=read_csv(here::here("Expt1_data", "sfgenerate_final.csv")) # read in corrected csv
+sfgen=read_csv(here::here("Expt1_data", "summary_data", "expt1_summary_cuedrecall.csv")) # read in corrected csv
 
 ex1=sfgen %>% 
   dplyr::mutate(difftype = case_when( 
@@ -141,13 +147,15 @@ ex1=sfgen %>%
 
 ex1_agg <- sfgen %>%
   dplyr::group_by(id, condition, dis)%>%
-  dplyr::summarise(mean_acc=mean(acc))
+  dplyr::summarise(mean_acc=mean(mean_acc))
 
 
-a1 <- aov_ez("id", "mean_acc", ex1_agg, 
-             between = c("condition"), within=c("dis")) # mixed
+#write.csv(ex1_agg, file="expt1_summary_cuedrecall.csv")
 
-summary(a1)
+#a1 <- aov_ez("id", "mean_acc", ex1_agg, 
+          #   between = c("condition"), within=c("dis")) # mixed
+
+#summary(a1)
 
 x_label=c("Disfluent", "Fluent")
 
@@ -216,28 +224,29 @@ p1
 
 ```
 
-The results for Experiment 1 are clear-cut. While the benefit of generating information was clear, there was no benefit of studying items in the Sans Forgetica font. Presenting weakly associated targets in Sans Forgetica for 2 seconds produced no memory benefit. This was confirmed by a Bayesian analysis denoting strong eveidence for the presence of the interaction compared to a main effects model. Although overall accuracy was low in the current experiment (38%), it is important to note that the level of performance was comparable to what was observed by @Carpenter2006 using the same materials (30% overall for study trial). In additon, accuracy was comparable to Experiment 2 from @Taylor2020, with highly associated cue target pairs (~45%). Taken together, these results suggest that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the Sans Forgetica effect is most likely not a desirable difficulty.
-
+While the benefit of generating information was clear, there was no benefit of studying items in the Sans Forgetica font. Thus, presenting weakly associated targets in Sans Forgetica for two seconds produced no memory benefit. This null result was confirmed by a Bayesian analysis denoting strong evidence for the presence of the interaction compared to a main effects model. Although participants’ overall accuracy was low in the current experiment (38%), it is important to note that the level of performance was comparable to what was observed by @Carpenter2006 using the same materials (30% overall for restudy compared to tested trials). In addition, accuracy was comparable to Experiment 2 from @Taylor2020 who used highly associated cue target pairs (~45%). Finally, overall performance was strong enough to reveal a significant generation effect, minimizing concerns that a difficult task might be suppressing an otherwise robust effect of Sans Forgettica . Taken together, these results suggest that (1) presenting materials in Sans Forgetica does not lead to better memory and (2) the effect of Sans Forgetica on memory is most likely not a desirable difficulty.
 
 # Experiment 2
 
-@Taylor2020 examined recall performance for Sans Forgetica using a within-subjects manipulation wherein a participant sees two levels of memoranda—a fluent level and disfluent (Sans Forgetica) level. Doing this, they did not see a memory benefit for Sans Forgetica font. In our Experiment 1, we also did not observe a benefit. @Atler2007 has argued that the utilization of a within-subjects design might have the undesriable consequence of masking a disfluency effect. That is, deeper processing evoked by disfluent items might carry-over to the fluent items. This could be a potential reason @Taylor and our (Experiment 1) failed to find a Sans Forgetica effect. To remedy this, Experiment 2 tested the mnemonic effects of Sans Forgetica with a between-subjects manipulation. Instead of using simple cue-target paris, we examined memory for sentences presented in Sans Forgetica which is more represenative of what students do while studying. In addition to examining the effects of Sans Forgetica, we also looked at the effects of pre-highlighting. One of the main functions of the Sans Forgetica font is to highlight information one needs to remember. This is similar to pre-highlighting, whereby important study information is highlghted prior to studying. This is used by instructors and textbook creators to enhance learning. Indeed, it has been shown that when students read pre-highlighted passages, there is some evience that they may recall more of the highlighted information and less of the non-highlighted information compared to students who receive an unmarked copy of the same passage [@Fowler1974; @Silvers1997]. To this end, Experiment 2 compared cued recall performance on a prose passage where some of the sentences were either presented in: Sans Forgetica, pre-highlighted in yellow, or unmodified. We hypothesized that if the Sans Forgetica effect is moderated by task design (within vs. between) words presented in Sans Forgetica should benefit more from the disfluency than the passage presented unmodified. Further, the benefit for Sans Forgetica should be similar in magnitude to the pre-highlighting condition as both manipulations serve to draw attention to the material. 
+Experiment 1 failed to reveal a memory benefit for the Sans Forgetica font. One potential limitation is that the atomistic stimuli employed in Experiment 1 (cue-target word pairs) may not provide an ecologically valid lens under which to study real classroom learning. To address this, in Experiment 2, we examined the mnemonic effects of Sans Forgetica using more complex prose materials. Like before, we wanted to compare the (potential) benefits of Sans Forgetica to something with empirical scrutiny. Accordingly, in Experiment 2, we examined how Sans Forgetica stacked up against pre-highlighting. 
+
+One of the purported functions of the Sans Forgetica font is to call attention to information one needs to remember. This is functionally similar to pre-highlighting, whereby important study information is highlighted prior to studying. Pre-highlighting is often used by instructors and textbook creators to enhance learning. Indeed, when students read pre-highlighted passages, there is some evidence that they recall more of the highlighted information and less of the non-highlighted information when compared to students who receive an unmarked copy of the same passage [@Fowler1974; @Silvers1997]. To this end, Experiment 2 compared cued recall performance on a prose passage where some of the sentences were either presented in Sans Forgetica, pre-highlighted in yellow, or unmodified text. We hypothesized that both Sans Forgetica and pre-highlighting should enhance memory for selected passages compared to an unmodified passage.
+
 
 ## Method
 
 ### Participants
 
-Five hundred and twenty-eight undergraduates (*N* = 528) participated for partial completion of course credit. After excluding participants based on our preregistered exclusion criteria, we were left with unequal group sizes. After excluding participants based on our preregistered exclusion criteria (*n* = 111), we were left with unequal group sizes. Because of this, we ran several more participants per group, yielding 176 participants in each of the three conditions. 
+Undergraduate students (N = 683) participated for partial completion of course credit.   After excluding participants based on our reregistered exclusion criteria (see above), we were left with unequal group sizes. Because of this, we ran six more participants per group, giving us 528 participants—176 participants in each of the three conditions. 
+
 
 ### Materials
 
-Participants read a passage on ground water (856 words) taken from from the U.S. Geological Survey [see @Yue2014]. Eleven critical phrases [^2]: originally we had 12 critical phrases but a pilot test showed that one of the questions was repeated twice so we removed one of them and also added a manipulation check question to sure participants were paying attention] each containing a different keyword, were selected from the passage (e.g., the term *recharge* was the keyword in the phrase: Water seeping down from the land surface adds to the ground water and is called recharge water.) and were either presented in yellow (pre-highlighted), Sans Forgetica, or unmodified. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). There was 1 attention check question at the start of the final test: "What was the passage you read on?."
+Participants read a passage on ground water (856 words) taken from the U.S. Geological Survey (see Yue et al., 2014). Eleven critical phrases,  each containing a different keyword, were selected from the passage (e.g., the term recharge was the keyword in the phrase “Water seeping down from the land surface adds to the ground water and is called recharge water”) and were presented in yellow (pre-highlighted) font, Sans Forgetica, or unformatted font. Then, 11 fill-in-the blank questions were created from these phrases by deleting the keyword and asking participants to provide it on the final test (e.g., Water seeping down from the land surface adds to the ground water and is called __________ water). There was one attention check question at the beginning of the final test. All materials can be found at (https://osf.io/d2vy8/). 
 
 ### Design and Procedure
 
-Participants were randomly assigned to either the pre-highlighted condition, Sans Forgetica condition, or unmodified condition. Our design manipulated three difference types of passages between-subjects: pre-highlighting, Sans Forgetica, and unmodified.
-
-Participants completed the experiment on-line via the Qualtrics survey platform. Participants were randomly assigned to one of three conditions: pre-highlighting, Sans Forgetica, or unmodified. Participants read a passage on ground water. All participants were instructed to read the passage as though they were studying material for a class. After 10 minutes, all participants were given a brief questionnaire (2 questions) asking them to indicate their metacognitive beliefs after reading the passage. The two questions were: “Do you feel that the presentation of the material helped you remember it better" and "How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?" Participants were then given a short distraction task (anagrams) for 3 minutes. Finally, all participants were given 11 fill-in-the-blank test questions, presented one at a time.
+Participants completed the experiment online via the Qualtrics survey platform. Participants were randomly assigned to one of three conditions: pre-highlighting, Sans Forgetica, or unmodified text. Participants read a passage on ground water. All participants were instructed to read the passage as though they were studying material for a class. After 10 minutes, all participants were given a question asking them to provide a judgement of learning after reading the passage: “How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?” Participants were then given a short distraction task (anagrams) for three minutes. Finally, all participants were given 11 fill-in-the-blank test questions, presented one at a time.
 
 ### Scoring
 
@@ -245,7 +254,9 @@ Spell checking was automated with the same procedure as Experiment 1.
 
 ## Results and Discussion
 
-Per our pregreistation, cued-recall accuracy was analyzed with a one-way ANOVA (Passage Type: Pre-highlighting vs. Sans Forgetica vs. Unmodified). The one-way ANOVA was significant, *F*(2, 525) = 3.16, ges = .012, **p* = .043. We hypothesized that recall for pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences between the highlighted and sans forgetia sentences. Our hypotheses were partially supported (see Fig. 2). Results indicated that pre-highlighted sentences were better remembered than sentences presented normally, *t*(525) = 2.45, *SE* = 0.028, *p* = .039, *d* = 0.26. There was weak evidence for no effect between sentences presented in Sans Forgetcia and pre-highlighted, *t*(525) = 0.049, *SE* = 0.028, *p* = .202, *d* = 0.18, BF~01~ = 2.36. Critically, there was no difference between sentences presented normally or in Sans Forgetcia, *t*(525) = 0.02, *SE* = 0.028, *p* = .734, *d* = 0.079. A Bayes factor indicated strong evidence of no effect between the two conditions (BF~01~ = 6.47). 
+Per our preregistration, cued recall accuracy was analyzed with a one-way ANOVA (Passage Type: Pre-highlighting vs. Sans Forgetica vs. Unmodified). The one-way ANOVA was significant, F(2, 525) = 3.16, $\eta_{g}^{2}$ = .012, p = .043. We hypothesized that pre-highlighted and Sans Forgetica sentences would be better remembered than normal sentences and that there would be no recall differences in recall between the highlighted and Sans Forgetica sentences. Our hypotheses were partially supported (see Fig. 2). Examining our planned comparisons (Tukey corrected), we found that pre-highlighted sentences were better remembered than sentences presented in unformatted text, *t*(525) = 2.45, *SE* = 0.028, *p *= .039, *d* = 0.26. There was weak evidence for no effect between sentences presented in Sans Forgetica and pre-highlighted, *t*(525) = 0.049, *SE* = 0.028, *p* = .202, *d* = 0.18, BF~10~ = 2.36. Critically, there was no difference between sentences presented normally or in Sans Forgetica, *t*(525) = 0.02, *SE* = 0.028, *p* = .734, *d* = 0.079. A Bayes factor indicated strong evidence of no effect between the two conditions (BF~10~ = 6.47).
+
+In short, we did not find that select information presented in Sans Forgetica produced better memory than select information left unmodified or pre-highlighted. The finding that Sans Forgetica font does not enhance memory for prose passages replicates the findings of @Taylor2020 (Experiments 3 and 4). We did, however, observe better memory for pre-highlighted information compared to words presented unmodified or in a Sans Forgetica font.
 
 
 ```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Proportion recalled as a function of passage type. Violin plots represent the kernal density of average accuracy (black dots) with the fixed effect mean (white dot) and 95\\%  CIs derived from the ANOVA model.", messages=FALSE, echo=FALSE, warning=FALSE,  results="asis"}
@@ -256,7 +267,6 @@ library(emmeans)
 library(here)
 library(ggpol)
 library(knitr)
-
 ground<-qualtRics::read_survey(here::here("Expt2_Data", "final_scored_acc.csv"))
 
 ground_change <- ground %>%
@@ -284,10 +294,10 @@ ls1<-as.data.frame(ls1)
 ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-highlighted", "Unmodified", "Sans Forgetica"))     
 
 #bf1<- ground_change_agg %>%
-  #filter(Passage!="Pre-highlighted")
+#filter(Passage!="Pre-highlighted")
 
 #bf2<-ground_change_agg %>%
-  #filter(Passage!="Unmodified")
+#filter(Passage!="Unmodified")
 
 #bf = ttestBF(formula = mean_acc ~ filter(Passage!="Pre-highlighted"), data = bf1)
 #bf
@@ -300,7 +310,7 @@ ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-high
 #fit full model
 
 #m2<-read_rds(here("Brms", "brms_gw.rds.gz"))
-                  
+
 #c_main <- emmeans(m2, ~ FL_149_DO, type="response")
 
 #c_main1=plot(c_main, horizontal =FALSE, colors="darkgreen")  + labs(x="Passage Type", y= "Probability Answering Question") + theme_bw(base_size = 14) + ggplot2::coord_cartesian(ylim = c(0, 1)) + theme(axis.text=bold)
@@ -314,7 +324,7 @@ ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-high
 #p<- ggplot(x1, aes(Passage, fit, fill=Passage))+ 
 #  geom_bar(stat="identity", position="dodge") + 
 #  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, position=position_dodge(width=0.9),color="red") + theme_bw(base_size=14)+labs(y="Pr Recall ", x="Passage Type") + 
- # scale_fill_manual(values=c("grey", "yellow", "black"))+
+# scale_fill_manual(values=c("grey", "yellow", "black"))+
 #  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
 
@@ -331,17 +341,18 @@ p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
 
 p1
 
+
+
 ```
 
 
 ## Exploratory Analysis
 
-In Experiment 2 we also asked students about their metacognitive awareness of the manipulations. Specifically we asked participants: "How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?" To examine differences we conducted seperate independent t-tests. Looking at JOLs, the unmodified passage was given higher JOLs (*M* = 57.4, *SE* = 1.97) than the pre-highlighted passage (*M* = 50.3, *SE* = 1.97), t(525) = -7.08,  *p* = .023. There were no reliable differences between the pre-highlighted passage and Sans Forgetica (*M* = 53.8, *SE* = 1.97), *t*(525) = -3.52,  *p* = .415 or between the passage in Sans Forgetica and the passage presented normally, *t*(525) = 3.56,  *p* = .406. 
+In Experiment 2 we also asked students about their metacognitive awareness of the manipulations known as JOLs. To examine differences, we conducted separate independent t-tests. Looking at JOLs, the unmodified passage was given higher JOLs (*M* = 57.4, *SD* = 25.2) than the pre-highlighted passage (*M* = 50.3, *SD* = 26.0), *t*(525) = -7.08, *p* = .023. There were no reliable differences between the pre-highlighted passage and Sans Forgetica (*M* = 53.8, *SD* = 27.0), *t*(525) = -3.52, *p* = .415 or between the passage in Sans Forgetica and the passage presented normally, *t*(525) = 3.56, *p* = .406. That is, passages in Sans Forgetica font did not produce lower judgement of learning compared to an unmodified or pre-highlighted passage. Interestingly, individuals gave lower JOLs to pre-highlighted information compared to materials presented in a normal font. With a between-subjects design, it is not uncommon to observe no JOL differences between fluent and disfluent materials [@Magreehan2016; @Yue2013]. Indeed, @Taylor2020 (Experiment 1) showed lower JOLs for Sans Forgetica font compared to a normal, Arial, font in a within-subjects design. Despite this, we did find lower JOLs for pre-highlighted information compared to unmodified information. One potential reason for pre-highlighted information receiving lower JOLs than the normal passage is that pre-highlighted information served to focus participants’ attention to specific parts of the passage. Given the question (i.e., “How likely is it that you will be able to recall material from the passage you just read on a scale of 0 (not likely to recall) to 100 (likely to recall) in 5 minutes?”), participants might have thought pre-highlighting would hinder their ability to answer questions on the whole passage.
 
 ```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap="Judgements of learning as a function of passage type.",  messages=FALSE, echo=FALSE, results="asis"}
 
-
-ground <- qualtRics::read_survey(here::here("Expt2_Data", "memory_acc_gw_final.csv"))
+ground <- qualtRics::read_survey(here::here("Expt2_Data", "qualtrics_raw", "memory_acc_gw_final.csv"))
 
 jols=ground %>% 
   dplyr::group_by(ResponseId, FL_149_DO)%>%
@@ -364,11 +375,10 @@ a1 <- aov_ez("ResponseId", "jols", jols,
 
 ls1 <- emmeans(a1, specs = "Passage") # get the simple effects test for signifcant interaction. 
 
-flex1=pairs(ls1)
 flex1=as.data.frame(ls1)
 
 
-kable(flex1)
+#kable(flex1)
 jols<-as.data.frame(jols)
 
 
@@ -400,40 +410,37 @@ p1
 ```
 
 
-Examining metamemory judgments, we showed that a passage in Sans Forgetica font does not produce lower judgement of learning compared to unmodified or pre-highlighted passages. Interestingly, individuals gave lower JOLs to pre-highlighted information compared to materials presented in a normal font. With a between-subjects design, it is not uncommon to observe no JOL differences between fluent and disfluent materials [cf. @Geller2018]. Indeed, @Taylor showed JOL differences between passages presented in normal (Arial) font and Sans Forgetica using a within-subject design. We did, however, find a JOL effect for pre-highlighted information. One potential reason for pre-highlighted information receiving lower JOLs than the normal passage is that pre-highlighted information served to focus participants attention specific parts of the passage. Given the question, participants might have thought this would hinder them if tested over the passage as a whole. 
-
 # Experiment 3
 
-@Taylor2020 tested the Sans Forgetica effect using cued recall. In previous studes, perceptual disfluency has been shown to enhance performance on yes/no recognition tests, even when there is no recall benefit [@Nairne1988]. The proposed reason for this discrepancy is that during the initial perceptual identification process, the learner is focusing on surface-level aspects. Doing so would aid later recognition, but not recall, for fluent items, given that recall relies more on item elaboration than on perceptually distinctive features  [@Nairne1988]. In Experiment 3, we tested whether Sans Forgetica would lead to similar benefits in recognition memory. It is possible then that Sans Forgetica serves to increase surface-level familiarity of  a word, while recollection is unchanged. This is tested in Experiment 3 by employing an old-new recognition test.
-
+Both Experiments 1 and 2 utilized cued recall for the final criterion test. In previous studies, perceptual disfluency has been shown to enhance performance on yes/no recognition tests, even when there is no recall benefit [@Nairne1988]. This is thought to be because the learner is focusing on surface-level aspects during the initial perceptual identification process. This strategy should aid later recognition, but not recall, for fluent items, given that recall relies more on item elaboration than on perceptually distinctive features. In Experiment 3, we tested whether Sans Forgetica would lead to similar benefits in recognition memory. It is possible that Sans Forgetica serves to increase surface-level familiarity of a word and thus recognition, while recall is unchanged.
 
 ### Participants
 
-Sixty participants (*N* = 60) participated for partial completion of course credit. Sample size was determined by a similar procedure to the above experiments. No participants had to be thrown out for failing to meet the exclusion criteria noted above. 
+Sixty participants (*N* = 60) participated for partial completion of course credit. Sample size was determined by a similar procedure to the above experiments. No participants were removed for failing to meet the exclusion criteria noted above.
 
 ### Materials
 
-Stimuli were 188 nouns taken from @Geller2018. All words were from the English Lexicon Project database (Balota et al., 2007). Both frequency (all words were high frequency; mean log HAL frequency = 9.2) and length (all words were four letters in length) were controlled. The full set of stimuli can be found at https://osf.io/dsxrc/. 
+Stimuli were 188 single-word nouns taken from Geller et al. (2018). All words were from the English Lexicon Project database [@Balota2007]. Both word frequency (all words were high frequency; mean log HAL frequency = 9.2) and length (all words were four letters) were controlled. The full set of stimuli can be found at https://osf.io/dsxrc/.
 
 # Design and Procedure
 
-Disfluency (Sans Forgetica vs. Fluent) was the single factor, manipulated within-subjects. We used 188 words, 94 at study (47 in each script condition) and 188 at test (94 old and 94 new). Words were counterbalanced across the disfluency and study/test conditions, such that each word served equally often as a target and a foil in both fonts. The experiment was created and conducted using the Gorilla Experiment Builder (Anwyl-Irvine, Massonnié, Flitton, Kirkham, & Evershed, 2020); http://www.gorilla.sc). The experiment protocol and tasks are available to preview and copy from Gorilla Open Materials at https://gorilla.sc/open materials/72765. Word order was completely randomized, such that Arial and Sans Forgetica words were randomly intermixed in the study phase, and Arial and Sans Forgetica old and new words were randomly intermixed in the test phase, with old words always presented in the same script at test as it was at study.
+Disfluency (Sans Forgetica vs. Fluent) was the single variable, manipulated within-subjects. We presented participants with 188 words, 94 at study (47 in each script condition) and 188 at test (94 old and 94 new). Words were counterbalanced across the disfluency and study/test conditions, such that each word served equally often as a target and a foil in both fonts. The experiment was created and conducted using the Gorilla Experiment Builder [@Anwyl-Irvine2020; http://www.gorilla.sc]. The experiment protocol and tasks are available to preview and copy from Gorilla Open Materials at https://gorilla.sc/openmaterials/72765. Word order was completely randomized, such that Arial and Sans Forgetica words were randomly intermixed in the study phase, and Arial and Sans Forgetica old and new words were randomly intermixed in the test phase, with old words always presented in the same script at test as they were at study.
 
-
-The experiment employed a within-subject design. The factor of script type (Arial vs. Sans Forgetica) was manipulated within-subjects. We employed 188 words, 94 at study (47 in each script condition) and 188 at test (94 old and 94 new). This resulted in four counterbalanced lists. Lists were assigned to participants so that across participants each word occurred equally often in the four possible conditions: Arial-old, Arial-new, Sans Forgetica-old, Sans Forgetica-new. 
-
-During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced. After the study phase, a short 3-minute distractor task was administered in which participants wrote down as many United States capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chose from one of two boxes displayed on the screen: a box labeled “old” to indicate that they had named the word during study, and a box labeled “new” to indicate they did not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed. The entire experiment took about 30 minutes to complete.
+During the study phase, a fixation cross appeared at the center of the screen for 500 ms. The fixation cross was immediately replaced by a word in the same location. To continue to the next trial, participants pressed the continue button at the bottom of the screen. Each trial was self-paced (see the General Discussion for the study time data). After the study phase, participants completed a short three-minute distractor task wherein they wrote down as many U.S. state capitals as they could. Afterward, participants took an old-new recognition test. At test, a word appeared in the center of the screen that either had been presented during study (“old”) or had not been presented during study (“new”). Old words occurred in their original script, and following the counterbalancing procedure, each new word was presented in Arial font or Sans Forgetica font. For each word presented, participants chose from one of two boxes displayed on the screen: a box labeled “old” to indicate that they had named the word during study, and a box labeled “new” to indicate they did not remember naming the word. Words stayed on the screen until participants gave an “old” or “new” response. All words were individually randomized for each participant during both the study and test phases. After the experiment, participants were debriefed.
 
 # Results and Discussion
 
-D' values along with hit rates and false alarm rates can be seen in Fig. 3. The results are straight-forward.  Consistent with our hypothesis, there was no difference in d' between Sans Forgetica and Arial fonts, *t* (59) = 0.281 , *SE* = 0.05, 95% CI [-0.096, 0.127], *p* = .780. There was strong evidence for no effect (BF~01~ = 13.68). 
+Performance was examined with d', a memory sensitivity measure derived from signal detection theory [@Macmillan2005]. Hits or false alarms of 0 or 1 were changed to .99 or .01. 
 
- We did not find an effect of Sans Forgetica font on recognition memory. Given that we did not observe a significant effect of Sans Forgetica in Experiment 1 and 2 using cued recall, it does not seem like Sans Forgetica is moderated by type of test. 
+Hit rates and false alarm rates along with sensitivity (d') can be seen in Fig. 3. Consistent with our preregistered hypothesis, there was no difference in d' between Sans Forgetica and Arial fonts, t(59) = 0.281, SE = 0.05, 95% CI[-0.096, 0.127], p = .780. There was strong evidence for no effect (BF~01~ = 13.68). 
 
-```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap = "A. Mean proportions of “old” responses. Violin plots represent the kernal density of average probability (black dots) with the mean (white dot) and within-subject 95\\% CIs. B. Memory sensitivity (d'). Violin plots represent the kernal density of average sensitivity (black dots) with the mean (white dot) and within-subject 95\\% CIs ", warning=FALSE,  messages=FALSE, echo=FALSE, results="asis"}
+Overall, we did not find an effect of Sans Forgetica font on recognition memory. This study provides further evidence that Sans Forgetica font is not desirable for memory, regardless of the final test format.
+
+
+```{r, fig.align="center", fig.height=4, fig.width=8, fig.cap = "A. Mean proportions of “old” responses. Violin plots represent the kernal density of average probability (black dots) with the mean (white dot) and within-subject 95\\% CIs. B. Memory sensitivity (d'). Violin plots represent the kernal density of average sensitivity (black dots) with the mean (white dot) and within-subject 95\\% CIs ", warnings=FALSE,  messages=FALSE, echo=FALSE, results="asis"}
 #frecog=read_csv(here("Expt3_data", "expt3recog.csv"))
 #oldnew=glmer(sayold~isold*condition1+(1+isold*condition1|Participant.Private.ID)+ (1+isold*condition1|Stims), data=sfrecog, family=binomial(link="probit"))
-data=here::here('Expt3_data', 'Gorilla_raw_data', 'ex3_recog.csv')  
+data=here::here('Expt3_data', 'expt3recog.csv')  
 
 
 ex3=read_csv(data)
@@ -475,6 +482,8 @@ sdt <- sdt %>%
     dprime = zhr-zfa) %>%
   ungroup()
 
+#write.csv(sdt, file="expt3_summary_dprime.csv")
+
 sdt1=sdt  %>% select(Participant.Private.ID, condition, hr, fa) %>% 
   pivot_longer(hr:fa, names_to="type") %>%
   dplyr::mutate(isold=case_when(type=="hr" ~ "Old", type=="fa" ~ "New"), Condition=case_when(
@@ -493,12 +502,12 @@ dprimebf=sdt  %>% select(Participant.Private.ID, condition, dprime) %>%
   pivot_wider(names_from=condition, values_from = dprime)
 
 #paired ttest
-a1 <- t.test(dprimebf$normal,dprimebf$SF, paired=TRUE, data=dprimebf)
+#a1 <- t.test(dprimebf$normal,dprimebf$SF, paired=TRUE, data=dprimebf)
 
 #Bayes Factor
-dprimebf<-as.data.frame(dprimebf)
+#dprimebf<-as.data.frame(dprimebf)
 
-ttestBF(x=dprimebf$normal, y=dprimebf$SF, paired=TRUE, data=dprimebf)
+#ttestBF(x=dprimebf$normal, y=dprimebf$SF, paired=TRUE, data=dprimebf)
 
 #BF=7.14
 
@@ -530,7 +539,6 @@ p1<- ggplot(means, aes(Condition, value, fill=Condition))+
 
 #oldnew=brm(glmm2, data=ex3, family=bernoulli(link="identity"), prior=Priors, sample_prior = TRUE,  cores=6, inits = 0, control = list(adapt_delta = .9), iter=3000)
 
-p1
 
 
 
@@ -558,36 +566,25 @@ p2<- ggplot(sdt, aes(condition, dprime, fill=condition))+
   theme(legend.position = "none") + 
   theme(axis.text=bold)
 
-p2
-
 
 patchwork1= p1/ p2 
 patchwork1 + plot_annotation(tag_levels = 'A')
 
 ```
 
-
-```{r}
-#library(sjPlot)
-
-#tab_model(oldnewglme)
-
-```
 # General Discussion
 
-The current experiments measured the effect of Sans Forgetica font on recall and recognition. Replicating the findings from @Taylor2020, we did not find a mnemonic benefit for Sans Forgetica font across three experiments. Specifically, in Experiment 1, we did not show a mnemonic benefit for Sans Forgetica font in a cued recall task with weakly realted cues. In Experiment 2, using a between-subjects design, we did not show a mneminic benefit for Sans Forgetica font. In Experiment 3, we did not find a mnemonic benefit for Sans Forgetica using a yes/no recognition test. While it has been claimed, in unpublished and published studies [@Earp2018; @Eskenazi2020], that Sans Forgetica has a positive effect on memory, our high-powered studies argue against this claim. The main conclusion from all three experiments is that Sans Forgetica is not a desirable difficulty. Overall, this set of studies adds to the increasing literature showing that perceptual disfluency has very little impact on actual memory performance [e.g., @Magreehan2016; @Rhodes2008; @Rhodes2009; @Rummer2016; @Xie2018; @Yue2013]. Nonsurprisingly, we did observe a memory advantage for items that had to be generated (Experiment 1) and that were pre-highlighted (Experiment 2).
+The creators of the Sans Forgetica font as well as the media have made strong claims regarding the mnemonic benefits of Sans Forgetica. The aim of the current experiments was to test those claims empirically. In Experiment 1, Sans Forgetica font did not enhance memory in a cued recall task with weakly related cues. In Experiment 2, Sans Forgetica font did not enhance memory for a complex prose passage. In Experiment 3, Sans Forgetica font did not enhance recognition memory. Even with every opportunity to reveal itself, we did not find any evidence for a mnemonic benefit of Sans Forgetica font. 
 
-While we did not find a positive effect of Sans Forgetica on memory, this does not mean there is not one. A number of boundary conditions that determine when perceptual disfluency will and and will not be a desirable difficulty have been established over the past several years [@Geller2018, Geller & Still, 2018]. One important boundary condition is that the disfluency manipulation used is actually disfluent [@Geller2018]. In many studies, perceptual disfluency is assumed but never objectively tested. Thus, it could be that the failure to observe an effect in the current set of studies is because Sans Forgetica font is not perceptually disfluent. Although we did not preregister explicit hypotheses about the perceptual disfluncy of the Sans Forgetica font, we have some preliminary evidence that Sans Forgetica is not objectively disfluent. In general, perceptual disfluency is thought to lower JOLs and produce longer latencies [@Geller2018; @Xie2018]. In Experiment 2, Sans Forgetica font did not produce lower JOLs (although @Taylor2020 did show JOL differences using a within-subjects manipulation). In Experiment 3, we collected self-paced study times for each stimulus. [We did not collect readings times in Experiments 1 and 2 becasue it is not clear how prescise Timing is with Qualtircs whereas Gorilla boosts millisecond accuray]. Self-paced study times have been used as an objective proxy for disfluency [see @Carpenter2020]. Looking at the difference in self-paced reading times, we did not observe a significant difference between Sans Forgetica (*M* = 1481 ms, *SD* = 1750 ms) and Arial (*M* = 1500 ms, *SD* = 2344 ms) fonts, *t*(59) = 0.469, *p* = 0.641. This could be a potentional explanation for why we did not observe an effect of Sans Forgetica on memory across three experiments [but see @Eskenazi2020 for eye-tracking evidence]. It is worth noting, however, that self-paced study times might reflect things other than, or in addition to, processing fluency. Although self-paced study provides one way of measuring processing fluency, more precsise measures of processing fluency should be considered as well (e.g., pupillometry; Goldinger & Papesh, 2012) in future studies. 
+While it has been posited both in unpublished and published studies (Earp, 2018; Eskenazi & Nix, 2020) that Sans Forgetica has a positive effect on memory, our high-powered studies with over 800 participants argue against this claim. This, along with @Taylor2020 provides converging evidence that that Sans Forgetica font is not a desirable difficulty. Theoretically, these findings add to the literature showing that perceptual disfluency has little impact on actual memory performance [e.g., @Magreehan2016; @Rhodes2008, @Rhodes2009; @Rummer2016; @Xie2018; @Yue2013]. Importantly, we did find a memory advantage for other learning techniques such as generation (Experiment 1) and pre-highlighting (Experiment 2) whose efficacy is robustly supported in the literature. That is, the conditions were ripe for a Sans Forgetica effect to emerge if it were an actual mnemonic effect.
 
-In the current set of experiments, we examined whether boundary conditions such as cue strenth, design type, or type of test influenced whether or not we could find a mnemonic effect of Sans Forgetica on memory. We did not find any evidence the Sans Forgetica effect is moderated by these factors. We cannot rule out that the postive benefits of Sans Forgetica might arise under different conditions, however. For instance, [@Eskenazi2020] showed that Sans Forgetica can lead to better orthographic distinctiveness and semantic acquistion, but only if you are are a good speller. This is because better spellers are thought to have a more precise mental lexicon which allows for more efficient processing at multiple levels of representation [i.e,, orthographic, phonological, and semantic; @Perfetti2007]. When confronted with perceptual degradation, better spellers would be able to process a stimulus at a deeper level, which could give rise to better memory. Furture research should examine this along with other factors not tested might influence the Sans Forgetica effect (e.g., test delay). 
+What might account for the null effect of Sans Forgetica font on memory? Drawing valid conclusions about disfluency requires the use of objective disfluency measures. In many studies, perceptual disfluency is assumed but never explicitly tested. Thus, it could be that the failure to observe an effect in the current set of studies is because Sans Forgetica font is simply not perceptually disfluent. Although we did not preregister explicit tests of objective disfluency, we have some preliminary evidence that Sans Forgetica is not disfluent. In Experiment 3, we collected self-paced study times for each stimulus. Self-paced study times have been used as an objective proxy for disfluency (see Carpenter & Geller, 2020). Looking at the difference in self-paced reading times, we did not observe a significant difference between Sans Forgetica font (*M* = 1481 ms, *SD* = 1750 ms) and Arial font (*M* = 1500 ms, *SD* = 2344 ms), *t*(59) = 0.469, *p* = 0.641, BF~01~ = 6.67.  The absence of a study time disparity suggests the font may not be considered disfluent and could therefore explain why we did not observe an effect of Sans Forgetica font. It is worth noting, however, that self-paced study times might reflect variables other than, or in addition to, processing disfluency. Although self-paced study provides one way of measuring processing fluency, more precise measures of processing disfluency should be considered as well (but see Eskenazi & Nix, 2020 for eye-tracking evidence for Sans Forgetica font in good spellers).
 
-Lastly, it is possible that the effect size of the Sans Forgetica effect is smaller than we could detect across our three studies. We powered our studies to detect a medium-sized effect (*d*=.35). If the Sans Forgetica effect is small, it is not clear what the educational use for it would be, particularly given that the generation and pre-highlighting manipulations were more effective. 
+While the current set of experiments (see also Taylor et al., 2020) did not find a memory benefit for Sans Forgetica font, we cannot rule out that the effect might arise under different conditions. A number of boundary conditions that determine when perceptual disfluency will and will not be a desirable difficulty have been established over the past several years (see Geller et al., 2018, Geller & Still, 2018). In the current set of experiments, we examined whether cue strength, study time, and type of test influenced whether or not we could find a mnemonic effect of Sans Forgetica on memory. We did not find any evidence that the memory benefit from Sans Forgetica is moderated by these factors. Despite this, future research should examine the role of individual difference measures [e.g., working memory capacity; @Lehmann2016] along with other design features not tested (e.g. test delay, testing expectancy). 
 
 ## Conclusion
 
-
-Students are attracted to learning interventions that are easy to implement [@Geller2018]. It is not surprising why Sans Forgetia font has gained so much media attention. However, in our current age of uncertainty, it is important to properly evaluate scientific claims made by the media, even if that information comes from widely trusted news soruces like the the Washington Post or NPR. As scientists, our job is to properly evaulate the evidence and correct errorenous information. Based on our careful examination of Sans Forgetica font, we have to argue against the claims made by the Sans Forgetica team and various news outlets and conclude that Sans Forgetica should not be used as a learning technque to bolster learning. Placing material in Sans Forgetica font does not lead to more durable learning. It is our reccomendation to students looking to remember more and forget less, that they use "power tools" such as testing or spacing which have been shown to ehnace learning for 
-
+Students are attracted to learning interventions that are easy to implement (Geller et al., 2018). It is no surprise, then, that Sans Forgetica has garnered so much media attention. However, in our current age of uncertainty about the quality of information, it is important to properly evaluate scientific claims made by the media, even if that information comes from widely trusted news sources. As scientists, our job is to properly evaluate the evidence and correct erroneous information. Accordingly, we are compelled to argue against the claims made by the Sans Forgetica team and various news outlets and conclude that Sans Forgetica should not be used as a learning technique to bolster learning. Our results suggest that placing material in Sans Forgetica font does not lead to more durable learning. It is our recommendation that students looking to remember more and forget less use learning tools such as testing or spacing that have stood the test of time.
 
 
 \newpage
