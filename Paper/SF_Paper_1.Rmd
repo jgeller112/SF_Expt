@@ -17,10 +17,10 @@ affiliation:
   institution: Skidmore College
 output: papaja::apa6_pdf
 bibliography: ref.bib
-classoption: "jou"
+classoption: "man"
 documentclass: "apa6"
 draft: no
-figurelist: no
+figurelist: yes
 floatsintext: no
 footnotelist: no
 keywords: Disfluency, Recall, Desirable Difficulty, Learning and Memory
@@ -30,7 +30,6 @@ authornote: |
  Funding: This research was supported by grant number 220020429 from the James S. McDonnell Foundation awarded to the third author.
   
  Declaration of Interest: The authors declare no competing interests.
-  
   
 shorttitle: Sans Forgetica
 tablelist: no
