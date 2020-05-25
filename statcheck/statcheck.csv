@@ -1,0 +1,2 @@
+"Source","Statistic","df1","df2","Test.Comparison","Value","Reported.Comparison","Reported.P.Value","Computed","Raw","Error","DecisionError","OneTail","OneTailedInTxt","APAfactor"
+"SF_Paper_1","t",NA,59,"=",0.469,"=",0.641,0.640798088653324,"t(59) = 0.469, p = 0.641",FALSE,FALSE,FALSE,FALSE,0.08
