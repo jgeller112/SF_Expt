@@ -192,6 +192,8 @@ jols$Passage <- factor(jols$Passage, level=c("Pre-highlighted", "Unmodified", "S
 
 
 
+write.csv(jols, file="jols_summary.csv")
+
 a1 <- aov_ez("ResponseId", "jols", jols, 
              between = c("Passage")) # one way
 

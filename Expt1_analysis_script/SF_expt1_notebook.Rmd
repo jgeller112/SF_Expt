@@ -289,7 +289,15 @@ p1
 
 
 ```
+```{r}
+#simple effects
 
+dis.emm <- emmeans(a1, ~ dis*condition)
+
+pairs(noise.emm, simple = "dis")
+
+
+```
 #Supplemental Analysis (GLMER)
 #Results between both converge on same conclusion
 
