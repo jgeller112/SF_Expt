@@ -17,7 +17,7 @@ affiliation:
   institution: Skidmore College
 output: papaja::apa6_word
 bibliography: ref.bib
-classoption: "man"
+classoption: doc
 documentclass: "apa6"
 draft: no
 figurelist: no
@@ -585,6 +585,26 @@ Students are attracted to learning interventions that are easy to implement (Gel
 
 \newpage
 
+## Disclosures
+
+### Conflicts of Interest
+The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article.
+\newline
+
+### Author Contributions
+JG wrote the first draft of the manuscript, collected data, and conducted all statistical analyses. JG, SD, and DP conceptualized the studies, reviewed, and edited the manuscript. 
+
+\newline
+
+### R and R package acknowledgements
+```{r r packages}
+my_citations <- cite_r(file = "ref.bib")
+
+my_citations
+```
+
+\newpage
+
 # References
 ```{r create_r-references}
 r_refs(file = "ref.bib")
@@ -596,3 +616,5 @@ r_refs(file = "ref.bib")
 
 <div id = "refs"></div>
 \endgroup
+
+
