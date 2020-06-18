@@ -15,13 +15,13 @@ affiliation:
   institution: University of Iowa
 - id: '2'
   institution: Skidmore College
-output: papaja::apa6_word
+output: papaja::apa6_pdf
 bibliography: ref.bib
-classoption: doc
+classoption: "man"
 documentclass: "apa6"
-draft: no
+draft: yes
 figurelist: no
-floatsintext: no
+floatsintext: yes
 footnotelist: no
 keywords: Disfluency, Recall, Desirable Difficulty, Learning and Memory, Recognition
 linenumbers: no
@@ -581,8 +581,6 @@ While the current set of experiments (see also Taylor et al., 2020) did not find
 ## Conclusion
 
 Students are attracted to learning interventions that are easy to implement (Geller et al., 2018). It is no surprise, then, that Sans Forgetica has garnered so much media attention. However, in our current age of uncertainty about the quality of information, it is important to properly evaluate scientific claims made by the media, even if that information comes from widely trusted news sources. As scientists, our job is to properly evaluate the evidence and correct erroneous information. Accordingly, we are compelled to argue against the claims made by the Sans Forgetica team and various news outlets and conclude that Sans Forgetica should not be used as a learning technique to bolster learning. Our results suggest that placing material in Sans Forgetica typeface does not lead to more durable learning. It is our recommendation that students looking to remember more and forget less use learning tools such as testing or spacing that have stood the test of time.
-
-
 \newpage
 
 ## Disclosures
@@ -593,15 +591,15 @@ The authors declare that they have no conflicts of interest with respect to the 
 
 ### Author Contributions
 JG wrote the first draft of the manuscript, collected data, and conducted all statistical analyses. JG, SD, and DP conceptualized the studies, reviewed, and edited the manuscript. 
-
 \newline
 
 ### R and R package acknowledgements
 ```{r r packages}
 my_citations <- cite_r(file = "ref.bib")
 
-my_citations
 ```
+
+The results were created using `r my_citations`. 
 
 \newpage
 
