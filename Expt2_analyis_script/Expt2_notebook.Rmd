@@ -1,10 +1,12 @@
 ---
-title: "Expt 2: Ground Water"
-output: html_notebook
+title: 'Expt 2: Ground Water'
+output:
+  html_document:
+    df_print: paged
 ---
 
 
-```{r}
+```{r results=FALSE}
 install.packages("qualtRics")
 install.packages("tidyverse")
 install.packages("afex")
@@ -13,6 +15,10 @@ install.packages("hunspell")
 install.packages("tidytext")
 install.packages("brms")
 install.packages("bayestestR")
+install.packages("BayesFactor")
+install.packages("here")
+install.packages("Rmisc")
+install.packages("see")
 
 
 library(qualtRics)
@@ -24,7 +30,8 @@ library(bayestestR)
 library(brms)
 library(Rmisc)
 library(BayesFactor)
-library(lrd)
+library(see)
+
 
 
 
@@ -38,11 +45,12 @@ library(stringi)
 
 ```{r}
 
+#set random seed
 set.seed(456)
 
-ground <- qualtRics::read_survey(here::here("Expt2_data", "qualtrics_raw", "memory_for_words_final.csv")) # raw data
+# load raw data from Qualtrics 
+ground <- qualtRics::read_survey(here::here("Expt2_data", "qualtrics_raw", "memory_for_words_final.csv"))
 
-#data was collected until the last day of the fall semester 2019 Decemeber13th. 
 
 #get attention check question to merge with scored data. 
 ground_native <-dplyr::select(ground, ResponseId,Finished, Progress, Q163_1, Q164, FL_149_DO, Q192, Q145, Q434, Q435, Q436, Q437, Q438, Q439, Q440, Q441, Q442, Q444)
@@ -58,9 +66,9 @@ dplyr::filter(Q192=="Ground water", Progress==100, Q145=="Yes")
 ground_native <- pivot_longer(ground_native,cols=Q434:Q443, names_to="Question", values_to="Response") %>%
   dplyr::filter(Q192=="Ground water", Progress==100, Q145=="Yes")
   
+# read in correct responses 
+question<-read_csv(here::here("Expt2_data", "questions",  "question_response.csv")) 
 
-
-question<-read_csv(here::here("Expt2_data", "questions",  "question_response.csv")) # read in correct responses 
 
 ground_native_question<-dplyr::left_join(ground_native, question) #merge
 
@@ -89,17 +97,20 @@ tokens <- unnest_tokens(tbl = ground_native_question, output = token,
                         input = Response, token = stringr::str_split,
                         pattern = " |\\, |\\.|\\,|\\;")
 
-tokens %>%
+tokens <- tokens  %>%
   mutate(auto_acc=ifelse(tokens$Correct==tokens$token, 1, 0), auto_acc=replace_na(auto_acc, 0))
 
 
-tokens[is.na(tokens)] <- 0 #change all NAs to 0 
+tokens
 
 
 ```
 
 
 ```{r}
+
+# merge manual corrected responses
+
 ground<-qualtRics::read_survey(here::here("Expt2_Data", "final_scored_acc.csv"))
 
 ground_change <- ground %>%
@@ -116,9 +127,12 @@ a1 <- aov_ez("id", "mean_acc", ground_change_agg,
 
 ls1 <- emmeans(a1, specs = "Passage") # get the simple effects test for signifcant interaction. 
 
+kable(summary(a1))
 
 
 flex1=pairs(ls1)
+
+kable(flex1)
 
 #effsexp2=eff_size(flex1, sigma = sigma(a1$lm), edf = 525, method = "identity")
 
@@ -160,7 +174,7 @@ ground_change_agg$Passage <- factor(ground_change_agg$Passage, level=c("Pre-high
 # scale_fill_manual(values=c("grey", "yellow", "black"))+
 #  theme(axis.text=bold, legend.position = "none") + ggplot2::coord_cartesian(ylim = c(0, 1))
 
-
+bold <- element_text(face = "bold", color = "black", size = 14) #axis bold
 p1<- ggplot(ground_change_agg, aes(Passage, mean_acc, fill=Passage))+
   geom_violin() + 
   geom_jitter2(width=0.11, alpha=.5)+ 
@@ -177,11 +191,11 @@ p1
 ```
 #JOLs
 ```{r}
-ground <- qualtRics::read_survey(here::here("Expt2_Data", "memory_acc_gw_final.csv"))
+ground<-qualtRics::read_survey(here::here("Expt2_Data", "final_scored_acc.csv"))
 
 jols=ground %>% 
-  dplr::group_by(ResponseId, FL_149_DO)%>%
-  dplr::summarise(jols=mean(Q163_1)) %>%
+  dplyr::group_by(id, FL_149_DO)%>%
+  dplyr::summarise(jols=mean(Q163_1)) %>%
   dplyr::ungroup() %>%
   dplyr::rename(Passage="FL_149_DO") %>% 
   dplyr::mutate(Passage=ifelse(Passage=="Highlight", "Pre-highlighted",     ifelse(Passage=="Passage", "Sans Forgetica", "Unmodified")))
@@ -194,8 +208,10 @@ jols$Passage <- factor(jols$Passage, level=c("Pre-highlighted", "Unmodified", "S
 
 write.csv(jols, file="jols_summary.csv")
 
-a1 <- aov_ez("ResponseId", "jols", jols, 
+a1 <- aov_ez("id", "jols", jols, 
              between = c("Passage")) # one way
+
+kable(summary(a1))
 
 #plot the results
 
@@ -207,8 +223,9 @@ flex1=as.data.frame(ls1)
 
 
 kable(flex1)
-jols<-as.data.frame(jols)
 
+
+jols<-as.data.frame(jols)
 
 
 p1<- ggplot(jols, aes(Passage, jols, fill=Passage))+
@@ -221,7 +238,7 @@ p1<- ggplot(jols, aes(Passage, jols, fill=Passage))+
   theme(legend.position = "none")  + 
   theme(axis.text=bold) 
 
-
+p1
 
 
 ```
